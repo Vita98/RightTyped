@@ -13,7 +13,37 @@
 		019E2F0F2A1E8C39005A8021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F0D2A1E8C39005A8021 /* Main.storyboard */; };
 		019E2F112A1E8C3B005A8021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F102A1E8C3B005A8021 /* Assets.xcassets */; };
 		019E2F142A1E8C3B005A8021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F122A1E8C3B005A8021 /* LaunchScreen.storyboard */; };
+		019E2F222A1E8EFC005A8021 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F212A1E8EFC005A8021 /* KeyboardViewController.swift */; };
+		019E2F262A1E8EFC005A8021 /* RightTyped-Keyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 019E2F1F2A1E8EFC005A8021 /* RightTyped-Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		019E2F2E2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2C2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf */; };
+		019E2F2F2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2C2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf */; };
+		019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */; };
+		019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		019E2F242A1E8EFC005A8021 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 019E2EFC2A1E8C39005A8021 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 019E2F1E2A1E8EFC005A8021;
+			remoteInfo = "RightTyped-Keyboard";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		019E2F272A1E8EFC005A8021 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				019E2F262A1E8EFC005A8021 /* RightTyped-Keyboard.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		019E2F042A1E8C39005A8021 /* RightTyped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightTyped.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +54,22 @@
 		019E2F102A1E8C3B005A8021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019E2F132A1E8C3B005A8021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019E2F152A1E8C3B005A8021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		019E2F1F2A1E8EFC005A8021 /* RightTyped-Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RightTyped-Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		019E2F212A1E8EFC005A8021 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		019E2F232A1E8EFC005A8021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		019E2F2C2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bulent-yuksel-trakya-rounded-300-light.otf"; sourceTree = "<group>"; };
+		019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bulent-yuksel-trakya-rounded-alt-300-light.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		019E2F012A1E8C39005A8021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		019E2F1C2A1E8EFC005A8021 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				019E2F062A1E8C39005A8021 /* RightTyped */,
+				019E2F202A1E8EFC005A8021 /* RightTyped-Keyboard */,
 				019E2F052A1E8C39005A8021 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				019E2F042A1E8C39005A8021 /* RightTyped.app */,
+				019E2F1F2A1E8EFC005A8021 /* RightTyped-Keyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +100,7 @@
 		019E2F062A1E8C39005A8021 /* RightTyped */ = {
 			isa = PBXGroup;
 			children = (
+				019E2F2B2A1E8F31005A8021 /* Fonts */,
 				019E2F072A1E8C39005A8021 /* AppDelegate.swift */,
 				019E2F092A1E8C39005A8021 /* SceneDelegate.swift */,
 				019E2F0B2A1E8C39005A8021 /* ViewController.swift */,
@@ -65,6 +110,24 @@
 				019E2F152A1E8C3B005A8021 /* Info.plist */,
 			);
 			path = RightTyped;
+			sourceTree = "<group>";
+		};
+		019E2F202A1E8EFC005A8021 /* RightTyped-Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				019E2F212A1E8EFC005A8021 /* KeyboardViewController.swift */,
+				019E2F232A1E8EFC005A8021 /* Info.plist */,
+			);
+			path = "RightTyped-Keyboard";
+			sourceTree = "<group>";
+		};
+		019E2F2B2A1E8F31005A8021 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				019E2F2C2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf */,
+				019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,15 +140,34 @@
 				019E2F002A1E8C39005A8021 /* Sources */,
 				019E2F012A1E8C39005A8021 /* Frameworks */,
 				019E2F022A1E8C39005A8021 /* Resources */,
+				019E2F272A1E8EFC005A8021 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				019E2F252A1E8EFC005A8021 /* PBXTargetDependency */,
 			);
 			name = RightTyped;
 			productName = RightTyped;
 			productReference = 019E2F042A1E8C39005A8021 /* RightTyped.app */;
 			productType = "com.apple.product-type.application";
+		};
+		019E2F1E2A1E8EFC005A8021 /* RightTyped-Keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 019E2F2A2A1E8EFC005A8021 /* Build configuration list for PBXNativeTarget "RightTyped-Keyboard" */;
+			buildPhases = (
+				019E2F1B2A1E8EFC005A8021 /* Sources */,
+				019E2F1C2A1E8EFC005A8021 /* Frameworks */,
+				019E2F1D2A1E8EFC005A8021 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RightTyped-Keyboard";
+			productName = "RightTyped-Keyboard";
+			productReference = 019E2F1F2A1E8EFC005A8021 /* RightTyped-Keyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +180,9 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					019E2F032A1E8C39005A8021 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					019E2F1E2A1E8EFC005A8021 = {
 						CreatedOnToolsVersion = 14.3;
 					};
 				};
@@ -116,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				019E2F032A1E8C39005A8021 /* RightTyped */,
+				019E2F1E2A1E8EFC005A8021 /* RightTyped-Keyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -126,8 +212,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				019E2F142A1E8C3B005A8021 /* LaunchScreen.storyboard in Resources */,
+				019E2F2E2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
+				019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
 				019E2F112A1E8C3B005A8021 /* Assets.xcassets in Resources */,
 				019E2F0F2A1E8C39005A8021 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		019E2F1D2A1E8EFC005A8021 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				019E2F2F2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
+				019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +241,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		019E2F1B2A1E8EFC005A8021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				019E2F222A1E8EFC005A8021 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		019E2F252A1E8EFC005A8021 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 019E2F1E2A1E8EFC005A8021 /* RightTyped-Keyboard */;
+			targetProxy = 019E2F242A1E8EFC005A8021 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		019E2F0D2A1E8C39005A8021 /* Main.storyboard */ = {
@@ -283,6 +396,7 @@
 		019E2F192A1E8C3B005A8021 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -311,6 +425,7 @@
 		019E2F1A2A1E8C3B005A8021 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -336,6 +451,58 @@
 			};
 			name = Release;
 		};
+		019E2F282A1E8EFC005A8021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY4EPMGM8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RightTyped-Keyboard/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "RightTyped-Keyboard";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vitAndreAS.RightTyped.RightTyped-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		019E2F292A1E8EFC005A8021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY4EPMGM8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RightTyped-Keyboard/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "RightTyped-Keyboard";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vitAndreAS.RightTyped.RightTyped-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -353,6 +520,15 @@
 			buildConfigurations = (
 				019E2F192A1E8C3B005A8021 /* Debug */,
 				019E2F1A2A1E8C3B005A8021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		019E2F2A2A1E8EFC005A8021 /* Build configuration list for PBXNativeTarget "RightTyped-Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				019E2F282A1E8EFC005A8021 /* Debug */,
+				019E2F292A1E8EFC005A8021 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
