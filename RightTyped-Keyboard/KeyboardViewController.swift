@@ -10,6 +10,7 @@ import UIKit
 class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
+    var contentView : ContentView!
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -20,7 +21,28 @@ class KeyboardViewController: UIInputViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Perform custom UI setup here
+        setContentView()
+        setNextButton()
+        
+        //Setting the background color
+        self.view.backgroundColor = UIColor.backgroundColor
+    }
+    
+    
+    private func setContentView(){
+        guard let cV = ContentView.instanceFromNib() else { return }
+        contentView = cV
+        
+        self.view.addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        //contentView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+    }
+    
+    private func setNextButton(){
         self.nextKeyboardButton = UIButton(type: .system)
         
         self.nextKeyboardButton.setTitle(NSLocalizedString("Next Keyboard", comment: "Title for 'Next Keyboard' button"), for: [])
@@ -29,10 +51,10 @@ class KeyboardViewController: UIInputViewController {
         
         self.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
         
-        self.view.addSubview(self.nextKeyboardButton)
+        self.contentView.addSubview(self.nextKeyboardButton)
         
-        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        self.nextKeyboardButton.leftAnchor.constraint(equalTo: self.contentView.leftAnchor).isActive = true
+        self.nextKeyboardButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
     }
     
     override func viewWillLayoutSubviews() {

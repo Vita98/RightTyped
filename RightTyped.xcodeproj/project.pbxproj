@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013E08432A21327100FF7928 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08422A21327100FF7928 /* ContentView.xib */; };
+		013E08452A21328100FF7928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08442A21328100FF7928 /* ContentView.swift */; };
+		013E08472A21348D00FF7928 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08462A21348D00FF7928 /* UIColor.swift */; };
+		013E08482A21348D00FF7928 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08462A21348D00FF7928 /* UIColor.swift */; };
 		019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F072A1E8C39005A8021 /* AppDelegate.swift */; };
 		019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F092A1E8C39005A8021 /* SceneDelegate.swift */; };
 		019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F0B2A1E8C39005A8021 /* ViewController.swift */; };
@@ -46,6 +50,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		013E08422A21327100FF7928 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
+		013E08442A21328100FF7928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		013E08462A21348D00FF7928 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		019E2F042A1E8C39005A8021 /* RightTyped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightTyped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019E2F072A1E8C39005A8021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019E2F092A1E8C39005A8021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		013E08492A21451400FF7928 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				013E08462A21348D00FF7928 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		013E084A2A21452800FF7928 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				013E08422A21327100FF7928 /* ContentView.xib */,
+				013E08442A21328100FF7928 /* ContentView.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
 		019E2EFB2A1E8C39005A8021 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +132,7 @@
 				019E2F102A1E8C3B005A8021 /* Assets.xcassets */,
 				019E2F122A1E8C3B005A8021 /* LaunchScreen.storyboard */,
 				019E2F152A1E8C3B005A8021 /* Info.plist */,
+				013E08492A21451400FF7928 /* Extensions */,
 			);
 			path = RightTyped;
 			sourceTree = "<group>";
@@ -117,6 +142,7 @@
 			children = (
 				019E2F212A1E8EFC005A8021 /* KeyboardViewController.swift */,
 				019E2F232A1E8EFC005A8021 /* Info.plist */,
+				013E084A2A21452800FF7928 /* ContentView */,
 			);
 			path = "RightTyped-Keyboard";
 			sourceTree = "<group>";
@@ -224,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				019E2F2F2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
+				013E08432A21327100FF7928 /* ContentView.xib in Resources */,
 				019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
+				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
 				019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */,
 			);
@@ -245,6 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013E08452A21328100FF7928 /* ContentView.swift in Sources */,
+				013E08482A21348D00FF7928 /* UIColor.swift in Sources */,
 				019E2F222A1E8EFC005A8021 /* KeyboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
