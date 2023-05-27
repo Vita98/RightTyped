@@ -24,10 +24,20 @@ class KeyboardViewController: UIInputViewController {
         setContentView()
         setNextButton()
         
+        setCategoryTableView()
+        
         //Setting the background color
         self.view.backgroundColor = UIColor.backgroundColor
     }
     
+    
+    private func setCategoryTableView(){
+        //registering the cell
+        contentView.configureView()
+        
+        contentView.categoryTableView.dataSource = self
+        contentView.categoryTableView.delegate = self
+    }
     
     private func setContentView(){
         guard let cV = ContentView.instanceFromNib() else { return }
@@ -39,7 +49,13 @@ class KeyboardViewController: UIInputViewController {
         contentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         contentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        //contentView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        
+        //Setting the height of the keyboard based on the number of category
+        if CATEGORY_TABLE_VIEW_CELL_HEIGHT * CGFloat(NUMBER_OF_CATEGORY) <= UIScreen.main.bounds.height / 2 {
+            contentView.heightAnchor.constraint(equalToConstant: CATEGORY_TABLE_VIEW_CELL_HEIGHT * CGFloat(NUMBER_OF_CATEGORY)).isActive = true
+        }else{
+            contentView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 2).isActive = true
+        }
     }
     
     private func setNextButton(){
@@ -79,4 +95,16 @@ class KeyboardViewController: UIInputViewController {
         self.nextKeyboardButton.setTitleColor(textColor, for: [])
     }
 
+}
+
+extension KeyboardViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return NUMBER_OF_CATEGORY
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCellID", for: indexPath) as! CategoryTableViewCell
+        cell.configureCell()
+        return cell
+    }
 }

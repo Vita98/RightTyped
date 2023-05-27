@@ -11,6 +11,15 @@
 		013E08452A21328100FF7928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08442A21328100FF7928 /* ContentView.swift */; };
 		013E08472A21348D00FF7928 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08462A21348D00FF7928 /* UIColor.swift */; };
 		013E08482A21348D00FF7928 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08462A21348D00FF7928 /* UIColor.swift */; };
+		013E084D2A21FD7600FF7928 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E084B2A21FD7600FF7928 /* CategoryTableViewCell.swift */; };
+		013E084E2A21FD7600FF7928 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E084C2A21FD7600FF7928 /* CategoryTableViewCell.xib */; };
+		013E08502A22120B00FF7928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E084F2A22120B00FF7928 /* Constants.swift */; };
+		013E08542A221CBC00FF7928 /* AnswersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08522A221CBC00FF7928 /* AnswersCollectionViewCell.swift */; };
+		013E08552A221CBC00FF7928 /* AnswersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08532A221CBC00FF7928 /* AnswersCollectionViewCell.xib */; };
+		01766B442A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
+		01766B452A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
+		01766B472A22394100BA359C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B462A22394100BA359C /* GlobalConstant.swift */; };
+		01766B482A22394100BA359C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B462A22394100BA359C /* GlobalConstant.swift */; };
 		019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F072A1E8C39005A8021 /* AppDelegate.swift */; };
 		019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F092A1E8C39005A8021 /* SceneDelegate.swift */; };
 		019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F0B2A1E8C39005A8021 /* ViewController.swift */; };
@@ -53,6 +62,13 @@
 		013E08422A21327100FF7928 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
 		013E08442A21328100FF7928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		013E08462A21348D00FF7928 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		013E084B2A21FD7600FF7928 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		013E084C2A21FD7600FF7928 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		013E084F2A22120B00FF7928 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		013E08522A221CBC00FF7928 /* AnswersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersCollectionViewCell.swift; sourceTree = "<group>"; };
+		013E08532A221CBC00FF7928 /* AnswersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersCollectionViewCell.xib; sourceTree = "<group>"; };
+		01766B432A22379B00BA359C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		01766B462A22394100BA359C /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		019E2F042A1E8C39005A8021 /* RightTyped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightTyped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019E2F072A1E8C39005A8021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019E2F092A1E8C39005A8021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				013E08462A21348D00FF7928 /* UIColor.swift */,
+				01766B432A22379B00BA359C /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -101,6 +118,33 @@
 				013E08442A21328100FF7928 /* ContentView.swift */,
 			);
 			path = ContentView;
+			sourceTree = "<group>";
+		};
+		013E08512A221BF300FF7928 /* CategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				013E084B2A21FD7600FF7928 /* CategoryTableViewCell.swift */,
+				013E084C2A21FD7600FF7928 /* CategoryTableViewCell.xib */,
+			);
+			path = CategoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		013E08562A221CC200FF7928 /* AnswersCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				013E08522A221CBC00FF7928 /* AnswersCollectionViewCell.swift */,
+				013E08532A221CBC00FF7928 /* AnswersCollectionViewCell.xib */,
+			);
+			path = AnswersCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		01766B492A223E0800BA359C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				013E08512A221BF300FF7928 /* CategoryTableViewCell */,
+				013E08562A221CC200FF7928 /* AnswersCollectionViewCell */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		019E2EFB2A1E8C39005A8021 = {
@@ -133,6 +177,7 @@
 				019E2F122A1E8C3B005A8021 /* LaunchScreen.storyboard */,
 				019E2F152A1E8C3B005A8021 /* Info.plist */,
 				013E08492A21451400FF7928 /* Extensions */,
+				01766B462A22394100BA359C /* GlobalConstant.swift */,
 			);
 			path = RightTyped;
 			sourceTree = "<group>";
@@ -141,8 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				019E2F212A1E8EFC005A8021 /* KeyboardViewController.swift */,
+				013E084F2A22120B00FF7928 /* Constants.swift */,
 				019E2F232A1E8EFC005A8021 /* Info.plist */,
 				013E084A2A21452800FF7928 /* ContentView */,
+				01766B492A223E0800BA359C /* Cells */,
 			);
 			path = "RightTyped-Keyboard";
 			sourceTree = "<group>";
@@ -249,9 +296,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013E08552A221CBC00FF7928 /* AnswersCollectionViewCell.xib in Resources */,
 				019E2F2F2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
 				013E08432A21327100FF7928 /* ContentView.xib in Resources */,
 				019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
+				013E084E2A21FD7600FF7928 /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01766B472A22394100BA359C /* GlobalConstant.swift in Sources */,
+				01766B442A22379B00BA359C /* UIView.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
@@ -273,9 +324,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013E08502A22120B00FF7928 /* Constants.swift in Sources */,
 				013E08452A21328100FF7928 /* ContentView.swift in Sources */,
+				01766B482A22394100BA359C /* GlobalConstant.swift in Sources */,
 				013E08482A21348D00FF7928 /* UIColor.swift in Sources */,
+				01766B452A22379B00BA359C /* UIView.swift in Sources */,
 				019E2F222A1E8EFC005A8021 /* KeyboardViewController.swift in Sources */,
+				013E08542A221CBC00FF7928 /* AnswersCollectionViewCell.swift in Sources */,
+				013E084D2A21FD7600FF7928 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
