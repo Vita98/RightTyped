@@ -10,6 +10,8 @@ import UIKit
 class ContentView: UIView {
 
     @IBOutlet weak var categoryTableView: UITableView!
+    public var footerView: FooterView?
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -18,13 +20,14 @@ class ContentView: UIView {
     }
     */
     
-    public func configureView(){
+    public func configureView(withFooter: Bool){
         categoryTableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "categoryTableViewCellID")
         categoryTableView.alwaysBounceVertical = false
+        
+        if withFooter{
+            footerView = FooterView()
+            footerView!.frame = CGRect(x: 0, y: 0, width: 0, height: FOOTER_VIEW_HEIGHT)
+            categoryTableView.tableFooterView = footerView!
+        }
     }
-    
-    class func instanceFromNib() -> ContentView? {
-        return UINib(nibName: "ContentView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? ContentView
-    }
-
 }

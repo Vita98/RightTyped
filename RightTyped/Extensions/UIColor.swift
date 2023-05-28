@@ -24,4 +24,9 @@ extension UIColor{
 /** DEFINITION OF ALL THE CUSTOM COLOR FOR THE APP **/
 extension UIColor{
     public static let backgroundColor = UIColor(red: 245, green: 245, blue: 233)
+    
+    public static let cellDarkBackgroudColor = UIColor.white.withAlphaComponent(0.2)
+    public static let cellLightBackgroudColor = UIColor.white
+    public static let cellTextLightColor = UIColor.black
+    public static let cellTextlDarkColor = UIColor.white
 }

@@ -49,4 +49,8 @@ extension UIView{
         self.layer.shadowOpacity = shadow.opacity
         self.layer.masksToBounds = false
     }
+    
+    class func instanceFromNib<T : UIView>(withNibName nibName: String) -> T? {
+        return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
+    }
 }

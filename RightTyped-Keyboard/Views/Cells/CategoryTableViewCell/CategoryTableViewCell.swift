@@ -16,6 +16,7 @@ class CategoryTableViewCell: UITableViewCell {
     }
         
     @IBOutlet weak var answersCollectionView: UICollectionView!
+    var keyboardAppearance: UIKeyboardAppearance?
     
     
     override func awakeFromNib() {
@@ -42,6 +43,11 @@ class CategoryTableViewCell: UITableViewCell {
         answersCollectionView.backgroundColor = .none
     }
     
+    public func textDidChange(appearance: UIKeyboardAppearance){
+        keyboardAppearance = appearance
+        answersCollectionView.reloadData()
+    }
+    
 }
 
 extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -53,6 +59,9 @@ extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "answersCollectionViewCellID", for: indexPath) as! AnswersCollectionViewCell
         cell.configureCell()
         cell.setAnswer(text: ANSWERS[indexPath.row])
+        if let appearance = keyboardAppearance{
+            cell.textDidChange(appearance: appearance)
+        }
         return cell
     }
 }

@@ -8,4 +8,4 @@
 import Foundation
 import UIKit
 
-let CATEGORY_CELL_SHADOW = Shadow(color: UIColor.black.cgColor, offset: CGSize(width: 0.5, height: 0.5), radius: 0.5, opacity: 0.6)
+let CATEGORY_CELL_SHADOW = Shadow(color: UIColor.black.cgColor, offset: CGSize(width: 0, height: 0.5), radius: 0.5, opacity: 0.6)

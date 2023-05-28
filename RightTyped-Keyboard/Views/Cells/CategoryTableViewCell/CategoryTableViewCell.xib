@@ -22,7 +22,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVi-6p-8tr">
                                 <rect key="frame" x="15" y="7" width="419" height="33"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -44,6 +44,7 @@
                             <constraint firstAttribute="bottom" secondItem="7A8-VJ-ElX" secondAttribute="bottom" id="EBc-w0-Cu0"/>
                             <constraint firstItem="7A8-VJ-ElX" firstAttribute="top" secondItem="CVi-6p-8tr" secondAttribute="bottom" constant="5" id="HJj-0I-PH7"/>
                             <constraint firstItem="CVi-6p-8tr" firstAttribute="top" secondItem="AS3-J6-udE" secondAttribute="top" constant="7" id="JMf-KI-A9X"/>
+                            <constraint firstAttribute="height" constant="90" id="R4q-ae-1Pr"/>
                             <constraint firstAttribute="trailing" secondItem="7A8-VJ-ElX" secondAttribute="trailing" id="XpX-n9-xUZ"/>
                             <constraint firstItem="CVi-6p-8tr" firstAttribute="leading" secondItem="AS3-J6-udE" secondAttribute="leading" constant="15" id="YVb-a9-Jrb"/>
                             <constraint firstAttribute="trailing" secondItem="CVi-6p-8tr" secondAttribute="trailing" constant="15" id="cFg-mB-7MO"/>
