@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0120274F2A25123F00B62039 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120274E2A25123F00B62039 /* Constant.swift */; };
+		012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012027502A2514ED00B62039 /* AnswerTableViewCell.swift */; };
+		012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012027512A2514ED00B62039 /* AnswerTableViewCell.xib */; };
+		012027562A252C5D00B62039 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012027552A252C5D00B62039 /* HomeHeaderView.swift */; };
+		012027582A252C6800B62039 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012027572A252C6800B62039 /* HomeHeaderView.xib */; };
 		013E08432A21327100FF7928 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08422A21327100FF7928 /* ContentView.xib */; };
 		013E08452A21328100FF7928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08442A21328100FF7928 /* ContentView.swift */; };
 		013E08472A21348D00FF7928 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08462A21348D00FF7928 /* UIColor.swift */; };
@@ -33,7 +38,6 @@
 		019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */; };
 		019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */; };
 		01ADB21E2A23929C007613EB /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB21D2A23929C007613EB /* FooterView.swift */; };
-		01ADB2202A23BEEF007613EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F102A1E8C3B005A8021 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0120274E2A25123F00B62039 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		012027502A2514ED00B62039 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
+		012027512A2514ED00B62039 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
+		012027552A252C5D00B62039 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		012027572A252C6800B62039 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		013E08422A21327100FF7928 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
 		013E08442A21328100FF7928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		013E08462A21348D00FF7928 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -105,6 +114,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012027542A2514F700B62039 /* AnswerTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				012027502A2514ED00B62039 /* AnswerTableViewCell.swift */,
+				012027512A2514ED00B62039 /* AnswerTableViewCell.xib */,
+			);
+			path = AnswerTableViewCell;
+			sourceTree = "<group>";
+		};
+		012027592A252C6C00B62039 /* HomeHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				012027552A252C5D00B62039 /* HomeHeaderView.swift */,
+				012027572A252C6800B62039 /* HomeHeaderView.xib */,
+			);
+			path = HomeHeaderView;
+			sourceTree = "<group>";
+		};
 		013E08492A21451400FF7928 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +208,9 @@
 				019E2F152A1E8C3B005A8021 /* Info.plist */,
 				013E08492A21451400FF7928 /* Extensions */,
 				01766B462A22394100BA359C /* GlobalConstant.swift */,
+				0120274E2A25123F00B62039 /* Constant.swift */,
+				012027542A2514F700B62039 /* AnswerTableViewCell */,
+				012027592A252C6C00B62039 /* HomeHeaderView */,
 			);
 			path = RightTyped;
 			sourceTree = "<group>";
@@ -299,6 +329,8 @@
 				019E2F142A1E8C3B005A8021 /* LaunchScreen.storyboard in Resources */,
 				019E2F2E2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
 				019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
+				012027582A252C6800B62039 /* HomeHeaderView.xib in Resources */,
+				012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */,
 				019E2F112A1E8C3B005A8021 /* Assets.xcassets in Resources */,
 				019E2F0F2A1E8C39005A8021 /* Main.storyboard in Resources */,
 			);
@@ -311,7 +343,6 @@
 				013E08552A221CBC00FF7928 /* AnswersCollectionViewCell.xib in Resources */,
 				019E2F2F2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
 				013E08432A21327100FF7928 /* ContentView.xib in Resources */,
-				01ADB2202A23BEEF007613EB /* Assets.xcassets in Resources */,
 				019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
 				013E084E2A21FD7600FF7928 /* CategoryTableViewCell.xib in Resources */,
 			);
@@ -324,12 +355,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0120274F2A25123F00B62039 /* Constant.swift in Sources */,
 				01766B472A22394100BA359C /* GlobalConstant.swift in Sources */,
 				01766B442A22379B00BA359C /* UIView.swift in Sources */,
+				012027562A252C5D00B62039 /* HomeHeaderView.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
 				019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */,
+				012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

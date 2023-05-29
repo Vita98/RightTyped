@@ -21,14 +21,16 @@ public struct Shadow{
 /// Enum used to differenciate variuos shadows type
 public enum ShadowType{
     case CollectionViewCell
-    
+    case ContentView
     
     /// Associatiion between the type and the hardcoded constants
     var value : Shadow {
         get{
             switch self{
-            case.CollectionViewCell:
+            case .CollectionViewCell:
                 return CATEGORY_CELL_SHADOW
+            case .ContentView:
+                return CONTENT_VIEW_SHADOW
             }
         }
     }
