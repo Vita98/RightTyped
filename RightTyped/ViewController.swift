@@ -9,6 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //Variables used to stop the table view to bounce on top
+    var firstScroll : Bool = true
+    var scrolloffset: CGFloat = 0
+    
+    @IBOutlet weak var tableShadowView: UIView!
     @IBOutlet weak var answersTableView: UITableView!
     
     override func viewDidLoad() {
@@ -17,6 +22,7 @@ class ViewController: UIViewController {
         
         configureView()
         configureAnswersTableView()
+        configureHeaderView()
     }
     
     private func configureView(){
@@ -27,11 +33,26 @@ class ViewController: UIViewController {
         answersTableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil), forCellReuseIdentifier: "answerTableViewCellID")
         answersTableView.dataSource = self
         answersTableView.delegate = self
-        answersTableView.backgroundColor = .none
+        answersTableView.backgroundColor = .white
+        answersTableView.clipsToBounds = true
+        answersTableView.layer.cornerRadius = 45
+        answersTableView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         
-        guard let headerView : HomeHeaderView = HomeHeaderView.instanceFromNib(withNibName: "HomeHeaderView") else { return }
-        headerView.backgroundColor = .backgroundColor
-        answersTableView.tableHeaderView = headerView
+        tableShadowView.dropShadow(shadowType: .ContentView)
+        tableShadowView.layer.cornerRadius = 45
+        tableShadowView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+    }
+    
+    private func configureHeaderView(){
+        guard let headerView : HomeHeaderView = HomeHeaderView.instanceFromNib(withNibName: HomeHeaderView.NIB_NAME) else { return }
+        headerView.configureView()
+        
+        tableShadowView.addSubview(headerView)
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.topAnchor.constraint(equalTo: tableShadowView.topAnchor).isActive = true
+        headerView.leadingAnchor.constraint(equalTo: tableShadowView.leadingAnchor).isActive = true
+        headerView.trailingAnchor.constraint(equalTo: tableShadowView.trailingAnchor).isActive = true
+        answersTableView.contentInset = .init(top: headerView.frame.height, left: 0, bottom: 0, right: 0)
     }
 
 
@@ -47,12 +68,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let item = vector[indexPath.row % vector.count]
         cell.answerLabel.text = item
         return cell
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y <= 0 {
-            scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: 0), animated: false)
-        }
     }
 }
 
