@@ -18,7 +18,7 @@ class AnswersCollectionViewCell: UICollectionViewCell {
     
     public func configureCell(){
         self.layer.cornerRadius = 5        
-        self.dropShadow(shadowType: .CollectionViewCell)
+        self.dropShadow(shadowType: .collectionViewCell)
     }
     
     public func setAnswer(text : String){

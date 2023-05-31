@@ -10,8 +10,6 @@
 		0120274F2A25123F00B62039 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120274E2A25123F00B62039 /* Constant.swift */; };
 		012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012027502A2514ED00B62039 /* AnswerTableViewCell.swift */; };
 		012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012027512A2514ED00B62039 /* AnswerTableViewCell.xib */; };
-		012027562A252C5D00B62039 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012027552A252C5D00B62039 /* HomeHeaderView.swift */; };
-		012027582A252C6800B62039 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012027572A252C6800B62039 /* HomeHeaderView.xib */; };
 		013E08432A21327100FF7928 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08422A21327100FF7928 /* ContentView.xib */; };
 		013E08452A21328100FF7928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08442A21328100FF7928 /* ContentView.swift */; };
 		013E08472A21348D00FF7928 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08462A21348D00FF7928 /* UIColor.swift */; };
@@ -37,6 +35,13 @@
 		019E2F2F2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2C2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf */; };
 		019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */; };
 		019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */; };
+		01A680302A278D6200DD67DC /* HomeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6802E2A278D6200DD67DC /* HomeHeaderTableViewCell.swift */; };
+		01A680312A278D6200DD67DC /* HomeHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A6802F2A278D6200DD67DC /* HomeHeaderTableViewCell.xib */; };
+		01A680362A27901300DD67DC /* AnswersHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A680352A27901300DD67DC /* AnswersHeaderView.swift */; };
+		01A680382A27902600DD67DC /* AnswersHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A680372A27902600DD67DC /* AnswersHeaderView.xib */; };
+		01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A765982A27AF9600D50C4B /* CategoryCollectionViewCell.swift */; };
+		01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */; };
+		01A765A02A27B64400D50C4B /* cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A7659F2A27B64400D50C4B /* cells.swift */; };
 		01ADB21E2A23929C007613EB /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB21D2A23929C007613EB /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +73,6 @@
 		0120274E2A25123F00B62039 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		012027502A2514ED00B62039 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		012027512A2514ED00B62039 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
-		012027552A252C5D00B62039 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
-		012027572A252C6800B62039 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		013E08422A21327100FF7928 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
 		013E08442A21328100FF7928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		013E08462A21348D00FF7928 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -93,6 +96,13 @@
 		019E2F232A1E8EFC005A8021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		019E2F2C2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bulent-yuksel-trakya-rounded-300-light.otf"; sourceTree = "<group>"; };
 		019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bulent-yuksel-trakya-rounded-alt-300-light.otf"; sourceTree = "<group>"; };
+		01A6802E2A278D6200DD67DC /* HomeHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		01A6802F2A278D6200DD67DC /* HomeHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		01A680352A27901300DD67DC /* AnswersHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersHeaderView.swift; sourceTree = "<group>"; };
+		01A680372A27902600DD67DC /* AnswersHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersHeaderView.xib; sourceTree = "<group>"; };
+		01A765982A27AF9600D50C4B /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		01A7659F2A27B64400D50C4B /* cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cells.swift; sourceTree = "<group>"; };
 		01ADB21D2A23929C007613EB /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,15 +131,6 @@
 				012027512A2514ED00B62039 /* AnswerTableViewCell.xib */,
 			);
 			path = AnswerTableViewCell;
-			sourceTree = "<group>";
-		};
-		012027592A252C6C00B62039 /* HomeHeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				012027552A252C5D00B62039 /* HomeHeaderView.swift */,
-				012027572A252C6800B62039 /* HomeHeaderView.xib */,
-			);
-			path = HomeHeaderView;
 			sourceTree = "<group>";
 		};
 		013E08492A21451400FF7928 /* Extensions */ = {
@@ -207,10 +208,9 @@
 				019E2F122A1E8C3B005A8021 /* LaunchScreen.storyboard */,
 				019E2F152A1E8C3B005A8021 /* Info.plist */,
 				013E08492A21451400FF7928 /* Extensions */,
-				01766B462A22394100BA359C /* GlobalConstant.swift */,
-				0120274E2A25123F00B62039 /* Constant.swift */,
-				012027542A2514F700B62039 /* AnswerTableViewCell */,
-				012027592A252C6C00B62039 /* HomeHeaderView */,
+				01A7659D2A27B5B800D50C4B /* Constants */,
+				01A765A22A27B64F00D50C4B /* View */,
+				01A765A12A27B64800D50C4B /* Model */,
 			);
 			path = RightTyped;
 			sourceTree = "<group>";
@@ -233,6 +233,69 @@
 				019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		01A680322A278F8900DD67DC /* HomeHeaderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				01A6802E2A278D6200DD67DC /* HomeHeaderTableViewCell.swift */,
+				01A6802F2A278D6200DD67DC /* HomeHeaderTableViewCell.xib */,
+				01A7659C2A27AF9B00D50C4B /* CategoryCollectionViewCell */,
+			);
+			path = HomeHeaderTableViewCell;
+			sourceTree = "<group>";
+		};
+		01A680392A279ACF00DD67DC /* AnswersHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				01A680352A27901300DD67DC /* AnswersHeaderView.swift */,
+				01A680372A27902600DD67DC /* AnswersHeaderView.xib */,
+			);
+			path = AnswersHeaderView;
+			sourceTree = "<group>";
+		};
+		01A7659C2A27AF9B00D50C4B /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				01A765982A27AF9600D50C4B /* CategoryCollectionViewCell.swift */,
+				01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		01A7659D2A27B5B800D50C4B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				01766B462A22394100BA359C /* GlobalConstant.swift */,
+				0120274E2A25123F00B62039 /* Constant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		01A7659E2A27B5DA00D50C4B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				012027542A2514F700B62039 /* AnswerTableViewCell */,
+				01A680322A278F8900DD67DC /* HomeHeaderTableViewCell */,
+				01A680392A279ACF00DD67DC /* AnswersHeaderView */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		01A765A12A27B64800D50C4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01A7659F2A27B64400D50C4B /* cells.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01A765A22A27B64F00D50C4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01A7659E2A27B5DA00D50C4B /* Home */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		01ADB2212A23EDC8007613EB /* Views */ = {
@@ -327,10 +390,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				019E2F142A1E8C3B005A8021 /* LaunchScreen.storyboard in Resources */,
+				01A680312A278D6200DD67DC /* HomeHeaderTableViewCell.xib in Resources */,
 				019E2F2E2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
+				01A680382A27902600DD67DC /* AnswersHeaderView.xib in Resources */,
 				019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
-				012027582A252C6800B62039 /* HomeHeaderView.xib in Resources */,
 				012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */,
+				01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */,
 				019E2F112A1E8C3B005A8021 /* Assets.xcassets in Resources */,
 				019E2F0F2A1E8C39005A8021 /* Main.storyboard in Resources */,
 			);
@@ -356,12 +421,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0120274F2A25123F00B62039 /* Constant.swift in Sources */,
+				01A680302A278D6200DD67DC /* HomeHeaderTableViewCell.swift in Sources */,
 				01766B472A22394100BA359C /* GlobalConstant.swift in Sources */,
 				01766B442A22379B00BA359C /* UIView.swift in Sources */,
-				012027562A252C5D00B62039 /* HomeHeaderView.swift in Sources */,
+				01A680362A27901300DD67DC /* AnswersHeaderView.swift in Sources */,
+				01A765A02A27B64400D50C4B /* cells.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
+				01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */,
 				019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */,
 				012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */,
 			);

@@ -25,7 +25,7 @@ class FooterView: UIView {
         globeButton.translatesAutoresizingMaskIntoConstraints = false
         globeButton.imageEdgeInsets = .init(top: 5, left: 5, bottom: 5, right: 5)
         globeButton.layer.cornerRadius = 5
-        globeButton.dropShadow(shadowType: .CollectionViewCell)
+        globeButton.dropShadow(shadowType: .collectionViewCell)
         globeButton.isEnabled = true
         
         self.addSubview(globeButton)
