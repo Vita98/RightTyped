@@ -42,6 +42,7 @@
 		01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A765982A27AF9600D50C4B /* CategoryCollectionViewCell.swift */; };
 		01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */; };
 		01A765A02A27B64400D50C4B /* cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A7659F2A27B64400D50C4B /* cells.swift */; };
+		01A765A32A27C88200D50C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F102A1E8C3B005A8021 /* Assets.xcassets */; };
 		01ADB21E2A23929C007613EB /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB21D2A23929C007613EB /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
@@ -409,6 +410,7 @@
 				019E2F2F2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
 				013E08432A21327100FF7928 /* ContentView.xib in Resources */,
 				019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
+				01A765A32A27C88200D50C4B /* Assets.xcassets in Resources */,
 				013E084E2A21FD7600FF7928 /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
