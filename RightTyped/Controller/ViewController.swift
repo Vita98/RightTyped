@@ -22,6 +22,16 @@ class ViewController: UIViewController {
         configureAnswersTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func configureView(){
         self.view.backgroundColor = .backgroundColor
     }
@@ -90,6 +100,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let item = vector[indexPath.row % vector.count]
         cell.answerLabel.text = item
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newAnswerViewControllerID") as! NewAnswerViewController
+        self.navigationController?.pushViewController(VC, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

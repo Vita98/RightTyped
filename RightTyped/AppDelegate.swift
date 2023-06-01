@@ -14,6 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Customizing the back icon and text
+//        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backIcon")
+//        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backIcon")
+//        UIBarButtonItem.appearance().setBackButtonBackgroundImage(UIImage(named: "backIcon"), for: .normal, barMetrics: .default)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: UIControl.State.highlighted)
+        UIBarButtonItem.appearance().tintColor = .componentColor
         return true
     }
 
