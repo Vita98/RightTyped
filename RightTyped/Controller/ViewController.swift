@@ -53,8 +53,7 @@ class ViewController: UIViewController {
         }
         
         tableShadowView.dropShadow(shadowType: .contentView)
-        tableShadowView.layer.cornerRadius = 45
-        tableShadowView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        tableShadowView.applyCustomRoundCorner()
     }
 }
 

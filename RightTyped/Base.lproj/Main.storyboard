@@ -95,10 +95,25 @@ quando e come vuoi!</string>
                     <view key="view" contentMode="scaleToFill" id="GNL-SI-V5w">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgR-Bq-yTl">
+                                <rect key="frame" x="0.0" y="69" width="393" height="783"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wI9-3k-oGs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="NgR-Bq-yTl" secondAttribute="bottom" id="4y3-vd-vBd"/>
+                            <constraint firstItem="wI9-3k-oGs" firstAttribute="trailing" secondItem="NgR-Bq-yTl" secondAttribute="trailing" id="SNv-eE-fvF"/>
+                            <constraint firstItem="NgR-Bq-yTl" firstAttribute="leading" secondItem="wI9-3k-oGs" secondAttribute="leading" id="Snr-U4-sst"/>
+                            <constraint firstItem="NgR-Bq-yTl" firstAttribute="top" secondItem="wI9-3k-oGs" secondAttribute="top" constant="10" id="yWy-m4-a60"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="buQ-Xc-dOo"/>
+                    <connections>
+                        <outlet property="containerView" destination="NgR-Bq-yTl" id="kZl-7e-xM3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGJ-k5-Pgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

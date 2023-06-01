@@ -55,6 +55,11 @@ extension UIView{
         self.layer.masksToBounds = false
     }
     
+    public func applyCustomRoundCorner(){
+        self.layer.cornerRadius = CONTAINER_VIEW_ROUND_CORNER
+        self.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+    }
+    
     class func instanceFromNib<T : UIView>(withNibName nibName: String) -> T? {
         return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
     }

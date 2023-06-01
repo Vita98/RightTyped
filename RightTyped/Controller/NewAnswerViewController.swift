@@ -9,6 +9,8 @@ import UIKit
 
 class NewAnswerViewController: UIViewController {
 
+    @IBOutlet weak var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +20,9 @@ class NewAnswerViewController: UIViewController {
     
     private func setView(){
         self.view.backgroundColor = .backgroundColor
+        containerView.applyCustomRoundCorner()
+        containerView.dropShadow(shadowType: .contentView)
+        containerView.backgroundColor = .white
     }
     
 
