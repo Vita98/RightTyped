@@ -46,6 +46,8 @@
 		01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */; };
 		01A765A02A27B64400D50C4B /* cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A7659F2A27B64400D50C4B /* cells.swift */; };
 		01ADB21E2A23929C007613EB /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB21D2A23929C007613EB /* FooterView.swift */; };
+		01DA1C282A2B52E200A28CE7 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C272A2B52E200A28CE7 /* CustomTextField.xib */; };
+		01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		01A7659F2A27B64400D50C4B /* cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cells.swift; sourceTree = "<group>"; };
 		01ADB21D2A23929C007613EB /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		01DA1C272A2B52E200A28CE7 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
+		01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				01A7659E2A27B5DA00D50C4B /* Home */,
+				01DA1C2B2A2B52FE00A28CE7 /* CustomTextField */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +326,15 @@
 				01ADB21D2A23929C007613EB /* FooterView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		01DA1C2B2A2B52FE00A28CE7 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				01DA1C272A2B52E200A28CE7 /* CustomTextField.xib */,
+				01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */,
+			);
+			path = CustomTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01DA1C282A2B52E200A28CE7 /* CustomTextField.xib in Resources */,
 				019E2F142A1E8C3B005A8021 /* LaunchScreen.storyboard in Resources */,
 				01A680312A278D6200DD67DC /* HomeHeaderTableViewCell.xib in Resources */,
 				019E2F2E2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
@@ -450,6 +465,7 @@
 				01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */,
 				019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */,
 				012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */,
+				01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
