@@ -16,6 +16,8 @@ class NewAnswerViewController: UIViewController {
     @IBOutlet weak var textFieldView: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var textAreaView: UIView!
+    @IBOutlet weak var textAreaLabelPlaceholder: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +28,11 @@ class NewAnswerViewController: UIViewController {
         setView()
         
         scrollView.alwaysBounceVertical = false
-        textView.clipsToBounds = true
         enableSwitch.onTintColor = .componentColor
         
         setBottomView()
         setTextField()
+        setTextArea()
     }
     
     private func setUpObserver(){
@@ -57,6 +59,13 @@ class NewAnswerViewController: UIViewController {
         contentInset.bottom = keyboardFrame.size.height + 20
         scrollView.contentInset = contentInset
         
+    }
+    
+    private func setTextArea(){
+        textAreaLabelPlaceholder.removeFromSuperview()
+        guard let viewCustom : CustomTextArea = CustomTextField.instanceFromNib(withNibName: "CustomTextArea") else { return }
+        viewCustom.inizalize(inView: textAreaView, placheolder: "Che placeholder")
+        textAreaView.layoutIfNeeded()
     }
     
     private func setTextField(){

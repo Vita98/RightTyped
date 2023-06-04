@@ -103,7 +103,7 @@ quando e come vuoi!</string>
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNv-tT-KBF" userLabel="scrollContainerView">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1198.6666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Risposta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2r-MJ-iQW">
                                                         <rect key="frame" x="23" y="5" width="347" height="34.333333333333336"/>
@@ -164,16 +164,8 @@ quando e come vuoi!</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MDS-pX-4ur">
-                                                        <rect key="frame" x="23" y="341.66666666666674" width="347" height="747"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex </mutableString>
-                                                        <color key="textColor" systemColor="labelColor"/>
-                                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFV-Y2-Myb">
-                                                        <rect key="frame" x="23" y="1128.6666666666667" width="347" height="50"/>
+                                                        <rect key="frame" x="23" y="679" width="347" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salva" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-Gm-SVI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="347" height="50"/>
@@ -198,6 +190,24 @@ quando e come vuoi!</string>
                                                             <constraint firstAttribute="height" constant="40" id="M0A-Z9-cLG"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R7-VX-w5t">
+                                                        <rect key="frame" x="23" y="341.66666666666669" width="347" height="41"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEv-Ug-Rdz">
+                                                                <rect key="frame" x="23" y="10" width="301" height="21"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="aEv-Ug-Rdz" secondAttribute="trailing" constant="23" id="Qhf-Se-5BH"/>
+                                                            <constraint firstItem="aEv-Ug-Rdz" firstAttribute="leading" secondItem="5R7-VX-w5t" secondAttribute="leading" constant="23" id="iMw-dh-Ubi"/>
+                                                            <constraint firstAttribute="bottom" secondItem="aEv-Ug-Rdz" secondAttribute="bottom" constant="10" id="pLQ-7c-1VP"/>
+                                                            <constraint firstItem="aEv-Ug-Rdz" firstAttribute="top" secondItem="5R7-VX-w5t" secondAttribute="top" constant="10" id="raG-Lv-MRi"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -205,15 +215,16 @@ quando e come vuoi!</string>
                                                     <constraint firstItem="942-6P-fSg" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="1Lh-IR-gaB"/>
                                                     <constraint firstAttribute="trailing" secondItem="Uba-st-Dkc" secondAttribute="trailing" constant="15" id="26z-p5-o1h"/>
                                                     <constraint firstAttribute="trailing" secondItem="hG9-hg-OaX" secondAttribute="trailing" constant="23" id="5TG-Py-CQK"/>
+                                                    <constraint firstItem="5R7-VX-w5t" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="CHk-L9-F1a"/>
                                                     <constraint firstItem="7wt-7S-h2R" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="10" id="CfP-2E-XpU"/>
                                                     <constraint firstAttribute="trailing" secondItem="PyR-Lk-sO6" secondAttribute="trailing" constant="10" id="EZz-jx-OeT"/>
                                                     <constraint firstItem="hG9-hg-OaX" firstAttribute="top" secondItem="O5c-PS-9Fg" secondAttribute="bottom" constant="10" id="JDN-N1-ttM"/>
                                                     <constraint firstAttribute="trailing" secondItem="YFV-Y2-Myb" secondAttribute="trailing" constant="23" id="Jje-i4-S8K"/>
                                                     <constraint firstAttribute="bottom" secondItem="YFV-Y2-Myb" secondAttribute="bottom" constant="20" id="KEt-4Y-sr7"/>
+                                                    <constraint firstItem="5R7-VX-w5t" firstAttribute="top" secondItem="NF1-0f-XXW" secondAttribute="bottom" constant="10" id="KdI-WG-TQT"/>
+                                                    <constraint firstItem="YFV-Y2-Myb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5R7-VX-w5t" secondAttribute="bottom" constant="40" id="Obf-ID-cra"/>
                                                     <constraint firstItem="YFV-Y2-Myb" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="OsR-TA-QZR"/>
-                                                    <constraint firstItem="YFV-Y2-Myb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="MDS-pX-4ur" secondAttribute="bottom" constant="40" id="PVL-4b-W6I"/>
                                                     <constraint firstItem="PyR-Lk-sO6" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="10" id="Qj4-mZ-4sS"/>
-                                                    <constraint firstItem="MDS-pX-4ur" firstAttribute="top" secondItem="NF1-0f-XXW" secondAttribute="bottom" constant="10" id="T0f-MT-YaY"/>
                                                     <constraint firstItem="tb3-bk-Yfk" firstAttribute="centerY" secondItem="qAE-5w-BgA" secondAttribute="centerY" id="TAp-SM-gzU"/>
                                                     <constraint firstAttribute="trailing" secondItem="7wt-7S-h2R" secondAttribute="trailing" constant="10" id="TQy-Mw-rAg"/>
                                                     <constraint firstItem="942-6P-fSg" firstAttribute="top" secondItem="M2r-MJ-iQW" secondAttribute="bottom" id="WHp-6M-8Bt"/>
@@ -225,12 +236,11 @@ quando e come vuoi!</string>
                                                     <constraint firstAttribute="trailing" secondItem="942-6P-fSg" secondAttribute="trailing" constant="15" id="aqu-MR-qJ5"/>
                                                     <constraint firstAttribute="trailing" secondItem="O5c-PS-9Fg" secondAttribute="trailing" constant="23" id="bET-qC-276"/>
                                                     <constraint firstItem="NF1-0f-XXW" firstAttribute="top" secondItem="hG9-hg-OaX" secondAttribute="bottom" id="des-4X-ID4"/>
-                                                    <constraint firstAttribute="trailing" secondItem="MDS-pX-4ur" secondAttribute="trailing" constant="23" id="dfJ-Uf-bHQ"/>
                                                     <constraint firstItem="Uba-st-Dkc" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="dyy-XU-Yqf"/>
                                                     <constraint firstAttribute="trailing" secondItem="M2r-MJ-iQW" secondAttribute="trailing" constant="23" id="eew-92-B3u"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5R7-VX-w5t" secondAttribute="trailing" constant="23" id="fqR-Rk-x5n"/>
                                                     <constraint firstItem="M2r-MJ-iQW" firstAttribute="top" secondItem="JNv-tT-KBF" secondAttribute="top" constant="5" id="fy3-IC-svW"/>
                                                     <constraint firstItem="hG9-hg-OaX" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="hFT-Y9-zLd"/>
-                                                    <constraint firstItem="MDS-pX-4ur" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="hoZ-5I-OcQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="RUj-Jm-J1Y" secondAttribute="trailing" constant="23" id="ikF-0T-ROR"/>
                                                     <constraint firstAttribute="trailing" secondItem="tb3-bk-Yfk" secondAttribute="trailing" constant="23" id="ion-bk-xNq"/>
                                                     <constraint firstItem="NF1-0f-XXW" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="k2t-o9-Aeg"/>
@@ -279,8 +289,9 @@ quando e come vuoi!</string>
                         <outlet property="containerView" destination="NgR-Bq-yTl" id="kZl-7e-xM3"/>
                         <outlet property="enableSwitch" destination="tb3-bk-Yfk" id="oQc-IG-sdw"/>
                         <outlet property="scrollView" destination="dT8-Dm-6bs" id="Tic-TS-TbB"/>
+                        <outlet property="textAreaLabelPlaceholder" destination="aEv-Ug-Rdz" id="GW8-8e-Dac"/>
+                        <outlet property="textAreaView" destination="5R7-VX-w5t" id="Rao-9k-V1O"/>
                         <outlet property="textFieldView" destination="O5c-PS-9Fg" id="9yz-hg-b6b"/>
-                        <outlet property="textView" destination="MDS-pX-4ur" id="WCU-qj-GpO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGJ-k5-Pgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -309,9 +320,6 @@ quando e come vuoi!</string>
     <resources>
         <image name="appLogo" width="177" height="19"/>
         <image name="settingsIcon" width="30" height="30"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

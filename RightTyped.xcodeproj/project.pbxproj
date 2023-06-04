@@ -48,6 +48,8 @@
 		01ADB21E2A23929C007613EB /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB21D2A23929C007613EB /* FooterView.swift */; };
 		01DA1C282A2B52E200A28CE7 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C272A2B52E200A28CE7 /* CustomTextField.xib */; };
 		01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */; };
+		01DA1C2E2A2CFF8C00A28CE7 /* CustomTextArea.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */; };
+		01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		01ADB21D2A23929C007613EB /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		01DA1C272A2B52E200A28CE7 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextArea.xib; sourceTree = "<group>"; };
+		01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +316,7 @@
 		01A765A22A27B64F00D50C4B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				01DA1C2C2A2CFF7800A28CE7 /* CustomTextArea */,
 				01A7659E2A27B5DA00D50C4B /* Home */,
 				01DA1C2B2A2B52FE00A28CE7 /* CustomTextField */,
 			);
@@ -335,6 +340,15 @@
 				01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */,
 			);
 			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		01DA1C2C2A2CFF7800A28CE7 /* CustomTextArea */ = {
+			isa = PBXGroup;
+			children = (
+				01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */,
+				01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */,
+			);
+			path = CustomTextArea;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +437,7 @@
 				01A680312A278D6200DD67DC /* HomeHeaderTableViewCell.xib in Resources */,
 				019E2F2E2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
 				01A680382A27902600DD67DC /* AnswersHeaderView.xib in Resources */,
+				01DA1C2E2A2CFF8C00A28CE7 /* CustomTextArea.xib in Resources */,
 				019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
 				012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */,
 				01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */,
@@ -459,6 +474,7 @@
 				01A680362A27901300DD67DC /* AnswersHeaderView.swift in Sources */,
 				01A765A02A27B64400D50C4B /* cells.swift in Sources */,
 				0160F8C92A2946F3005B97CB /* NewAnswerViewController.swift in Sources */,
+				01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,

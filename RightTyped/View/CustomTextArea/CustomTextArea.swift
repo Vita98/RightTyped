@@ -1,36 +1,22 @@
 //
-//  CustomTextField.swift
+//  CustomTextArea.swift
 //  RightTyped
 //
-//  Created by Vitandrea Sorino on 03/06/23.
+//  Created by Vitandrea Sorino on 04/06/23.
 //
 
 import UIKit
 
-class CustomTextField: UIView, UITextFieldDelegate {
+class CustomTextArea: UIView, UITextViewDelegate {
 
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var editButton: UIButton!
-        
-    var currentText : String? {
-        didSet {
-            textField.text = currentText
-            label.text = currentText
-        }
-    }
+    @IBOutlet weak var textView: UITextView!
     
-    private var isEditing = false
+    var isEditing : Bool = false
+    var currentText : String?
     
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     private func setUp(inView view: UIView){
         
@@ -41,23 +27,27 @@ class CustomTextField: UIView, UITextFieldDelegate {
         self.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         
+        textView.sizeToFit()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.delegate = self
+        textView.text = ""
+        
         editButton.setTitle("", for: .normal)
         editButton.imageView?.contentMode = .scaleAspectFit
-        
-        textField.backgroundColor = .none
-        textField.borderStyle = .none
-        textField.delegate = self
         
         editButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
         self.contentView.layer.borderWidth = 0.5
         self.contentView.layer.cornerRadius = 7
         self.contentView.layer.borderColor = UIColor.clear.cgColor
+        
+        placeholderLabel.isHidden = true
+        
     }
     
     @objc func buttonPressed(){
         if isEditing{
-            endEditing(true)
+            textView.endEditing(true)
         }else{
             isEditing = true
             setEditingMode(enabled: true)
@@ -65,22 +55,15 @@ class CustomTextField: UIView, UITextFieldDelegate {
     }
     
     private func disableEditing(){
-        currentText = textField.text
+        currentText = textView.text
         setEditingMode(enabled: false)
         isEditing = false
         endEditing(true)
     }
     
-    internal func textFieldDidEndEditing(_ textField: UITextField) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         disableEditing()
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        disableEditing()
-        return false
-    }
-    
-    
     
     private func toggleBorder(enabled : Bool){
         if enabled{
@@ -93,29 +76,30 @@ class CustomTextField: UIView, UITextFieldDelegate {
     private func setEditingMode(enabled : Bool){
         if !enabled {
             toggleBorder(enabled: false)
+            textView.isEditable = false
             
-            if let text = currentText, text.isEmpty{
-                textField.isEnabled = false
+            if let text = currentText, text.isEmpty, let _ = placeholderLabel.text{
+                placeholderLabel.isHidden = false
             }else{
-                textField.isHidden = true
+                placeholderLabel.isHidden = true
             }
-            label.isHidden = false
         }else{
-            self.textField.becomeFirstResponder()
+            textView.isEditable = true
+            placeholderLabel.isHidden = true
+            textView.becomeFirstResponder()
             toggleBorder(enabled: true)
-            textField.isHidden = false
-            textField.isEnabled = true
-            label.isHidden = true
         }
     }
+    
     
     
     public func inizalize(inView view : UIView, withText text: String = "", placheolder: String? = nil){
         setUp(inView: view)
         
-        textField.placeholder = placheolder
+        if let p = placheolder, !p.isEmpty{
+            placeholderLabel.text = p
+        }
         currentText = text
-        
         setEditingMode(enabled: false)
     }
 

@@ -23,8 +23,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="387" height="97"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-h7-5hg">
-                            <rect key="frame" x="342" y="7" width="40" height="83"/>
+                            <rect key="frame" x="342" y="28.666666666666671" width="40" height="40"/>
                             <constraints>
+                                <constraint firstAttribute="height" constant="40" id="nic-HW-REl"/>
                                 <constraint firstAttribute="width" constant="40" id="sLy-jF-Vps"/>
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -48,13 +49,11 @@
                         <constraint firstItem="vb6-RT-z0C" firstAttribute="trailing" secondItem="3CA-Iz-ER2" secondAttribute="trailing" id="Hnq-Bt-YpD"/>
                         <constraint firstItem="vb6-RT-z0C" firstAttribute="bottom" secondItem="3CA-Iz-ER2" secondAttribute="bottom" id="LOh-Pi-mEn"/>
                         <constraint firstItem="3CA-Iz-ER2" firstAttribute="top" secondItem="sEh-fw-rYM" secondAttribute="top" id="Uqs-LV-zcA"/>
-                        <constraint firstAttribute="bottom" secondItem="WhC-h7-5hg" secondAttribute="bottom" constant="7" id="jwc-4z-zPb"/>
                         <constraint firstAttribute="trailing" secondItem="WhC-h7-5hg" secondAttribute="trailing" constant="5" id="lju-8A-vXA"/>
                         <constraint firstItem="WhC-h7-5hg" firstAttribute="leading" secondItem="3CA-Iz-ER2" secondAttribute="trailing" constant="5" id="oIn-wO-dDh"/>
                         <constraint firstItem="WhC-h7-5hg" firstAttribute="centerY" secondItem="3CA-Iz-ER2" secondAttribute="centerY" id="og3-1b-Hgf"/>
                         <constraint firstAttribute="bottom" secondItem="3CA-Iz-ER2" secondAttribute="bottom" id="pjG-e0-Ajr"/>
                         <constraint firstItem="vb6-RT-z0C" firstAttribute="top" secondItem="3CA-Iz-ER2" secondAttribute="top" id="t9j-BJ-Ufa"/>
-                        <constraint firstItem="WhC-h7-5hg" firstAttribute="top" secondItem="sEh-fw-rYM" secondAttribute="top" constant="7" id="wzK-gr-dkI"/>
                         <constraint firstItem="3CA-Iz-ER2" firstAttribute="leading" secondItem="sEh-fw-rYM" secondAttribute="leading" constant="5" id="yKy-Ap-9FP"/>
                     </constraints>
                 </view>

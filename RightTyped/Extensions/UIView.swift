@@ -55,6 +55,15 @@ extension UIView{
         self.layer.masksToBounds = false
     }
     
+    func animateBorderColor(toColor: UIColor, duration: Double) {
+        let animation = CABasicAnimation(keyPath: "borderColor")
+        animation.fromValue = layer.borderColor
+        animation.toValue = toColor.cgColor
+        animation.duration = duration
+        layer.add(animation, forKey: "borderColor")
+        layer.borderColor = toColor.cgColor
+      }
+    
     public func applyCustomRoundCorner(){
         self.layer.cornerRadius = CONTAINER_VIEW_ROUND_CORNER
         self.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
