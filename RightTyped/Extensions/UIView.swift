@@ -62,7 +62,12 @@ extension UIView{
         animation.duration = duration
         layer.add(animation, forKey: "borderColor")
         layer.borderColor = toColor.cgColor
-      }
+    }
+    
+    public func enableComponentButtonMode(enabled: Bool = true){
+        self.backgroundColor = enabled ? .componentColor : .componentColor.withAlphaComponent(0.15)
+        self.layer.cornerRadius = 5
+    }
     
     public func applyCustomRoundCorner(){
         self.layer.cornerRadius = CONTAINER_VIEW_ROUND_CORNER

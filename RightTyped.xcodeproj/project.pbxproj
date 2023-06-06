@@ -38,6 +38,8 @@
 		019E2F2F2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2C2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf */; };
 		019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */; };
 		019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */; };
+		01A391382A2F8F980051FBE4 /* EnableKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A391372A2F8F980051FBE4 /* EnableKeyboardViewController.swift */; };
+		01A3913A2A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A391392A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift */; };
 		01A680302A278D6200DD67DC /* HomeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A6802E2A278D6200DD67DC /* HomeHeaderTableViewCell.swift */; };
 		01A680312A278D6200DD67DC /* HomeHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A6802F2A278D6200DD67DC /* HomeHeaderTableViewCell.xib */; };
 		01A680362A27901300DD67DC /* AnswersHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A680352A27901300DD67DC /* AnswersHeaderView.swift */; };
@@ -105,6 +107,8 @@
 		019E2F232A1E8EFC005A8021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		019E2F2C2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bulent-yuksel-trakya-rounded-300-light.otf"; sourceTree = "<group>"; };
 		019E2F2D2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bulent-yuksel-trakya-rounded-alt-300-light.otf"; sourceTree = "<group>"; };
+		01A391372A2F8F980051FBE4 /* EnableKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableKeyboardViewController.swift; sourceTree = "<group>"; };
+		01A391392A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardEnabledViewController.swift; sourceTree = "<group>"; };
 		01A6802E2A278D6200DD67DC /* HomeHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		01A6802F2A278D6200DD67DC /* HomeHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		01A680352A27901300DD67DC /* AnswersHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersHeaderView.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 			children = (
 				019E2F0B2A1E8C39005A8021 /* ViewController.swift */,
 				0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */,
+				01A391372A2F8F980051FBE4 /* EnableKeyboardViewController.swift */,
+				01A391392A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,6 +264,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		01A391362A2F8F0B0051FBE4 /* CustomComponent */ = {
+			isa = PBXGroup;
+			children = (
+				01DA1C2C2A2CFF7800A28CE7 /* CustomTextArea */,
+				01DA1C2B2A2B52FE00A28CE7 /* CustomTextField */,
+			);
+			path = CustomComponent;
+			sourceTree = "<group>";
+		};
 		01A680322A278F8900DD67DC /* HomeHeaderTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,9 +331,8 @@
 		01A765A22A27B64F00D50C4B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				01DA1C2C2A2CFF7800A28CE7 /* CustomTextArea */,
+				01A391362A2F8F0B0051FBE4 /* CustomComponent */,
 				01A7659E2A27B5DA00D50C4B /* Home */,
-				01DA1C2B2A2B52FE00A28CE7 /* CustomTextField */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -470,6 +484,7 @@
 				0120274F2A25123F00B62039 /* Constant.swift in Sources */,
 				01A680302A278D6200DD67DC /* HomeHeaderTableViewCell.swift in Sources */,
 				01766B472A22394100BA359C /* GlobalConstant.swift in Sources */,
+				01A391382A2F8F980051FBE4 /* EnableKeyboardViewController.swift in Sources */,
 				01766B442A22379B00BA359C /* UIView.swift in Sources */,
 				01A680362A27901300DD67DC /* AnswersHeaderView.swift in Sources */,
 				01A765A02A27B64400D50C4B /* cells.swift in Sources */,
@@ -478,6 +493,7 @@
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
+				01A3913A2A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift in Sources */,
 				01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */,
 				019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */,
 				012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */,
@@ -656,6 +672,7 @@
 				DEVELOPMENT_TEAM = NY4EPMGM8S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RightTyped/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RightTyped;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -685,6 +702,7 @@
 				DEVELOPMENT_TEAM = NY4EPMGM8S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RightTyped/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RightTyped;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -711,7 +729,7 @@
 				DEVELOPMENT_TEAM = NY4EPMGM8S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RightTyped-Keyboard/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "RightTyped-Keyboard";
+				INFOPLIST_KEY_CFBundleDisplayName = RIGHTTYPED;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -737,7 +755,7 @@
 				DEVELOPMENT_TEAM = NY4EPMGM8S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RightTyped-Keyboard/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "RightTyped-Keyboard";
+				INFOPLIST_KEY_CFBundleDisplayName = RIGHTTYPED;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -17,6 +17,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if !AppDelegate.isKeyboardExtensionEnabled{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "enableKeyboardViewControllerID") as! EnableKeyboardViewController
+            let navController = UINavigationController(rootViewController: initialViewController)
+            navController.navigationBar.isHidden = true
+
+            self.window?.rootViewController = navController
+            self.window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +58,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    static func goToHome(){
+        if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate{
+            scene.goToHome()
+        }
+    }
+    
+    func goToHome(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "viewControllerID") as! ViewController
+        let navController = UINavigationController(rootViewController: initialViewController)
+        navController.navigationBar.isHidden = true
+
+        self.window?.rootViewController = navController
+        UIView.transition(with: self.window!, duration: 0.3,options: UIView.AnimationOptions.transitionCrossDissolve, animations: {})
+    }
 
 }
 

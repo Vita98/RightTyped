@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5xi-BX-clE">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -17,19 +17,19 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewControllerID" id="BYZ-38-t0r" customClass="ViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Xx1-w8-0ZK">
-                                <rect key="frame" x="108" y="64" width="177" height="36"/>
+                                <rect key="frame" x="106.66666666666669" y="52" width="177" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="wDY-XY-bTx"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1B-Jk-TIm">
-                                <rect key="frame" x="348" y="64" width="30" height="30"/>
+                                <rect key="frame" x="345" y="52" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2dF-0O-5Qr"/>
                                     <constraint firstAttribute="width" constant="30" id="7WM-MS-AsJ"/>
@@ -38,7 +38,7 @@
                                 <state key="normal" title="Button" image="settingsIcon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAP-9K-XNs">
-                                <rect key="frame" x="85.666666666666686" y="100" width="222" height="51.333333333333343"/>
+                                <rect key="frame" x="84" y="88" width="222" height="51.333333333333343"/>
                                 <string key="text">Personalizza le tue risposte, 
 quando e come vuoi!</string>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
@@ -46,10 +46,10 @@ quando e come vuoi!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2a8-Bt-QhJ">
-                                <rect key="frame" x="0.0" y="171.33333333333331" width="393" height="680.66666666666674"/>
+                                <rect key="frame" x="0.0" y="159.33333333333331" width="390" height="684.66666666666674"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIP-bj-mxL">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="680.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="684.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -93,82 +93,82 @@ quando e come vuoi!</string>
             <objects>
                 <viewController storyboardIdentifier="newAnswerViewControllerID" id="M7H-gB-n8C" customClass="NewAnswerViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GNL-SI-V5w">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgR-Bq-yTl">
-                                <rect key="frame" x="0.0" y="69" width="393" height="783"/>
+                                <rect key="frame" x="0.0" y="57" width="390" height="787"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dT8-Dm-6bs">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNv-tT-KBF" userLabel="scrollContainerView">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Risposta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2r-MJ-iQW">
-                                                        <rect key="frame" x="23" y="5" width="347" height="34.333333333333336"/>
+                                                        <rect key="frame" x="23" y="5" width="344" height="34.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Compila tutti i campi della risposta rapida" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="942-6P-fSg">
-                                                        <rect key="frame" x="15" y="39.333333333333329" width="363" height="20"/>
+                                                        <rect key="frame" x="15" y="39.333333333333329" width="360" height="20"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view alpha="0.60000002384185791" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="PyR-Lk-sO6" userLabel="separator">
-                                                        <rect key="frame" x="10" y="71.333333333333343" width="373" height="1"/>
+                                                        <rect key="frame" x="10" y="71.333333333333343" width="370" height="1"/>
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="KuQ-ei-HqI"/>
                                                         </constraints>
                                                     </view>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tb3-bk-Yfk">
-                                                        <rect key="frame" x="321" y="82.333333333333343" width="51" height="31"/>
+                                                        <rect key="frame" x="318" y="82.333333333333343" width="51" height="31"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-5w-BgA">
-                                                        <rect key="frame" x="23" y="83.666666666666657" width="288" height="28.666666666666671"/>
+                                                        <rect key="frame" x="23" y="83.333333333333343" width="285" height="29"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view alpha="0.60000002384185791" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="7wt-7S-h2R" userLabel="separator">
-                                                        <rect key="frame" x="10" y="123.33333333333334" width="373" height="1"/>
+                                                        <rect key="frame" x="10" y="123.33333333333334" width="370" height="1"/>
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="YeR-pP-ZQY"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-Jm-J1Y">
-                                                        <rect key="frame" x="23" y="134.33333333333334" width="347" height="28.666666666666657"/>
+                                                        <rect key="frame" x="23" y="134.33333333333334" width="344" height="28.666666666666657"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viene visualizzato nella tastiera come titolo della risposta, deve essere breve" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-st-Dkc">
-                                                        <rect key="frame" x="15" y="163" width="363" height="40"/>
+                                                        <rect key="frame" x="15" y="163" width="360" height="40"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-hg-OaX">
-                                                        <rect key="frame" x="23" y="263" width="347" height="28.666666666666686"/>
+                                                        <rect key="frame" x="23" y="263" width="344" height="29"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="È il testo che viene scritto come risposta, può essere lungo e dettagliato" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF1-0f-XXW">
-                                                        <rect key="frame" x="15" y="291.66666666666669" width="363" height="40"/>
+                                                        <rect key="frame" x="15" y="292" width="360" height="40"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFV-Y2-Myb">
-                                                        <rect key="frame" x="23" y="679" width="347" height="50"/>
+                                                        <rect key="frame" x="23" y="683" width="344" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salva" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-Gm-SVI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="347" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="344" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -184,17 +184,17 @@ quando e come vuoi!</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-PS-9Fg">
-                                                        <rect key="frame" x="23" y="213" width="347" height="40"/>
+                                                        <rect key="frame" x="23" y="213" width="344" height="40"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="M0A-Z9-cLG"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R7-VX-w5t">
-                                                        <rect key="frame" x="23" y="341.66666666666669" width="347" height="41"/>
+                                                        <rect key="frame" x="23" y="342" width="344" height="41"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEv-Ug-Rdz">
-                                                                <rect key="frame" x="23" y="10" width="301" height="21"/>
+                                                                <rect key="frame" x="23" y="10" width="298" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -298,28 +298,260 @@ quando e come vuoi!</string>
             </objects>
             <point key="canvasLocation" x="1999.2366412213739" y="-27.464788732394368"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Hgb-eq-vg2">
+        <!--Enable Keyboard View Controller-->
+        <scene sceneID="bPD-xu-Avw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5xi-BX-clE" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VZY-ET-4TD">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController storyboardIdentifier="enableKeyboardViewControllerID" id="Kt6-Ob-U90" customClass="EnableKeyboardViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sCj-hf-8cD">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KJ0-qS-E63">
+                                <rect key="frame" x="106.66666666666669" y="67" width="177" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="6SX-Mb-BNY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku3-N9-Asw">
+                                <rect key="frame" x="342" y="47" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="JY6-Uu-dYB"/>
+                                    <constraint firstAttribute="height" constant="30" id="X8K-wu-mNE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="closeIcon"/>
+                                <connections>
+                                    <action selector="closeButtonPression:" destination="Kt6-Ob-U90" eventType="touchUpInside" id="G4w-RB-ymJ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="E04-tn-f2M">
+                                <rect key="frame" x="20" y="103" width="350" height="294"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Abilita la tastiera dalle impostazioni" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="2eV-1L-gAd">
+                                        <rect key="frame" x="54" y="0.0" width="242" height="90.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Vai in: Impostazioni &gt; Generali &gt; Tastiera &gt; Tastiere &gt; Aggiungi nuova tastiera &gt; Seleziona RightTyped" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="izz-0c-ae8">
+                                        <rect key="frame" x="5.6666666666666572" y="101.66666666666666" width="339" height="90.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="748" text="oppure" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-hr-hOZ">
+                                        <rect key="frame" x="146.33333333333334" y="203.33333333333331" width="57.666666666666657" height="90.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="qzC-Xh-91Z">
+                                <rect key="frame" x="20" y="447" width="350" height="218"/>
+                                <string key="text">e clicca:
+Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
+                                <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5I-2y-hGz">
+                                <rect key="frame" x="40" y="397" width="310" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apri le impostazioni" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2B4-wI-xFh">
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="2B4-wI-xFh" firstAttribute="top" secondItem="i5I-2y-hGz" secondAttribute="top" id="ONh-Gr-bS9"/>
+                                    <constraint firstAttribute="bottom" secondItem="2B4-wI-xFh" secondAttribute="bottom" id="g0v-3S-gcH"/>
+                                    <constraint firstItem="2B4-wI-xFh" firstAttribute="leading" secondItem="i5I-2y-hGz" secondAttribute="leading" id="lVL-bL-Mue"/>
+                                    <constraint firstAttribute="trailing" secondItem="2B4-wI-xFh" secondAttribute="trailing" id="nih-fm-Zk1"/>
+                                    <constraint firstAttribute="height" constant="50" id="pPT-YO-lWx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGM-n1-S06">
+                                <rect key="frame" x="40" y="700" width="310" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tastiera non abilitata" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaR-Tt-0gV">
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GaR-Tt-0gV" firstAttribute="top" secondItem="jGM-n1-S06" secondAttribute="top" id="8Vv-D2-UQW"/>
+                                    <constraint firstItem="GaR-Tt-0gV" firstAttribute="leading" secondItem="jGM-n1-S06" secondAttribute="leading" id="GXB-O0-Gbo"/>
+                                    <constraint firstAttribute="bottom" secondItem="GaR-Tt-0gV" secondAttribute="bottom" id="JE5-dX-zp0"/>
+                                    <constraint firstAttribute="height" constant="50" id="X4y-F5-bmg"/>
+                                    <constraint firstAttribute="trailing" secondItem="GaR-Tt-0gV" secondAttribute="trailing" id="rfF-X6-qB4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCP-km-jby">
+                                <rect key="frame" x="64" y="665" width="262" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-00-a7m">
+                                        <rect key="frame" x="0.0" y="6.6666666666666288" width="17" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="17" id="0jA-ac-aG4"/>
+                                            <constraint firstAttribute="height" constant="17" id="YOe-fx-77h"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="checkboxUnchecked"/>
+                                        <connections>
+                                            <action selector="checkboxButtonClicked:" destination="Kt6-Ob-U90" eventType="touchUpInside" id="OK6-dF-UBB"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="non visualizzare più questo messaggio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q03-9H-ffK">
+                                        <rect key="frame" x="27" y="5" width="235" height="20"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Q03-9H-ffK" secondAttribute="trailing" id="2P5-cB-WXF"/>
+                                    <constraint firstItem="Q03-9H-ffK" firstAttribute="centerY" secondItem="iCP-km-jby" secondAttribute="centerY" id="3KD-Eb-KDj"/>
+                                    <constraint firstItem="Q03-9H-ffK" firstAttribute="leading" secondItem="eYd-00-a7m" secondAttribute="trailing" constant="10" id="HBJ-gf-eq9"/>
+                                    <constraint firstItem="eYd-00-a7m" firstAttribute="centerY" secondItem="iCP-km-jby" secondAttribute="centerY" id="OgK-5e-hCa"/>
+                                    <constraint firstAttribute="height" constant="30" id="WLW-F5-hyK"/>
+                                    <constraint firstItem="eYd-00-a7m" firstAttribute="leading" secondItem="iCP-km-jby" secondAttribute="leading" id="n4f-Z1-Qwu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="heG-vC-reh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="heG-vC-reh" firstAttribute="trailing" secondItem="i5I-2y-hGz" secondAttribute="trailing" constant="40" id="1Bb-vQ-hOk"/>
+                            <constraint firstItem="E04-tn-f2M" firstAttribute="top" secondItem="KJ0-qS-E63" secondAttribute="bottom" id="3AT-ql-8Y3"/>
+                            <constraint firstAttribute="trailing" secondItem="E04-tn-f2M" secondAttribute="trailing" constant="20" id="58V-gv-qvM"/>
+                            <constraint firstItem="jGM-n1-S06" firstAttribute="top" secondItem="iCP-km-jby" secondAttribute="bottom" constant="5" id="5xd-Tg-8ZI"/>
+                            <constraint firstItem="qzC-Xh-91Z" firstAttribute="leading" secondItem="sCj-hf-8cD" secondAttribute="leading" constant="20" id="6bE-lS-Q7w"/>
+                            <constraint firstItem="jGM-n1-S06" firstAttribute="leading" secondItem="heG-vC-reh" secondAttribute="leading" constant="40" id="CDG-zS-iht"/>
+                            <constraint firstItem="ku3-N9-Asw" firstAttribute="top" secondItem="heG-vC-reh" secondAttribute="top" id="EaN-XO-NZF"/>
+                            <constraint firstItem="KJ0-qS-E63" firstAttribute="centerX" secondItem="sCj-hf-8cD" secondAttribute="centerX" id="Jzh-AR-cHi"/>
+                            <constraint firstItem="jGM-n1-S06" firstAttribute="centerX" secondItem="iCP-km-jby" secondAttribute="centerX" id="KJ0-r6-gEe"/>
+                            <constraint firstItem="i5I-2y-hGz" firstAttribute="leading" secondItem="heG-vC-reh" secondAttribute="leading" constant="40" id="PcK-vx-aO2"/>
+                            <constraint firstItem="E04-tn-f2M" firstAttribute="leading" secondItem="heG-vC-reh" secondAttribute="leading" constant="20" id="THv-J9-60G"/>
+                            <constraint firstItem="heG-vC-reh" firstAttribute="bottom" secondItem="jGM-n1-S06" secondAttribute="bottom" constant="60" id="WiT-fR-sE3"/>
+                            <constraint firstItem="i5I-2y-hGz" firstAttribute="centerY" secondItem="sCj-hf-8cD" secondAttribute="centerY" id="YnX-DY-QZh"/>
+                            <constraint firstItem="heG-vC-reh" firstAttribute="trailing" secondItem="ku3-N9-Asw" secondAttribute="trailing" constant="18" id="dEk-3T-LIh"/>
+                            <constraint firstAttribute="trailing" secondItem="qzC-Xh-91Z" secondAttribute="trailing" constant="20" id="djt-98-TDY"/>
+                            <constraint firstItem="heG-vC-reh" firstAttribute="trailing" secondItem="jGM-n1-S06" secondAttribute="trailing" constant="40" id="go2-X1-bZy"/>
+                            <constraint firstItem="qzC-Xh-91Z" firstAttribute="top" secondItem="i5I-2y-hGz" secondAttribute="bottom" id="h5I-41-c1s"/>
+                            <constraint firstItem="E04-tn-f2M" firstAttribute="bottom" secondItem="i5I-2y-hGz" secondAttribute="top" id="mqi-CM-gVO"/>
+                            <constraint firstItem="KJ0-qS-E63" firstAttribute="top" secondItem="heG-vC-reh" secondAttribute="top" constant="20" id="sjU-gL-b22"/>
+                            <constraint firstItem="iCP-km-jby" firstAttribute="top" secondItem="qzC-Xh-91Z" secondAttribute="bottom" id="wJH-3g-H8P"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Lz1-iH-x1d"/>
+                        <outlet property="checkboxButton" destination="eYd-00-a7m" id="2Ak-cK-ttm"/>
+                        <outlet property="closeButton" destination="ku3-N9-Asw" id="99n-72-vzN"/>
+                        <outlet property="keyboardNotEnabledView" destination="jGM-n1-S06" id="WKA-9z-MAj"/>
+                        <outlet property="openSettingsView" destination="i5I-2y-hGz" id="Uuy-sW-LBi"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ld5-Qw-s8R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Uz-iO-gTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1057" y="800"/>
+        </scene>
+        <!--Keyboard Enabled View Controller-->
+        <scene sceneID="ZJM-zj-NfP">
+            <objects>
+                <viewController storyboardIdentifier="keyboardEnabledViewControllerID" id="psO-Vx-axp" customClass="KeyboardEnabledViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qho-1s-aOa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="FIA-LO-I2K">
+                                <rect key="frame" x="106.66666666666669" y="67" width="177" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="zGp-vU-nB0"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWk-55-KiC">
+                                <rect key="frame" x="342" y="47" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="auM-g1-WyY"/>
+                                    <constraint firstAttribute="height" constant="30" id="dhk-ZV-hWs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="closeIcon"/>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="psO-Vx-axp" eventType="touchUpInside" id="Uv9-Df-fsT"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8cg-TX-XhQ">
+                                <rect key="frame" x="80" y="203" width="230" height="397"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1m-v2-OTa">
+                                <rect key="frame" x="40" y="700" width="310" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fatto!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0o-gh-l0P">
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="O0o-gh-l0P" secondAttribute="trailing" id="1gN-m3-b5J"/>
+                                    <constraint firstItem="O0o-gh-l0P" firstAttribute="top" secondItem="B1m-v2-OTa" secondAttribute="top" id="3DR-nn-6nC"/>
+                                    <constraint firstItem="O0o-gh-l0P" firstAttribute="leading" secondItem="B1m-v2-OTa" secondAttribute="leading" id="gam-RY-Mmj"/>
+                                    <constraint firstAttribute="height" constant="50" id="joN-xd-i5k"/>
+                                    <constraint firstAttribute="bottom" secondItem="O0o-gh-l0P" secondAttribute="bottom" id="uJ5-Hm-OYW"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Tastiera abilitata con successo!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-OV-gkQ">
+                                <rect key="frame" x="40" y="108" width="310" height="68.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y00-YE-i83"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B1m-v2-OTa" firstAttribute="top" secondItem="8cg-TX-XhQ" secondAttribute="bottom" constant="100" id="3La-LV-AoA"/>
+                            <constraint firstItem="8cg-TX-XhQ" firstAttribute="leading" secondItem="Y00-YE-i83" secondAttribute="leading" constant="80" id="3ML-3W-7el"/>
+                            <constraint firstItem="Y00-YE-i83" firstAttribute="trailing" secondItem="8cg-TX-XhQ" secondAttribute="trailing" constant="80" id="CVw-vt-AeT"/>
+                            <constraint firstItem="FIA-LO-I2K" firstAttribute="top" secondItem="Y00-YE-i83" secondAttribute="top" constant="20" id="LKi-IS-koC"/>
+                            <constraint firstItem="FIA-LO-I2K" firstAttribute="centerX" secondItem="qho-1s-aOa" secondAttribute="centerX" id="Tsi-PE-LgS"/>
+                            <constraint firstItem="B1m-v2-OTa" firstAttribute="leading" secondItem="Y00-YE-i83" secondAttribute="leading" constant="40" id="UCG-5W-Svp"/>
+                            <constraint firstItem="RUR-OV-gkQ" firstAttribute="top" secondItem="FIA-LO-I2K" secondAttribute="bottom" constant="5" id="WRt-8J-inI"/>
+                            <constraint firstItem="Y00-YE-i83" firstAttribute="bottom" secondItem="B1m-v2-OTa" secondAttribute="bottom" constant="60" id="YCm-TP-9ys"/>
+                            <constraint firstItem="Y00-YE-i83" firstAttribute="trailing" secondItem="B1m-v2-OTa" secondAttribute="trailing" constant="40" id="eol-V0-IHE"/>
+                            <constraint firstItem="Y00-YE-i83" firstAttribute="trailing" secondItem="RUR-OV-gkQ" secondAttribute="trailing" constant="40" id="i1j-3x-OmC"/>
+                            <constraint firstItem="Y00-YE-i83" firstAttribute="trailing" secondItem="oWk-55-KiC" secondAttribute="trailing" constant="18" id="ifp-Q6-x7X"/>
+                            <constraint firstItem="RUR-OV-gkQ" firstAttribute="leading" secondItem="Y00-YE-i83" secondAttribute="leading" constant="40" id="jBI-gD-qPh"/>
+                            <constraint firstItem="oWk-55-KiC" firstAttribute="top" secondItem="Y00-YE-i83" secondAttribute="top" id="vb7-7F-mWB"/>
+                            <constraint firstItem="8cg-TX-XhQ" firstAttribute="top" secondItem="FIA-LO-I2K" secondAttribute="bottom" constant="100" id="y77-5w-Jgg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="oWk-55-KiC" id="4gm-f6-RrO"/>
+                        <outlet property="doneButtonView" destination="B1m-v2-OTa" id="Xgr-KE-DbI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PeR-hV-KwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="800"/>
         </scene>
     </scenes>
     <resources>
         <image name="appLogo" width="177" height="19"/>
+        <image name="checkboxUnchecked" width="17" height="17"/>
+        <image name="closeIcon" width="30" height="30"/>
         <image name="settingsIcon" width="30" height="30"/>
+        <image name="tickIcon" width="200" height="200"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
