@@ -23,11 +23,11 @@ class KeyboardEnabledViewController: UIViewController {
     }
     
     @objc private func doneButtonViewPressed(){
-        SceneDelegate.goToHome()
+        SceneDelegate.goToHome(animated: true)
     }
     
     @IBAction func closeButtonAction(_ sender: Any) {
-        SceneDelegate.goToHome()
+        SceneDelegate.goToHome(animated: true)
     }
     
     /*

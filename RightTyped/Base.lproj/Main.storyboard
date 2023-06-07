@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i9y-SJ-MIe">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -86,7 +86,7 @@ quando e come vuoi!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1986.1538461538462" y="-27.72511848341232"/>
         </scene>
         <!--New Answer View Controller-->
         <scene sceneID="Z4v-L6-Nol">
@@ -296,7 +296,7 @@ quando e come vuoi!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGJ-k5-Pgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1999.2366412213739" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="2927.6923076923076" y="-27.72511848341232"/>
         </scene>
         <!--Enable Keyboard View Controller-->
         <scene sceneID="bPD-xu-Avw">
@@ -307,13 +307,13 @@ quando e come vuoi!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KJ0-qS-E63">
-                                <rect key="frame" x="106.66666666666669" y="67" width="177" height="36"/>
+                                <rect key="frame" x="106.66666666666669" y="77" width="177" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="6SX-Mb-BNY"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku3-N9-Asw">
-                                <rect key="frame" x="342" y="47" width="30" height="30"/>
+                                <rect key="frame" x="342" y="57" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="JY6-Uu-dYB"/>
                                     <constraint firstAttribute="height" constant="30" id="X8K-wu-mNE"/>
@@ -325,22 +325,22 @@ quando e come vuoi!</string>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="E04-tn-f2M">
-                                <rect key="frame" x="20" y="103" width="350" height="294"/>
+                                <rect key="frame" x="20" y="113" width="350" height="284"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Abilita la tastiera dalle impostazioni" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="2eV-1L-gAd">
-                                        <rect key="frame" x="54" y="0.0" width="242" height="90.666666666666671"/>
+                                        <rect key="frame" x="54" y="0.0" width="242" height="87.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Vai in: Impostazioni &gt; Generali &gt; Tastiera &gt; Tastiere &gt; Aggiungi nuova tastiera &gt; Seleziona RightTyped" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="izz-0c-ae8">
-                                        <rect key="frame" x="5.6666666666666572" y="101.66666666666666" width="339" height="90.666666666666657"/>
+                                        <rect key="frame" x="5.6666666666666572" y="98.333333333333343" width="339" height="87.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="748" text="oppure" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-hr-hOZ">
-                                        <rect key="frame" x="146.33333333333334" y="203.33333333333331" width="57.666666666666657" height="90.666666666666686"/>
+                                        <rect key="frame" x="146.33333333333334" y="196.66666666666669" width="57.666666666666657" height="87.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -435,7 +435,7 @@ Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
                             <constraint firstItem="jGM-n1-S06" firstAttribute="top" secondItem="iCP-km-jby" secondAttribute="bottom" constant="5" id="5xd-Tg-8ZI"/>
                             <constraint firstItem="qzC-Xh-91Z" firstAttribute="leading" secondItem="sCj-hf-8cD" secondAttribute="leading" constant="20" id="6bE-lS-Q7w"/>
                             <constraint firstItem="jGM-n1-S06" firstAttribute="leading" secondItem="heG-vC-reh" secondAttribute="leading" constant="40" id="CDG-zS-iht"/>
-                            <constraint firstItem="ku3-N9-Asw" firstAttribute="top" secondItem="heG-vC-reh" secondAttribute="top" id="EaN-XO-NZF"/>
+                            <constraint firstItem="ku3-N9-Asw" firstAttribute="top" secondItem="heG-vC-reh" secondAttribute="top" constant="10" id="EaN-XO-NZF"/>
                             <constraint firstItem="KJ0-qS-E63" firstAttribute="centerX" secondItem="sCj-hf-8cD" secondAttribute="centerX" id="Jzh-AR-cHi"/>
                             <constraint firstItem="jGM-n1-S06" firstAttribute="centerX" secondItem="iCP-km-jby" secondAttribute="centerX" id="KJ0-r6-gEe"/>
                             <constraint firstItem="i5I-2y-hGz" firstAttribute="leading" secondItem="heG-vC-reh" secondAttribute="leading" constant="40" id="PcK-vx-aO2"/>
@@ -447,7 +447,7 @@ Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
                             <constraint firstItem="heG-vC-reh" firstAttribute="trailing" secondItem="jGM-n1-S06" secondAttribute="trailing" constant="40" id="go2-X1-bZy"/>
                             <constraint firstItem="qzC-Xh-91Z" firstAttribute="top" secondItem="i5I-2y-hGz" secondAttribute="bottom" id="h5I-41-c1s"/>
                             <constraint firstItem="E04-tn-f2M" firstAttribute="bottom" secondItem="i5I-2y-hGz" secondAttribute="top" id="mqi-CM-gVO"/>
-                            <constraint firstItem="KJ0-qS-E63" firstAttribute="top" secondItem="heG-vC-reh" secondAttribute="top" constant="20" id="sjU-gL-b22"/>
+                            <constraint firstItem="KJ0-qS-E63" firstAttribute="top" secondItem="heG-vC-reh" secondAttribute="top" constant="30" id="sjU-gL-b22"/>
                             <constraint firstItem="iCP-km-jby" firstAttribute="top" secondItem="qzC-Xh-91Z" secondAttribute="bottom" id="wJH-3g-H8P"/>
                         </constraints>
                     </view>
@@ -471,13 +471,13 @@ Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="FIA-LO-I2K">
-                                <rect key="frame" x="106.66666666666669" y="67" width="177" height="36"/>
+                                <rect key="frame" x="106.66666666666669" y="77" width="177" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="zGp-vU-nB0"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWk-55-KiC">
-                                <rect key="frame" x="342" y="47" width="30" height="30"/>
+                                <rect key="frame" x="342" y="57" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="auM-g1-WyY"/>
                                     <constraint firstAttribute="height" constant="30" id="dhk-ZV-hWs"/>
@@ -489,7 +489,7 @@ Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8cg-TX-XhQ">
-                                <rect key="frame" x="80" y="203" width="230" height="397"/>
+                                <rect key="frame" x="80" y="213" width="230" height="387"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1m-v2-OTa">
                                 <rect key="frame" x="40" y="700" width="310" height="50"/>
@@ -511,7 +511,7 @@ Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Tastiera abilitata con successo!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-OV-gkQ">
-                                <rect key="frame" x="40" y="108" width="310" height="68.333333333333314"/>
+                                <rect key="frame" x="40" y="118" width="310" height="68.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -523,7 +523,7 @@ Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
                             <constraint firstItem="B1m-v2-OTa" firstAttribute="top" secondItem="8cg-TX-XhQ" secondAttribute="bottom" constant="100" id="3La-LV-AoA"/>
                             <constraint firstItem="8cg-TX-XhQ" firstAttribute="leading" secondItem="Y00-YE-i83" secondAttribute="leading" constant="80" id="3ML-3W-7el"/>
                             <constraint firstItem="Y00-YE-i83" firstAttribute="trailing" secondItem="8cg-TX-XhQ" secondAttribute="trailing" constant="80" id="CVw-vt-AeT"/>
-                            <constraint firstItem="FIA-LO-I2K" firstAttribute="top" secondItem="Y00-YE-i83" secondAttribute="top" constant="20" id="LKi-IS-koC"/>
+                            <constraint firstItem="FIA-LO-I2K" firstAttribute="top" secondItem="Y00-YE-i83" secondAttribute="top" constant="30" id="LKi-IS-koC"/>
                             <constraint firstItem="FIA-LO-I2K" firstAttribute="centerX" secondItem="qho-1s-aOa" secondAttribute="centerX" id="Tsi-PE-LgS"/>
                             <constraint firstItem="B1m-v2-OTa" firstAttribute="leading" secondItem="Y00-YE-i83" secondAttribute="leading" constant="40" id="UCG-5W-Svp"/>
                             <constraint firstItem="RUR-OV-gkQ" firstAttribute="top" secondItem="FIA-LO-I2K" secondAttribute="bottom" constant="5" id="WRt-8J-inI"/>
@@ -532,7 +532,7 @@ Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
                             <constraint firstItem="Y00-YE-i83" firstAttribute="trailing" secondItem="RUR-OV-gkQ" secondAttribute="trailing" constant="40" id="i1j-3x-OmC"/>
                             <constraint firstItem="Y00-YE-i83" firstAttribute="trailing" secondItem="oWk-55-KiC" secondAttribute="trailing" constant="18" id="ifp-Q6-x7X"/>
                             <constraint firstItem="RUR-OV-gkQ" firstAttribute="leading" secondItem="Y00-YE-i83" secondAttribute="leading" constant="40" id="jBI-gD-qPh"/>
-                            <constraint firstItem="oWk-55-KiC" firstAttribute="top" secondItem="Y00-YE-i83" secondAttribute="top" id="vb7-7F-mWB"/>
+                            <constraint firstItem="oWk-55-KiC" firstAttribute="top" secondItem="Y00-YE-i83" secondAttribute="top" constant="10" id="vb7-7F-mWB"/>
                             <constraint firstItem="8cg-TX-XhQ" firstAttribute="top" secondItem="FIA-LO-I2K" secondAttribute="bottom" constant="100" id="y77-5w-Jgg"/>
                         </constraints>
                     </view>
@@ -544,6 +544,24 @@ Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeR-hV-KwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1998" y="800"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FYJ-zX-deM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i9y-SJ-MIe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MTU-Yu-XCb">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="goo-zS-ilS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4p-VD-iKD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.9230769230769" y="-27.72511848341232"/>
         </scene>
     </scenes>
     <resources>

@@ -58,13 +58,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-    static func goToHome(){
+    static func goToHome(animated : Bool = false){
         if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate{
-            scene.goToHome()
+            scene.goToHome(animated: animated)
         }
     }
     
-    func goToHome(){
+    func goToHome(animated: Bool = false){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let initialViewController = storyboard.instantiateViewController(withIdentifier: "viewControllerID") as! ViewController
@@ -72,7 +72,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navController.navigationBar.isHidden = true
 
         self.window?.rootViewController = navController
-        UIView.transition(with: self.window!, duration: 0.3,options: UIView.AnimationOptions.transitionCrossDissolve, animations: {})
+        if animated, let window = self.window{
+            UIView.transition(with: window, duration: 0.3,options: UIView.AnimationOptions.transitionCrossDissolve, animations: {})
+        }
     }
 
 }
