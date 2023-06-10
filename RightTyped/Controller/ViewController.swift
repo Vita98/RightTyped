@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -14,12 +15,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableShadowView: UIView!
     @IBOutlet weak var answersTableView: UITableView!
     
+    var categories = [Category]()
+    fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultController(delegate: self)
+    var selectedCategory : Category?
+    var answers: [Answer]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         configureView()
         configureAnswersTableView()
+                
+        do {
+            try self.categoryFetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("Unable to Perform Fetch Request")
+            print("\(fetchError), \(fetchError.localizedDescription)")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,8 +51,8 @@ class ViewController: UIViewController {
     }
     
     private func configureAnswersTableView(){
-        answersTableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil), forCellReuseIdentifier: "answerTableViewCellID")
-        answersTableView.register(UINib(nibName: "HomeHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "homeHeaderTableViewCellID")
+        answersTableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil), forCellReuseIdentifier: AnswerTableViewCell.reuseID)
+        answersTableView.register(UINib(nibName: "HomeHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: HomeHeaderTableViewCell.reuseID)
         answersTableView.dataSource = self
         answersTableView.delegate = self
         answersTableView.backgroundColor = .white
@@ -62,7 +76,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         if section == 0{
             return 1
         }else{
-            return 30
+            return answers != nil ? answers!.count : 0
         }
     }
     
@@ -89,40 +103,55 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "homeHeaderTableViewCellID", for: indexPath) as! HomeHeaderTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeHeaderTableViewCell.reuseID, for: indexPath) as! HomeHeaderTableViewCell
             cell.categoryCollectionView.dataSource = self
             cell.categoryCollectionView.delegate = self
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "answerTableViewCellID", for: indexPath) as! AnswerTableViewCell
-        let item = vector[indexPath.row % vector.count]
-        cell.answerLabel.text = item
+        let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.reuseID, for: indexPath) as! AnswerTableViewCell
+        guard let answers = answers else { return cell }
+        let answer = answers[indexPath.row]
+        cell.answerLabel.text = answer.title
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 { return }
+        guard let answers = answers, indexPath.section > 0 else { return }
         
         let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newAnswerViewControllerID") as! NewAnswerViewController
+        VC.setAnswer(answers[indexPath.row])
         self.navigationController?.pushViewController(VC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    private func reloadTableViewWithAnimation(originIndex : Int, destinationIndex: Int){
+        guard originIndex != destinationIndex else { return }
+        answersTableView.reloadSections(NSIndexSet(index: 1) as IndexSet, with: originIndex>destinationIndex ? .right : .left)
     }
 }
 
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        guard let categories = categoryFetchedResultsController.fetchedObjects else { return 0 }
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCollectionViewCellID", for: indexPath) as! CategoryCollectionViewCell
-        cell.label.text = category[indexPath.row % category.count]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.reuseID, for: indexPath) as! CategoryCollectionViewCell
+        let category = categoryFetchedResultsController.object(at: indexPath)
+        cell.label.text = category.name
         
+        //Selection and deselection process
         if selectedCategoryIndex == nil{
             selectedCategoryIndex = indexPath
+            selectedCategory = category
+            if let ans = category.answers{
+                answers = ans.allObjects as? [Answer]
+                answersTableView.reloadData()
+            }
         }
         
         if indexPath == selectedCategoryIndex{
@@ -136,16 +165,21 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Item selected: \(indexPath.row)")
         //deselecting the previous
         guard let selectedCategoryIndex = selectedCategoryIndex else { return }
         let oldCell = collectionView.cellForItem(at: selectedCategoryIndex) as? CategoryCollectionViewCell
         oldCell?.setSelected(false, animated: true)
+        let originIndex = selectedCategoryIndex.row
         
         //Selecting the current
         let cell = collectionView.cellForItem(at: indexPath) as! CategoryCollectionViewCell
         cell.setSelected(true, animated: true)
         self.selectedCategoryIndex = indexPath
+        selectedCategory = categoryFetchedResultsController.object(at: indexPath)
+        if let ans = selectedCategory?.answers{
+            answers = ans.allObjects as? [Answer]
+            reloadTableViewWithAnimation(originIndex: originIndex, destinationIndex: indexPath.row)
+        }
     }
     
 }

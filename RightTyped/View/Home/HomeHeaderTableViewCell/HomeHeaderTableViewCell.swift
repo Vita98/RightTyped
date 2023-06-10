@@ -8,6 +8,8 @@
 import UIKit
 
 class HomeHeaderTableViewCell: UITableViewCell {
+    
+    public static var reuseID = "homeHeaderTableViewCellID"
 
     @IBOutlet weak var categoryCollectionViewFlowLayout: UICollectionViewFlowLayout! {
         didSet {
@@ -23,7 +25,7 @@ class HomeHeaderTableViewCell: UITableViewCell {
         // Initialization code
         
         categorySwitch.onTintColor = .componentColor
-        configureCategoryCollectionView()
+        categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.reuseID)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,9 +33,4 @@ class HomeHeaderTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    private func configureCategoryCollectionView(){
-        categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "categoryCollectionViewCellID")
-    }
-    
 }

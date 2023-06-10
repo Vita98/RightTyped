@@ -9,15 +9,25 @@ import UIKit
 
 class NewAnswerViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var containerView: UIView!
     
-    @IBOutlet weak var enableSwitch: UISwitch!
-    @IBOutlet weak var textFieldView: UIView!
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var textAreaView: UIView!
-    @IBOutlet weak var textAreaLabelPlaceholder: UILabel!
+    @IBOutlet private weak var enableSwitch: UISwitch!
+    @IBOutlet private weak var textFieldView: UIView!
+    @IBOutlet private weak var textView: UITextView!
+    @IBOutlet private weak var bottomView: UIView!
+    @IBOutlet private weak var textAreaView: UIView!
+    @IBOutlet private weak var textAreaLabelPlaceholder: UILabel!
+    
+    private var customTextField: CustomTextField?
+    private var customTextArea: CustomTextArea?
+    
+    private var answer: Answer? {
+        didSet{
+            customTextArea?.currentText = answer!.descr
+            customTextField?.currentText = answer!.title
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +45,7 @@ class NewAnswerViewController: UIViewController {
         setTextArea()
     }
     
+    // MARK: observers
     private func setUpObserver(){
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -45,6 +56,8 @@ class NewAnswerViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    
+    // MARK: keyboard events
     @objc private func keyboardWillHide(_ notification: Notification){
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
             scrollView.contentInset = contentInset
@@ -61,21 +74,23 @@ class NewAnswerViewController: UIViewController {
         
     }
     
+    
+    // MARK: setting up the interface
     private func setTextArea(){
         textAreaLabelPlaceholder.removeFromSuperview()
-        guard let viewCustom : CustomTextArea = CustomTextField.instanceFromNib(withNibName: "CustomTextArea") else { return }
-        viewCustom.inizalize(inView: textAreaView, placheolder: "Che placeholder")
-        textAreaView.layoutIfNeeded()
+        customTextArea = CustomTextField.instanceFromNib(withNibName: "CustomTextArea")
+        guard let customTextArea = self.customTextArea else { return }
+        customTextArea.inizalize(inView: textAreaView, withText: answer?.descr, placheolder: "Che placeholder")
     }
     
     private func setTextField(){
-        guard let viewCustom : CustomTextField = CustomTextField.instanceFromNib(withNibName: "CustomTextField") else { return }
-        viewCustom.inizalize(inView: textFieldView, withText: "Che bel testo", placheolder: "questo è")
+        customTextField = CustomTextField.instanceFromNib(withNibName: "CustomTextField")
+        guard let customTextField = self.customTextField else { return }
+        customTextField.inizalize(inView: textFieldView, withText: answer?.title, placheolder: "questo è")
     }
     
     private func setBottomView(){
-        bottomView.layer.cornerRadius = 5
-        bottomView.backgroundColor = .componentColor
+        bottomView.enableComponentButtonMode(enabled: false)
     }
     
     private func setView(){
@@ -84,6 +99,10 @@ class NewAnswerViewController: UIViewController {
         containerView.dropShadow(shadowType: .contentView)
         containerView.backgroundColor = .white
         scrollView.applyCustomRoundCorner()
+    }
+    
+    public func setAnswer(_ answer: Answer){
+        self.answer = answer
     }
     
 

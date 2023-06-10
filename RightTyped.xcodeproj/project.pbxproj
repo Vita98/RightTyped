@@ -221,8 +221,7 @@
 			children = (
 				019E2F0B2A1E8C39005A8021 /* ViewController.swift */,
 				0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */,
-				01A391372A2F8F980051FBE4 /* EnableKeyboardViewController.swift */,
-				01A391392A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift */,
+				01D514352A34FDF700B9FF2B /* EnableKeyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -385,6 +384,15 @@
 				01C8A0312A323E7E001DBC8D /* DataModel.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		01D514352A34FDF700B9FF2B /* EnableKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				01A391372A2F8F980051FBE4 /* EnableKeyboardViewController.swift */,
+				01A391392A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift */,
+			);
+			path = EnableKeyboard;
 			sourceTree = "<group>";
 		};
 		01DA1C2B2A2B52FE00A28CE7 /* CustomTextField */ = {

@@ -9,10 +9,10 @@ import UIKit
 
 class CustomTextField: UIView, UITextFieldDelegate {
 
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var editButton: UIButton!
         
     var currentText : String? {
         didSet {
@@ -55,7 +55,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
         self.contentView.layer.borderColor = UIColor.clear.cgColor
     }
     
-    @objc func buttonPressed(){
+    @objc private func buttonPressed(){
         if isEditing{
             endEditing(true)
         }else{
@@ -75,7 +75,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
         disableEditing()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         disableEditing()
         return false
     }
@@ -110,7 +110,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
     }
     
     
-    public func inizalize(inView view : UIView, withText text: String = "", placheolder: String? = nil){
+    public func inizalize(inView view : UIView, withText text: String? = nil, placheolder: String? = nil){
         setUp(inView: view)
         
         textField.placeholder = placheolder

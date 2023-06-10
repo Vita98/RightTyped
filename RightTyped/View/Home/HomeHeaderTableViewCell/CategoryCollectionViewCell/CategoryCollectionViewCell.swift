@@ -8,6 +8,8 @@
 import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
+    
+    public static var reuseID = "categoryCollectionViewCellID"
 
     @IBOutlet weak var label: UILabel!
     

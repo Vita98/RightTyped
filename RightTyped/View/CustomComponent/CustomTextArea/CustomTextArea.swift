@@ -9,13 +9,18 @@ import UIKit
 
 class CustomTextArea: UIView, UITextViewDelegate {
 
-    @IBOutlet weak var placeholderLabel: UILabel!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet private weak var placeholderLabel: UILabel!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var editButton: UIButton!
+    @IBOutlet private weak var textView: UITextView!
     
-    var isEditing : Bool = false
-    var currentText : String?
+    private var isEditing : Bool = false
+    
+    var currentText : String? {
+        didSet {
+            textView.text = currentText
+        }
+    }
     
     
     private func setUp(inView view: UIView){
@@ -45,7 +50,7 @@ class CustomTextArea: UIView, UITextViewDelegate {
         
     }
     
-    @objc func buttonPressed(){
+    @objc private func buttonPressed(){
         if isEditing{
             textView.endEditing(true)
         }else{
@@ -61,7 +66,7 @@ class CustomTextArea: UIView, UITextViewDelegate {
         endEditing(true)
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
+    internal func textViewDidEndEditing(_ textView: UITextView) {
         disableEditing()
     }
     
@@ -78,10 +83,10 @@ class CustomTextArea: UIView, UITextViewDelegate {
             toggleBorder(enabled: false)
             textView.isEditable = false
             
-            if let text = currentText, text.isEmpty, let _ = placeholderLabel.text{
-                placeholderLabel.isHidden = false
-            }else{
+            if let text = currentText, !text.isEmpty{
                 placeholderLabel.isHidden = true
+            }else{
+                placeholderLabel.isHidden = false
             }
         }else{
             textView.isEditable = true
@@ -93,7 +98,7 @@ class CustomTextArea: UIView, UITextViewDelegate {
     
     
     
-    public func inizalize(inView view : UIView, withText text: String = "", placheolder: String? = nil){
+    public func inizalize(inView view : UIView, withText text: String? = nil, placheolder: String? = nil){
         setUp(inView: view)
         
         if let p = placheolder, !p.isEmpty{

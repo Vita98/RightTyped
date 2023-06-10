@@ -16,6 +16,7 @@ public class Category: NSManagedObject {
     static func saveNewCategory(name: String){
         let newCategory = Category(context: DataModelManagerPersistentContainer.shared.context)
         newCategory.name = name
+        newCategory.creationDate = Date()
         DataModelManagerPersistentContainer.shared.saveContext()
     }
     
@@ -32,5 +33,20 @@ public class Category: NSManagedObject {
             print("Fetch error: \(error) description: \(error.userInfo)")
         }
         return category
+    }
+    
+    static func getFetchedResultController(delegate : NSFetchedResultsControllerDelegate? = nil) -> NSFetchedResultsController<Category>{
+        // Create Fetch Request
+        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+
+        // Configure Fetch Request
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.creationDate), ascending: false)]
+
+        // Create Fetched Results Controller
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataModelManagerPersistentContainer.shared.context, sectionNameKeyPath: nil, cacheName: nil)
+
+        // Configure Fetched Results Controller
+        fetchedResultsController.delegate = delegate
+        return fetchedResultsController
     }
 }

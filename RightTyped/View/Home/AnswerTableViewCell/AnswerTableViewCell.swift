@@ -8,6 +8,8 @@
 import UIKit
 
 class AnswerTableViewCell: UITableViewCell {
+    
+    public static var reuseID = "answerTableViewCellID"
 
     @IBOutlet weak var answerLabel: UILabel!
     
