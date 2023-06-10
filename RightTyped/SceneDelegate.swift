@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        if !AppDelegate.isKeyboardExtensionEnabled{
+        if !UserDefaultManager.shared.isKeyboardExtensionEnabled(){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "enableKeyboardViewControllerID") as! EnableKeyboardViewController

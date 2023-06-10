@@ -8,6 +8,7 @@
 import Foundation
 
 fileprivate let FIRST_BOOT_KEY = "FIRST_BOOT_KEY"
+fileprivate let KEYBOARD_EXTENSION_ENABLED_KEY = "AppleKeyboards"
 
 class UserDefaultManager{
     
@@ -15,6 +16,14 @@ class UserDefaultManager{
     
     private init(){}
     
+    
+    
+    public func isKeyboardExtensionEnabled() -> Bool {
+        if let keyboards = UserDefaults.standard.object(forKey: KEYBOARD_EXTENSION_ENABLED_KEY) as? [String], keyboards.contains("com.vitAndreAS.RightTyped.RightTyped-Keyboard2023"){
+            return true
+        }
+        return false
+    }
     
     public func isFirstBoot() -> Bool{
         if let _ = UserDefaults.standard.object(forKey: FIRST_BOOT_KEY){

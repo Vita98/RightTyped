@@ -41,8 +41,7 @@ class EnableKeyboardViewController: UIViewController {
     }
     
     @objc private func willEnterForeground(){
-        print("Ciao")
-        if AppDelegate.isKeyboardExtensionEnabled{
+        if UserDefaultManager.shared.isKeyboardExtensionEnabled(){
             let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "keyboardEnabledViewControllerID") as! KeyboardEnabledViewController
             self.navigationController?.setViewControllers([VC], animated: true)
         }
