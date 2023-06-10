@@ -12,6 +12,10 @@ import CoreData
 @objc(Category)
 public class Category: NSManagedObject {
     
+    static func saveNewCategory(category: Category){
+        category.creationDate = Date()
+        DataModelManagerPersistentContainer.shared.saveContext()
+    }
     
     static func saveNewCategory(name: String){
         let newCategory = Category(context: DataModelManagerPersistentContainer.shared.context)

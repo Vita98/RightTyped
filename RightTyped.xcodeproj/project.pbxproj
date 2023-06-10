@@ -19,6 +19,7 @@
 		013E08502A22120B00FF7928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E084F2A22120B00FF7928 /* Constants.swift */; };
 		013E08542A221CBC00FF7928 /* AnswersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08522A221CBC00FF7928 /* AnswersCollectionViewCell.swift */; };
 		013E08552A221CBC00FF7928 /* AnswersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08532A221CBC00FF7928 /* AnswersCollectionViewCell.xib */; };
+		01525E182A352CFE00E1E5E9 /* DefaultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01525E172A352CFE00E1E5E9 /* DefaultData.swift */; };
 		0160F8C72A29444E005B97CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F102A1E8C3B005A8021 /* Assets.xcassets */; };
 		0160F8C92A2946F3005B97CB /* NewAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */; };
 		0160F8CC2A2949AE005B97CB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8CB2A2949AE005B97CB /* UIViewController.swift */; };
@@ -103,6 +104,7 @@
 		013E084F2A22120B00FF7928 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		013E08522A221CBC00FF7928 /* AnswersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersCollectionViewCell.swift; sourceTree = "<group>"; };
 		013E08532A221CBC00FF7928 /* AnswersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersCollectionViewCell.xib; sourceTree = "<group>"; };
+		01525E172A352CFE00E1E5E9 /* DefaultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultData.swift; sourceTree = "<group>"; };
 		0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnswerViewController.swift; sourceTree = "<group>"; };
 		0160F8CB2A2949AE005B97CB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		01766B432A22379B00BA359C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				011987562A3260FF007D76B9 /* Models */,
 				01C8A0352A323F03001DBC8D /* DataModelPersistentContainer.swift */,
 				01C8A0312A323E7E001DBC8D /* DataModel.xcdatamodeld */,
+				01525E172A352CFE00E1E5E9 /* DefaultData.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				01A680302A278D6200DD67DC /* HomeHeaderTableViewCell.swift in Sources */,
 				01766B472A22394100BA359C /* GlobalConstant.swift in Sources */,
 				01A391382A2F8F980051FBE4 /* EnableKeyboardViewController.swift in Sources */,
+				01525E182A352CFE00E1E5E9 /* DefaultData.swift in Sources */,
 				01C8A0422A324323001DBC8D /* Answer+CoreDataProperties.swift in Sources */,
 				01C8A0402A324323001DBC8D /* Answer+CoreDataClass.swift in Sources */,
 				01766B442A22379B00BA359C /* UIView.swift in Sources */,

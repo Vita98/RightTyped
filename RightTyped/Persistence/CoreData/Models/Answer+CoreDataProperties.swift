@@ -16,8 +16,8 @@ extension Answer {
         return NSFetchRequest<Answer>(entityName: "Answer")
     }
 
-    @NSManaged public var title: String?
-    @NSManaged public var descr: String?
+    @NSManaged public var title: String
+    @NSManaged public var descr: String
     @NSManaged public var category: Category?
 
 }
