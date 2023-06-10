@@ -60,6 +60,7 @@
 		01C8A0412A324323001DBC8D /* Answer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8A03A2A324323001DBC8D /* Answer+CoreDataClass.swift */; };
 		01C8A0422A324323001DBC8D /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8A03B2A324323001DBC8D /* Answer+CoreDataProperties.swift */; };
 		01C8A0432A324323001DBC8D /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8A03B2A324323001DBC8D /* Answer+CoreDataProperties.swift */; };
+		01D514372A35061300B9FF2B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D514362A35061300B9FF2B /* UserDefaultsManager.swift */; };
 		01DA1C282A2B52E200A28CE7 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C272A2B52E200A28CE7 /* CustomTextField.xib */; };
 		01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */; };
 		01DA1C2E2A2CFF8C00A28CE7 /* CustomTextArea.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */; };
@@ -135,6 +136,7 @@
 		01C8A0392A324323001DBC8D /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		01C8A03A2A324323001DBC8D /* Answer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		01C8A03B2A324323001DBC8D /* Answer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		01D514362A35061300B9FF2B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		01DA1C272A2B52E200A28CE7 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextArea.xib; sourceTree = "<group>"; };
@@ -256,7 +258,7 @@
 		019E2F062A1E8C39005A8021 /* RightTyped */ = {
 			isa = PBXGroup;
 			children = (
-				01C8A0442A32437D001DBC8D /* CoreData */,
+				01D514382A35061C00B9FF2B /* Persistence */,
 				019E2F2B2A1E8F31005A8021 /* Fonts */,
 				019E2F072A1E8C39005A8021 /* AppDelegate.swift */,
 				019E2F092A1E8C39005A8021 /* SceneDelegate.swift */,
@@ -393,6 +395,15 @@
 				01A391392A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift */,
 			);
 			path = EnableKeyboard;
+			sourceTree = "<group>";
+		};
+		01D514382A35061C00B9FF2B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				01D514362A35061300B9FF2B /* UserDefaultsManager.swift */,
+				01C8A0442A32437D001DBC8D /* CoreData */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		01DA1C2B2A2B52FE00A28CE7 /* CustomTextField */ = {
@@ -539,6 +550,7 @@
 				01A680362A27901300DD67DC /* AnswersHeaderView.swift in Sources */,
 				01A765A02A27B64400D50C4B /* cells.swift in Sources */,
 				0160F8C92A2946F3005B97CB /* NewAnswerViewController.swift in Sources */,
+				01D514372A35061300B9FF2B /* UserDefaultsManager.swift in Sources */,
 				01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,

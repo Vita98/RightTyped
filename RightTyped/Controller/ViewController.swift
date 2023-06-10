@@ -59,6 +59,7 @@ class ViewController: UIViewController {
         answersTableView.clipsToBounds = true
         answersTableView.layer.cornerRadius = 45
         answersTableView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        answersTableView.alwaysBounceVertical = false
         
         if #available(iOS 15.0, *) {
             answersTableView.sectionHeaderTopPadding = 0
