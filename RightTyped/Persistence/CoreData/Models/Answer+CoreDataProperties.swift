@@ -19,6 +19,7 @@ extension Answer {
     @NSManaged public var title: String
     @NSManaged public var descr: String
     @NSManaged public var category: Category?
+    @NSManaged public var enabled: Bool
 
 }
 

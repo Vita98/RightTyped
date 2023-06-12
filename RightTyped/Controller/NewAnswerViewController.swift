@@ -26,6 +26,9 @@ class NewAnswerViewController: UIViewController {
         didSet{
             customTextArea?.currentText = answer!.descr
             customTextField?.currentText = answer!.title
+            if enableSwitch != nil {
+                enableSwitch.setOn(answer!.enabled, animated: false)
+            }
         }
     }
     
@@ -43,6 +46,10 @@ class NewAnswerViewController: UIViewController {
         setBottomView()
         setTextField()
         setTextArea()
+        
+        if let enableSwitch = enableSwitch, let answer = answer {
+            enableSwitch.setOn(answer.enabled, animated: false)
+        }
     }
     
     // MARK: observers
@@ -105,6 +112,14 @@ class NewAnswerViewController: UIViewController {
         self.answer = answer
     }
     
+    
+    // MARK: Events
+    @IBAction func enableSwitchValueChanged(_ sender: Any) {
+        if let answer = answer{
+            answer.enabled = enableSwitch.isOn
+            answer.save()
+        }
+    }
 
     /*
     // MARK: - Navigation

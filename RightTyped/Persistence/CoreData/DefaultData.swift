@@ -38,6 +38,5 @@ class DefaultData{
             }
             Category.saveNewCategory(category: catObj)
         }
-        
     }
 }

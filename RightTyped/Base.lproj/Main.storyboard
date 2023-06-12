@@ -126,6 +126,9 @@ quando e come vuoi!</string>
                                                     </view>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tb3-bk-Yfk">
                                                         <rect key="frame" x="318" y="82.333333333333343" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="enableSwitchValueChanged:" destination="M7H-gB-n8C" eventType="valueChanged" id="Lkc-6D-JmB"/>
+                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-5w-BgA">
                                                         <rect key="frame" x="23" y="83.333333333333343" width="285" height="29"/>
@@ -287,7 +290,7 @@ quando e come vuoi!</string>
                     <connections>
                         <outlet property="bottomView" destination="YFV-Y2-Myb" id="v5f-J1-Yop"/>
                         <outlet property="containerView" destination="NgR-Bq-yTl" id="kZl-7e-xM3"/>
-                        <outlet property="enableSwitch" destination="tb3-bk-Yfk" id="oQc-IG-sdw"/>
+                        <outlet property="enableSwitch" destination="tb3-bk-Yfk" id="93e-38-dJk"/>
                         <outlet property="scrollView" destination="dT8-Dm-6bs" id="Tic-TS-TbB"/>
                         <outlet property="textAreaLabelPlaceholder" destination="aEv-Ug-Rdz" id="GW8-8e-Dac"/>
                         <outlet property="textAreaView" destination="5R7-VX-w5t" id="Rao-9k-V1O"/>

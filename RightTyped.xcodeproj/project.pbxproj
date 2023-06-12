@@ -66,6 +66,7 @@
 		01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */; };
 		01DA1C2E2A2CFF8C00A28CE7 /* CustomTextArea.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */; };
 		01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */; };
+		01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FDAA3C2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextArea.xib; sourceTree = "<group>"; };
 		01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextArea.swift; sourceTree = "<group>"; };
+		01FDAA3C2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,8 +387,9 @@
 			children = (
 				011987562A3260FF007D76B9 /* Models */,
 				01C8A0352A323F03001DBC8D /* DataModelPersistentContainer.swift */,
-				01C8A0312A323E7E001DBC8D /* DataModel.xcdatamodeld */,
 				01525E172A352CFE00E1E5E9 /* DefaultData.swift */,
+				01C8A0312A323E7E001DBC8D /* DataModel.xcdatamodeld */,
+				01FDAA3C2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				01D514372A35061300B9FF2B /* UserDefaultsManager.swift in Sources */,
 				01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
+				01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
 				01A3913A2A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift in Sources */,

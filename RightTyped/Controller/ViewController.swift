@@ -107,6 +107,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeHeaderTableViewCell.reuseID, for: indexPath) as! HomeHeaderTableViewCell
             cell.categoryCollectionView.dataSource = self
             cell.categoryCollectionView.delegate = self
+            
+            if let cat = selectedCategory{
+                cell.selectedCategory = cat
+            }
+            
             return cell
         }
         
@@ -153,6 +158,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 answers = ans.allObjects as? [Answer]
                 answersTableView.reloadData()
             }
+            if let homeHeaderCell = answersTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderTableViewCell{
+                homeHeaderCell.selectedCategory = selectedCategory
+                print("BABA")
+            }
         }
         
         if indexPath == selectedCategoryIndex{
@@ -181,6 +190,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             answers = ans.allObjects as? [Answer]
             reloadTableViewWithAnimation(originIndex: originIndex, destinationIndex: indexPath.row)
         }
+        
+        if let cell = answersTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderTableViewCell{
+            cell.selectedCategory = selectedCategory
+        }
+        
     }
     
 }

@@ -19,6 +19,7 @@ extension Category {
     @NSManaged public var name: String
     @NSManaged public var answers: NSSet?
     @NSManaged public var creationDate: Date
+    @NSManaged public var enabled: Bool
     
 }
 

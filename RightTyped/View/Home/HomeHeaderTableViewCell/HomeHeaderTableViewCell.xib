@@ -53,6 +53,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fe3-qu-ix6">
                                 <rect key="frame" x="390" y="143" width="51" height="27"/>
+                                <connections>
+                                    <action selector="categorySwitchValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="38x-XG-kSg"/>
+                                </connections>
                             </switch>
                             <view alpha="0.60000002384185791" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="W5B-yE-BSs" userLabel="separator">
                                 <rect key="frame" x="10" y="180" width="442" height="1"/>
