@@ -10,6 +10,7 @@
 		0120274F2A25123F00B62039 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120274E2A25123F00B62039 /* Constant.swift */; };
 		012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012027502A2514ED00B62039 /* AnswerTableViewCell.swift */; };
 		012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012027512A2514ED00B62039 /* AnswerTableViewCell.xib */; };
+		01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */; };
 		013E08432A21327100FF7928 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08422A21327100FF7928 /* ContentView.xib */; };
 		013E08452A21328100FF7928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08442A21328100FF7928 /* ContentView.swift */; };
 		013E08472A21348D00FF7928 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08462A21348D00FF7928 /* UIColor.swift */; };
@@ -97,6 +98,7 @@
 		0120274E2A25123F00B62039 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		012027502A2514ED00B62039 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		012027512A2514ED00B62039 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
+		01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomComponentProtocol.swift; sourceTree = "<group>"; };
 		013E08422A21327100FF7928 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
 		013E08442A21328100FF7928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		013E08462A21348D00FF7928 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				01DA1C2C2A2CFF7800A28CE7 /* CustomTextArea */,
 				01DA1C2B2A2B52FE00A28CE7 /* CustomTextField */,
+				01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */,
 			);
 			path = CustomComponent;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */,
+				01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
 				01A3913A2A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift in Sources */,

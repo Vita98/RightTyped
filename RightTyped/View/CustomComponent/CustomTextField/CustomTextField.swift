@@ -13,6 +13,8 @@ class CustomTextField: UIView, UITextFieldDelegate {
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var editButton: UIButton!
+    
+    public var delegate: CustomComponentDelegate?
         
     var currentText : String? {
         didSet {
@@ -69,6 +71,10 @@ class CustomTextField: UIView, UITextFieldDelegate {
         setEditingMode(enabled: false)
         isEditing = false
         endEditing(true)
+        
+        if let currentText = currentText{
+            delegate?.didSetNewValue(component: self, newValue: currentText)
+        }
     }
     
     internal func textFieldDidEndEditing(_ textField: UITextField) {

@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension ViewController: UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, NewAnswerViewControllerDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             return 1
@@ -127,6 +127,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
         let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newAnswerViewControllerID") as! NewAnswerViewController
         VC.setAnswer(answers[indexPath.row])
+        VC.delegate = self
+        VC.originTableViewIndexPath = indexPath
         self.navigationController?.pushViewController(VC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -135,10 +137,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         guard originIndex != destinationIndex else { return }
         answersTableView.reloadSections(NSIndexSet(index: 1) as IndexSet, with: originIndex>destinationIndex ? .right : .left)
     }
+    
+    func newAnswerViewController(didChange answer: Answer, at originIndexPath: IndexPath?) {
+        if let indexPath = originIndexPath{
+            answersTableView.reloadRows(at: [indexPath], with: .fade)
+        }else{
+            answersTableView.reloadData()
+        }
+    }
 }
 
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate{
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let categories = categoryFetchedResultsController.fetchedObjects else { return 0 }

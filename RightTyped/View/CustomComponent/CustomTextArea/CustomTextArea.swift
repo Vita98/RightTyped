@@ -14,6 +14,8 @@ class CustomTextArea: UIView, UITextViewDelegate {
     @IBOutlet private weak var editButton: UIButton!
     @IBOutlet private weak var textView: UITextView!
     
+    public var delegate: CustomComponentDelegate?
+    
     private var isEditing : Bool = false
     
     var currentText : String? {
@@ -64,6 +66,10 @@ class CustomTextArea: UIView, UITextViewDelegate {
         setEditingMode(enabled: false)
         isEditing = false
         endEditing(true)
+        
+        if let currentText = currentText{
+            delegate?.didSetNewValue(component: self, newValue: currentText)
+        }
     }
     
     internal func textViewDidEndEditing(_ textView: UITextView) {

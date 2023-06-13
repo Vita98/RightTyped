@@ -7,7 +7,11 @@
 
 import UIKit
 
-class NewAnswerViewController: UIViewController {
+protocol NewAnswerViewControllerDelegate{
+    func newAnswerViewController(didChange answer: Answer, at originIndexPath: IndexPath?)
+}
+
+class NewAnswerViewController: UIViewController, CustomComponentDelegate {
 
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var containerView: UIView!
@@ -19,6 +23,9 @@ class NewAnswerViewController: UIViewController {
     @IBOutlet private weak var textAreaView: UIView!
     @IBOutlet private weak var textAreaLabelPlaceholder: UILabel!
     
+    public var delegate: NewAnswerViewControllerDelegate?
+    public var originTableViewIndexPath: IndexPath?
+    
     private var customTextField: CustomTextField?
     private var customTextArea: CustomTextArea?
     
@@ -29,8 +36,11 @@ class NewAnswerViewController: UIViewController {
             if enableSwitch != nil {
                 enableSwitch.setOn(answer!.enabled, animated: false)
             }
+            originalAnswer = answer?.copy()
         }
     }
+    
+    private var originalAnswer: Answer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,16 +98,19 @@ class NewAnswerViewController: UIViewController {
         customTextArea = CustomTextField.instanceFromNib(withNibName: "CustomTextArea")
         guard let customTextArea = self.customTextArea else { return }
         customTextArea.inizalize(inView: textAreaView, withText: answer?.descr, placheolder: "Che placeholder")
+        customTextArea.delegate = self
     }
     
     private func setTextField(){
         customTextField = CustomTextField.instanceFromNib(withNibName: "CustomTextField")
         guard let customTextField = self.customTextField else { return }
         customTextField.inizalize(inView: textFieldView, withText: answer?.title, placheolder: "questo è")
+        customTextField.delegate = self
     }
     
     private func setBottomView(){
         bottomView.enableComponentButtonMode(enabled: false)
+        bottomView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(bottomViewTouchUpInside)))
     }
     
     private func setView(){
@@ -112,12 +125,44 @@ class NewAnswerViewController: UIViewController {
         self.answer = answer
     }
     
+    private func isSavabled() -> Bool{
+        if let orA = originalAnswer, let currAns = answer{
+            if orA.enabled == currAns.enabled && orA.descr == currAns.descr && orA.title == currAns.title{
+                return false
+            }else{
+                return true
+            }
+        }else{
+            return false
+        }
+    }
+    
     
     // MARK: Events
     @IBAction func enableSwitchValueChanged(_ sender: Any) {
         if let answer = answer{
             answer.enabled = enableSwitch.isOn
-            answer.save()
+        }
+        
+        bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
+    }
+    
+    func didSetNewValue(component: UIView, newValue: String) {
+        if component is CustomTextArea, answer != nil, customTextArea != nil{
+            answer!.descr = customTextArea!.currentText!
+        }else if component is CustomTextField, answer != nil, customTextField != nil{
+            answer!.title = customTextField!.currentText!
+        }
+        bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
+    }
+    
+    @objc func bottomViewTouchUpInside(){
+        if isSavabled(){
+            if let saved = answer?.save(), saved{
+                originalAnswer = answer?.copy()
+                bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
+                delegate?.newAnswerViewController(didChange: answer!, at: originTableViewIndexPath)
+            }
         }
     }
 
