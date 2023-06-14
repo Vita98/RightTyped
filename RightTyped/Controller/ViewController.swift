@@ -170,7 +170,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
             }
             if let homeHeaderCell = answersTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderTableViewCell{
                 homeHeaderCell.selectedCategory = selectedCategory
-                print("BABA")
             }
         }
         

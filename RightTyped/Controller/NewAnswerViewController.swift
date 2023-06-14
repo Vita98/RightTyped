@@ -165,6 +165,14 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             }
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if isSavabled(), let answer = answer, let originalAnswer = originalAnswer{
+            answer.title = originalAnswer.title
+            answer.descr = originalAnswer.descr
+            answer.enabled = originalAnswer.enabled
+        }
+    }
 
     /*
     // MARK: - Navigation
