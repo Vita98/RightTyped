@@ -11,6 +11,12 @@ class AnswersCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var answerLabel: UILabel!
     
+    private var selectedAnswer: Answer? {
+        didSet{
+            answerLabel.text = selectedAnswer!.title
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,8 +27,8 @@ class AnswersCollectionViewCell: UICollectionViewCell {
         self.dropShadow(shadowType: .collectionViewCell)
     }
     
-    public func setAnswer(text : String){
-        answerLabel.text = text
+    public func setAnswer(_ answer: Answer){
+        selectedAnswer = answer
     }
     
     public func textDidChange(appearance: UIKeyboardAppearance){

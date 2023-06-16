@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var answersTableView: UITableView!
     
     var categories = [Category]()
-    fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultController(delegate: self)
+    fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForAllCategory(delegate: self)
     var selectedCategory : Category?
     var answers: [Answer]?
     
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, NewAnswerViewControllerDelegate {
+extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerViewControllerDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             return 1
@@ -148,7 +148,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NSFetchedR
 }
 
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let categories = categoryFetchedResultsController.fetchedObjects else { return 0 }

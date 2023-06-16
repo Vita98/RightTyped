@@ -24,7 +24,7 @@ public class Category: NSManagedObject {
         DataModelManagerPersistentContainer.shared.saveContext()
     }
     
-    static func getAllCategory() -> [Category]? {
+    static func getAllCategory(enabled: Bool = false) -> [Category]? {
         let categoryFetch = Category.fetchRequest()
         let sortByName = NSSortDescriptor(key: #keyPath(Category.name), ascending: false)
         categoryFetch.sortDescriptors = [sortByName]
@@ -39,12 +39,74 @@ public class Category: NSManagedObject {
         return category
     }
     
-    static func getFetchedResultController(delegate : NSFetchedResultsControllerDelegate? = nil) -> NSFetchedResultsController<Category>{
+    static func getCategory(enabled: Bool = true) -> [Category]? {
+        let categoryFetch = Category.fetchRequest()
+        let sortByName = NSSortDescriptor(key: #keyPath(Category.name), ascending: false)
+        if enabled{
+            categoryFetch.predicate = NSPredicate(format: "enabled == YES")
+        }else{
+            categoryFetch.predicate = NSPredicate(format: "enabled == NO")
+        }
+        categoryFetch.sortDescriptors = [sortByName]
+        
+        var category : [Category]? = nil
+        do {
+            let managedContext = DataModelManagerPersistentContainer.shared.context
+            let results = try managedContext.fetch(categoryFetch)
+            category = results
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
+        return category
+    }
+    
+    static func getCategoryCount(enabled: Bool = true) -> Int{
+        let categoryFetch = Category.fetchRequest()
+        let sortByName = NSSortDescriptor(key: #keyPath(Category.name), ascending: false)
+        if enabled{
+            categoryFetch.predicate = NSPredicate(format: "enabled == YES")
+        }else{
+            categoryFetch.predicate = NSPredicate(format: "enabled == NO")
+        }
+        categoryFetch.sortDescriptors = [sortByName]
+        
+        var count = 0
+        do {
+            let managedContext = DataModelManagerPersistentContainer.shared.context
+            count = try managedContext.count(for: categoryFetch)
+            
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
+        return count
+    }
+    
+    static func getFetchedResultControllerForAllCategory(delegate : NSFetchedResultsControllerDelegate? = nil) -> NSFetchedResultsController<Category>{
         // Create Fetch Request
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
 
         // Configure Fetch Request
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.creationDate), ascending: false)]
+
+        // Create Fetched Results Controller
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataModelManagerPersistentContainer.shared.context, sectionNameKeyPath: nil, cacheName: nil)
+
+        // Configure Fetched Results Controller
+        fetchedResultsController.delegate = delegate
+        return fetchedResultsController
+    }
+    
+    static func getFetchedResultControllerForCategory(delegate : NSFetchedResultsControllerDelegate? = nil, enabled:Bool = true) -> NSFetchedResultsController<Category>{
+        // Create Fetch Request
+        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+
+        // Configure Fetch Request
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.creationDate), ascending: false)]
+        if enabled{
+            fetchRequest.predicate = NSPredicate(format: "enabled == YES")
+        }else{
+            fetchRequest.predicate = NSPredicate(format: "enabled == NO")
+        }
 
         // Create Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataModelManagerPersistentContainer.shared.context, sectionNameKeyPath: nil, cacheName: nil)

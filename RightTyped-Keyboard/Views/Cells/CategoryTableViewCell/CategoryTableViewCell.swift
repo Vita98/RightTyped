@@ -9,14 +9,27 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout! {
+    @IBOutlet private weak var categoryTitleLabel: UILabel!
+    @IBOutlet private weak var collectionViewFlowLayout: UICollectionViewFlowLayout! {
         didSet {
             collectionViewFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
         
-    @IBOutlet weak var answersCollectionView: UICollectionView!
+    @IBOutlet private weak var answersCollectionView: UICollectionView!
     var keyboardAppearance: UIKeyboardAppearance?
+    private var selectedCategory: Category? {
+        didSet{
+            categoryTitleLabel.text = selectedCategory!.name
+            
+            if let answers = selectedCategory!.answers?.allObjects as? [Answer]{
+                enabledAnswers = answers.filter { answer in answer.enabled }
+                answersCollectionView.reloadData()
+            }
+        }
+    }
+    
+    private var enabledAnswers: [Answer]?
     
     
     override func awakeFromNib() {
@@ -48,17 +61,23 @@ class CategoryTableViewCell: UITableViewCell {
         answersCollectionView.reloadData()
     }
     
+    public func setCategory(_ category: Category){
+        selectedCategory = category
+    }
+    
 }
 
 extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NUMBER_OF_ANSWERS
+        return enabledAnswers != nil ? enabledAnswers!.count : 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "answersCollectionViewCellID", for: indexPath) as! AnswersCollectionViewCell
         cell.configureCell()
-        cell.setAnswer(text: ANSWERS[indexPath.row])
+        if let answ = enabledAnswers{
+            cell.setAnswer(answ[indexPath.row])
+        }
         if let appearance = keyboardAppearance{
             cell.textDidChange(appearance: appearance)
         }

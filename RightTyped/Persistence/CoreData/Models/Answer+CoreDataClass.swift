@@ -21,12 +21,4 @@ public class Answer: NSManagedObject{
         DataModelManagerPersistentContainer.shared.saveContext()
     }
     
-    public func copy() -> Answer {
-        let copy = Answer(entity: Answer.entity(), insertInto: nil)
-        copy.title = self.title
-        copy.descr = self.descr
-        copy.enabled = self.enabled
-        return copy
-    }
-    
 }

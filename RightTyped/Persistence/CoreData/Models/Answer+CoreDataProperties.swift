@@ -20,6 +20,14 @@ extension Answer {
     @NSManaged public var descr: String
     @NSManaged public var category: Category?
     @NSManaged public var enabled: Bool
+    
+    public func copy() -> Answer {
+        let copy = Answer(entity: Answer.entity(), insertInto: nil)
+        copy.title = self.title
+        copy.descr = self.descr
+        copy.enabled = self.enabled
+        return copy
+    }
 
 }
 

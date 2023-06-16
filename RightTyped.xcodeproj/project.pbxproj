@@ -112,6 +112,8 @@
 		0160F8CB2A2949AE005B97CB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		01766B432A22379B00BA359C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		01766B462A22394100BA359C /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
+		018ED41E2A3CB97200E9A90C /* RightTyped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightTyped.entitlements; sourceTree = "<group>"; };
+		018ED41F2A3CB9C600E9A90C /* RightTyped-Keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RightTyped-Keyboard.entitlements"; sourceTree = "<group>"; };
 		019E2F042A1E8C39005A8021 /* RightTyped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightTyped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019E2F072A1E8C39005A8021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019E2F092A1E8C39005A8021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		019E2F062A1E8C39005A8021 /* RightTyped */ = {
 			isa = PBXGroup;
 			children = (
+				018ED41E2A3CB97200E9A90C /* RightTyped.entitlements */,
 				01D514382A35061C00B9FF2B /* Persistence */,
 				019E2F2B2A1E8F31005A8021 /* Fonts */,
 				019E2F072A1E8C39005A8021 /* AppDelegate.swift */,
@@ -284,6 +287,7 @@
 		019E2F202A1E8EFC005A8021 /* RightTyped-Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				018ED41F2A3CB9C600E9A90C /* RightTyped-Keyboard.entitlements */,
 				019E2F212A1E8EFC005A8021 /* KeyboardViewController.swift */,
 				013E084F2A22120B00FF7928 /* Constants.swift */,
 				019E2F232A1E8EFC005A8021 /* Info.plist */,
@@ -751,6 +755,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RightTyped/RightTyped.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NY4EPMGM8S;
@@ -781,6 +786,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RightTyped/RightTyped.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NY4EPMGM8S;
@@ -808,6 +814,7 @@
 		019E2F282A1E8EFC005A8021 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RightTyped-Keyboard/RightTyped-Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NY4EPMGM8S;
@@ -834,6 +841,7 @@
 		019E2F292A1E8EFC005A8021 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RightTyped-Keyboard/RightTyped-Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NY4EPMGM8S;

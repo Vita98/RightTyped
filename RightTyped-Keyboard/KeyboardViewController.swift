@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class KeyboardViewController: UIInputViewController {
 
@@ -14,6 +15,8 @@ class KeyboardViewController: UIInputViewController {
     var contentViewHightConstraint: NSLayoutConstraint?
     
     var keyboardAppearance : UIKeyboardAppearance?
+    
+    fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForCategory(delegate: self)
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
@@ -28,6 +31,15 @@ class KeyboardViewController: UIInputViewController {
         
         //Setting the background color
         self.view.backgroundColor = .none
+        
+        //Extecute the core data fetch
+        do {
+            try self.categoryFetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("Unable to Perform Fetch Request")
+            print("\(fetchError), \(fetchError.localizedDescription)")
+        }
     }
     
     
@@ -74,7 +86,7 @@ class KeyboardViewController: UIInputViewController {
             contentView.removeConstraint(constraint)
         }
         
-        let maxHeight = CATEGORY_TABLE_VIEW_CELL_HEIGHT * CGFloat(NUMBER_OF_CATEGORY) + (self.needsInputModeSwitchKey ? FOOTER_VIEW_HEIGHT : 0)
+        let maxHeight = CATEGORY_TABLE_VIEW_CELL_HEIGHT * CGFloat(Category.getCategoryCount()) + (self.needsInputModeSwitchKey ? FOOTER_VIEW_HEIGHT : 0)
         if maxHeight <= size.height / 2 {
             contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: maxHeight)
         }else{
@@ -108,14 +120,18 @@ class KeyboardViewController: UIInputViewController {
 
 }
 
-extension KeyboardViewController: UITableViewDelegate, UITableViewDataSource{
+extension KeyboardViewController: UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NUMBER_OF_CATEGORY
+        guard let categories = categoryFetchedResultsController.fetchedObjects else { return 0 }
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCellID", for: indexPath) as! CategoryTableViewCell
+        let category = categoryFetchedResultsController.object(at: indexPath)
         cell.configureCell()
+        cell.setCategory(category)
+        
         if let appearance = keyboardAppearance{
             cell.textDidChange(appearance: appearance)
         }

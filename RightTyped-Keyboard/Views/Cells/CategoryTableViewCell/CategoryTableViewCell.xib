@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,6 +66,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="answersCollectionView" destination="7A8-VJ-ElX" id="8Cn-Cn-2fA"/>
+                <outlet property="categoryTitleLabel" destination="CVi-6p-8tr" id="dE2-lp-hIh"/>
                 <outlet property="collectionViewFlowLayout" destination="taN-Ki-rIt" id="BbT-XR-hVb"/>
             </connections>
             <point key="canvasLocation" x="231.29770992366412" y="21.126760563380284"/>
