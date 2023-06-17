@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CategoryTableViewCell: UITableViewCell {
 
@@ -15,21 +16,21 @@ class CategoryTableViewCell: UITableViewCell {
             collectionViewFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
     }
+    
+    fileprivate var answerFetchedResultsController: NSFetchedResultsController<Answer>?
         
     @IBOutlet private weak var answersCollectionView: UICollectionView!
     var keyboardAppearance: UIKeyboardAppearance?
+    
     private var selectedCategory: Category? {
         didSet{
             categoryTitleLabel.text = selectedCategory!.name
-            
-            if let answers = selectedCategory!.answers?.allObjects as? [Answer]{
-                enabledAnswers = answers.filter { answer in answer.enabled }
-                answersCollectionView.reloadData()
-            }
+            initResultController(category: selectedCategory!)
         }
     }
     
-    private var enabledAnswers: [Answer]?
+    public var cellDelegate: AnswerCollectionViewCellDelegate?
+    
     
     
     override func awakeFromNib() {
@@ -65,19 +66,34 @@ class CategoryTableViewCell: UITableViewCell {
         selectedCategory = category
     }
     
+    private func initResultController(category: Category){
+        answerFetchedResultsController = Answer.getFetchedResultController(for: category, delegate: self)
+        //Extecute the core data fetch
+        do {
+            try self.answerFetchedResultsController!.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("Unable to Perform Fetch Request")
+            print("\(fetchError), \(fetchError.localizedDescription)")
+        }
+    }
 }
 
-extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource{
+extension CategoryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return enabledAnswers != nil ? enabledAnswers!.count : 0
+        guard let answers = answerFetchedResultsController?.fetchedObjects else { return 0 }
+        return answers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "answersCollectionViewCellID", for: indexPath) as! AnswersCollectionViewCell
         cell.configureCell()
-        if let answ = enabledAnswers{
-            cell.setAnswer(answ[indexPath.row])
+        cell.delegate = cellDelegate
+        if let resContr = answerFetchedResultsController{
+            let answ = resContr.object(at: indexPath)
+            cell.setAnswer(answ)
         }
+        
         if let appearance = keyboardAppearance{
             cell.textDidChange(appearance: appearance)
         }

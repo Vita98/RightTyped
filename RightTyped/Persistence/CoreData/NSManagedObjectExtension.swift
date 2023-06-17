@@ -12,6 +12,7 @@ extension NSManagedObject{
     
     @discardableResult
     public func save() -> Bool{
+        guard hasChanges else { return false }
         do{
             try DataModelManagerPersistentContainer.shared.context.save()
             return true

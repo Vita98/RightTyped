@@ -42,11 +42,7 @@ public class Category: NSManagedObject {
     static func getCategory(enabled: Bool = true) -> [Category]? {
         let categoryFetch = Category.fetchRequest()
         let sortByName = NSSortDescriptor(key: #keyPath(Category.name), ascending: false)
-        if enabled{
-            categoryFetch.predicate = NSPredicate(format: "enabled == YES")
-        }else{
-            categoryFetch.predicate = NSPredicate(format: "enabled == NO")
-        }
+        categoryFetch.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
         categoryFetch.sortDescriptors = [sortByName]
         
         var category : [Category]? = nil
@@ -63,11 +59,7 @@ public class Category: NSManagedObject {
     static func getCategoryCount(enabled: Bool = true) -> Int{
         let categoryFetch = Category.fetchRequest()
         let sortByName = NSSortDescriptor(key: #keyPath(Category.name), ascending: false)
-        if enabled{
-            categoryFetch.predicate = NSPredicate(format: "enabled == YES")
-        }else{
-            categoryFetch.predicate = NSPredicate(format: "enabled == NO")
-        }
+        categoryFetch.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
         categoryFetch.sortDescriptors = [sortByName]
         
         var count = 0
@@ -102,11 +94,7 @@ public class Category: NSManagedObject {
 
         // Configure Fetch Request
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.creationDate), ascending: false)]
-        if enabled{
-            fetchRequest.predicate = NSPredicate(format: "enabled == YES")
-        }else{
-            fetchRequest.predicate = NSPredicate(format: "enabled == NO")
-        }
+        fetchRequest.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
 
         // Create Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataModelManagerPersistentContainer.shared.context, sectionNameKeyPath: nil, cacheName: nil)
