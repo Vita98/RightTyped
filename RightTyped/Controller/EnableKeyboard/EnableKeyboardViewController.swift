@@ -58,6 +58,7 @@ class EnableKeyboardViewController: UIViewController {
             checkboxButton.setImage(UIImage(named: "checkboxChecked"), for: .normal)
         }
         isCheckboxSelected = !isCheckboxSelected
+        UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY, enabled: isCheckboxSelected)
     }
     
     
