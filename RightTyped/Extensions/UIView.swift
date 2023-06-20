@@ -43,6 +43,17 @@ public enum ShadowType{
 
 extension UIView{
     
+    
+    /// Method that set the constraint in a way to fill the superview component
+    /// - Parameter view: the superview in which the self component must be filled
+    public func setFloodConstrait(in view: UIView){
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        self.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+    
     /// Method used to drop a shadow to the view
     /// - Parameter shadowType: type of shadow to drop
     public func dropShadow(shadowType : ShadowType){
@@ -81,7 +92,16 @@ extension UIView{
         self.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
     }
     
-    class func instanceFromNib<T : UIView>(withNibName nibName: String) -> T? {
-        return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
+    /// Method to instanciate a view from a xib file
+    /// - Parameter nibName: the name of the associated xib file
+    /// - Returns: the results UIView
+    /// - Warning: if nibName is nil, the xib files will have the same name as the given Generic class T. Force casting to the give T to specify the generic
+    /// - Discussion: ciao
+    class func instanceFromNib<T : UIView>(withNibName nibName: String?) -> T? {
+        if let nibName = nibName{
+            return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
+        }else{
+            return UINib(nibName: String(describing: T.self), bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
+        }
     }
 }

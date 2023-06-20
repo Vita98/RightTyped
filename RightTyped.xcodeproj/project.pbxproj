@@ -50,6 +50,7 @@
 		01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */; };
 		01A765A02A27B64400D50C4B /* cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A7659F2A27B64400D50C4B /* cells.swift */; };
 		01ADB21E2A23929C007613EB /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB21D2A23929C007613EB /* FooterView.swift */; };
+		01BE0A002A40C385003B39F8 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BE09FF2A40C385003B39F8 /* PopoverView.swift */; };
 		01C8A0332A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01C8A0312A323E7E001DBC8D /* DataModel.xcdatamodeld */; };
 		01C8A0342A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01C8A0312A323E7E001DBC8D /* DataModel.xcdatamodeld */; };
 		01C8A0362A323F03001DBC8D /* DataModelPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8A0352A323F03001DBC8D /* DataModelPersistentContainer.swift */; };
@@ -137,6 +138,7 @@
 		01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		01A7659F2A27B64400D50C4B /* cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cells.swift; sourceTree = "<group>"; };
 		01ADB21D2A23929C007613EB /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		01BE09FF2A40C385003B39F8 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		01C8A0322A323E7E001DBC8D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		01C8A0352A323F03001DBC8D /* DataModelPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelPersistentContainer.swift; sourceTree = "<group>"; };
 		01C8A0382A324323001DBC8D /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				013E084A2A21452800FF7928 /* ContentView */,
 				01766B492A223E0800BA359C /* Cells */,
 				01ADB21D2A23929C007613EB /* FooterView.swift */,
+				01BE09FF2A40C385003B39F8 /* PopoverView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 			files = (
 				013E08502A22120B00FF7928 /* Constants.swift in Sources */,
 				01C8A0412A324323001DBC8D /* Answer+CoreDataClass.swift in Sources */,
+				01BE0A002A40C385003B39F8 /* PopoverView.swift in Sources */,
 				01C8A03F2A324323001DBC8D /* Category+CoreDataProperties.swift in Sources */,
 				01C8A03D2A324323001DBC8D /* Category+CoreDataClass.swift in Sources */,
 				01C8A0342A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */,

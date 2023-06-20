@@ -53,15 +53,13 @@ class AnswersCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func labelLongPress(gestureReconizer: UILongPressGestureRecognizer){
-        if gestureReconizer.state == .began{
-            guard let answer = selectedAnswer else { return }
-            delegate?.answerCollectionViewCellLongPress(withAnswer: answer)
-        }
+        guard let answer = selectedAnswer else { return }
+        delegate?.answerCollectionViewCellLongPress(withAnswer: answer, state: gestureReconizer.state)
     }
 
 }
 
 public protocol AnswerCollectionViewCellDelegate {
     func answerCollectionViewCellTouchUpInside(withAnswer answer: Answer)
-    func answerCollectionViewCellLongPress(withAnswer answer: Answer)
+    func answerCollectionViewCellLongPress(withAnswer answer: Answer, state: UIGestureRecognizer.State)
 }

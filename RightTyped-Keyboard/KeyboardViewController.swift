@@ -13,6 +13,7 @@ class KeyboardViewController: UIInputViewController {
     @IBOutlet var nextKeyboardButton: UIButton!
     var contentView : ContentView!
     var contentViewHightConstraint: NSLayoutConstraint?
+    var popoverView: PopoverView?
     
     var keyboardAppearance : UIKeyboardAppearance?
     
@@ -157,7 +158,20 @@ extension KeyboardViewController: AnswerCollectionViewCellDelegate{
         self.textDocumentProxy.insertText(answer.descr)
     }
     
-    func answerCollectionViewCellLongPress(withAnswer answer: Answer) {
-        print("Long pression")
+    func answerCollectionViewCellLongPress(withAnswer answer: Answer, state: UIGestureRecognizer.State) {
+        switch state{
+        case .began:
+            let ppV = PopoverView(frame: self.view.frame, keyboardAppearance: keyboardAppearance)
+            ppV.setText(answer.descr)
+            ppV.setIn(self.view)
+            ppV.show(hideView: contentView)
+            popoverView = ppV
+        case .ended, .cancelled, .failed:
+            if let ppV = popoverView{
+                ppV.removeFromSuperviewWithAnimation()
+            }
+        default:
+            break
+        }
     }
 }
