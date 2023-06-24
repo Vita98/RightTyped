@@ -9,6 +9,7 @@ import UIKit
 
 protocol NewAnswerViewControllerDelegate{
     func newAnswerViewController(didChange answer: Answer, at originIndexPath: IndexPath?)
+    func newAnswerViewController(didDelete answer: Answer, at originIndexPath: IndexPath?)
 }
 
 class NewAnswerViewController: UIViewController, CustomComponentDelegate {
@@ -22,6 +23,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
     @IBOutlet private weak var bottomView: UIView!
     @IBOutlet private weak var textAreaView: UIView!
     @IBOutlet private weak var textAreaLabelPlaceholder: UILabel!
+    @IBOutlet weak var binImageView: UIImageView!
     
     public var delegate: NewAnswerViewControllerDelegate?
     public var originTableViewIndexPath: IndexPath?
@@ -59,6 +61,22 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         
         if let enableSwitch = enableSwitch, let answer = answer {
             enableSwitch.setOn(answer.enabled, animated: false)
+        }
+        
+        binImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteIconTouchUpInside)))
+    }
+    
+    //MARK: Controller lifecycle
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        overrideBackAction(action: #selector(goBack))
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if isSavabled(), let answer = answer, let originalAnswer = originalAnswer{
+            answer.title = originalAnswer.title
+            answer.descr = originalAnswer.descr
+            answer.enabled = originalAnswer.enabled
         }
     }
     
@@ -147,6 +165,37 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
     }
     
+    @objc func deleteIconTouchUpInside(){
+        let alert = UIAlertController(title: "Sei sicuro?", message: "Sei sicuro di voler cancellare questa risposta?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "No", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Si", style: .destructive, handler: { alertAction in
+            if let answer = self.answer{
+                DataModelManagerPersistentContainer.shared.context.delete(answer)
+                DataModelManagerPersistentContainer.shared.saveContext()
+                if let delegate = self.delegate{
+                    delegate.newAnswerViewController(didDelete: answer, at: self.originTableViewIndexPath)
+                }
+                self.navigationController?.popViewController(animated: true)
+            }
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    @objc func goBack() {
+        if !isSavabled(){
+            navigationController?.popViewController(animated: true)
+        }else{
+            let alert = UIAlertController(title: "Sei sicuro?", message: "Sei sicuro di voler tornare indietro?\nLe modifiche effettuate non verranno salvate", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "No", style: .cancel))
+            alert.addAction(UIAlertAction(title: "Si", style: .destructive, handler: { alertAction in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            
+            self.present(alert, animated: true)
+        }
+    }
+    
     func didSetNewValue(component: UIView, newValue: String) {
         if component is CustomTextArea, answer != nil, customTextArea != nil{
             answer!.descr = customTextArea!.currentText!
@@ -165,23 +214,5 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             }
         }
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        if isSavabled(), let answer = answer, let originalAnswer = originalAnswer{
-            answer.title = originalAnswer.title
-            answer.descr = originalAnswer.descr
-            answer.enabled = originalAnswer.enabled
-        }
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

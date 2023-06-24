@@ -18,5 +18,12 @@ extension UIViewController{
         imageView.image = image
         navigationItem.titleView = imageView
     }
+    
+    /// Method to change the action to execute when the navigationBar back button is pressed.
+    /// Must be called in the viewDidAppear because the navigationBar must be already present in the view hierarchy
+    /// - Parameter action: the new action to execute
+    public func overrideBackAction(action: Selector?){
+        self.navigationController?.navigationBar.subviews[1].subviews[1].addGestureRecognizer(UITapGestureRecognizer(target: self, action: action))
+    }
 
 }

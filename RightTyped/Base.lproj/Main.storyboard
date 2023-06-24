@@ -258,13 +258,13 @@ quando e come vuoi!</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Risposta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2r-MJ-iQW">
-                                                        <rect key="frame" x="23" y="5" width="344" height="34.333333333333336"/>
+                                                        <rect key="frame" x="23" y="5" width="307" height="34.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Compila tutti i campi della risposta rapida" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="942-6P-fSg">
-                                                        <rect key="frame" x="15" y="39.333333333333329" width="360" height="20"/>
+                                                        <rect key="frame" x="15" y="39.333333333333329" width="307.66666666666669" height="20"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -363,12 +363,27 @@ quando e come vuoi!</string>
                                                             <constraint firstItem="aEv-Ug-Rdz" firstAttribute="top" secondItem="5R7-VX-w5t" secondAttribute="top" constant="10" id="raG-Lv-MRi"/>
                                                         </constraints>
                                                     </view>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="binIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xde-8v-1z1">
+                                                        <rect key="frame" x="340" y="15" width="20" height="23"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="5uA-I8-UUQ"/>
+                                                            <constraint firstAttribute="height" constant="23" id="Uvu-Gs-xDy"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancella" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVU-Zd-AMk">
+                                                        <rect key="frame" x="332.66666666666669" y="38" width="35" height="13"/>
+                                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="9"/>
+                                                        <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="RUj-Jm-J1Y" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="0fU-4t-wUV"/>
+                                                    <constraint firstItem="lVU-Zd-AMk" firstAttribute="top" secondItem="xde-8v-1z1" secondAttribute="bottom" id="0yQ-mn-TUG"/>
                                                     <constraint firstItem="942-6P-fSg" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="1Lh-IR-gaB"/>
                                                     <constraint firstAttribute="trailing" secondItem="Uba-st-Dkc" secondAttribute="trailing" constant="15" id="26z-p5-o1h"/>
+                                                    <constraint firstItem="xde-8v-1z1" firstAttribute="centerX" secondItem="lVU-Zd-AMk" secondAttribute="centerX" id="3C9-Pe-ifI"/>
                                                     <constraint firstAttribute="trailing" secondItem="hG9-hg-OaX" secondAttribute="trailing" constant="23" id="5TG-Py-CQK"/>
                                                     <constraint firstItem="5R7-VX-w5t" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="CHk-L9-F1a"/>
                                                     <constraint firstItem="7wt-7S-h2R" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="10" id="CfP-2E-XpU"/>
@@ -379,7 +394,9 @@ quando e come vuoi!</string>
                                                     <constraint firstItem="5R7-VX-w5t" firstAttribute="top" secondItem="NF1-0f-XXW" secondAttribute="bottom" constant="10" id="KdI-WG-TQT"/>
                                                     <constraint firstItem="YFV-Y2-Myb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5R7-VX-w5t" secondAttribute="bottom" constant="40" id="Obf-ID-cra"/>
                                                     <constraint firstItem="YFV-Y2-Myb" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="OsR-TA-QZR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xde-8v-1z1" secondAttribute="trailing" constant="30" id="PmS-31-T7c"/>
                                                     <constraint firstItem="PyR-Lk-sO6" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="10" id="Qj4-mZ-4sS"/>
+                                                    <constraint firstItem="xde-8v-1z1" firstAttribute="leading" secondItem="M2r-MJ-iQW" secondAttribute="trailing" constant="10" id="S56-hP-s1a"/>
                                                     <constraint firstItem="tb3-bk-Yfk" firstAttribute="centerY" secondItem="qAE-5w-BgA" secondAttribute="centerY" id="TAp-SM-gzU"/>
                                                     <constraint firstAttribute="trailing" secondItem="7wt-7S-h2R" secondAttribute="trailing" constant="10" id="TQy-Mw-rAg"/>
                                                     <constraint firstItem="942-6P-fSg" firstAttribute="top" secondItem="M2r-MJ-iQW" secondAttribute="bottom" id="WHp-6M-8Bt"/>
@@ -388,11 +405,10 @@ quando e come vuoi!</string>
                                                     <constraint firstItem="7wt-7S-h2R" firstAttribute="top" secondItem="tb3-bk-Yfk" secondAttribute="bottom" constant="10" id="Zgk-KT-pHK"/>
                                                     <constraint firstItem="M2r-MJ-iQW" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="a5k-vj-bN1"/>
                                                     <constraint firstItem="Uba-st-Dkc" firstAttribute="top" secondItem="RUj-Jm-J1Y" secondAttribute="bottom" id="aam-US-Ky0"/>
-                                                    <constraint firstAttribute="trailing" secondItem="942-6P-fSg" secondAttribute="trailing" constant="15" id="aqu-MR-qJ5"/>
                                                     <constraint firstAttribute="trailing" secondItem="O5c-PS-9Fg" secondAttribute="trailing" constant="23" id="bET-qC-276"/>
+                                                    <constraint firstItem="lVU-Zd-AMk" firstAttribute="leading" secondItem="942-6P-fSg" secondAttribute="trailing" constant="10" id="cCE-kl-MDR"/>
                                                     <constraint firstItem="NF1-0f-XXW" firstAttribute="top" secondItem="hG9-hg-OaX" secondAttribute="bottom" id="des-4X-ID4"/>
                                                     <constraint firstItem="Uba-st-Dkc" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="dyy-XU-Yqf"/>
-                                                    <constraint firstAttribute="trailing" secondItem="M2r-MJ-iQW" secondAttribute="trailing" constant="23" id="eew-92-B3u"/>
                                                     <constraint firstAttribute="trailing" secondItem="5R7-VX-w5t" secondAttribute="trailing" constant="23" id="fqR-Rk-x5n"/>
                                                     <constraint firstItem="M2r-MJ-iQW" firstAttribute="top" secondItem="JNv-tT-KBF" secondAttribute="top" constant="5" id="fy3-IC-svW"/>
                                                     <constraint firstItem="hG9-hg-OaX" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="hFT-Y9-zLd"/>
@@ -400,6 +416,7 @@ quando e come vuoi!</string>
                                                     <constraint firstAttribute="trailing" secondItem="tb3-bk-Yfk" secondAttribute="trailing" constant="23" id="ion-bk-xNq"/>
                                                     <constraint firstItem="NF1-0f-XXW" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="k2t-o9-Aeg"/>
                                                     <constraint firstItem="RUj-Jm-J1Y" firstAttribute="top" secondItem="7wt-7S-h2R" secondAttribute="bottom" constant="10" id="lKR-fl-I7R"/>
+                                                    <constraint firstItem="xde-8v-1z1" firstAttribute="top" secondItem="JNv-tT-KBF" secondAttribute="top" constant="15" id="m30-o1-VE1"/>
                                                     <constraint firstItem="qAE-5w-BgA" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="n1O-TP-vtd"/>
                                                     <constraint firstAttribute="trailing" secondItem="NF1-0f-XXW" secondAttribute="trailing" constant="15" id="pir-in-RXc"/>
                                                     <constraint firstItem="tb3-bk-Yfk" firstAttribute="top" secondItem="PyR-Lk-sO6" secondAttribute="bottom" constant="10" id="rSg-Vy-u1n"/>
@@ -440,6 +457,7 @@ quando e come vuoi!</string>
                     </view>
                     <navigationItem key="navigationItem" id="buQ-Xc-dOo"/>
                     <connections>
+                        <outlet property="binImageView" destination="xde-8v-1z1" id="Bd6-KY-5JD"/>
                         <outlet property="bottomView" destination="YFV-Y2-Myb" id="v5f-J1-Yop"/>
                         <outlet property="containerView" destination="NgR-Bq-yTl" id="kZl-7e-xM3"/>
                         <outlet property="enableSwitch" destination="tb3-bk-Yfk" id="93e-38-dJk"/>

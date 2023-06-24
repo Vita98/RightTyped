@@ -235,6 +235,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             answersTableView.reloadData()
         }
     }
+    
+    func newAnswerViewController(didDelete answer: Answer, at originIndexPath: IndexPath?) {
+        if let indexPath = originIndexPath{
+            searchedAnswers?.remove(at: indexPath.row)
+            if let answers = answers, let index = answers.firstIndex(of: answer){
+                self.answers!.remove(at: index)
+            }
+            answersTableView.deleteRows(at: [indexPath], with: .left)
+        }else{
+            answersTableView.reloadData()
+        }
+    }
 }
 
 //MARK: Search bar delegate
