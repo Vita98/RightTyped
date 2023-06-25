@@ -21,6 +21,8 @@
 		013E08542A221CBC00FF7928 /* AnswersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08522A221CBC00FF7928 /* AnswersCollectionViewCell.swift */; };
 		013E08552A221CBC00FF7928 /* AnswersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08532A221CBC00FF7928 /* AnswersCollectionViewCell.xib */; };
 		01525E182A352CFE00E1E5E9 /* DefaultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01525E172A352CFE00E1E5E9 /* DefaultData.swift */; };
+		01595FEC2A47794F003EAE79 /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01595FEB2A47794F003EAE79 /* IndexPath.swift */; };
+		01595FEE2A47C532003EAE79 /* UITableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01595FED2A47C532003EAE79 /* UITableCollectionViewController.swift */; };
 		0160F8C72A29444E005B97CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F102A1E8C3B005A8021 /* Assets.xcassets */; };
 		0160F8C92A2946F3005B97CB /* NewAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */; };
 		0160F8CC2A2949AE005B97CB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8CB2A2949AE005B97CB /* UIViewController.swift */; };
@@ -110,6 +112,8 @@
 		013E08522A221CBC00FF7928 /* AnswersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersCollectionViewCell.swift; sourceTree = "<group>"; };
 		013E08532A221CBC00FF7928 /* AnswersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersCollectionViewCell.xib; sourceTree = "<group>"; };
 		01525E172A352CFE00E1E5E9 /* DefaultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultData.swift; sourceTree = "<group>"; };
+		01595FEB2A47794F003EAE79 /* IndexPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
+		01595FED2A47C532003EAE79 /* UITableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableCollectionViewController.swift; sourceTree = "<group>"; };
 		0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnswerViewController.swift; sourceTree = "<group>"; };
 		0160F8CB2A2949AE005B97CB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		01766B432A22379B00BA359C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				013E08462A21348D00FF7928 /* UIColor.swift */,
 				01766B432A22379B00BA359C /* UIView.swift */,
 				0160F8CB2A2949AE005B97CB /* UIViewController.swift */,
+				01595FEB2A47794F003EAE79 /* IndexPath.swift */,
+				01595FED2A47C532003EAE79 /* UITableCollectionViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -557,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0160F8CC2A2949AE005B97CB /* UIViewController.swift in Sources */,
+				01595FEC2A47794F003EAE79 /* IndexPath.swift in Sources */,
 				0120274F2A25123F00B62039 /* Constant.swift in Sources */,
 				01A680302A278D6200DD67DC /* HomeHeaderTableViewCell.swift in Sources */,
 				01766B472A22394100BA359C /* GlobalConstant.swift in Sources */,
@@ -580,6 +587,7 @@
 				01C8A0362A323F03001DBC8D /* DataModelPersistentContainer.swift in Sources */,
 				01C8A03C2A324323001DBC8D /* Category+CoreDataClass.swift in Sources */,
 				01C8A03E2A324323001DBC8D /* Category+CoreDataProperties.swift in Sources */,
+				01595FEE2A47C532003EAE79 /* UITableCollectionViewController.swift in Sources */,
 				01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */,
 				019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */,
 				012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */,

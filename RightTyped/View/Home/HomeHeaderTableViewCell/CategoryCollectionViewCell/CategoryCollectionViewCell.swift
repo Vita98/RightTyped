@@ -10,6 +10,8 @@ import UIKit
 class CategoryCollectionViewCell: UICollectionViewCell {
     
     public static var reuseID = "categoryCollectionViewCellID"
+    public var associatedCategory: Category?
+    public var associatedCategoryIndex: IndexPath?
 
     @IBOutlet weak var label: UILabel!
     

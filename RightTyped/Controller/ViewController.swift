@@ -15,11 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableShadowView: UIView!
     @IBOutlet weak var answersTableView: UITableView!
     
-    var categories = [Category]()
     fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForAllCategory(delegate: self)
     var selectedCategory : Category?
     var answers: [Answer]?
     var searchedAnswers: [Answer]?
+    private var homeHeaderTableViewCell: HomeHeaderTableViewCell?
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -102,14 +102,26 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let categories = categoryFetchedResultsController.fetchedObjects else { return 0 }
-        return categories.count
+        let categories = categoryFetchedResultsController.fetchedObjects
+        if categories == nil{
+            collectionView.setEmptyMessage("Non hai nessuna categoria!")
+            return 0
+        }else if categories!.isEmpty{
+            collectionView.setEmptyMessage("Non hai nessuna categoria!")
+            return 0
+        }else{
+            collectionView.restore()
+        }
+        
+        return categories!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.reuseID, for: indexPath) as! CategoryCollectionViewCell
         let category = categoryFetchedResultsController.object(at: indexPath)
         cell.label.text = category.name
+        cell.associatedCategory = category
+        cell.associatedCategoryIndex = indexPath
         
         //Selection and deselection process
         if selectedCategoryIndex == nil{
@@ -160,7 +172,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 }
 
 //MARK: Answers table view delegate and datasource
-extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerViewControllerDelegate{
+extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerViewControllerDelegate, HomeHeaderTableViewCellDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             return 1
@@ -197,6 +209,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeHeaderTableViewCell.reuseID, for: indexPath) as! HomeHeaderTableViewCell
             cell.categoryCollectionView.dataSource = self
             cell.categoryCollectionView.delegate = self
+            cell.delegate = self
+            homeHeaderTableViewCell = cell
             
             if let cat = selectedCategory{
                 cell.selectedCategory = cat
@@ -228,6 +242,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
         answersTableView.reloadSections(NSIndexSet(index: 1) as IndexSet, with: originIndex>destinationIndex ? .right : .left)
     }
     
+    //MARK: newAnwerViewController delegate
     func newAnswerViewController(didChange answer: Answer, at originIndexPath: IndexPath?) {
         if let indexPath = originIndexPath{
             answersTableView.reloadRows(at: [indexPath], with: .fade)
@@ -245,6 +260,64 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             answersTableView.deleteRows(at: [indexPath], with: .left)
         }else{
             answersTableView.reloadData()
+        }
+    }
+    
+    //MARK: HomeHeaderTableViewCell delegate
+    func homeHeaderTableViewCellDidPressed(event: HomeHeaderTableViewCell.PressionEvent) {
+        switch event{
+        case .AddNew:
+            //TODO: Implement
+            break
+        case .Change:
+            //TODO: Implement
+            break
+        case .Delete:
+            let alert = UIAlertController(title: "Sei sicuro?", message: "Sei sicuro di voler cancellare questa categoria?\nTutte le domande associate verranno anch'esse cancellate", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "No", style: .cancel))
+            alert.addAction(UIAlertAction(title: "Si", style: .destructive, handler: { alertAction in
+                if let selectedCategory = self.selectedCategory{
+                    self.selectedCategory = nil
+                    self.selectedCategoryIndex = nil
+                    
+                    DataModelManagerPersistentContainer.shared.context.delete(selectedCategory)
+                    DataModelManagerPersistentContainer.shared.saveContext()
+                }
+            }))
+            
+            self.present(alert, animated: true)
+            break
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        if type == .delete, let indexPath = indexPath, let cat = categoryFetchedResultsController.fetchedObjects?.count{
+            let nextCellIndex = indexPath.nearest(withLeftBound: cat)
+            
+            if let nextCellIndex = nextCellIndex, let nextCell = homeHeaderTableViewCell?.categoryCollectionView.cellForItem(at: nextCellIndex) as? CategoryCollectionViewCell{
+                nextCell.setSelected(true)
+                self.selectedCategory = nextCell.associatedCategory
+                self.selectedCategoryIndex = nextCell.associatedCategoryIndex
+                
+                if let snw = self.selectedCategory?.answers, let answers = snw.allObjects as? [Answer]{
+                    self.answers = answers
+                    self.searchedAnswers = answers
+                }
+                reloadTableViewWithAnimation(originIndex: indexPath.row, destinationIndex: nextCellIndex.row)
+                homeHeaderTableViewCell?.categoryCollectionView.deleteItems(at: [indexPath])
+                
+                if nextCellIndex.row > indexPath.row{
+                    let f = IndexPath(row: nextCellIndex.row-1, section: indexPath.section)
+                    selectedCategoryIndex = f
+                }
+            }else{
+                homeHeaderTableViewCell?.categoryCollectionView.deleteItems(at: [indexPath])
+                self.selectedCategory = nil
+                self.selectedCategoryIndex = nil
+                self.answers = nil
+                self.searchedAnswers = nil
+                answersTableView.reloadSections(IndexSet(integer: 1), with: .fade)
+            }
         }
     }
 }
