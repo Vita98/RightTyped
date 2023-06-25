@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableShadowView: UIView!
     @IBOutlet weak var answersTableView: UITableView!
+    @IBOutlet weak var addAnswerView: AddAnswerCustomView!
     
     fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForAllCategory(delegate: self)
     var selectedCategory : Category?
@@ -79,6 +80,15 @@ class ViewController: UIViewController {
         tableShadowView.applyCustomRoundCorner()
     }
     
+    private func toggleComponent(enabled: Bool){
+        addAnswerView.isEnabled = enabled
+        if enabled{
+            //TODO: Implement
+        }else{
+            //TODO: Implement
+        }
+    }
+    
     //MARK: Keyboard events
     private func addObservers(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -105,14 +115,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let categories = categoryFetchedResultsController.fetchedObjects
         if categories == nil{
             collectionView.setEmptyMessage("Non hai nessuna categoria!")
+            toggleComponent(enabled: false)
             return 0
         }else if categories!.isEmpty{
             collectionView.setEmptyMessage("Non hai nessuna categoria!")
+            toggleComponent(enabled: false)
             return 0
-        }else{
-            collectionView.restore()
         }
         
+        collectionView.restore()
+        toggleComponent(enabled: true)
         return categories!.count
     }
     
