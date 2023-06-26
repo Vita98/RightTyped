@@ -18,7 +18,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="viewControllerID" id="BYZ-38-t0r" customClass="ViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="CustomBaseView" customModule="RightTyped" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -61,23 +61,13 @@ quando e come vuoi!</string>
                                     <constraint firstAttribute="bottom" secondItem="aIP-bj-mxL" secondAttribute="bottom" id="L0H-8o-QVF"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OI9-hZ-Qpo" customClass="AddAnswerCustomView" customModule="RightTyped" customModuleProvider="target">
-                                <rect key="frame" x="340" y="580" width="50" height="80"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="05e-KH-Wwb"/>
-                                    <constraint firstAttribute="height" constant="80" id="bLQ-jB-hgm"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OI9-hZ-Qpo" secondAttribute="trailing" id="2Zl-qI-RPc"/>
                             <constraint firstItem="T1B-Jk-TIm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="Dvs-DH-zE3"/>
                             <constraint firstItem="2a8-Bt-QhJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FzC-Ur-Rpf"/>
                             <constraint firstItem="Xx1-w8-0ZK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GHK-6U-pxO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OI9-hZ-Qpo" secondAttribute="bottom" constant="150" id="ISm-c3-sOx"/>
                             <constraint firstItem="2a8-Bt-QhJ" firstAttribute="top" secondItem="IAP-9K-XNs" secondAttribute="bottom" constant="20" id="N8B-XK-ord"/>
                             <constraint firstItem="IAP-9K-XNs" firstAttribute="top" secondItem="Xx1-w8-0ZK" secondAttribute="bottom" id="NQa-2p-lew"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2a8-Bt-QhJ" secondAttribute="trailing" id="NzF-vK-L9O"/>
@@ -90,8 +80,8 @@ quando e come vuoi!</string>
                     <navigationItem key="navigationItem" id="wIU-gP-1ZD"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="addAnswerView" destination="OI9-hZ-Qpo" id="1Ao-bH-S4r"/>
                         <outlet property="answersTableView" destination="aIP-bj-mxL" id="Eju-QS-dKM"/>
+                        <outlet property="containerView" destination="8bC-Xf-vdC" id="8LR-Go-pSx"/>
                         <outlet property="tableShadowView" destination="2a8-Bt-QhJ" id="ryo-EF-JtR"/>
                     </connections>
                 </viewController>

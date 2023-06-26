@@ -12,15 +12,16 @@ class ViewController: UIViewController {
     
     var selectedCategoryIndex : IndexPath?
     
+    @IBOutlet var containerView: CustomBaseView!
     @IBOutlet weak var tableShadowView: UIView!
     @IBOutlet weak var answersTableView: UITableView!
-    @IBOutlet weak var addAnswerView: AddAnswerCustomView!
     
     fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForAllCategory(delegate: self)
     var selectedCategory : Category?
     var answers: [Answer]?
     var searchedAnswers: [Answer]?
     private var homeHeaderTableViewCell: HomeHeaderTableViewCell?
+    private var addAnswerView: AddAnswerCustomView?
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
         addObservers()
         configureView()
         configureAnswersTableView()
+        configureAddAnswerCustomView()
         
         //Performing the core data fetch
         do {
@@ -37,6 +39,13 @@ class ViewController: UIViewController {
             let fetchError = error as NSError
             print("Unable to Perform Fetch Request")
             print("\(fetchError), \(fetchError.localizedDescription)")
+        }
+        
+        //Close the addIconView every time another place on the screen is tapped
+        containerView.touchInViewClosure = { [weak self] point in
+            if let strongSelf = self, let addAnswerView = strongSelf.addAnswerView, addAnswerView.isOpened, !addAnswerView.frame.contains(point) {
+                addAnswerView.setStatus(status: .closed, withAnimation: true)
+            }
         }
     }
     
@@ -80,8 +89,14 @@ class ViewController: UIViewController {
         tableShadowView.applyCustomRoundCorner()
     }
     
+    private func configureAddAnswerCustomView(){
+        addAnswerView = AddAnswerCustomView(inside: self.view)
+    }
+    
     private func toggleComponent(enabled: Bool){
-        addAnswerView.isEnabled = enabled
+        if let addAnswerView = addAnswerView{
+            addAnswerView.isEnabled = enabled
+        }
         if enabled{
             //TODO: Implement
         }else{

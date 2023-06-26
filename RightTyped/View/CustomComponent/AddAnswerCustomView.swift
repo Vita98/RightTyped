@@ -42,14 +42,30 @@ class AddAnswerCustomView: UIView {
     private var originalFrame: CGRect?
     private var customTapAction: (() -> Void)?
     
+    private var trailingConstraint: NSLayoutConstraint?
+    
     
     //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configure()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        configure()
+    }
+    
+    init(inside view: UIView) {
+        super.init(frame:.zero)
+        
+        view.addSubview(self)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        trailingConstraint = self.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        trailingConstraint?.isActive = true
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150).isActive = true
         configure()
     }
     
@@ -67,8 +83,7 @@ class AddAnswerCustomView: UIView {
     private func addLeftArrowImageView(){
         self.insertSubview(leftArrowImageView, belowSubview: addIconImageView)
         leftArrowImageView.translatesAutoresizingMaskIntoConstraints = false
-        leftArrowImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        leftArrowImageView.widthAnchor.constraint(equalToConstant: self.frame.width/2+3).isActive = true
+        leftArrowImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
         leftArrowImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         leftArrowImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         leftArrowImageView.alpha = 0
@@ -99,12 +114,14 @@ class AddAnswerCustomView: UIView {
         if status == .closed{
             self.status = .closed
             self.frame = CGRect(x: self.frame.minX+(self.frame.width/2), y: self.frame.minY, width: self.frame.width, height: self.frame.height)
+            trailingConstraint?.constant = 25
             self.addIconImageView.alpha = 0
             self.label.alpha = 0
             self.leftArrowImageView.alpha = 1
         } else if status == .opened, let originalFrame = originalFrame{
             self.status = .opened
             self.frame = originalFrame
+            trailingConstraint?.constant = 0
             self.addIconImageView.alpha = 1
             self.label.alpha = 1
             self.leftArrowImageView.alpha = 0
@@ -169,6 +186,12 @@ class AddAnswerCustomView: UIView {
         }
         get{
             return self.enabled
+        }
+    }
+    
+    public var isOpened: Bool {
+        get{
+            return self.status == .opened
         }
     }
     

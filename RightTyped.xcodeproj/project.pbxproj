@@ -67,6 +67,7 @@
 		01C8A0412A324323001DBC8D /* Answer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8A03A2A324323001DBC8D /* Answer+CoreDataClass.swift */; };
 		01C8A0422A324323001DBC8D /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8A03B2A324323001DBC8D /* Answer+CoreDataProperties.swift */; };
 		01C8A0432A324323001DBC8D /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8A03B2A324323001DBC8D /* Answer+CoreDataProperties.swift */; };
+		01CCF1632A49FCBD00656277 /* CustomBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CCF1622A49FCBD00656277 /* CustomBaseView.swift */; };
 		01D514372A35061300B9FF2B /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D514362A35061300B9FF2B /* UserDefaultsManager.swift */; };
 		01DA1C282A2B52E200A28CE7 /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C272A2B52E200A28CE7 /* CustomTextField.xib */; };
 		01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */; };
@@ -152,6 +153,7 @@
 		01C8A0392A324323001DBC8D /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		01C8A03A2A324323001DBC8D /* Answer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		01C8A03B2A324323001DBC8D /* Answer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		01CCF1622A49FCBD00656277 /* CustomBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBaseView.swift; sourceTree = "<group>"; };
 		01D514362A35061300B9FF2B /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		01DA1C272A2B52E200A28CE7 /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 		01A7659E2A27B5DA00D50C4B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				01CCF1622A49FCBD00656277 /* CustomBaseView.swift */,
 				012027542A2514F700B62039 /* AnswerTableViewCell */,
 				01A680322A278F8900DD67DC /* HomeHeaderTableViewCell */,
 				01A680392A279ACF00DD67DC /* AnswersHeaderView */,
@@ -565,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CCF1632A49FCBD00656277 /* CustomBaseView.swift in Sources */,
 				0160F8CC2A2949AE005B97CB /* UIViewController.swift in Sources */,
 				01595FEC2A47794F003EAE79 /* IndexPath.swift in Sources */,
 				0120274F2A25123F00B62039 /* Constant.swift in Sources */,
