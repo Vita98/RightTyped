@@ -15,4 +15,6 @@ let CATEGORY_CELL_APP_SHADOW = Shadow(color: UIColor.black.cgColor, offset: CGSi
 
 let CONTAINER_VIEW_ROUND_CORNER : CGFloat = 45
 
+//Color
+let DISABLED_COMPONENT_ALPHA: CGFloat = 0.5
 

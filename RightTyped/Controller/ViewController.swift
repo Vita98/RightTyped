@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var answers: [Answer]?
     var searchedAnswers: [Answer]?
     private var homeHeaderTableViewCell: HomeHeaderTableViewCell?
+    private var answerHeaderView: AnswersHeaderView?
     private var addAnswerView: AddAnswerCustomView?
     
     //MARK: Lifecycle
@@ -97,10 +98,11 @@ class ViewController: UIViewController {
         if let addAnswerView = addAnswerView{
             addAnswerView.isEnabled = enabled
         }
-        if enabled{
-            //TODO: Implement
-        }else{
-            //TODO: Implement
+        if let homeHeaderTableViewCell = homeHeaderTableViewCell{
+            homeHeaderTableViewCell.enableComponent(enabled: enabled, animated: true)
+        }
+        if let answerHeaderView = answerHeaderView{
+            answerHeaderView.setSearchBarStatus(enabled: enabled)
         }
     }
     
@@ -219,6 +221,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
         header.configureCell()
         header.searchBar.delegate = self
         header.searchBar.searchTextField.delegate = self
+        header.setSearchBarStatus(enabled: searchedAnswers != nil && searchedAnswers!.count > 0)
+        answerHeaderView = header
         return header
     }
     

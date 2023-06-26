@@ -133,13 +133,13 @@ class AddAnswerCustomView: UIView {
         
         UIView.animate(withDuration: 0.3) {
             if enabled{
-                self.addIconImageView.image = UIImage(named: "addIcon")
-                self.label.isEnabled = true
-                self.leftArrowImageView.image = UIImage(named: "backIcon")
+                self.addIconImageView.image = self.addIconImageView.image?.withTintColor(.componentColor)
+                self.label.textColor = .componentColor
+                self.leftArrowImageView.image = self.leftArrowImageView.image?.withTintColor(.componentColor)
             }else{
-                self.addIconImageView.image = self.addIconImageView.image?.withTintColor(.lightGray)
-                self.label.isEnabled = false
-                self.leftArrowImageView.image = self.leftArrowImageView.image?.withTintColor(.lightGray)
+                self.addIconImageView.image = self.addIconImageView.image?.withTintColor(.componentColor.disabled())
+                self.label.textColor = .componentColor.disabled()
+                self.leftArrowImageView.image = self.leftArrowImageView.image?.withTintColor(.componentColor.disabled())
             }
         }
     }

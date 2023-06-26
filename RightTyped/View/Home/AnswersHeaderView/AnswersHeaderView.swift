@@ -39,6 +39,24 @@ class AnswersHeaderView: UIView {
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
             textfield.backgroundColor = .lightComponentColor
             textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.placeholderColor])
+            textfield.leftView?.tintColor = .placeholderColor
+        }
+    }
+    
+    public func setSearchBarStatus(enabled: Bool){
+        if enabled{
+            if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+                textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.placeholderColor])
+                textfield.leftView?.tintColor = .placeholderColor
+            }
+            searchBar.isUserInteractionEnabled = true
+        }else{
+            searchBar.text = ""
+            if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+                textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.placeholderColor.withAlphaComponent(0.2)])
+                textfield.leftView?.tintColor = .placeholderColor.withAlphaComponent(0.2)
+            }
+            searchBar.isUserInteractionEnabled = false
         }
     }
 

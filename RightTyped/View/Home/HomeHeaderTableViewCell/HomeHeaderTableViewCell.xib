@@ -202,6 +202,10 @@
                 <outlet property="categorySwitch" destination="Fe3-qu-ix6" id="EZ7-yF-29r"/>
                 <outlet property="changeContentView" destination="AlZ-4g-mPX" id="ODc-oa-sIK"/>
                 <outlet property="deleteContentView" destination="zZH-IU-Ddx" id="85R-kx-jJD"/>
+                <outlet property="deleteIconImageView" destination="z6u-84-bl3" id="I0I-fc-TRH"/>
+                <outlet property="deleteLabel" destination="lgs-Qt-vMZ" id="sxs-I5-TD5"/>
+                <outlet property="editIconImageView" destination="efD-Cp-3UC" id="ZEj-p4-cXk"/>
+                <outlet property="editLabel" destination="Z3y-Wd-jzM" id="L1K-x9-gaQ"/>
             </connections>
             <point key="canvasLocation" x="242.74809160305344" y="49.295774647887328"/>
         </tableViewCell>
