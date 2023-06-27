@@ -100,18 +100,24 @@ class CustomTextField: UIView, UITextFieldDelegate {
         if !enabled {
             toggleBorder(enabled: false)
             
-            if let text = currentText, text.isEmpty{
-                textField.isEnabled = false
+            if let text = currentText{
+                if text.isEmpty{
+                    textField.isEnabled = false
+                    label.isHidden = true
+                }else{
+                    textField.isHidden = true
+                    label.isHidden = false
+                }
             }else{
-                textField.isHidden = true
+                textField.isEnabled = false
+                label.isHidden = true
             }
-            label.isHidden = false
         }else{
-            self.textField.becomeFirstResponder()
             toggleBorder(enabled: true)
             textField.isHidden = false
             textField.isEnabled = true
             label.isHidden = true
+            self.textField.becomeFirstResponder()
         }
     }
     

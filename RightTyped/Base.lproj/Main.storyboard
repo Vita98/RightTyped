@@ -48,7 +48,7 @@ quando e come vuoi!</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2a8-Bt-QhJ">
                                 <rect key="frame" x="0.0" y="159.33333333333331" width="390" height="684.66666666666674"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIP-bj-mxL">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIP-bj-mxL">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="684.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
@@ -307,6 +307,7 @@ quando e come vuoi!</string>
                     <navigationItem key="navigationItem" id="buQ-Xc-dOo"/>
                     <connections>
                         <outlet property="binImageView" destination="xde-8v-1z1" id="Bd6-KY-5JD"/>
+                        <outlet property="binLabel" destination="lVU-Zd-AMk" id="gan-IQ-0bj"/>
                         <outlet property="bottomView" destination="YFV-Y2-Myb" id="v5f-J1-Yop"/>
                         <outlet property="containerView" destination="NgR-Bq-yTl" id="kZl-7e-xM3"/>
                         <outlet property="enableSwitch" destination="tb3-bk-Yfk" id="93e-38-dJk"/>

@@ -151,7 +151,7 @@ class AddAnswerCustomView: UIView {
         
         if status == .closed{
             self.setStatus(status: .opened, withAnimation: true)
-        }else{
+        }else if enabled{
             customTapAction?()
         }
     }

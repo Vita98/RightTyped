@@ -11,13 +11,13 @@ import CoreData
 class ViewController: UIViewController {
     
     var selectedCategoryIndex : IndexPath?
+    var selectedCategory : Category?
     
     @IBOutlet var containerView: CustomBaseView!
     @IBOutlet weak var tableShadowView: UIView!
     @IBOutlet weak var answersTableView: UITableView!
     
     fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForAllCategory(delegate: self)
-    var selectedCategory : Category?
     var answers: [Answer]?
     var searchedAnswers: [Answer]?
     private var homeHeaderTableViewCell: HomeHeaderTableViewCell?
@@ -92,6 +92,15 @@ class ViewController: UIViewController {
     
     private func configureAddAnswerCustomView(){
         addAnswerView = AddAnswerCustomView(inside: self.view)
+        addAnswerView!.setCustomTapAction {[weak self] in
+            guard let strongSelf = self else { return }
+            let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newAnswerViewControllerID") as! NewAnswerViewController
+            VC.delegate = self
+            VC.isNewAnswer = true
+            if strongSelf.selectedCategory != nil{ VC.setAnswerCategory(strongSelf.selectedCategory!) }
+            strongSelf.view.endEditing(true)
+            strongSelf.navigationController?.pushViewController(VC, animated: true)
+        }
     }
     
     private func toggleComponent(enabled: Bool){
@@ -292,6 +301,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
         }else{
             answersTableView.reloadData()
         }
+    }
+    
+    func newAnswerViewController(didInsert answer: Answer) {
+        answers?.append(answer)
+        if let answerHeaderView = answerHeaderView{
+            if let text = answerHeaderView.searchBar.text, !text.isEmpty{
+                if answer.title.lowercased().contains(text.lowercased()) || answer.descr.lowercased().contains(text.lowercased()){
+                    searchedAnswers?.append(answer)
+                    if searchedAnswers != nil { answersTableView.insertRows(at: [IndexPath(row: searchedAnswers!.count-1, section: 1)], with: .automatic) }
+                }
+                return
+            }
+        }
+        searchedAnswers = answers
+        if answers != nil { answersTableView.insertRows(at: [IndexPath(row: answers!.count-1, section: 1)], with: .automatic) }
     }
     
     //MARK: HomeHeaderTableViewCell delegate

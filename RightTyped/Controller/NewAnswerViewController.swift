@@ -10,6 +10,7 @@ import UIKit
 protocol NewAnswerViewControllerDelegate{
     func newAnswerViewController(didChange answer: Answer, at originIndexPath: IndexPath?)
     func newAnswerViewController(didDelete answer: Answer, at originIndexPath: IndexPath?)
+    func newAnswerViewController(didInsert answer: Answer)
 }
 
 class NewAnswerViewController: UIViewController, CustomComponentDelegate {
@@ -19,12 +20,13 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
     
     @IBOutlet private weak var enableSwitch: UISwitch!
     @IBOutlet private weak var textFieldView: UIView!
-    @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var bottomView: UIView!
     @IBOutlet private weak var textAreaView: UIView!
     @IBOutlet private weak var textAreaLabelPlaceholder: UILabel!
     @IBOutlet weak var binImageView: UIImageView!
+    @IBOutlet weak var binLabel: UILabel!
     
+    public var isNewAnswer: Bool = false
     public var delegate: NewAnswerViewControllerDelegate?
     public var originTableViewIndexPath: IndexPath?
     
@@ -33,16 +35,18 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
     
     private var answer: Answer? {
         didSet{
-            customTextArea?.currentText = answer!.descr
-            customTextField?.currentText = answer!.title
+            guard let answer = answer else { return }
+            customTextArea?.currentText = answer.descr
+            customTextField?.currentText = answer.title
             if enableSwitch != nil {
-                enableSwitch.setOn(answer!.enabled, animated: false)
+                enableSwitch.setOn(answer.enabled, animated: false)
             }
-            originalAnswer = answer?.copy()
+            originalAnswer = answer.copy()
         }
     }
     
     private var originalAnswer: Answer?
+    private var answerCategory: Category?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +67,15 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             enableSwitch.setOn(answer.enabled, animated: false)
         }
         
-        binImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteIconTouchUpInside)))
+        if isNewAnswer{
+            binImageView.isHidden = true
+            binLabel.isHidden = true
+            
+            answer = Answer(context: DataModelManagerPersistentContainer.shared.context)
+        }else{
+            binImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteIconTouchUpInside)))
+        }
+        
     }
     
     //MARK: Controller lifecycle
@@ -104,9 +116,8 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
 
         var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height + 20
+        contentInset.bottom = keyboardFrame.size.height + 40
         scrollView.contentInset = contentInset
-        
     }
     
     
@@ -115,14 +126,14 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         textAreaLabelPlaceholder.removeFromSuperview()
         customTextArea = CustomTextField.instanceFromNib(withNibName: "CustomTextArea")
         guard let customTextArea = self.customTextArea else { return }
-        customTextArea.inizalize(inView: textAreaView, withText: answer?.descr, placheolder: "Che placeholder")
+        customTextArea.inizalize(inView: textAreaView, withText: answer?.descr, placheolder: "Descrizione della risposta")
         customTextArea.delegate = self
     }
     
     private func setTextField(){
         customTextField = CustomTextField.instanceFromNib(withNibName: "CustomTextField")
         guard let customTextField = self.customTextField else { return }
-        customTextField.inizalize(inView: textFieldView, withText: answer?.title, placheolder: "questo è")
+        customTextField.inizalize(inView: textFieldView, withText: answer?.title, placheolder: "Titolo della risposta")
         customTextField.delegate = self
     }
     
@@ -141,6 +152,10 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
     
     public func setAnswer(_ answer: Answer){
         self.answer = answer
+    }
+    
+    public func setAnswerCategory(_ category: Category){
+        self.answerCategory = category
     }
     
     private func isSavabled() -> Bool{
@@ -172,9 +187,8 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             if let answer = self.answer{
                 DataModelManagerPersistentContainer.shared.context.delete(answer)
                 DataModelManagerPersistentContainer.shared.saveContext()
-                if let delegate = self.delegate{
-                    delegate.newAnswerViewController(didDelete: answer, at: self.originTableViewIndexPath)
-                }
+                self.delegate?.newAnswerViewController(didDelete: answer, at: self.originTableViewIndexPath)
+                self.answer = nil
                 self.navigationController?.popViewController(animated: true)
             }
         }))
@@ -207,10 +221,22 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
     
     @objc func bottomViewTouchUpInside(){
         if isSavabled(){
-            if let saved = answer?.save(), saved{
-                originalAnswer = answer?.copy()
-                bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
-                delegate?.newAnswerViewController(didChange: answer!, at: originTableViewIndexPath)
+            if isNewAnswer{
+                if let answer = answer, let category = answerCategory{
+                    category.addToAnswers(answer)
+                    if category.save() {
+                        originalAnswer = answer.copy()
+                        bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
+                        delegate?.newAnswerViewController(didInsert: answer)
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }else{
+                if let saved = answer?.save(), saved{
+                    originalAnswer = answer?.copy()
+                    bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
+                    delegate?.newAnswerViewController(didChange: answer!, at: originTableViewIndexPath)
+                }
             }
         }
     }
