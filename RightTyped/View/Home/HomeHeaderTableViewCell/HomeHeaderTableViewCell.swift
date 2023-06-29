@@ -102,6 +102,10 @@ class HomeHeaderTableViewCell: UITableViewCell {
         }
     }
     
+    public func setSwitch(enabled: Bool){
+        categorySwitch.setOn(enabled, animated: true)
+    }
+    
     //MARK: Models
     enum PressionEvent{
         case AddNew

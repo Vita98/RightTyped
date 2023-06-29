@@ -11,22 +11,51 @@ import CoreData
 
 @objc(Category)
 public class Category: NSManagedObject {
-    
-    static func saveNewCategory(category: Category){
+        
+    @discardableResult
+    static func saveNewCategory(category: Category) -> Bool{
+        if Category.isEmpty(){
+            category.order = 0
+        }else{
+            if let order = Category.getGreatestOrder(){
+                category.order = Double(order + 1)
+            }else{
+                return false
+            }
+        }
         category.creationDate = Date()
-        DataModelManagerPersistentContainer.shared.saveContext()
+        return DataModelManagerPersistentContainer.shared.saveContextWithCheck()
     }
     
-    static func saveNewCategory(name: String){
-        let newCategory = Category(context: DataModelManagerPersistentContainer.shared.context)
-        newCategory.name = name
-        newCategory.creationDate = Date()
-        DataModelManagerPersistentContainer.shared.saveContext()
+    private static func isEmpty() -> Bool{
+        let request = NSFetchRequest<Category>(entityName: "Category")
+        do{
+            let count = try DataModelManagerPersistentContainer.shared.context.count(for: request)
+            return count == 1
+        }catch{
+            return true
+        }
+    }
+    
+    static func getGreatestOrder() -> Int? {
+        let categoryFetch = Category.fetchRequest()
+        let sortBy = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
+        categoryFetch.sortDescriptors = [sortBy]
+        do {
+            let managedContext = DataModelManagerPersistentContainer.shared.context
+            let results = try managedContext.fetch(categoryFetch)
+            if let order = results.first?.order{
+                return Int(order)
+            }
+        } catch _ as NSError {
+            return nil
+        }
+        return nil
     }
     
     static func getAllCategory(enabled: Bool = false) -> [Category]? {
         let categoryFetch = Category.fetchRequest()
-        let sortByName = NSSortDescriptor(key: #keyPath(Category.name), ascending: false)
+        let sortByName = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
         categoryFetch.sortDescriptors = [sortByName]
         var category : [Category]? = nil
         do {
@@ -41,7 +70,7 @@ public class Category: NSManagedObject {
     
     static func getCategory(enabled: Bool = true) -> [Category]? {
         let categoryFetch = Category.fetchRequest()
-        let sortByName = NSSortDescriptor(key: #keyPath(Category.name), ascending: false)
+        let sortByName = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
         categoryFetch.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
         categoryFetch.sortDescriptors = [sortByName]
         
@@ -58,7 +87,7 @@ public class Category: NSManagedObject {
     
     static func getCategoryCount(enabled: Bool = true) -> Int{
         let categoryFetch = Category.fetchRequest()
-        let sortByName = NSSortDescriptor(key: #keyPath(Category.name), ascending: false)
+        let sortByName = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
         categoryFetch.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
         categoryFetch.sortDescriptors = [sortByName]
         
@@ -78,7 +107,7 @@ public class Category: NSManagedObject {
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
 
         // Configure Fetch Request
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.creationDate), ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.order), ascending: false)]
 
         // Create Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataModelManagerPersistentContainer.shared.context, sectionNameKeyPath: nil, cacheName: nil)
@@ -93,7 +122,7 @@ public class Category: NSManagedObject {
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
 
         // Configure Fetch Request
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.creationDate), ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.order), ascending: false)]
         fetchRequest.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
 
         // Create Fetched Results Controller

@@ -36,6 +36,17 @@ final class DataModelManagerPersistentContainer: NSPersistentContainer{
             print("Error: \(error), \(error.userInfo)")
         }
     }
+    
+    func saveContextWithCheck(backgroundContext: NSManagedObjectContext? = nil) -> Bool {
+        let context = backgroundContext ?? viewContext
+        guard context.hasChanges else { return false }
+        do {
+            try context.save()
+            return true
+        } catch _ as NSError {
+            return false
+        }
+    }
 }
 
 public extension URL {

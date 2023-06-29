@@ -135,7 +135,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: Categories Collection view delegate and datasource
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate{
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, NewCategoryViewControllerDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let categories = categoryFetchedResultsController.fetchedObjects
@@ -207,6 +207,57 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             cell.selectedCategory = selectedCategory
         }
     }
+    
+    //MARK: NewCategoryViewController Delegate
+    func newCategoryViewController(didInsert category: Category) {
+        
+        if let indexPath = selectedCategoryIndex, let collectionView = homeHeaderTableViewCell?.categoryCollectionView {
+            //deselecting the previous
+            guard let selectedCategoryIndex = selectedCategoryIndex else { return }
+            let oldCell = collectionView.cellForItem(at: selectedCategoryIndex) as? CategoryCollectionViewCell
+            oldCell?.setSelected(false, animated: true)
+            let originIndex = selectedCategoryIndex.row
+            
+            //Inserting the new at the beginning
+            let newIndexPath = IndexPath(row: 0, section: indexPath.section)
+            homeHeaderTableViewCell?.categoryCollectionView.insertItems(at: [newIndexPath])
+            homeHeaderTableViewCell?.categoryCollectionView.scrollToItem(at: newIndexPath, at: .centeredHorizontally, animated: true)
+            
+            if let cell = collectionView.cellForItem(at: newIndexPath) as? CategoryCollectionViewCell{
+                cell.setSelected(true, animated: true)
+            }else{
+                self.selectedCategoryIndex = newIndexPath
+            }
+            
+            selectedCategory = categoryFetchedResultsController.object(at: newIndexPath)
+            if let ans = selectedCategory?.answers{
+                answers = ans.allObjects as? [Answer]
+                searchedAnswers = answers
+                reloadTableViewWithAnimation(originIndex: originIndex+1, destinationIndex: newIndexPath.row)
+            }else{
+                answers = nil
+                searchedAnswers = nil
+                reloadTableViewWithAnimation(originIndex: originIndex, destinationIndex: newIndexPath.row)
+            }
+            
+            if let cell = answersTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderTableViewCell{
+                cell.selectedCategory = selectedCategory
+            }
+        }
+    }
+    
+    func newCategoryViewController(didChange category: Category, at originIndexPath: IndexPath?) {
+        if let indexPath = originIndexPath{
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                self?.homeHeaderTableViewCell?.categoryCollectionView.reloadItems(at: [indexPath])
+            }
+            if let selectedCategoryIndex = selectedCategoryIndex, let originIndexPath = originIndexPath, selectedCategoryIndex == originIndexPath{
+                homeHeaderTableViewCell?.setSwitch(enabled: category.enabled)
+            }
+        }else{
+            answersTableView.reloadData()
+        }
+    }
 }
 
 //MARK: Answers table view delegate and datasource
@@ -215,6 +266,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
         if section == 0{
             return 1
         }else{
+            if let answers = answers{
+                answerHeaderView?.setSearchBarStatus(enabled: !answers.isEmpty)
+            }
             return searchedAnswers != nil ? searchedAnswers!.count : 0
         }
     }
@@ -230,7 +284,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
         header.configureCell()
         header.searchBar.delegate = self
         header.searchBar.searchTextField.delegate = self
-        header.setSearchBarStatus(enabled: searchedAnswers != nil && searchedAnswers!.count > 0)
+        header.setSearchBarStatus(enabled: answers != nil && answers!.count > 0)
         answerHeaderView = header
         return header
     }
@@ -296,8 +350,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             searchedAnswers?.remove(at: indexPath.row)
             if let answers = answers, let index = answers.firstIndex(of: answer){
                 self.answers!.remove(at: index)
+                if let answerHeaderView = answerHeaderView {
+                    answerHeaderView.setSearchBarStatus(enabled: self.answers!.count > 0)
+                }
             }
             answersTableView.deleteRows(at: [indexPath], with: .left)
+            
         }else{
             answersTableView.reloadData()
         }
@@ -316,17 +374,30 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
         }
         searchedAnswers = answers
         if answers != nil { answersTableView.insertRows(at: [IndexPath(row: answers!.count-1, section: 1)], with: .automatic) }
+        if let answerHeaderView = answerHeaderView {
+            answerHeaderView.setSearchBarStatus(enabled: self.answers!.count > 0)
+        }
     }
     
     //MARK: HomeHeaderTableViewCell delegate
     func homeHeaderTableViewCellDidPressed(event: HomeHeaderTableViewCell.PressionEvent) {
         switch event{
         case .AddNew:
-            //TODO: Implement
-            break
+            let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newCategoryViewController") as! NewCategoryViewController
+            VC.modalTransitionStyle = .crossDissolve
+            VC.modalPresentationStyle = .overFullScreen
+            VC.delegate = self
+            self.view.endEditing(true)
+            self.present(VC, animated: true)
         case .Change:
-            //TODO: Implement
-            break
+            let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newCategoryViewController") as! NewCategoryViewController
+            VC.modalTransitionStyle = .crossDissolve
+            VC.modalPresentationStyle = .overFullScreen
+            VC.setCategory(selectedCategory, indexPath: selectedCategoryIndex)
+            VC.editMode = true
+            VC.delegate = self
+            self.view.endEditing(true)
+            self.present(VC, animated: true)
         case .Delete:
             let alert = UIAlertController(title: "Sei sicuro?", message: "Sei sicuro di voler cancellare questa categoria?\nTutte le domande associate verranno anch'esse cancellate", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "No", style: .cancel))
@@ -341,7 +412,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             }))
             
             self.present(alert, animated: true)
-            break
         }
     }
     
@@ -360,6 +430,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
                 }
                 reloadTableViewWithAnimation(originIndex: indexPath.row, destinationIndex: nextCellIndex.row)
                 homeHeaderTableViewCell?.categoryCollectionView.deleteItems(at: [indexPath])
+                answerHeaderView?.setSearchBarStatus(enabled: answers != nil && answers!.count > 0)
                 
                 if nextCellIndex.row > indexPath.row{
                     let f = IndexPath(row: nextCellIndex.row-1, section: indexPath.section)

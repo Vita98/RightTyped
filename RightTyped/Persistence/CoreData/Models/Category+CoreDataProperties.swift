@@ -20,6 +20,7 @@ extension Category {
     @NSManaged public var answers: NSSet?
     @NSManaged public var creationDate: Date
     @NSManaged public var enabled: Bool
+    @NSManaged public var order: Double
     
 }
 
@@ -37,6 +38,13 @@ extension Category {
 
     @objc(removeAnswers:)
     @NSManaged public func removeFromAnswers(_ values: NSSet)
+    
+    public func copy() -> Category {
+        let copy = Category(entity: Category.entity(), insertInto: nil)
+        copy.name = self.name
+        copy.enabled = self.enabled
+        return copy
+    }
 
 }
 
