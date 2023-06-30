@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             DefaultData.shared.saveDefaultData()
         }
         
-        if !UserDefaultManager.shared.isKeyboardExtensionEnabled() && !UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY){
+        if !UserDefaultManager.shared.isKeyboardExtensionEnabled(), let boolVal = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY), !boolVal{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "enableKeyboardViewControllerID") as! EnableKeyboardViewController

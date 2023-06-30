@@ -13,6 +13,7 @@ final class DataModelManagerPersistentContainer: NSPersistentContainer{
     var context : NSManagedObjectContext {
         return self.viewContext
     }
+    public var loadedWithError: Bool = false
     
     static var shared: DataModelManagerPersistentContainer = {
         let storeURL = URL.storeURL(for: "group.vitAndreAS.RightTypedGroup", databaseName: "DataModel")
@@ -20,12 +21,23 @@ final class DataModelManagerPersistentContainer: NSPersistentContainer{
         let container = DataModelManagerPersistentContainer(name: "DataModel")
         container.persistentStoreDescriptions = [storeDescription]
         container.loadPersistentStores { description, error in
-            if let error = error {
-                fatalError("Unable to load persistent stores: \(error)")
-            }
+            container.loadedWithError = error == nil
         }
         return container
     }()
+    
+    public static func tryResettingContainer(){
+        if DataModelManagerPersistentContainer.shared.loadedWithError{
+            let storeURL = URL.storeURL(for: "group.vitAndreAS.RightTypedGroup", databaseName: "DataModel")
+            let storeDescription = NSPersistentStoreDescription(url: storeURL)
+            let container = DataModelManagerPersistentContainer(name: "DataModel")
+            container.persistentStoreDescriptions = [storeDescription]
+            container.loadPersistentStores { description, error in
+                container.loadedWithError = error == nil
+            }
+            shared = container
+        }
+    }
     
     func saveContext(backgroundContext: NSManagedObjectContext? = nil) {
         let context = backgroundContext ?? viewContext

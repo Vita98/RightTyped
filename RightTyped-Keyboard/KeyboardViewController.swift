@@ -22,8 +22,6 @@ class KeyboardViewController: UIInputViewController {
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
     }
     
     override func viewDidLoad() {
@@ -35,20 +33,20 @@ class KeyboardViewController: UIInputViewController {
         self.view.backgroundColor = .none
         
         //Extecute the core data fetch
-        do {
-            try DataModelManagerPersistentContainer.shared.context.setQueryGenerationFrom(.current)
-            DataModelManagerPersistentContainer.shared.context.refreshAllObjects()
-            try self.categoryFetchedResultsController.performFetch()
-        } catch {
-            let fetchError = error as NSError
-            print("Unable to Perform Fetch Request")
-            print("\(fetchError), \(fetchError.localizedDescription)")
+        if !UserDefaultManager.shared.isFirstBootForExtension(){
+            do {
+                try DataModelManagerPersistentContainer.shared.context.setQueryGenerationFrom(.current)
+                DataModelManagerPersistentContainer.shared.context.refreshAllObjects()
+                try self.categoryFetchedResultsController.performFetch()
+            } catch {
+                let fetchError = error as NSError
+                print("Unable to Perform Fetch Request")
+                print("\(fetchError), \(fetchError.localizedDescription)")
+            }
         }
     }
     
-    
-   
-    
+    //MARK: Configuration
     private func setContentView(){
         guard let cV : ContentView = ContentView.instanceFromNib(withNibName: "ContentView") else { return }
         contentView = cV
@@ -90,12 +88,27 @@ class KeyboardViewController: UIInputViewController {
             contentView.removeConstraint(constraint)
         }
         
-        actualCategoryCount = Category.getCategoryCount()
-        let maxHeight = CATEGORY_TABLE_VIEW_CELL_HEIGHT * CGFloat(actualCategoryCount) + (self.needsInputModeSwitchKey ? FOOTER_VIEW_HEIGHT : 0)
-        if maxHeight <= size.height / 2 {
-            contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: maxHeight)
-        }else{
+        if UserDefaultManager.shared.isFirstBootForExtension(){
+            //set the maximum height to fit the view with the error message
             contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: size.height / 2)
+            contentView.configurePlaceholderView(withContentViewHeight: size.height / 2, text: "Apri l'app prima di iniziare ad usare la tastiera!")
+        }else{
+            DataModelManagerPersistentContainer.tryResettingContainer()
+            contentView.resetPlaceholder()
+            actualCategoryCount = Category.getCategoryCount()
+            print("CAT COUNT: \(actualCategoryCount)")
+            if actualCategoryCount > 0{
+                let maxHeight = CATEGORY_TABLE_VIEW_CELL_HEIGHT * CGFloat(actualCategoryCount) + (self.needsInputModeSwitchKey ? FOOTER_VIEW_HEIGHT : 0)
+                if maxHeight <= size.height / 2 {
+                    contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: maxHeight)
+                }else{
+                    contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: size.height / 2)
+                }
+            }else{
+                //Show the view telling that there are not categories available
+                contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: size.height / 2)
+                contentView.configurePlaceholderView(withContentViewHeight: size.height / 2, text: "Non ci sono categorie abilitate!\nEntra nell'app e abilita quelle che più fanno per te o creane delle nuove!")
+            }
         }
         contentViewHightConstraint?.isActive = true
     }

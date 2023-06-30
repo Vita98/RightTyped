@@ -14,17 +14,19 @@ class UserDefaultManager{
     static let KEYBOARD_EXTENSION_ENABLED_KEY = "AppleKeyboards"
     static let DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY = "DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY"
     
+    private let SHARED_GROUP_NAME = "group.vitAndreAS.RightTypedGroup"
+    
     
     public static let shared: UserDefaultManager = UserDefaultManager()
     private init(){}
     
     //MARK: Access method
     public func setBoolValue(key: String, enabled: Bool){
-        UserDefaults.standard.set(enabled, forKey: key)
+        UserDefaults(suiteName: SHARED_GROUP_NAME)?.set(enabled, forKey: key)
     }
     
-    public func getBoolValue(key: String) -> Bool {
-        return UserDefaults.standard.bool(forKey: key)
+    public func getBoolValue(key: String) -> Bool? {
+        return UserDefaults(suiteName: SHARED_GROUP_NAME)?.bool(forKey: key)
     }
     
     public func isKeyboardExtensionEnabled() -> Bool {
@@ -35,10 +37,18 @@ class UserDefaultManager{
     }
     
     public func isFirstBoot() -> Bool{
-        if let _ = UserDefaults.standard.object(forKey: UserDefaultManager.FIRST_BOOT_KEY){
+        if let _ = UserDefaults(suiteName: SHARED_GROUP_NAME)?.object(forKey: UserDefaultManager.FIRST_BOOT_KEY){
             return false
         }else{
-            UserDefaults.standard.set(false, forKey: UserDefaultManager.FIRST_BOOT_KEY)
+            UserDefaults(suiteName: SHARED_GROUP_NAME)?.set(false, forKey: UserDefaultManager.FIRST_BOOT_KEY)
+            return true
+        }
+    }
+    
+    public func isFirstBootForExtension() -> Bool{
+        if let _ = UserDefaults(suiteName: SHARED_GROUP_NAME)?.object(forKey: UserDefaultManager.FIRST_BOOT_KEY){
+            return false
+        }else{
             return true
         }
     }
