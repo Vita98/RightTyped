@@ -68,27 +68,65 @@ public class Category: NSManagedObject {
             let managedContext = DataModelManagerPersistentContainer.shared.context
             let results = try managedContext.fetch(categoryFetch)
             category = results
-        } catch let error as NSError {
-            print("Fetch error: \(error) description: \(error.userInfo)")
+        } catch _ as NSError {
+            return nil
         }
         return category
     }
     
-    static func getCategory(enabled: Bool = true) -> [Category]? {
+    static func getCategory(enabled: Bool = true, withAtLeastOneEnabledAnswer: Bool = false) -> [Category]? {
         let categoryFetch = Category.fetchRequest()
         let sortByName = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
         categoryFetch.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
         categoryFetch.sortDescriptors = [sortByName]
         
-        var category : [Category]? = nil
+        var categories : [Category]? = nil
         do {
             let managedContext = DataModelManagerPersistentContainer.shared.context
             let results = try managedContext.fetch(categoryFetch)
-            category = results
-        } catch let error as NSError {
-            print("Fetch error: \(error) description: \(error.userInfo)")
+            categories = results
+            
+            if withAtLeastOneEnabledAnswer, let categ = categories{
+                categories = categ.filter({ cat in
+                    if let answers = cat.answers?.allObjects as? [Answer]{
+                        return answers.filter({answ in answ.enabled}).count > 0
+                    }else { return false }
+                })
+            }
+        } catch _ as NSError {
+            return nil
         }
-        return category
+        return categories
+    }
+    
+    static func getCategoryCount(enabled: Bool = true, withAtLeastOneEnabledAnswer: Bool = false) -> Int {
+        let categoryFetch = Category.fetchRequest()
+        let sortByName = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
+        categoryFetch.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
+        categoryFetch.sortDescriptors = [sortByName]
+
+        var categories : [Category]? = nil
+        do {
+            let managedContext = DataModelManagerPersistentContainer.shared.context
+            let results = try managedContext.fetch(categoryFetch)
+            categories = results
+
+            if withAtLeastOneEnabledAnswer, let categ = categories{
+                categories = categ.filter({ cat in
+                    if let answers = cat.answers?.allObjects as? [Answer]{
+                        return answers.filter({answ in answ.enabled}).count > 0
+                    }else { return false }
+                })
+            }
+        } catch _ as NSError {
+            return 0
+        }
+        
+        if let categories = categories{
+            return categories.count
+        }else{
+            return 0
+        }
     }
     
     static func getCategoryCount(enabled: Bool = true) -> Int{
@@ -102,8 +140,8 @@ public class Category: NSManagedObject {
             let managedContext = DataModelManagerPersistentContainer.shared.context
             count = try managedContext.count(for: categoryFetch)
             
-        } catch let error as NSError {
-            print("Fetch error: \(error) description: \(error.userInfo)")
+        } catch _ as NSError {
+            return 0
         }
         return count
     }
@@ -123,7 +161,7 @@ public class Category: NSManagedObject {
         return fetchedResultsController
     }
     
-    static func getFetchedResultControllerForCategory(delegate : NSFetchedResultsControllerDelegate? = nil, enabled:Bool = true) -> NSFetchedResultsController<Category>{
+    static func getFetchedResultControllerForCategory(delegate : NSFetchedResultsControllerDelegate? = nil, enabled:Bool = true, withAtLeastOneEnabledAnswer: Bool = false) -> NSFetchedResultsController<Category>{
         // Create Fetch Request
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
 

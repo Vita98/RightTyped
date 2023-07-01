@@ -16,8 +16,8 @@ class KeyboardViewController: UIInputViewController {
     var popoverView: PopoverView?
     
     var keyboardAppearance : UIKeyboardAppearance?
+    var categories: [Category]?
     
-    fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForCategory(delegate: self)
     private var actualCategoryCount: Int = 0
     
     override func updateViewConstraints() {
@@ -34,15 +34,7 @@ class KeyboardViewController: UIInputViewController {
         
         //Extecute the core data fetch
         if !UserDefaultManager.shared.isFirstBootForExtension(){
-            do {
-                try DataModelManagerPersistentContainer.shared.context.setQueryGenerationFrom(.current)
-                DataModelManagerPersistentContainer.shared.context.refreshAllObjects()
-                try self.categoryFetchedResultsController.performFetch()
-            } catch {
-                let fetchError = error as NSError
-                print("Unable to Perform Fetch Request")
-                print("\(fetchError), \(fetchError.localizedDescription)")
-            }
+            categories = Category.getCategory(withAtLeastOneEnabledAnswer: true)
         }
     }
     
@@ -95,7 +87,7 @@ class KeyboardViewController: UIInputViewController {
         }else{
             DataModelManagerPersistentContainer.tryResettingContainer()
             contentView.resetPlaceholder()
-            actualCategoryCount = Category.getCategoryCount()
+            actualCategoryCount = Category.getCategoryCount(withAtLeastOneEnabledAnswer: true)
             print("CAT COUNT: \(actualCategoryCount)")
             if actualCategoryCount > 0{
                 let maxHeight = CATEGORY_TABLE_VIEW_CELL_HEIGHT * CGFloat(actualCategoryCount) + (self.needsInputModeSwitchKey ? FOOTER_VIEW_HEIGHT : 0)
@@ -140,7 +132,7 @@ class KeyboardViewController: UIInputViewController {
 
 extension KeyboardViewController: UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let categories = categoryFetchedResultsController.fetchedObjects{
+        if let categories = categories{
             let catCount = categories.count
             if catCount != actualCategoryCount{
                 actualCategoryCount = catCount
@@ -152,8 +144,8 @@ extension KeyboardViewController: UITableViewDelegate, UITableViewDataSource, NS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let category = categories?[indexPath.row] else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCellID", for: indexPath) as! CategoryTableViewCell
-        let category = categoryFetchedResultsController.object(at: indexPath)
         cell.configureCell()
         cell.cellDelegate = self
         cell.setCategory(category)
