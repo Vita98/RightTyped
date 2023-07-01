@@ -18,7 +18,7 @@ class ContentView: UIView {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0;
         label.textAlignment = .center;
-        label.font = UIFont(name: "Trakya Rounded 300 Light", size: 21)
+        label.font = UIFont.systemFont(ofSize: 21, weight: .light)
         label.sizeToFit()
         label.text = "Ciao ciao"
         return label
