@@ -28,6 +28,13 @@ extension Answer {
         copy.enabled = self.enabled
         return copy
     }
+    
+    public func copyTo(_ dest: Answer){
+        dest.title = title
+        dest.descr = descr
+        dest.category = category
+        dest.enabled = enabled
+    }
 
 }
 

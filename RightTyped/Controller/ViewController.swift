@@ -103,14 +103,14 @@ class ViewController: UIViewController {
         }
     }
     
-    private func toggleComponent(enabled: Bool){
+    private func toggleComponent(enabled: Bool, withSearchBar: Bool = true){
         if let addAnswerView = addAnswerView{
             addAnswerView.isEnabled = enabled
         }
         if let homeHeaderTableViewCell = homeHeaderTableViewCell{
             homeHeaderTableViewCell.enableComponent(enabled: enabled, animated: true)
         }
-        if let answerHeaderView = answerHeaderView{
+        if let answerHeaderView = answerHeaderView, withSearchBar{
             answerHeaderView.setSearchBarStatus(enabled: enabled)
         }
     }
@@ -150,7 +150,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         
         collectionView.restore()
-        toggleComponent(enabled: true)
+        toggleComponent(enabled: true, withSearchBar: false)
         return categories!.count
     }
     
@@ -211,37 +211,66 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     //MARK: NewCategoryViewController Delegate
     func newCategoryViewController(didInsert category: Category) {
         
-        if let indexPath = selectedCategoryIndex, let collectionView = homeHeaderTableViewCell?.categoryCollectionView {
-            //deselecting the previous
-            guard let selectedCategoryIndex = selectedCategoryIndex else { return }
-            let oldCell = collectionView.cellForItem(at: selectedCategoryIndex) as? CategoryCollectionViewCell
-            oldCell?.setSelected(false, animated: true)
-            let originIndex = selectedCategoryIndex.row
+        if let collectionView = homeHeaderTableViewCell?.categoryCollectionView {
             
-            //Inserting the new at the beginning
-            let newIndexPath = IndexPath(row: 0, section: indexPath.section)
-            homeHeaderTableViewCell?.categoryCollectionView.insertItems(at: [newIndexPath])
-            homeHeaderTableViewCell?.categoryCollectionView.scrollToItem(at: newIndexPath, at: .centeredHorizontally, animated: true)
-            
-            if let cell = collectionView.cellForItem(at: newIndexPath) as? CategoryCollectionViewCell{
-                cell.setSelected(true, animated: true)
+            //Deselecting the previous, if present
+            if  let indexPath = selectedCategoryIndex {
+                guard let selectedCategoryIndex = selectedCategoryIndex else { return }
+                let oldCell = collectionView.cellForItem(at: selectedCategoryIndex) as? CategoryCollectionViewCell
+                oldCell?.setSelected(false, animated: true)
+                let originIndex = selectedCategoryIndex.row
+                
+                //Inserting the new at the beginning
+                let newIndexPath = IndexPath(row: 0, section: indexPath.section)
+                homeHeaderTableViewCell?.categoryCollectionView.insertItems(at: [newIndexPath])
+                homeHeaderTableViewCell?.categoryCollectionView.scrollToItem(at: newIndexPath, at: .centeredHorizontally, animated: true)
+                
+                if let cell = collectionView.cellForItem(at: newIndexPath) as? CategoryCollectionViewCell{
+                    cell.setSelected(true, animated: true)
+                }else{
+                    self.selectedCategoryIndex = newIndexPath
+                }
+                
+                selectedCategory = categoryFetchedResultsController.object(at: newIndexPath)
+                if let ans = selectedCategory?.answers{
+                    answers = ans.allObjects as? [Answer]
+                    searchedAnswers = answers
+                    reloadTableViewWithAnimation(originIndex: originIndex+1, destinationIndex: newIndexPath.row)
+                }else{
+                    answers = nil
+                    searchedAnswers = nil
+                    reloadTableViewWithAnimation(originIndex: originIndex, destinationIndex: newIndexPath.row)
+                }
+                
+                if let cell = answersTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderTableViewCell{
+                    cell.selectedCategory = selectedCategory
+                }
             }else{
-                self.selectedCategoryIndex = newIndexPath
-            }
-            
-            selectedCategory = categoryFetchedResultsController.object(at: newIndexPath)
-            if let ans = selectedCategory?.answers{
-                answers = ans.allObjects as? [Answer]
-                searchedAnswers = answers
-                reloadTableViewWithAnimation(originIndex: originIndex+1, destinationIndex: newIndexPath.row)
-            }else{
-                answers = nil
-                searchedAnswers = nil
-                reloadTableViewWithAnimation(originIndex: originIndex, destinationIndex: newIndexPath.row)
-            }
-            
-            if let cell = answersTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderTableViewCell{
-                cell.selectedCategory = selectedCategory
+                //Inserting the new at the beginning
+                let newIndexPath = IndexPath(row: 0, section: 0)
+                homeHeaderTableViewCell?.categoryCollectionView.insertItems(at: [newIndexPath])
+                homeHeaderTableViewCell?.categoryCollectionView.scrollToItem(at: newIndexPath, at: .centeredHorizontally, animated: true)
+                
+                if let cell = collectionView.cellForItem(at: newIndexPath) as? CategoryCollectionViewCell{
+                    cell.setSelected(true, animated: true)
+                }else{
+                    self.selectedCategoryIndex = newIndexPath
+                }
+                
+                selectedCategory = categoryFetchedResultsController.object(at: newIndexPath)
+                if let ans = selectedCategory?.answers{
+                    answers = ans.allObjects as? [Answer]
+                    searchedAnswers = answers
+                    answersTableView.reloadSections(NSIndexSet(index: 1) as IndexSet, with: .fade)
+                }else{
+                    answers = nil
+                    searchedAnswers = nil
+                    answersTableView.reloadSections(NSIndexSet(index: 1) as IndexSet, with: .fade)
+                }
+                
+                if let cell = answersTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderTableViewCell{
+                    cell.selectedCategory = selectedCategory
+                }
             }
         }
     }

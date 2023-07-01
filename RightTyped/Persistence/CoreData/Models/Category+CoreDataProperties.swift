@@ -45,6 +45,13 @@ extension Category {
         copy.enabled = self.enabled
         return copy
     }
+    
+    public func copyTo(_ dest: Category){
+        dest.name = name
+        dest.creationDate = creationDate
+        dest.enabled = enabled
+        dest.order = order
+    }
 
 }
 

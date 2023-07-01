@@ -71,7 +71,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             binImageView.isHidden = true
             binLabel.isHidden = true
             
-            answer = Answer(context: DataModelManagerPersistentContainer.shared.context)
+            answer = Answer(entity: Answer.entity(), insertInto: nil)
         }else{
             binImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteIconTouchUpInside)))
         }
@@ -223,12 +223,15 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         if isSavabled(){
             if isNewAnswer{
                 if let answer = answer, let category = answerCategory{
-                    category.addToAnswers(answer)
+                    let objToSave = Answer(context: DataModelManagerPersistentContainer.shared.context)
+                    answer.copyTo(objToSave)
+                    category.addToAnswers(objToSave)
                     if category.save() {
                         originalAnswer = answer.copy()
                         bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
-                        delegate?.newAnswerViewController(didInsert: answer)
-                        self.navigationController?.popViewController(animated: true)
+                        self.navigationController?.popViewController(animated: true, completion: { [weak self] in
+                            self?.delegate?.newAnswerViewController(didInsert: answer)
+                        })
                     }
                 }
             }else{

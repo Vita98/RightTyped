@@ -24,6 +24,12 @@ public class Category: NSManagedObject {
             }
         }
         category.creationDate = Date()
+        
+        //Check if the object is not associated to the current context
+        if category.managedObjectContext == nil || (category.managedObjectContext != nil && category.managedObjectContext! != DataModelManagerPersistentContainer.shared.context){
+            let objectToSave = Category(context: DataModelManagerPersistentContainer.shared.context)
+            category.copyTo(objectToSave)
+        }
         return DataModelManagerPersistentContainer.shared.saveContextWithCheck()
     }
     
@@ -31,7 +37,7 @@ public class Category: NSManagedObject {
         let request = NSFetchRequest<Category>(entityName: "Category")
         do{
             let count = try DataModelManagerPersistentContainer.shared.context.count(for: request)
-            return count == 1
+            return count == 0
         }catch{
             return true
         }

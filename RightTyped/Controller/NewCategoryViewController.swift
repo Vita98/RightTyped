@@ -64,7 +64,7 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
         configureTextField()
         
         if !editMode{
-            associatedCategory = Category(context: DataModelManagerPersistentContainer.shared.context)
+            associatedCategory = Category(entity: Category.entity(), insertInto: nil)
             titleLabel.text = "Nuova Categoria"
         }else{
             titleLabel.text = "Modifica Categoria"
