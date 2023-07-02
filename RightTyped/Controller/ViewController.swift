@@ -227,9 +227,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 
                 if let cell = collectionView.cellForItem(at: newIndexPath) as? CategoryCollectionViewCell{
                     cell.setSelected(true, animated: true)
-                }else{
-                    self.selectedCategoryIndex = newIndexPath
                 }
+                self.selectedCategoryIndex = newIndexPath
                 
                 selectedCategory = categoryFetchedResultsController.object(at: newIndexPath)
                 if let ans = selectedCategory?.answers{
