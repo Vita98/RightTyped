@@ -224,13 +224,14 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             if isNewAnswer{
                 if let answer = answer, let category = answerCategory{
                     let objToSave = Answer(context: DataModelManagerPersistentContainer.shared.context)
+                    objToSave.category = category
                     answer.copyTo(objToSave)
                     category.addToAnswers(objToSave)
                     if category.save() {
-                        originalAnswer = answer.copy()
+                        originalAnswer = objToSave.copy()
                         bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
                         self.navigationController?.popViewController(animated: true, completion: { [weak self] in
-                            self?.delegate?.newAnswerViewController(didInsert: answer)
+                            self?.delegate?.newAnswerViewController(didInsert: objToSave)
                         })
                     }
                 }

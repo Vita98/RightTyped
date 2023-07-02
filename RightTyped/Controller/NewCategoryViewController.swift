@@ -142,13 +142,16 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
                 }
             }else{
                 if let cat = associatedCategory{
-                    if Category.saveNewCategory(category: cat){
-                        originalCategory = cat.copy()
+                    let savResp = Category.saveNewCategory(category: cat)
+                    if savResp.0 {
+                        associatedCategory = savResp.1
+                        originalCategory = associatedCategory?.copy()
                         bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
                         
                         self.dismiss(animated: true) {[weak self] in
-                            //TODO: Call the delegate
-                            self?.delegate?.newCategoryViewController(didInsert: cat)
+                            if let cat = savResp.1 {
+                                self?.delegate?.newCategoryViewController(didInsert: cat)
+                            }
                         }
                     }
                 }

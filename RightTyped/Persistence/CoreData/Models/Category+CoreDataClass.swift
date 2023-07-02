@@ -13,14 +13,14 @@ import CoreData
 public class Category: NSManagedObject {
         
     @discardableResult
-    static func saveNewCategory(category: Category) -> Bool{
+    static func saveNewCategory(category: Category) -> (Bool, Category?){
         if Category.isEmpty(){
             category.order = 0
         }else{
             if let order = Category.getGreatestOrder(){
                 category.order = Double(order + 1)
             }else{
-                return false
+                return (false, nil)
             }
         }
         category.creationDate = Date()
@@ -29,8 +29,9 @@ public class Category: NSManagedObject {
         if category.managedObjectContext == nil || (category.managedObjectContext != nil && category.managedObjectContext! != DataModelManagerPersistentContainer.shared.context){
             let objectToSave = Category(context: DataModelManagerPersistentContainer.shared.context)
             category.copyTo(objectToSave)
+            return (DataModelManagerPersistentContainer.shared.saveContextWithCheck(), objectToSave)
         }
-        return DataModelManagerPersistentContainer.shared.saveContextWithCheck()
+        return (DataModelManagerPersistentContainer.shared.saveContextWithCheck(), category)
     }
     
     private static func isEmpty() -> Bool{
