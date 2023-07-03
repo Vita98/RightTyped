@@ -159,7 +159,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let category = categoryFetchedResultsController.object(at: indexPath)
         cell.label.text = category.name
         cell.associatedCategory = category
-        cell.associatedCategoryIndex = indexPath
         
         //Selection and deselection process
         if selectedCategoryIndex == nil{
@@ -431,9 +430,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             alert.addAction(UIAlertAction(title: "No", style: .cancel))
             alert.addAction(UIAlertAction(title: "Si", style: .destructive, handler: { alertAction in
                 if let selectedCategory = self.selectedCategory{
-                    self.selectedCategory = nil
-                    self.selectedCategoryIndex = nil
-                    
                     DataModelManagerPersistentContainer.shared.context.delete(selectedCategory)
                     DataModelManagerPersistentContainer.shared.saveContext()
                 }
@@ -447,10 +443,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
         if type == .delete, let indexPath = indexPath, let cat = categoryFetchedResultsController.fetchedObjects?.count{
             let nextCellIndex = indexPath.nearest(withLeftBound: cat)
             
-            if let nextCellIndex = nextCellIndex, let nextCell = homeHeaderTableViewCell?.categoryCollectionView.cellForItem(at: nextCellIndex) as? CategoryCollectionViewCell{
-                nextCell.setSelected(true)
-                self.selectedCategory = nextCell.associatedCategory
-                self.selectedCategoryIndex = nextCell.associatedCategoryIndex
+            if let nextCellIndex = nextCellIndex{
+                
+                if nextCellIndex.row > indexPath.row{
+                    let f = IndexPath(row: nextCellIndex.row-1, section: indexPath.section)
+                    selectedCategoryIndex = f
+                }else{
+                    selectedCategoryIndex = nextCellIndex
+                }
+                
+                if let nextCell = homeHeaderTableViewCell?.categoryCollectionView.cellForItem(at: nextCellIndex) as? CategoryCollectionViewCell{
+                    nextCell.setSelected(true)
+                    self.selectedCategory = nextCell.associatedCategory
+                }else if let index = selectedCategoryIndex{
+                    self.selectedCategory = categoryFetchedResultsController.object(at: index)
+                }
                 
                 if let snw = self.selectedCategory?.answers, let answers = snw.allObjects as? [Answer]{
                     self.answers = answers
@@ -459,11 +466,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
                 reloadTableViewWithAnimation(originIndex: indexPath.row, destinationIndex: nextCellIndex.row)
                 homeHeaderTableViewCell?.categoryCollectionView.deleteItems(at: [indexPath])
                 answerHeaderView?.setSearchBarStatus(enabled: answers != nil && answers!.count > 0)
-                
-                if nextCellIndex.row > indexPath.row{
-                    let f = IndexPath(row: nextCellIndex.row-1, section: indexPath.section)
-                    selectedCategoryIndex = f
-                }
             }else{
                 homeHeaderTableViewCell?.categoryCollectionView.deleteItems(at: [indexPath])
                 self.selectedCategory = nil
