@@ -136,7 +136,6 @@ class ViewController: UIViewController {
 
 //MARK: Categories Collection view delegate and datasource
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, NewCategoryViewControllerDelegate{
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let categories = categoryFetchedResultsController.fetchedObjects
         if categories == nil{
@@ -287,6 +286,117 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 }
 
+//MARK: Drag and drop to change position of the categories
+extension ViewController: UICollectionViewDragDelegate, UICollectionViewDropDelegate{
+    //MARK: UICollectionViewDragDelegate
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let categoryItem = categoryFetchedResultsController.object(at: indexPath)
+        let itemProvider = NSItemProvider(object: "\(categoryItem.id.hashValue)" as NSString)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = categoryItem
+        return [dragItem]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        guard let destinationIndexPath = coordinator.destinationIndexPath, coordinator.proposal.operation == .move else { return }
+        
+        //Update the collection view
+        if let item = coordinator.items.first, let sourceIndexPath = item.sourceIndexPath{
+            
+            let originCategory = categoryFetchedResultsController.object(at: sourceIndexPath)
+            let destinationCategory = categoryFetchedResultsController.object(at: destinationIndexPath)
+            
+            //Perform the swap on core data
+            if moveOnCoreData(collectionView, objToMove: (originCategory, sourceIndexPath), destinationObj: (destinationCategory, destinationIndexPath)){
+                collectionView.performBatchUpdates( {
+                    collectionView.deleteItems(at: [sourceIndexPath])
+                    collectionView.insertItems(at: [destinationIndexPath])
+                    updateSelectedCategoryAfterDragAndDrop(sourceIndexPath: sourceIndexPath, destinationIndexPath: destinationIndexPath)
+                })
+                coordinator.drop(item.dragItem, toItemAt: destinationIndexPath)
+            }
+        }
+    }
+    
+    private func updateSelectedCategoryAfterDragAndDrop(sourceIndexPath: IndexPath, destinationIndexPath: IndexPath){
+        if sourceIndexPath == selectedCategoryIndex{
+            selectedCategoryIndex = destinationIndexPath
+        }else if destinationIndexPath == selectedCategoryIndex{
+            //have to shift the selected indexpath by one left or right
+            if sourceIndexPath.row > destinationIndexPath.row{
+                //swiping an element to its left
+                selectedCategoryIndex = IndexPath(row: destinationIndexPath.row + 1, section: destinationIndexPath.section)
+            }else if sourceIndexPath.row < destinationIndexPath.row{
+                selectedCategoryIndex = IndexPath(row: destinationIndexPath.row - 1, section: destinationIndexPath.section)
+            }
+        }else{
+            //the selectedCategory is not neither the source nor the destination
+            if let selectedCategoryIndex = self.selectedCategoryIndex{
+                if selectedCategoryIndex.row > destinationIndexPath.row && selectedCategoryIndex.row < sourceIndexPath.row{
+                    self.selectedCategoryIndex = IndexPath(row: selectedCategoryIndex.row + 1, section: selectedCategoryIndex.section)
+                }else if selectedCategoryIndex.row < destinationIndexPath.row && selectedCategoryIndex.row > sourceIndexPath.row {
+                    self.selectedCategoryIndex = IndexPath(row: selectedCategoryIndex.row - 1, section: selectedCategoryIndex.section)
+                }
+            }
+        }
+    }
+    
+    private func moveOnCoreData(_ collectionView: UICollectionView, objToMove: (Category, IndexPath), destinationObj: (Category, IndexPath)) -> Bool {
+        if destinationObj.1.row == 0{
+            //Check if the move is on the left bound - index.row == 0
+            if ceil(destinationObj.0.order) == destinationObj.0.order{
+                objToMove.0.order = destinationObj.0.order + 1
+            }else{
+                objToMove.0.order = ceil(destinationObj.0.order)
+            }
+        }else if let count = categoryFetchedResultsController.fetchedObjects?.count, destinationObj.1.row == count-1{
+            //Check if the move is on the right bound - index.row == number of abject minus one
+            if floor(destinationObj.0.order) == destinationObj.0.order{
+                objToMove.0.order = destinationObj.0.order - 1
+            }else{
+                objToMove.0.order = floor(destinationObj.0.order)
+            }
+        }else{
+            //middle move
+            var newOrder: Double = 0.0
+            if objToMove.1.row < destinationObj.1.row{
+                let leftCat = categoryFetchedResultsController.object(at: IndexPath(row: destinationObj.1.row + 1, section: destinationObj.1.section))
+                let rightCat = categoryFetchedResultsController.object(at: destinationObj.1)
+                newOrder = (leftCat.order + rightCat.order) / 2
+            }else{
+                let leftCat = categoryFetchedResultsController.object(at: IndexPath(row: destinationObj.1.row - 1, section: destinationObj.1.section))
+                let rightCat = categoryFetchedResultsController.object(at: destinationObj.1)
+                newOrder = (leftCat.order + rightCat.order) / 2
+            }
+            objToMove.0.order = newOrder
+        }
+        
+        return DataModelManagerPersistentContainer.shared.saveContextWithCheck()
+    }
+    
+    //MARK: Method to show the shadows even during the drag and dropp process
+    func collectionView(_ collectionView: UICollectionView, dropPreviewParametersForItemAt indexPath: IndexPath) -> UIDragPreviewParameters? {
+        let dragPrevParam: UIDragPreviewParameters = UIDragPreviewParameters()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.reuseID, for: indexPath) as? CategoryCollectionViewCell else { return nil }
+        dragPrevParam.backgroundColor = .black.withAlphaComponent(0.3)
+        dragPrevParam.visiblePath = UIBezierPath(roundedRect: CGRect(x: -0.5, y: -0.5, width: cell.frame.width+3, height: cell.frame.height+2), cornerRadius: 15)
+        return dragPrevParam
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, dragPreviewParametersForItemAt indexPath: IndexPath) -> UIDragPreviewParameters? {
+        let dragPrevParam: UIDragPreviewParameters = UIDragPreviewParameters()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.reuseID, for: indexPath) as? CategoryCollectionViewCell else { return nil }
+        dragPrevParam.backgroundColor = .black.withAlphaComponent(0.3)
+        dragPrevParam.visiblePath = UIBezierPath(roundedRect: CGRect(x: -0.5, y: -0.5, width: cell.frame.width+3, height: cell.frame.height+2), cornerRadius: 15)
+        return dragPrevParam
+    }
+}
+
+
 //MARK: Answers table view delegate and datasource
 extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerViewControllerDelegate, HomeHeaderTableViewCellDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -330,6 +440,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeHeaderTableViewCell.reuseID, for: indexPath) as! HomeHeaderTableViewCell
             cell.categoryCollectionView.dataSource = self
             cell.categoryCollectionView.delegate = self
+            cell.categoryCollectionView.dragDelegate = self
+            cell.categoryCollectionView.dropDelegate = self
             cell.delegate = self
             homeHeaderTableViewCell = cell
             

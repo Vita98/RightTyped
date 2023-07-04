@@ -52,6 +52,7 @@ class HomeHeaderTableViewCell: UITableViewCell {
         
         categorySwitch.onTintColor = .componentColor
         categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.reuseID)
+        categoryCollectionView.clipsToBounds = false
         setGestureRecognizer()
     }
     
