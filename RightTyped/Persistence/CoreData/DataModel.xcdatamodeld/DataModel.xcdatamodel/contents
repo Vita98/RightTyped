@@ -3,6 +3,7 @@
     <entity name="Answer" representedClassName="Answer" syncable="YES">
         <attribute name="descr" attributeType="String"/>
         <attribute name="enabled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="answers" inverseEntity="Category"/>
     </entity>

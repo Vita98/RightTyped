@@ -13,6 +13,57 @@ import CoreData
 public class Answer: NSManagedObject{
     
     
+    @discardableResult
+    static func saveNewAnswer(answer: Answer) -> (Bool, Answer?){
+        guard let category = answer.category else { return (false, nil) }
+        if Answer.isEmpty(for: category){
+            answer.order = 0
+        }else{
+            if let order = Answer.getGreatestOrder(for: category){
+                answer.order = Double(order + 1)
+            }else{
+                return (false, nil)
+            }
+        }
+        
+        //Check if the object is not associated to the current context
+        if answer.managedObjectContext == nil || (answer.managedObjectContext != nil && answer.managedObjectContext! != DataModelManagerPersistentContainer.shared.context){
+            let objectToSave = Answer(context: DataModelManagerPersistentContainer.shared.context)
+            answer.copyTo(objectToSave)
+            return (DataModelManagerPersistentContainer.shared.saveContextWithCheck(), objectToSave)
+        }
+        return (DataModelManagerPersistentContainer.shared.saveContextWithCheck(), answer)
+    }
+    
+    //MARK: method to manage the reordering of the answers
+    internal static func isEmpty(for category: Category) -> Bool{
+        let request = Answer.fetchRequest()
+        request.predicate = NSPredicate(format: "category == %@", category)
+        do{
+            let count = try DataModelManagerPersistentContainer.shared.context.count(for: request)
+            return count == 0
+        }catch{
+            return true
+        }
+    }
+    
+    static func getGreatestOrder(for category: Category) -> Int? {
+        let categoryFetch = Answer.fetchRequest()
+        let sortBy = NSSortDescriptor(key: #keyPath(Answer.order), ascending: false)
+        categoryFetch.predicate = NSPredicate(format: "category == %@", category)
+        categoryFetch.sortDescriptors = [sortBy]
+        do {
+            let managedContext = DataModelManagerPersistentContainer.shared.context
+            let results = try managedContext.fetch(categoryFetch)
+            if let order = results.first?.order{
+                return Int(order)
+            }
+        } catch _ as NSError {
+            return nil
+        }
+        return nil
+    }
+    
     static func saveNewAnswer(toCategory category : Category, withTitle title: String, withDescr descr : String){
         let answer = Answer(context: DataModelManagerPersistentContainer.shared.context)
         answer.title = title
@@ -23,16 +74,16 @@ public class Answer: NSManagedObject{
     
     static func getAnswers(for category: Category) -> [Answer]? {
         let categoryFetch = Answer.fetchRequest()
-        let sortByName = NSSortDescriptor(key: #keyPath(Answer.title), ascending: false)
-        categoryFetch.sortDescriptors = [sortByName]
+        let sortByOrder = NSSortDescriptor(key: #keyPath(Answer.order), ascending: false)
+        categoryFetch.sortDescriptors = [sortByOrder]
         categoryFetch.predicate = NSPredicate(format: "category == %@", category)
         var answers : [Answer]? = nil
         do {
             let managedContext = DataModelManagerPersistentContainer.shared.context
             let results = try managedContext.fetch(categoryFetch)
             answers = results
-        } catch let error as NSError {
-            print("Fetch error: \(error) description: \(error.userInfo)")
+        } catch _ as NSError {
+            return nil
         }
         return answers
     }
@@ -42,7 +93,7 @@ public class Answer: NSManagedObject{
         let fetchRequest: NSFetchRequest<Answer> = Answer.fetchRequest()
 
         // Configure Fetch Request
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Answer.title), ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Answer.order), ascending: false)]
         fetchRequest.predicate = NSPredicate(format: "enabled == %@ && category == %@", NSNumber(booleanLiteral: enabled), category)
 
         // Create Fetched Results Controller

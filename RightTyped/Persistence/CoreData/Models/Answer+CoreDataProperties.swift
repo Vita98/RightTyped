@@ -20,20 +20,40 @@ extension Answer {
     @NSManaged public var descr: String
     @NSManaged public var category: Category?
     @NSManaged public var enabled: Bool
+    @NSManaged public var order: Double
+    
+    //MARK: Init
+    public convenience init(into category: Category){
+        self.init(context: DataModelManagerPersistentContainer.shared.context)
+        self.category = category
+        
+        if Answer.isEmpty(for: category){
+            self.order = 0
+        }else{
+            if let order = Answer.getGreatestOrder(for: category){
+                self.order = Double(order + 1)
+            }else{
+                self.order = 0
+            }
+        }
+    }
+    
     
     public func copy() -> Answer {
         let copy = Answer(entity: Answer.entity(), insertInto: nil)
         copy.title = self.title
         copy.descr = self.descr
         copy.enabled = self.enabled
+        copy.order = self.order
         return copy
     }
     
-    public func copyTo(_ dest: Answer){
+    public func copyTo(_ dest: Answer, order: Bool = false){
         dest.title = title
         dest.descr = descr
         dest.category = category
         dest.enabled = enabled
+        dest.order = order ? self.order : dest.order
     }
 
 }

@@ -35,7 +35,7 @@ public class Category: NSManagedObject {
     }
     
     private static func isEmpty() -> Bool{
-        let request = NSFetchRequest<Category>(entityName: "Category")
+        let request = Category.fetchRequest()
         do{
             let count = try DataModelManagerPersistentContainer.shared.context.count(for: request)
             return count == 0

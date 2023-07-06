@@ -18,7 +18,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var answersTableView: UITableView!
     
     fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForAllCategory(delegate: self)
-    var answers: [Answer]?
+    var answers: [Answer]? {
+        didSet{
+            guard let answers = answers else { return }
+            self.answers = answers.sorted(by: {$0.order > $1.order})
+        }
+    }
     var searchedAnswers: [Answer]?
     private var homeHeaderTableViewCell: HomeHeaderTableViewCell?
     private var answerHeaderView: AnswersHeaderView?
@@ -501,18 +506,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
     }
     
     func newAnswerViewController(didInsert answer: Answer) {
-        answers?.append(answer)
+        answers?.insert(answer, at: 0)
         if let answerHeaderView = answerHeaderView{
             if let text = answerHeaderView.searchBar.text, !text.isEmpty{
                 if answer.title.lowercased().contains(text.lowercased()) || answer.descr.lowercased().contains(text.lowercased()){
-                    searchedAnswers?.append(answer)
-                    if searchedAnswers != nil { answersTableView.insertRows(at: [IndexPath(row: searchedAnswers!.count-1, section: 1)], with: .automatic) }
+                    searchedAnswers?.insert(answer, at: 0)
+                    if searchedAnswers != nil { answersTableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .automatic) }
                 }
                 return
             }
         }
         searchedAnswers = answers
-        if answers != nil { answersTableView.insertRows(at: [IndexPath(row: answers!.count-1, section: 1)], with: .automatic) }
+        if answers != nil { answersTableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .automatic) }
         if let answerHeaderView = answerHeaderView {
             answerHeaderView.setSearchBarStatus(enabled: self.answers!.count > 0)
         }

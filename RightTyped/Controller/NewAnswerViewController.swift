@@ -223,8 +223,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         if isSavabled(){
             if isNewAnswer{
                 if let answer = answer, let category = answerCategory{
-                    let objToSave = Answer(context: DataModelManagerPersistentContainer.shared.context)
-                    objToSave.category = category
+                    let objToSave = Answer(into: category)
                     answer.copyTo(objToSave)
                     category.addToAnswers(objToSave)
                     if category.save() {

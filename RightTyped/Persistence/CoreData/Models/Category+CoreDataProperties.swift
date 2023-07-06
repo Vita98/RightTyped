@@ -43,6 +43,7 @@ extension Category {
         let copy = Category(entity: Category.entity(), insertInto: nil)
         copy.name = self.name
         copy.enabled = self.enabled
+        copy.order = self.order
         return copy
     }
     

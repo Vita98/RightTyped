@@ -30,11 +30,14 @@ class DefaultData{
             catObj.name = category[NAME_KEY] as! String
             
             let answ_keys = category[ANSWERS_KEY] as! [[String:Any]]
+            var order = 0.0
             for answ in answ_keys{
                 let answObj = Answer(context: DataModelManagerPersistentContainer.shared.context)
                 answObj.title = answ[TITLE_KEY] as! String
                 answObj.descr = answ[DESC_KEY] as! String
+                answObj.order = order
                 catObj.addToAnswers(answObj)
+                order = order + 1
             }
             Category.saveNewCategory(category: catObj)
         }
