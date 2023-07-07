@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         didSet{
             guard let answers = answers else { return }
             self.answers = answers.sorted(by: {$0.order > $1.order})
+            self.searchedAnswers = self.answers
+            answersTableView.dragInteractionEnabled = answers.count > 1
         }
     }
     var searchedAnswers: [Answer]?
@@ -79,6 +81,8 @@ class ViewController: UIViewController {
         answersTableView.register(UINib(nibName: "HomeHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: HomeHeaderTableViewCell.reuseID)
         answersTableView.dataSource = self
         answersTableView.delegate = self
+        answersTableView.dragDelegate = self
+        answersTableView.dropDelegate = self
         answersTableView.backgroundColor = .white
         answersTableView.clipsToBounds = true
         answersTableView.layer.cornerRadius = 45
@@ -303,6 +307,8 @@ extension ViewController: UICollectionViewDragDelegate, UICollectionViewDropDele
     }
     
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
+        if destinationIndexPath == nil { return UICollectionViewDropProposal(operation: .cancel) }
+        if let _ = session.items.first?.localObject as? Answer { return UICollectionViewDropProposal(operation: .cancel) }
         return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
     }
     
@@ -316,7 +322,7 @@ extension ViewController: UICollectionViewDragDelegate, UICollectionViewDropDele
             let destinationCategory = categoryFetchedResultsController.object(at: destinationIndexPath)
             
             //Perform the swap on core data
-            if moveOnCoreData(collectionView, objToMove: (originCategory, sourceIndexPath), destinationObj: (destinationCategory, destinationIndexPath)){
+            if moveOnCoreData(objToMove: (originCategory, sourceIndexPath), destinationObj: (destinationCategory, destinationIndexPath)){
                 collectionView.performBatchUpdates( {
                     collectionView.deleteItems(at: [sourceIndexPath])
                     collectionView.insertItems(at: [destinationIndexPath])
@@ -350,7 +356,7 @@ extension ViewController: UICollectionViewDragDelegate, UICollectionViewDropDele
         }
     }
     
-    private func moveOnCoreData(_ collectionView: UICollectionView, objToMove: (Category, IndexPath), destinationObj: (Category, IndexPath)) -> Bool {
+    private func moveOnCoreData(objToMove: (Category, IndexPath), destinationObj: (Category, IndexPath)) -> Bool {
         if destinationObj.1.row == 0{
             //Check if the move is on the left bound - index.row == 0
             if ceil(destinationObj.0.order) == destinationObj.0.order{
@@ -595,23 +601,126 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
     }
 }
 
+//MARK: Drag and drop to change position of the answers
+extension ViewController: UITableViewDragDelegate, UITableViewDropDelegate {
+    
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        guard indexPath.section == 1 else { return [] }
+        let answ = searchedAnswers != nil ? searchedAnswers! : (answers != nil ? answers! : [])
+        guard answ.count > 0 else { return [] }
+        
+        let answerItem = answ[indexPath.row]
+        let itemProvider = NSItemProvider(object: "\(answerItem.id.hashValue)" as NSString)
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = answerItem
+        return [dragItem]
+    }
+    
+    func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
+        if destinationIndexPath?.section == 0 { return UITableViewDropProposal(operation: .cancel) }
+        if let _ = session.items.first?.localObject as? Category { return UITableViewDropProposal(operation: .cancel) }
+        return UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+        guard let destinationIndexPath = coordinator.destinationIndexPath, coordinator.proposal.operation == .move else { return }
+        
+        //Update the table view
+        if let item = coordinator.items.first, let sourceIndexPath = item.sourceIndexPath{
+            guard let searchedAnswers = searchedAnswers else { return }
+            let originAnswer = searchedAnswers[sourceIndexPath.row]
+            let destinationAnswer = searchedAnswers[destinationIndexPath.row]
+
+            //Perform the swap on core data
+            if moveOnCoreData(objToMove: (originAnswer, sourceIndexPath), destinationObj: (destinationAnswer, destinationIndexPath)){
+                self.answers = {self.answers}()
+                tableView.performBatchUpdates( {
+                    tableView.deleteRows(at: [sourceIndexPath], with: .automatic)
+                    tableView.insertRows(at: [destinationIndexPath], with: .automatic)
+                })
+                coordinator.drop(item.dragItem, toRowAt: destinationIndexPath)
+            }
+        }
+    }
+    
+    private func moveOnCoreData(objToMove: (Answer, IndexPath), destinationObj: (Answer, IndexPath)) -> Bool {
+        if destinationObj.1.row == 0{
+            //Check if the move is on the left bound - index.row == 0
+            if ceil(destinationObj.0.order) == destinationObj.0.order{
+                objToMove.0.order = destinationObj.0.order + 1
+            }else{
+                objToMove.0.order = ceil(destinationObj.0.order)
+            }
+        }else if let count = searchedAnswers?.count, destinationObj.1.row == count-1{
+            //Check if the move is on the right bound - index.row == number of abject minus one
+            if floor(destinationObj.0.order) == destinationObj.0.order{
+                objToMove.0.order = destinationObj.0.order - 1
+            }else{
+                objToMove.0.order = floor(destinationObj.0.order)
+            }
+        }else{
+            //middle move
+            var newOrder: Double = 0.0
+            guard let searchedAnswers = searchedAnswers else { return false }
+            if objToMove.1.row < destinationObj.1.row{
+                let leftAnsw = searchedAnswers[destinationObj.1.row + 1]
+                let rightAnsw = searchedAnswers[destinationObj.1.row]
+                newOrder = (leftAnsw.order + rightAnsw.order) / 2
+            }else{
+                let leftAnsw = searchedAnswers[destinationObj.1.row - 1]
+                let rightAnsw = searchedAnswers[destinationObj.1.row]
+                newOrder = (leftAnsw.order + rightAnsw.order) / 2
+            }
+            objToMove.0.order = newOrder
+        }
+        
+        return DataModelManagerPersistentContainer.shared.saveContextWithCheck()
+    }
+    
+    //MARK: Method to show custom row when dragging
+    func tableView(_ tableView: UITableView, dragPreviewParametersForRowAt indexPath: IndexPath) -> UIDragPreviewParameters? {
+        let dragPrevParam: UIDragPreviewParameters = UIDragPreviewParameters()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.reuseID, for: indexPath) as? AnswerTableViewCell else { return nil }
+        dragPrevParam.visiblePath = UIBezierPath(roundedRect: CGRect(x: 10, y: 0, width: cell.frame.width-20, height: cell.frame.height), cornerRadius: 15)
+        return dragPrevParam
+    }
+    
+}
+
 //MARK: Search bar delegate
 extension ViewController: UISearchBarDelegate, UISearchTextFieldDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchedAnswers = searchText.isEmpty ? answers : answers?.filter({ answer in
             return answer.title.lowercased().contains(searchText.lowercased()) || answer.descr.lowercased().contains(searchText.lowercased())
         })
+
+        if searchText.isEmpty{
+            answersTableView.dragInteractionEnabled = isDragInteractionEnabledBasedOnSearchBar()
+        }else{
+            answersTableView.dragInteractionEnabled = false
+        }
+
         answersTableView.reloadData()
+    }
+    
+    private func isDragInteractionEnabledBasedOnSearchBar() -> Bool{
+        if let answers = answers{
+            return answers.count > 1
+        }else{
+            return false
+        }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
+        answersTableView.dragInteractionEnabled = isDragInteractionEnabledBasedOnSearchBar()
         searchedAnswers = answers
         searchBar.endEditing(true)
         answersTableView.reloadData()
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        answersTableView.dragInteractionEnabled = isDragInteractionEnabledBasedOnSearchBar()
         textField.endEditing(true)
         return true
     }
