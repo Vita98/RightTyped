@@ -24,6 +24,10 @@
 		01595FEC2A47794F003EAE79 /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01595FEB2A47794F003EAE79 /* IndexPath.swift */; };
 		01595FEE2A47C532003EAE79 /* UITableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01595FED2A47C532003EAE79 /* UITableCollectionViewController.swift */; };
 		01595FF22A486374003EAE79 /* AddAnswerCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01595FF12A486374003EAE79 /* AddAnswerCustomView.swift */; };
+		015B9E622A596DE400171360 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B9E612A596DE400171360 /* SettingsViewController.swift */; };
+		015B9E642A5974BD00171360 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B9E632A5974BD00171360 /* SettingsModel.swift */; };
+		015B9E682A59F10300171360 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B9E662A59F10300171360 /* SettingsTableViewCell.swift */; };
+		015B9E692A59F10300171360 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015B9E672A59F10300171360 /* SettingsTableViewCell.xib */; };
 		0160F8C72A29444E005B97CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F102A1E8C3B005A8021 /* Assets.xcassets */; };
 		0160F8C92A2946F3005B97CB /* NewAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */; };
 		0160F8CC2A2949AE005B97CB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8CB2A2949AE005B97CB /* UIViewController.swift */; };
@@ -120,6 +124,10 @@
 		01595FEB2A47794F003EAE79 /* IndexPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
 		01595FED2A47C532003EAE79 /* UITableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableCollectionViewController.swift; sourceTree = "<group>"; };
 		01595FF12A486374003EAE79 /* AddAnswerCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnswerCustomView.swift; sourceTree = "<group>"; };
+		015B9E612A596DE400171360 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		015B9E632A5974BD00171360 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		015B9E662A59F10300171360 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		015B9E672A59F10300171360 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnswerViewController.swift; sourceTree = "<group>"; };
 		0160F8CB2A2949AE005B97CB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		01766B432A22379B00BA359C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -247,12 +255,22 @@
 			path = AnswersCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		015B9E652A59910500171360 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				015B9E662A59F10300171360 /* SettingsTableViewCell.swift */,
+				015B9E672A59F10300171360 /* SettingsTableViewCell.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		0160F8CA2A2947CB005B97CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				019E2F0B2A1E8C39005A8021 /* ViewController.swift */,
 				0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */,
 				019EEC442A4DDE4E004C2761 /* NewCategoryViewController.swift */,
+				015B9E612A596DE400171360 /* SettingsViewController.swift */,
 				01D514352A34FDF700B9FF2B /* EnableKeyboard */,
 			);
 			path = Controller;
@@ -390,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				01A7659F2A27B64400D50C4B /* cells.swift */,
+				015B9E632A5974BD00171360 /* SettingsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +416,7 @@
 		01A765A22A27B64F00D50C4B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				015B9E652A59910500171360 /* Settings */,
 				01A391362A2F8F0B0051FBE4 /* CustomComponent */,
 				01A7659E2A27B5DA00D50C4B /* Home */,
 			);
@@ -549,6 +569,7 @@
 				019E2F2E2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
 				01A680382A27902600DD67DC /* AnswersHeaderView.xib in Resources */,
 				01DA1C2E2A2CFF8C00A28CE7 /* CustomTextArea.xib in Resources */,
+				015B9E692A59F10300171360 /* SettingsTableViewCell.xib in Resources */,
 				019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
 				012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */,
 				01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */,
@@ -586,6 +607,7 @@
 				01C84C182A508CE300C8AD77 /* UINavigationController.swift in Sources */,
 				01A391382A2F8F980051FBE4 /* EnableKeyboardViewController.swift in Sources */,
 				01595FF22A486374003EAE79 /* AddAnswerCustomView.swift in Sources */,
+				015B9E642A5974BD00171360 /* SettingsModel.swift in Sources */,
 				01525E182A352CFE00E1E5E9 /* DefaultData.swift in Sources */,
 				01C8A0422A324323001DBC8D /* Answer+CoreDataProperties.swift in Sources */,
 				01C8A0402A324323001DBC8D /* Answer+CoreDataClass.swift in Sources */,
@@ -600,6 +622,7 @@
 				01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */,
 				01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
+				015B9E682A59F10300171360 /* SettingsTableViewCell.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
 				01A3913A2A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift in Sources */,
 				01C8A0332A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */,
@@ -612,6 +635,7 @@
 				012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */,
 				019EEC452A4DDE4E004C2761 /* NewCategoryViewController.swift in Sources */,
 				01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */,
+				015B9E622A596DE400171360 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

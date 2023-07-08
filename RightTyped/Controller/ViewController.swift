@@ -141,6 +141,13 @@ class ViewController: UIViewController {
     @objc func keyBoardWillHide(notification: NSNotification){
         answersTableView.contentInset = .zero
     }
+    
+    //MARK: Generic events
+    @IBAction func settingsTouchUpInside(_ sender: Any) {
+        let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "settingsViewControllerID") as! SettingsViewController
+        self.view.endEditing(true)
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
 }
 
 //MARK: Categories Collection view delegate and datasource
@@ -680,7 +687,7 @@ extension ViewController: UITableViewDragDelegate, UITableViewDropDelegate {
     //MARK: Method to show custom row when dragging
     func tableView(_ tableView: UITableView, dragPreviewParametersForRowAt indexPath: IndexPath) -> UIDragPreviewParameters? {
         let dragPrevParam: UIDragPreviewParameters = UIDragPreviewParameters()
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.reuseID, for: indexPath) as? AnswerTableViewCell else { return nil }
+        guard let cell = tableView.cellForRow(at: indexPath) as? AnswerTableViewCell else { return nil }
         dragPrevParam.visiblePath = UIBezierPath(roundedRect: CGRect(x: 10, y: 0, width: cell.frame.width-20, height: cell.frame.height), cornerRadius: 15)
         return dragPrevParam
     }

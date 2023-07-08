@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="bulent-yuksel-trakya-rounded-300-light.otf">
+            <string>Trakya-Rounded-300-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsTableViewCellID" rowHeight="106" id="KGk-i7-Jjw" customClass="SettingsTableViewCell" customModule="RightTyped" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="431" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="431" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eB0-oc-szM">
+                        <rect key="frame" x="0.0" y="0.0" width="431" height="106"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGs-gw-jdg">
+                                <rect key="frame" x="20" y="15" width="375" height="76"/>
+                                <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWU-Nv-hzI">
+                                <rect key="frame" x="400" y="42" width="11" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="1bg-1j-mcR"/>
+                                    <constraint firstAttribute="width" constant="11" id="ruN-Gx-C6x"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="rightRow"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cGs-gw-jdg" firstAttribute="leading" secondItem="eB0-oc-szM" secondAttribute="leading" constant="20" id="Jbq-lu-plD"/>
+                            <constraint firstItem="aWU-Nv-hzI" firstAttribute="centerY" secondItem="cGs-gw-jdg" secondAttribute="centerY" id="QFw-ye-v9U"/>
+                            <constraint firstItem="aWU-Nv-hzI" firstAttribute="leading" secondItem="cGs-gw-jdg" secondAttribute="trailing" constant="5" id="R8U-p1-DhV"/>
+                            <constraint firstAttribute="bottom" secondItem="cGs-gw-jdg" secondAttribute="bottom" constant="15" id="TiH-x4-Eop"/>
+                            <constraint firstAttribute="trailing" secondItem="aWU-Nv-hzI" secondAttribute="trailing" constant="20" id="X7K-Wn-5V1"/>
+                            <constraint firstItem="cGs-gw-jdg" firstAttribute="top" secondItem="eB0-oc-szM" secondAttribute="top" constant="15" id="zRP-zJ-pO1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eB0-oc-szM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5N1-jx-jxG"/>
+                    <constraint firstItem="eB0-oc-szM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="LIp-wM-QNS"/>
+                    <constraint firstAttribute="bottom" secondItem="eB0-oc-szM" secondAttribute="bottom" id="NBD-iX-Nzg"/>
+                    <constraint firstAttribute="trailing" secondItem="eB0-oc-szM" secondAttribute="trailing" id="SUr-Tf-GTD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="eB0-oc-szM" id="CQo-XC-mtp"/>
+                <outlet property="rowButton" destination="aWU-Nv-hzI" id="uz7-1U-uGp"/>
+                <outlet property="titleLabel" destination="cGs-gw-jdg" id="mtD-fj-5uC"/>
+            </connections>
+            <point key="canvasLocation" x="92.36641221374046" y="10.563380281690142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="rightRow" width="8" height="12"/>
+    </resources>
+</document>
