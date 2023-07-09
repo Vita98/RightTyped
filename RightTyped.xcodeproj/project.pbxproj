@@ -28,7 +28,8 @@
 		015B9E642A5974BD00171360 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B9E632A5974BD00171360 /* SettingsModel.swift */; };
 		015B9E682A59F10300171360 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B9E662A59F10300171360 /* SettingsTableViewCell.swift */; };
 		015B9E692A59F10300171360 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015B9E672A59F10300171360 /* SettingsTableViewCell.xib */; };
-		0160F8C72A29444E005B97CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019E2F102A1E8C3B005A8021 /* Assets.xcassets */; };
+		015B9E6B2A5ABA0300171360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015B9E6A2A5ABA0300171360 /* Assets.xcassets */; };
+		015B9E702A5AEF2400171360 /* AppNavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B9E6F2A5AEF2400171360 /* AppNavigationHelper.swift */; };
 		0160F8C92A2946F3005B97CB /* NewAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */; };
 		0160F8CC2A2949AE005B97CB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8CB2A2949AE005B97CB /* UIViewController.swift */; };
 		01766B442A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
@@ -57,7 +58,7 @@
 		01A680382A27902600DD67DC /* AnswersHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A680372A27902600DD67DC /* AnswersHeaderView.xib */; };
 		01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A765982A27AF9600D50C4B /* CategoryCollectionViewCell.swift */; };
 		01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */; };
-		01A765A02A27B64400D50C4B /* cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A7659F2A27B64400D50C4B /* cells.swift */; };
+		01A765A02A27B64400D50C4B /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A7659F2A27B64400D50C4B /* Cells.swift */; };
 		01ADB21E2A23929C007613EB /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB21D2A23929C007613EB /* FooterView.swift */; };
 		01BE0A002A40C385003B39F8 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BE09FF2A40C385003B39F8 /* PopoverView.swift */; };
 		01BE0A012A422262003B39F8 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D514362A35061300B9FF2B /* UserDefaultsManager.swift */; };
@@ -128,6 +129,8 @@
 		015B9E632A5974BD00171360 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		015B9E662A59F10300171360 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		015B9E672A59F10300171360 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		015B9E6A2A5ABA0300171360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		015B9E6F2A5AEF2400171360 /* AppNavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationHelper.swift; sourceTree = "<group>"; };
 		0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnswerViewController.swift; sourceTree = "<group>"; };
 		0160F8CB2A2949AE005B97CB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		01766B432A22379B00BA359C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -157,7 +160,7 @@
 		01A680372A27902600DD67DC /* AnswersHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersHeaderView.xib; sourceTree = "<group>"; };
 		01A765982A27AF9600D50C4B /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		01A7659F2A27B64400D50C4B /* cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cells.swift; sourceTree = "<group>"; };
+		01A7659F2A27B64400D50C4B /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		01ADB21D2A23929C007613EB /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		01BE09FF2A40C385003B39F8 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		01C84C172A508CE300C8AD77 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
@@ -264,6 +267,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		015B9E6E2A5AEF0B00171360 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				015B9E6F2A5AEF2400171360 /* AppNavigationHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		0160F8CA2A2947CB005B97CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,9 +339,11 @@
 			isa = PBXGroup;
 			children = (
 				018ED41F2A3CB9C600E9A90C /* RightTyped-Keyboard.entitlements */,
+				015B9E6A2A5ABA0300171360 /* Assets.xcassets */,
 				019E2F212A1E8EFC005A8021 /* KeyboardViewController.swift */,
 				013E084F2A22120B00FF7928 /* Constants.swift */,
 				019E2F232A1E8EFC005A8021 /* Info.plist */,
+				015B9E6E2A5AEF0B00171360 /* Helper */,
 				01ADB2212A23EDC8007613EB /* Views */,
 			);
 			path = "RightTyped-Keyboard";
@@ -407,7 +420,7 @@
 		01A765A12A27B64800D50C4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				01A7659F2A27B64400D50C4B /* cells.swift */,
+				01A7659F2A27B64400D50C4B /* Cells.swift */,
 				015B9E632A5974BD00171360 /* SettingsModel.swift */,
 			);
 			path = Model;
@@ -586,7 +599,7 @@
 				019E2F2F2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
 				013E08432A21327100FF7928 /* ContentView.xib in Resources */,
 				019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
-				0160F8C72A29444E005B97CB /* Assets.xcassets in Resources */,
+				015B9E6B2A5ABA0300171360 /* Assets.xcassets in Resources */,
 				013E084E2A21FD7600FF7928 /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,7 +626,7 @@
 				01C8A0402A324323001DBC8D /* Answer+CoreDataClass.swift in Sources */,
 				01766B442A22379B00BA359C /* UIView.swift in Sources */,
 				01A680362A27901300DD67DC /* AnswersHeaderView.swift in Sources */,
-				01A765A02A27B64400D50C4B /* cells.swift in Sources */,
+				01A765A02A27B64400D50C4B /* Cells.swift in Sources */,
 				0160F8C92A2946F3005B97CB /* NewAnswerViewController.swift in Sources */,
 				01D514372A35061300B9FF2B /* UserDefaultsManager.swift in Sources */,
 				01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */,
@@ -650,6 +663,7 @@
 				01C8A03F2A324323001DBC8D /* Category+CoreDataProperties.swift in Sources */,
 				01C8A03D2A324323001DBC8D /* Category+CoreDataClass.swift in Sources */,
 				01C8A0342A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */,
+				015B9E702A5AEF2400171360 /* AppNavigationHelper.swift in Sources */,
 				013E08452A21328100FF7928 /* ContentView.swift in Sources */,
 				01766B482A22394100BA359C /* GlobalConstant.swift in Sources */,
 				01ADB21E2A23929C007613EB /* FooterView.swift in Sources */,

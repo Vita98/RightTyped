@@ -9,6 +9,8 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>com.vitAndreAS.RightTyped</string>
+				<string>RightTyped</string>
 				<string>prefs</string>
 			</array>
 		</dict>

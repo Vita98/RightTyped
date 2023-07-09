@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="431" height="106"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGs-gw-jdg">
-                                <rect key="frame" x="20" y="15" width="375" height="76"/>
+                                <rect key="frame" x="35" y="15" width="360" height="76"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cGs-gw-jdg" firstAttribute="leading" secondItem="eB0-oc-szM" secondAttribute="leading" constant="20" id="Jbq-lu-plD"/>
+                            <constraint firstItem="cGs-gw-jdg" firstAttribute="leading" secondItem="eB0-oc-szM" secondAttribute="leading" constant="35" id="Jbq-lu-plD"/>
                             <constraint firstItem="aWU-Nv-hzI" firstAttribute="centerY" secondItem="cGs-gw-jdg" secondAttribute="centerY" id="QFw-ye-v9U"/>
                             <constraint firstItem="aWU-Nv-hzI" firstAttribute="leading" secondItem="cGs-gw-jdg" secondAttribute="trailing" constant="5" id="R8U-p1-DhV"/>
                             <constraint firstAttribute="bottom" secondItem="cGs-gw-jdg" secondAttribute="bottom" constant="15" id="TiH-x4-Eop"/>

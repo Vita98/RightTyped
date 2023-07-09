@@ -32,15 +32,14 @@ class ContentView: UIView {
     }()
     
     
-    public func configureView(withFooter: Bool){
+    public func configureView(withGlobe: Bool){
         categoryTableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "categoryTableViewCellID")
         categoryTableView.alwaysBounceVertical = false
         
-        if withFooter{
-            footerView = FooterView()
-            footerView!.frame = CGRect(x: 0, y: 0, width: 0, height: FOOTER_VIEW_HEIGHT)
-            categoryTableView.tableFooterView = footerView!
-        }
+        footerView = FooterView()
+        footerView?.withGlobe = withGlobe
+        footerView!.frame = CGRect(x: 0, y: 0, width: 0, height: FOOTER_VIEW_HEIGHT)
+        categoryTableView.tableFooterView = footerView!
     }
     
     public func resetPlaceholder(){

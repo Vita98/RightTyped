@@ -17,32 +17,79 @@ class FooterView: UIView {
     }
     */
     
-    var globeButton = UIButton(type: .custom)
+    var withGlobe: Bool = true
+    private var undoButtonEnabled = false
+    
+    var globeButton: UIButton = {
+        var button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageEdgeInsets = .init(top: 5, left: 5, bottom: 5, right: 5)
+        button.layer.cornerRadius = 5
+        button.dropShadow(shadowType: .collectionViewCell)
+        button.isEnabled = true
+        return button
+    }()
+    
+    var undoButton: UIButton = {
+        var button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageEdgeInsets = .init(top: 5, left: 5, bottom: 5, right: 5)
+        button.layer.cornerRadius = 5
+        button.dropShadow(shadowType: .collectionViewCell)
+        return button
+    }()
+    
+    var hStackView: UIStackView = {
+        var hStackView = UIStackView()
+        hStackView.backgroundColor = .clear
+        hStackView.axis = .horizontal
+        hStackView.alignment = .center
+        hStackView.distribution = .fill
+        hStackView.spacing = 20
+        hStackView.translatesAutoresizingMaskIntoConstraints = false
+        return hStackView
+    }()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        globeButton.translatesAutoresizingMaskIntoConstraints = false
-        globeButton.imageEdgeInsets = .init(top: 5, left: 5, bottom: 5, right: 5)
-        globeButton.layer.cornerRadius = 5
-        globeButton.dropShadow(shadowType: .collectionViewCell)
-        globeButton.isEnabled = true
+        if withGlobe{
+            globeButton.heightAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.height).isActive = true
+            globeButton.widthAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.width).isActive = true
+            hStackView.addArrangedSubview(globeButton)
+        }
         
-        self.addSubview(globeButton)
+        undoButton.heightAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.height).isActive = true
+        undoButton.widthAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.width).isActive = true
+        hStackView.addArrangedSubview(undoButton)
+        self.addSubview(hStackView)
         
-        globeButton.heightAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.height).isActive = true
-        globeButton.widthAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.width).isActive = true
-        globeButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        globeButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        hStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        hStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        
+        setUndoButton(enabled: false)
     }
     
     public func textDidChange(appearance: UIKeyboardAppearance){
         if appearance == .light{
             globeButton.setImage(UIImage(named: "globeIcon")?.withTintColor(.black), for: .normal)
             globeButton.backgroundColor = .white
+            undoButton.setImage(UIImage(named: "undoIcon")?.withTintColor(.black), for: .normal)
+            undoButton.backgroundColor = undoButtonEnabled ? .white : .white.withAlphaComponent(0.9)
         }else{
             globeButton.setImage(UIImage(named: "globeIcon")?.withTintColor(.white), for: .normal)
             globeButton.backgroundColor = .cellDarkBackgroudColor
+            undoButton.setImage(UIImage(named: "undoIcon")?.withTintColor(.white), for: .normal)
+            undoButton.backgroundColor = undoButtonEnabled ? .cellDarkBackgroudColor : .cellDarkBackgroudColor.withAlphaComponent(0.9)
+        }
+    }
+    
+    public func setUndoButton(enabled: Bool){
+        undoButtonEnabled = enabled
+        
+        UIView.transition(with: undoButton, duration: 0.3) {
+            self.undoButton.isEnabled = enabled
+            self.undoButton.backgroundColor = enabled ? self.undoButton.backgroundColor?.withAlphaComponent(1) : self.undoButton.backgroundColor?.withAlphaComponent(0.9)
         }
     }
 }

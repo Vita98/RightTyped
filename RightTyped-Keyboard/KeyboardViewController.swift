@@ -18,6 +18,8 @@ class KeyboardViewController: UIInputViewController {
     var keyboardAppearance : UIKeyboardAppearance?
     var categories: [Category]?
     
+    var lastTextInjected: String?
+    
     private var actualCategoryCount: Int = 0
     
     override func updateViewConstraints() {
@@ -42,7 +44,8 @@ class KeyboardViewController: UIInputViewController {
     private func setContentView(){
         guard let cV : ContentView = ContentView.instanceFromNib(withNibName: "ContentView") else { return }
         contentView = cV
-        contentView.configureView(withFooter: self.needsInputModeSwitchKey)
+        contentView.configureView(withGlobe: self.needsInputModeSwitchKey)
+        contentView.footerView?.undoButton.addTarget(self, action: #selector(undoBottonPressed), for: .touchUpInside)
         
         self.view.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -105,6 +108,7 @@ class KeyboardViewController: UIInputViewController {
         contentViewHightConstraint?.isActive = true
     }
     
+    //MARK: Event
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
     }
@@ -127,7 +131,15 @@ class KeyboardViewController: UIInputViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         setInterfaceHeight(fromWillTransition: true)
     }
-
+    
+    @objc private func undoBottonPressed(){
+        guard let _ = self.textDocumentProxy.documentContextBeforeInput, let lastTextInjected = lastTextInjected else { return }
+        for _ in lastTextInjected{
+            self.textDocumentProxy.deleteBackward()
+        }
+        contentView.footerView?.setUndoButton(enabled: false)
+        self.lastTextInjected = nil
+    }
 }
 
 extension KeyboardViewController: UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate{
@@ -161,6 +173,8 @@ extension KeyboardViewController: AnswerCollectionViewCellDelegate{
     func answerCollectionViewCellTouchUpInside(withAnswer answer: Answer) {
         print("Touch up inside")
         self.textDocumentProxy.insertText(answer.descr)
+        lastTextInjected = answer.descr
+        contentView.footerView?.setUndoButton(enabled: true)
     }
     
     func answerCollectionViewCellLongPress(withAnswer answer: Answer, state: UIGestureRecognizer.State) {
