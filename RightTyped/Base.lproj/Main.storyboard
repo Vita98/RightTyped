@@ -41,9 +41,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAP-9K-XNs">
-                                <rect key="frame" x="84" y="88" width="222" height="51.333333333333343"/>
-                                <string key="text">Personalizza le tue risposte, 
-quando e come vuoi!</string>
+                                <rect key="frame" x="95.333333333333329" y="88" width="199.33333333333337" height="51.333333333333343"/>
+                                <string key="text">Personalize your answers,
+when and how you want!</string>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@ quando e come vuoi!</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNv-tT-KBF" userLabel="scrollContainerView">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Risposta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2r-MJ-iQW">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2r-MJ-iQW">
                                                         <rect key="frame" x="23" y="5" width="307" height="34.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                                         <nil key="textColor"/>
@@ -134,7 +134,7 @@ quando e come vuoi!</string>
                                                             <action selector="enableSwitchValueChanged:" destination="M7H-gB-n8C" eventType="valueChanged" id="Lkc-6D-JmB"/>
                                                         </connections>
                                                     </switch>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-5w-BgA">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-5w-BgA">
                                                         <rect key="frame" x="23" y="83.333333333333343" width="285" height="29"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -147,26 +147,26 @@ quando e come vuoi!</string>
                                                             <constraint firstAttribute="height" constant="1" id="YeR-pP-ZQY"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-Jm-J1Y">
-                                                        <rect key="frame" x="23" y="134.33333333333334" width="344" height="28.666666666666657"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-Jm-J1Y">
+                                                        <rect key="frame" x="23" y="134.33333333333334" width="344" height="29"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viene visualizzato nella tastiera come titolo della risposta, deve essere breve" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-st-Dkc">
-                                                        <rect key="frame" x="15" y="163" width="360" height="40"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It appears in the keyboard as the title of the answer, it must be short" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-st-Dkc">
+                                                        <rect key="frame" x="15" y="163.33333333333334" width="360" height="40"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-hg-OaX">
-                                                        <rect key="frame" x="23" y="263" width="344" height="29"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-hg-OaX">
+                                                        <rect key="frame" x="23" y="263.33333333333331" width="344" height="29"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="È il testo che viene scritto come risposta, può essere lungo e dettagliato" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF1-0f-XXW">
-                                                        <rect key="frame" x="15" y="292" width="360" height="40"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is the text that is written as an answer, it can be long and detailed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF1-0f-XXW">
+                                                        <rect key="frame" x="15" y="292.33333333333331" width="360" height="40"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -174,7 +174,7 @@ quando e come vuoi!</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFV-Y2-Myb">
                                                         <rect key="frame" x="23" y="683" width="344" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salva" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-Gm-SVI">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-Gm-SVI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="344" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -191,14 +191,14 @@ quando e come vuoi!</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-PS-9Fg">
-                                                        <rect key="frame" x="23" y="213" width="344" height="40"/>
+                                                        <rect key="frame" x="23" y="213.33333333333331" width="344" height="40"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="M0A-Z9-cLG"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R7-VX-w5t">
-                                                        <rect key="frame" x="23" y="342" width="344" height="41"/>
+                                                        <rect key="frame" x="23" y="342.33333333333331" width="344" height="41"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEv-Ug-Rdz">
                                                                 <rect key="frame" x="23" y="10" width="298" height="21"/>
@@ -343,13 +343,13 @@ quando e come vuoi!</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifica Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnC-Ef-dDf">
-                                        <rect key="frame" x="10" y="80" width="330" height="34.333333333333343"/>
+                                        <rect key="frame" x="10" y="80" width="330" height="34"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v0-v5-3Tg">
-                                        <rect key="frame" x="23" y="144.33333333333331" width="304" height="28.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v0-v5-3Tg">
+                                        <rect key="frame" x="23" y="144" width="304" height="29"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -361,7 +361,7 @@ quando e come vuoi!</string>
                                             <constraint firstAttribute="height" constant="40" id="URo-7X-W97"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viene visualizzato nella tastiera come titolo della categoria, deve essere breve" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-Ml-Mh8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="It appears in the keyboard as a category title, it must be short" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-Ml-Mh8">
                                         <rect key="frame" x="15" y="173" width="320" height="40"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -380,13 +380,13 @@ quando e come vuoi!</string>
                                             <action selector="closeButtonAction:" destination="psO-Vx-axp" eventType="touchUpInside" id="gIU-Xv-ehx"/>
                                         </connections>
                                     </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPu-HM-cYo">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPu-HM-cYo">
                                         <rect key="frame" x="278" y="294" width="51" height="31"/>
                                         <connections>
                                             <action selector="enableSwitchValueChanged:" destination="gHz-eM-zOL" eventType="valueChanged" id="oct-LG-RH8"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilita" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veb-g3-as4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veb-g3-as4">
                                         <rect key="frame" x="23" y="295" width="245" height="29"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -395,7 +395,7 @@ quando e come vuoi!</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEq-Cr-shX">
                                         <rect key="frame" x="20" y="380" width="310" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salva" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuH-t6-NcM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuH-t6-NcM">
                                                 <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -760,7 +760,7 @@ Aggiungi Nuova Tastiera &gt;  Seleziona RightTyped</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zw6-aB-GK3">
                                 <rect key="frame" x="0.0" y="57" width="390" height="787"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Impostazioni" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eS-kY-g5a">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eS-kY-g5a">
                                         <rect key="frame" x="23" y="10" width="344" height="34.333333333333336"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <nil key="textColor"/>
