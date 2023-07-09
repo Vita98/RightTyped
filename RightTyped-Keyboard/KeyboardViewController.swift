@@ -46,6 +46,7 @@ class KeyboardViewController: UIInputViewController {
         contentView = cV
         contentView.configureView(withGlobe: self.needsInputModeSwitchKey)
         contentView.footerView?.undoButton.addTarget(self, action: #selector(undoBottonPressed), for: .touchUpInside)
+        contentView.footerView?.goToAppButton.addTarget(self, action: #selector(goToAppButtonPressed), for: .touchUpInside)
         
         self.view.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -100,7 +101,7 @@ class KeyboardViewController: UIInputViewController {
                     contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: size.height / 2)
                 }
             }else{
-                //Show the view telling that there are not categories available
+                //Show the view telling that there are no available categories 
                 contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: size.height / 2)
                 contentView.configurePlaceholderView(withContentViewHeight: size.height / 2, text: "Non ci sono categorie abilitate!\nEntra nell'app e abilita quelle che più fanno per te o creane delle nuove!")
             }
@@ -139,6 +140,10 @@ class KeyboardViewController: UIInputViewController {
         }
         contentView.footerView?.setUndoButton(enabled: false)
         self.lastTextInjected = nil
+    }
+    
+    @objc private func goToAppButtonPressed(){
+        AppNavigationHelper.shared.openApp(self)
     }
 }
 

@@ -39,6 +39,16 @@ class FooterView: UIView {
         return button
     }()
     
+    var goToAppButton: UIButton = {
+        var button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageEdgeInsets = .init(top: 8, left: 5, bottom: 8, right: 5)
+        button.layer.cornerRadius = 5
+        button.imageView?.contentMode = .scaleAspectFit
+        button.dropShadow(shadowType: .collectionViewCell)
+        return button
+    }()
+    
     var hStackView: UIStackView = {
         var hStackView = UIStackView()
         hStackView.backgroundColor = .clear
@@ -62,12 +72,17 @@ class FooterView: UIView {
         undoButton.heightAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.height).isActive = true
         undoButton.widthAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.width).isActive = true
         hStackView.addArrangedSubview(undoButton)
+        setUndoButton(enabled: false)
         self.addSubview(hStackView)
         
         hStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         hStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
-        setUndoButton(enabled: false)
+        self.addSubview(goToAppButton)
+        goToAppButton.heightAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.height).isActive = true
+        goToAppButton.widthAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.width).isActive = true
+        goToAppButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        goToAppButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
     public func textDidChange(appearance: UIKeyboardAppearance){
@@ -76,11 +91,16 @@ class FooterView: UIView {
             globeButton.backgroundColor = .white
             undoButton.setImage(UIImage(named: "undoIcon")?.withTintColor(.black), for: .normal)
             undoButton.backgroundColor = undoButtonEnabled ? .white : .white.withAlphaComponent(0.9)
+            goToAppButton.setImage(UIImage(named: "rIcon")?.withTintColor(.black), for: .normal)
+            goToAppButton.backgroundColor = .white
+            
         }else{
             globeButton.setImage(UIImage(named: "globeIcon")?.withTintColor(.white), for: .normal)
             globeButton.backgroundColor = .cellDarkBackgroudColor
             undoButton.setImage(UIImage(named: "undoIcon")?.withTintColor(.white), for: .normal)
-            undoButton.backgroundColor = undoButtonEnabled ? .cellDarkBackgroudColor : .cellDarkBackgroudColor.withAlphaComponent(0.9)
+            undoButton.backgroundColor = .cellDarkBackgroudColor
+            goToAppButton.setImage(UIImage(named: "rIcon")?.withTintColor(.white), for: .normal)
+            goToAppButton.backgroundColor = .cellDarkBackgroudColor
         }
     }
     
@@ -89,7 +109,12 @@ class FooterView: UIView {
         
         UIView.transition(with: undoButton, duration: 0.3) {
             self.undoButton.isEnabled = enabled
-            self.undoButton.backgroundColor = enabled ? self.undoButton.backgroundColor?.withAlphaComponent(1) : self.undoButton.backgroundColor?.withAlphaComponent(0.9)
+            
+            if enabled && self.undoButton.backgroundColor != .cellDarkBackgroudColor{
+                self.undoButton.backgroundColor = self.undoButton.backgroundColor?.withAlphaComponent(1)
+            }else if !enabled && self.undoButton.backgroundColor != .cellDarkBackgroudColor{
+                self.undoButton.backgroundColor = self.undoButton.backgroundColor?.withAlphaComponent(0.9)
+            }
         }
     }
 }
