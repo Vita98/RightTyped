@@ -32,6 +32,7 @@ class AnswersHeaderView: UIView {
         gradientView.layer.insertSublayer(gradient, at: 0)
 
         //Configuring the search bar
+        searchBar.placeholder = AppString.General.answerSearchBarPlaceholder
         searchBar.tintColor = .none
         searchBar.barTintColor = .none
         searchBar.backgroundColor = .none

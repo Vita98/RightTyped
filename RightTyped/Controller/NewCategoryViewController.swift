@@ -65,16 +65,16 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
         
         if !editMode{
             associatedCategory = Category(entity: Category.entity(), insertInto: nil)
-            titleLabel.text = "Nuova Categoria"
+            titleLabel.text = AppString.NewCategoryViewController.newCategory
         }else{
-            titleLabel.text = "Modifica Categoria"
+            titleLabel.text = AppString.NewCategoryViewController.editCategory
         }
     }
     
     private func configureTextField(){
         customTextField = CustomTextField.instanceFromNib(withNibName: "CustomTextField")
         guard let customTextField = self.customTextField else { return }
-        customTextField.inizalize(inView: textViewField,withText: associatedCategory?.name, placheolder: "Nome della Categoria")
+        customTextField.inizalize(inView: textViewField,withText: associatedCategory?.name, placheolder: AppString.NewCategoryViewController.categoryNamePlaceholder)
         customTextField.delegate = self
     }
     
@@ -114,9 +114,9 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
         if !isSavabled(){
             self.dismiss(animated: true)
         }else{
-            let alert = UIAlertController(title: "Sei sicuro?", message: "Sei sicuro di voler tornare indietro?\nLe modifiche effettuate non verranno salvate", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "No", style: .cancel))
-            alert.addAction(UIAlertAction(title: "Si", style: .destructive, handler: { alertAction in
+            let alert = UIAlertController(title: AppString.Alerts.titleAreYouSure, message: AppString.Alerts.genericGoBackWithoutSaving, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: AppString.Alerts.no, style: .cancel))
+            alert.addAction(UIAlertAction(title: AppString.Alerts.yes, style: .destructive, handler: { alertAction in
                 self.dismiss(animated: true)
             }))
             

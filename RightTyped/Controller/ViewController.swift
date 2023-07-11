@@ -155,11 +155,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let categories = categoryFetchedResultsController.fetchedObjects
         if categories == nil{
-            collectionView.setEmptyMessage("Non hai nessuna categoria!")
+            collectionView.setEmptyMessage(AppString.ViewController.emptyCategories)
             toggleComponent(enabled: false)
             return 0
         }else if categories!.isEmpty{
-            collectionView.setEmptyMessage("Non hai nessuna categoria!")
+            collectionView.setEmptyMessage(AppString.ViewController.emptyCategories)
             toggleComponent(enabled: false)
             return 0
         }
@@ -556,9 +556,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             self.view.endEditing(true)
             self.present(VC, animated: true)
         case .Delete:
-            let alert = UIAlertController(title: "Sei sicuro?", message: "Sei sicuro di voler cancellare questa categoria?\nTutte le domande associate verranno anch'esse cancellate", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "No", style: .cancel))
-            alert.addAction(UIAlertAction(title: "Si", style: .destructive, handler: { alertAction in
+            let alert = UIAlertController(title: AppString.Alerts.titleAreYouSure, message: AppString.ViewController.deleteCategoryAlertDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: AppString.Alerts.no, style: .cancel))
+            alert.addAction(UIAlertAction(title: AppString.Alerts.yes, style: .destructive, handler: { alertAction in
                 if let selectedCategory = self.selectedCategory{
                     DataModelManagerPersistentContainer.shared.context.delete(selectedCategory)
                     DataModelManagerPersistentContainer.shared.saveContext()

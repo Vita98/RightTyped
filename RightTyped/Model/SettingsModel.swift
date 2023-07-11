@@ -18,11 +18,11 @@ enum SettingsTypeEnum: String{
     public func getType() -> SettingsType {
         switch self {
         case .App:
-            return SettingsType(name: self.rawValue, index: 0)
+            return SettingsType(name: AppString.SettingsTypeEnum.app, index: 0)
         case .Keyboard:
-            return SettingsType(name: self.rawValue, index: 1)
+            return SettingsType(name: AppString.SettingsTypeEnum.keyboard, index: 1)
         case .Tutorial:
-            return SettingsType(name: self.rawValue, index: 2)
+            return SettingsType(name: AppString.SettingsTypeEnum.tutorial, index: 2)
         }
     }
     
@@ -82,11 +82,11 @@ struct SettingsModelHelper{
     private init(){}
     
     static var values: [SettingsCellModel] = {
-        return [SettingsCellModel(type: .App, itemType: .touchID, text: "Touch ID"),
-                SettingsCellModel(type: .Keyboard, itemType: .goBackToDefaultKeyboard, text: "Ritorna sulla tastiera di default all'inserire di una risposta"),
-                SettingsCellModel(type: .Tutorial, itemType: .howToEnableKeyboard, text: "Come abilitare la tastiera"),
-                SettingsCellModel(type: .Tutorial, itemType: .howToUseKeyboard, text: "Come usare la tastiera"),
-                SettingsCellModel(type: .Tutorial, itemType: .howToCustomizeKeyboard, text: "Come personalizzare la tastiera utilizzando l'app"),]
+        return [SettingsCellModel(type: .App, itemType: .touchID, text: AppString.SettingsModel.touchIDText),
+                SettingsCellModel(type: .Keyboard, itemType: .goBackToDefaultKeyboard, text: AppString.SettingsModel.goBackToDefaultKeyboardText),
+                SettingsCellModel(type: .Tutorial, itemType: .howToEnableKeyboard, text: AppString.SettingsModel.howToEnableKeyboardText),
+                SettingsCellModel(type: .Tutorial, itemType: .howToUseKeyboard, text: AppString.SettingsModel.howToUseKeyboardText),
+                SettingsCellModel(type: .Tutorial, itemType: .howToCustomizeKeyboard, text: AppString.SettingsModel.howToCustomizeKeyboardText),]
     }()
     
     static func value(at index: IndexPath) -> SettingsCellModel{

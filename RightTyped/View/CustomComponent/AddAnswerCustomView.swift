@@ -22,8 +22,8 @@ class AddAnswerCustomView: UIView {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "Risposta"
         label.font = UIFont(name: "Trakya Rounded 300 Light", size: 8)
+        label.text = AppString.General.answer
         label.textColor = .componentColor
         label.textAlignment = .center
         return label

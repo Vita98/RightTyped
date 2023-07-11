@@ -67,6 +67,8 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             enableSwitch.setOn(answer.enabled, animated: false)
         }
         
+        binLabel.text = AppString.General.delete
+        
         if isNewAnswer{
             binImageView.isHidden = true
             binLabel.isHidden = true
@@ -126,14 +128,14 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         textAreaLabelPlaceholder.removeFromSuperview()
         customTextArea = CustomTextField.instanceFromNib(withNibName: "CustomTextArea")
         guard let customTextArea = self.customTextArea else { return }
-        customTextArea.inizalize(inView: textAreaView, withText: answer?.descr, placheolder: "Descrizione della risposta")
+        customTextArea.inizalize(inView: textAreaView, withText: answer?.descr, placheolder: AppString.NewAnswerViewController.answerContentPlaceholder)
         customTextArea.delegate = self
     }
     
     private func setTextField(){
         customTextField = CustomTextField.instanceFromNib(withNibName: "CustomTextField")
         guard let customTextField = self.customTextField else { return }
-        customTextField.inizalize(inView: textFieldView, withText: answer?.title, placheolder: "Titolo della risposta")
+        customTextField.inizalize(inView: textFieldView, withText: answer?.title, placheolder: AppString.NewAnswerViewController.answerTitlePlaceholder)
         customTextField.delegate = self
     }
     
@@ -181,9 +183,9 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
     }
     
     @objc func deleteIconTouchUpInside(){
-        let alert = UIAlertController(title: "Sei sicuro?", message: "Sei sicuro di voler cancellare questa risposta?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "No", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Si", style: .destructive, handler: { alertAction in
+        let alert = UIAlertController(title: AppString.Alerts.titleAreYouSure, message: AppString.NewAnswerViewController.deleteAnswerAlertDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: AppString.Alerts.no, style: .cancel))
+        alert.addAction(UIAlertAction(title: AppString.Alerts.yes, style: .destructive, handler: { alertAction in
             if let answer = self.answer{
                 DataModelManagerPersistentContainer.shared.context.delete(answer)
                 DataModelManagerPersistentContainer.shared.saveContext()
@@ -200,9 +202,9 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         if !isSavabled(){
             navigationController?.popViewController(animated: true)
         }else{
-            let alert = UIAlertController(title: "Sei sicuro?", message: "Sei sicuro di voler tornare indietro?\nLe modifiche effettuate non verranno salvate", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "No", style: .cancel))
-            alert.addAction(UIAlertAction(title: "Si", style: .destructive, handler: { alertAction in
+            let alert = UIAlertController(title: AppString.Alerts.titleAreYouSure, message: AppString.Alerts.genericGoBackWithoutSaving, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: AppString.Alerts.no, style: .cancel))
+            alert.addAction(UIAlertAction(title: AppString.Alerts.yes, style: .destructive, handler: { alertAction in
                 self.navigationController?.popViewController(animated: true)
             }))
             

@@ -3,5 +3,48 @@
   RightTyped
 
   Created by Vitandrea Sorino on 09/07/23.
-  
+  MARK: ITALIAN
 */
+
+//MARK: General
+"GENERAL_CATEGORY" = "Categoria";
+"GENERAL_CATEGORIES" = "Categorie";
+"GENERAL_EDIT" = "Modifica";
+"GENERAL_DELETE" = "Cancella";
+"GENERAL_ANSW_SEARCH_BAR_PLACEHOLDER" = "Cerca risposta";
+"GENERAL_ANSWER" = "Risposta";
+
+//MARK: Alert
+"Alerts_YES" = "Si";
+"Alerts_NO" = "No";
+"Alerts_TITLE_ARE_YOU_SURE" = "Sei sicuro?";
+"Alerts_GO_BACK_WSAVING" = "Sei sicuro di voler tornare indietro?\nLe modifiche effettuate non verranno salvate";
+
+//MARK: Settings
+"SettingsTypeEnum_APP" = "App";
+"SettingsTypeEnum_KEYBOARD" = "Tastiera";
+"SettingsTypeEnum_TUTORIAL" = "Guide";
+
+"SettingsModel_TOUCH_ID" = "";
+"SettingsModel_GO_BACK_TO_DEFAULT_KEYBOARD" = "Ritorna sulla tastiera di default dopo aver inserito una risposta";
+"SettingsModel_HOW_TO_ENABLE_KEYBOARD" = "Come abilitare la tastiera";
+"SettingsModel_HOW_TO_USE_KEYBOARD" = "Come usare la tastiera";
+"SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD" = "Come personalizzare la tastiera utilizzando quest'app";
+
+//MARK: HomeHeaderTableViewCell
+"HomeHeaderTableViewCell_DESC" = "Hai a disposizione fino a 10 categorie";
+"HomeHeaderTableViewCell_ENABLE_CATEGORY" = "Abilita categoria selezionata";
+
+//MARK: NewCategoryViewController
+"NewCategoryViewController_NEW_CATEGORY" = "Nuova Categoria";
+"NewCategoryViewController_EDIT_CATEGORY" = "Modifica Categoria";
+"NewCategoryViewController_CAT_NAME_PLACEHOLDER" = "Nome della Categoria";
+
+//MARK: NewAnswerViewController
+"NewAnswerViewController_ANSW_TITLE_PLACEHOLDER" = "Titolo della risposta";
+"NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER" = "Descrizione della risposta";
+"NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION" = "Sei sicuro di voler cancellare questa risposta?";
+
+//MARK: ViewController
+"ViewController_DEL_CAT_ALERT_DESCRIPTION" = "Sei sicuro di voler cancellare questa categoria?\nTutte le domande associate verranno anch'esse cancellate";
+"ViewController_EMPTY_CATEGORIES" = "Non hai nessuna categoria!";

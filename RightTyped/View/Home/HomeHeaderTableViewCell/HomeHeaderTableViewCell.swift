@@ -13,6 +13,11 @@ protocol HomeHeaderTableViewCellDelegate{
 
 class HomeHeaderTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var addLabel: UILabel!
+    @IBOutlet weak var enableCatLable: UILabel!
+    
     public static var reuseID = "homeHeaderTableViewCellID"
     private var isFirstTimeOpening = true
     public var delegate: HomeHeaderTableViewCellDelegate?
@@ -54,6 +59,7 @@ class HomeHeaderTableViewCell: UITableViewCell {
         categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.reuseID)
         categoryCollectionView.clipsToBounds = false
         setGestureRecognizer()
+        configureString()
     }
     
     //MARK: Configurations
@@ -61,6 +67,15 @@ class HomeHeaderTableViewCell: UITableViewCell {
         changeContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonsPressed(sender:))))
         deleteContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonsPressed(sender:))))
         addImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonsPressed(sender:))))
+    }
+    
+    private func configureString(){
+        titleLabel.text = AppString.General.categories
+        addLabel.text = AppString.General.category
+        descLabel.text = AppString.HomeHeaderTableViewCell.description
+        enableCatLable.text = AppString.HomeHeaderTableViewCell.enableCategory
+        editLabel.text = AppString.General.edit
+        deleteLabel.text = AppString.General.delete
     }
 
     //MARK: events
