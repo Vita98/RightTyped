@@ -141,7 +141,6 @@
 		0160F8CB2A2949AE005B97CB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		016782A72A5B2E4E00DA8A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		016782A92A5B2E6200DA8A11 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
-		016782AA2A5B2E6200DA8A11 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		016782AB2A5B2E6200DA8A11 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		016782AC2A5B3BB500DA8A11 /* LocalizableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableHelper.swift; sourceTree = "<group>"; };
 		016782B62A5D6B2C00DA8A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -375,12 +374,12 @@
 			children = (
 				018ED41F2A3CB9C600E9A90C /* RightTyped-Keyboard.entitlements */,
 				015B9E6A2A5ABA0300171360 /* Assets.xcassets */,
-				016782BC2A5D6CE400DA8A11 /* Strings */,
 				019E2F212A1E8EFC005A8021 /* KeyboardViewController.swift */,
 				013E084F2A22120B00FF7928 /* Constants.swift */,
 				019E2F232A1E8EFC005A8021 /* Info.plist */,
 				015B9E6E2A5AEF0B00171360 /* Helper */,
 				01ADB2212A23EDC8007613EB /* Views */,
+				016782BC2A5D6CE400DA8A11 /* Strings */,
 			);
 			path = "RightTyped-Keyboard";
 			sourceTree = "<group>";
@@ -762,7 +761,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				019E2F132A1E8C3B005A8021 /* Base */,
-				016782AA2A5B2E6200DA8A11 /* it */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
