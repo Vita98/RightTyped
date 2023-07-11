@@ -87,7 +87,7 @@ class KeyboardViewController: UIInputViewController {
         if UserDefaultManager.shared.isFirstBootForExtension(){
             //set the maximum height to fit the view with the error message
             contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: size.height / 2)
-            contentView.configurePlaceholderView(withContentViewHeight: size.height / 2, text: "Apri l'app prima di iniziare ad usare la tastiera!")
+            contentView.configurePlaceholderView(withContentViewHeight: size.height / 2, text: KeyboardStrings.General.openAppBeforeStartText)
         }else{
             DataModelManagerPersistentContainer.tryResettingContainer()
             contentView.resetPlaceholder()
@@ -103,7 +103,7 @@ class KeyboardViewController: UIInputViewController {
             }else{
                 //Show the view telling that there are no available categories 
                 contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: size.height / 2)
-                contentView.configurePlaceholderView(withContentViewHeight: size.height / 2, text: "Non ci sono categorie abilitate!\nEntra nell'app e abilita quelle che più fanno per te o creane delle nuove!")
+                contentView.configurePlaceholderView(withContentViewHeight: size.height / 2, text: KeyboardStrings.General.noEnabledCategoriesText)
             }
         }
         contentViewHightConstraint?.isActive = true

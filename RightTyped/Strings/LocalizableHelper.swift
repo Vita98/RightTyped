@@ -62,22 +62,3 @@ struct AppString{
         static let emptyCategories: String = LocalizableString("ViewController_EMPTY_CATEGORIES").locale
     }
 }
-
-struct LocalizableString{
-    var value: String = ""
-    var locale: String {
-        get{
-            return self.value.withLocal()
-        }
-    }
-    
-    init(_ value: String){
-        self.value = value
-    }
-}
-
-extension String{
-    public func withLocal() -> String{
-        return NSLocalizedString(self, comment: "")
-    }
-}
