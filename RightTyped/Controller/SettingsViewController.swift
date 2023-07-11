@@ -80,10 +80,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
                 //TODO: do all the thing to enable or disable the touch id
             }
         case .goBackToDefaultKeyboard:
-            //TODO: Configure the cellModel.status
-            cellModel.action = {[weak self] isEnabled in
-                guard let strongSelf = self else { return }
-                //TODO: do all the thing to enable or disable the functionality
+            cellModel.status = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.GO_BACK_TO_DEF_KEYBOARD_KEY)
+            cellModel.action = { isEnabled in
+                UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.GO_BACK_TO_DEF_KEYBOARD_KEY, enabled: isEnabled)
             }
         default:
             break

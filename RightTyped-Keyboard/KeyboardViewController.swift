@@ -176,10 +176,13 @@ extension KeyboardViewController: UITableViewDelegate, UITableViewDataSource, NS
 
 extension KeyboardViewController: AnswerCollectionViewCellDelegate{
     func answerCollectionViewCellTouchUpInside(withAnswer answer: Answer) {
-        print("Touch up inside")
         self.textDocumentProxy.insertText(answer.descr)
         lastTextInjected = answer.descr
         contentView.footerView?.setUndoButton(enabled: true)
+        
+        if let goToDef = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.GO_BACK_TO_DEF_KEYBOARD_KEY), goToDef{
+            self.advanceToNextInputMode()
+        }
     }
     
     func answerCollectionViewCellLongPress(withAnswer answer: Answer, state: UIGestureRecognizer.State) {

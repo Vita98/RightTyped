@@ -14,6 +14,10 @@ class UserDefaultManager{
     static let KEYBOARD_EXTENSION_ENABLED_KEY = "AppleKeyboards"
     static let DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY = "DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY"
     
+    //MARK: Settings
+    static let TOUCH_ID_KEY = "TOUCH_ID_KEY"
+    static let GO_BACK_TO_DEF_KEYBOARD_KEY = "GO_BACK_TO_DEF_KEYBOARD_KEY"
+    
     private let SHARED_GROUP_NAME = "group.vitAndreAS.RightTypedGroup"
     
     
