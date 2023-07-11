@@ -12,6 +12,8 @@ class KeyboardEnabledViewController: UIViewController {
     @IBOutlet weak var doneButtonView: UIView!
     @IBOutlet weak var closeButton: UIButton!
     
+    var fromSettings = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,11 +25,19 @@ class KeyboardEnabledViewController: UIViewController {
     }
     
     @objc private func doneButtonViewPressed(){
-        SceneDelegate.goToHome(animated: true)
+        closeView()
     }
     
     @IBAction func closeButtonAction(_ sender: Any) {
-        SceneDelegate.goToHome(animated: true)
+        closeView()
+    }
+    
+    private func closeView(){
+        if fromSettings{
+            self.dismiss(animated: true)
+        }else{
+            SceneDelegate.goToHome(animated: true)
+        }
     }
     
     /*

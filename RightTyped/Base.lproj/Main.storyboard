@@ -640,6 +640,8 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                     <connections>
                         <outlet property="checkboxButton" destination="eYd-00-a7m" id="2Ak-cK-ttm"/>
                         <outlet property="closeButton" destination="ku3-N9-Asw" id="99n-72-vzN"/>
+                        <outlet property="doNotShowLabel" destination="Q03-9H-ffK" id="k2h-eN-GKJ"/>
+                        <outlet property="keyboardNotEnabledLabel" destination="GaR-Tt-0gV" id="x13-fg-98E"/>
                         <outlet property="keyboardNotEnabledView" destination="jGM-n1-S06" id="WKA-9z-MAj"/>
                         <outlet property="openSettingsView" destination="i5I-2y-hGz" id="Uuy-sW-LBi"/>
                     </connections>

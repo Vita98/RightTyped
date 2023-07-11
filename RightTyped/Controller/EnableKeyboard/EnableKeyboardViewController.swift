@@ -13,8 +13,11 @@ class EnableKeyboardViewController: UIViewController {
     @IBOutlet weak var keyboardNotEnabledView: UIView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var checkboxButton: UIButton!
+    @IBOutlet weak var keyboardNotEnabledLabel: UILabel!
+    @IBOutlet weak var doNotShowLabel: UILabel!
     
     var isCheckboxSelected: Bool = false
+    var fromSettings = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,19 @@ class EnableKeyboardViewController: UIViewController {
         closeButton.setTitle("", for: .normal)
         checkboxButton.setTitle("", for: .normal)
         openSettingsView.enableComponentButtonMode()
-        keyboardNotEnabledView.enableComponentButtonMode(enabled: false)
+        if UserDefaultManager.shared.isKeyboardExtensionEnabled(){
+            keyboardNotEnabledView.enableComponentButtonMode(enabled:false)
+            keyboardNotEnabledLabel.text = AppString.EnableKeyboardViewController.keyboardEnabled
+        }else{
+            keyboardNotEnabledView.enableComponentButtonMode(enabled:false)
+            keyboardNotEnabledLabel.text = AppString.EnableKeyboardViewController.keyboardDisabled
+        }
+        
+        if fromSettings{
+            doNotShowLabel.isHidden = true
+            checkboxButton.isHidden = true
+        }
+        
         openSettingsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openSettings)))
         
         // set observer for UIApplication.willEnterForegroundNotification
@@ -37,12 +52,17 @@ class EnableKeyboardViewController: UIViewController {
     
     
     @IBAction func closeButtonPression(_ sender: Any) {
-        SceneDelegate.goToHome(animated: true)
+        if fromSettings{
+            self.dismiss(animated: true)
+        }else{
+            SceneDelegate.goToHome(animated: true)
+        }
     }
     
     @objc private func willEnterForeground(){
         if UserDefaultManager.shared.isKeyboardExtensionEnabled(){
             let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "keyboardEnabledViewControllerID") as! KeyboardEnabledViewController
+            VC.fromSettings = self.fromSettings
             self.navigationController?.setViewControllers([VC], animated: true)
         }
     }

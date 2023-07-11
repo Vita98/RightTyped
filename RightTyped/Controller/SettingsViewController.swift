@@ -98,6 +98,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
         switch cellModel.itemType{
         case .howToEnableKeyboard:
             print("Vai al tutorial su come abilitare la tastiera")
+            let viewC = storyboard?.instantiateViewController(withIdentifier: "enableKeyboardViewControllerID") as! EnableKeyboardViewController
+            viewC.fromSettings = true
+            let navContr = UINavigationController(rootViewController: viewC)
+            navContr.navigationBar.isHidden = true
+            navContr.modalPresentationStyle = .fullScreen
+            self.present(navContr, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
         case .howToUseKeyboard:
             print("Vai al tutorial su come usare la tastiera")
         case .howToCustomizeKeyboard:
