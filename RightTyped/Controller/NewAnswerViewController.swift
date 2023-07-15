@@ -13,7 +13,7 @@ protocol NewAnswerViewControllerDelegate{
     func newAnswerViewController(didInsert answer: Answer)
 }
 
-class NewAnswerViewController: UIViewController, CustomComponentDelegate {
+class NewAnswerViewController: UIViewController, CustomComponentDelegate, SelectionDelegate {
 
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var containerView: UIView!
@@ -25,6 +25,10 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
     @IBOutlet private weak var textAreaLabelPlaceholder: UILabel!
     @IBOutlet weak var binImageView: UIImageView!
     @IBOutlet weak var binLabel: UILabel!
+    @IBOutlet weak var checkBox: UICheckBox!
+    
+    @IBOutlet weak var contentTitleLabel: UILabel!
+    @IBOutlet weak var contentDescrLabel: UILabel!
     
     public var isNewAnswer: Bool = false
     public var delegate: NewAnswerViewControllerDelegate?
@@ -41,10 +45,16 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             if enableSwitch != nil {
                 enableSwitch.setOn(answer.enabled, animated: false)
             }
+            if checkBox != nil{
+                checkBox.isSelected = answer.title == answer.descr && !isNewAnswer
+                originalCheckboxStatus = checkBox.isSelected
+                setContentVisibility(!checkBox.isSelected)
+            }
             originalAnswer = answer.copy()
         }
     }
     
+    private var originalCheckboxStatus: Bool?
     private var originalAnswer: Answer?
     private var answerCategory: Category?
     
@@ -63,16 +73,21 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         setTextField()
         setTextArea()
         
-        if let enableSwitch = enableSwitch, let answer = answer {
+        if let answer = answer {
             enableSwitch.setOn(answer.enabled, animated: false)
+            checkBox.isSelected = answer.title == answer.descr && !isNewAnswer
+            setContentVisibility(!checkBox.isSelected)
         }
         
         binLabel.text = AppString.General.delete
+        checkBox.selectionDelegate = self
+        originalCheckboxStatus = checkBox.isSelected
         
         if isNewAnswer{
             binImageView.isHidden = true
             binLabel.isHidden = true
-            
+            checkBox.isSelected = false
+            setContentVisibility(!checkBox.isSelected)
             answer = Answer(entity: Answer.entity(), insertInto: nil)
         }else{
             binImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteIconTouchUpInside)))
@@ -87,7 +102,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        if isSavabled(), let answer = answer, let originalAnswer = originalAnswer{
+        if isSavabled(), areChangesMade(), let answer = answer, let originalAnswer = originalAnswer{
             answer.title = originalAnswer.title
             answer.descr = originalAnswer.descr
             answer.enabled = originalAnswer.enabled
@@ -160,9 +175,9 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         self.answerCategory = category
     }
     
-    private func isSavabled() -> Bool{
+    private func areChangesMade() -> Bool{
         if let orA = originalAnswer, let currAns = answer{
-            if orA.enabled == currAns.enabled && orA.descr == currAns.descr && orA.title == currAns.title{
+            if orA.enabled == currAns.enabled && orA.descr == currAns.descr && orA.title == currAns.title && originalCheckboxStatus == checkBox.isSelected {
                 return false
             }else{
                 return true
@@ -172,6 +187,68 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         }
     }
     
+    private func isSavabled() -> Bool{
+        if let currAns = answer{
+            if (!checkBox.isSelected && (currAns.descr.isEmpty || currAns.title.isEmpty)) || (checkBox.isSelected && currAns.title.isEmpty) {
+                return false
+            }else{
+                return true
+            }
+        }else{
+            return false
+        }
+    }
+    
+    private func setContentVisibility(_ isVisible: Bool, animated: Bool = false){
+        if animated{
+            if isVisible{
+                contentDescrLabel.isHidden = false
+                contentTitleLabel.isHidden = false
+                textAreaView.isHidden = false
+            }
+            UIView.animate(withDuration: 0.2) {[weak self] in
+                guard let strongSelf = self else { return }
+                if isVisible{
+                    strongSelf.contentTitleLabel.alpha = 1
+                    strongSelf.contentDescrLabel.alpha = 1
+                    strongSelf.textAreaView.alpha = 1
+                }else{
+                    strongSelf.contentTitleLabel.alpha = 0
+                    strongSelf.contentDescrLabel.alpha = 0
+                    strongSelf.textAreaView.alpha = 0
+                }
+            } completion: { [weak self] isDone in
+                guard let strongSelf = self else { return }
+                if !isVisible{
+                    strongSelf.contentDescrLabel.isHidden = true
+                    strongSelf.contentTitleLabel.isHidden = true
+                    strongSelf.textAreaView.isHidden = true
+                }
+            }
+        }else{
+            if isVisible{
+                contentDescrLabel.isHidden = false
+                contentTitleLabel.isHidden = false
+                textAreaView.isHidden = false
+                contentTitleLabel.alpha = 1
+                contentDescrLabel.alpha = 1
+                textAreaView.alpha = 1
+            }else{
+                contentDescrLabel.isHidden = true
+                contentTitleLabel.isHidden = true
+                textAreaView.isHidden = true
+                contentTitleLabel.alpha = 0
+                contentDescrLabel.alpha = 0
+                textAreaView.alpha = 0
+            }
+        }
+    }
+    
+    // MARK: CheckBox Delegate
+    func didSelect(component: UIView, withStatus status: Bool) {
+        setContentVisibility(!status, animated: true)
+        bottomView.enableComponentButtonMode(enabled: isSavabled() && areChangesMade(), animated: true)
+    }
     
     // MARK: Events
     @IBAction func enableSwitchValueChanged(_ sender: Any) {
@@ -179,7 +256,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             answer.enabled = enableSwitch.isOn
         }
         
-        bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
+        bottomView.enableComponentButtonMode(enabled: isSavabled() && areChangesMade(), animated: true)
     }
     
     @objc func deleteIconTouchUpInside(){
@@ -199,9 +276,9 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
     }
     
     @objc func goBack() {
-        if !isSavabled(){
+        if !areChangesMade(){
             navigationController?.popViewController(animated: true)
-        }else{
+        }else if isSavabled(){
             let alert = UIAlertController(title: AppString.Alerts.titleAreYouSure, message: AppString.Alerts.genericGoBackWithoutSaving, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: AppString.Alerts.no, style: .cancel))
             alert.addAction(UIAlertAction(title: AppString.Alerts.yes, style: .destructive, handler: { alertAction in
@@ -218,11 +295,19 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
         }else if component is CustomTextField, answer != nil, customTextField != nil{
             answer!.title = customTextField!.currentText!
         }
-        bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
+        bottomView.enableComponentButtonMode(enabled: isSavabled() && areChangesMade(), animated: true)
     }
     
     @objc func bottomViewTouchUpInside(){
-        if isSavabled(){
+        if isSavabled() && areChangesMade(){
+            if let answ = answer{
+                if checkBox.isSelected{
+                    self.answer?.descr = answ.title
+                }else if let txtArea = customTextArea {
+                    self.answer?.descr = txtArea.currentText ?? ""
+                }
+            }
+            
             if isNewAnswer{
                 if let answer = answer, let category = answerCategory{
                     let objToSave = Answer(into: category)
@@ -230,7 +315,8 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
                     category.addToAnswers(objToSave)
                     if category.save() {
                         originalAnswer = objToSave.copy()
-                        bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
+                        originalCheckboxStatus = checkBox.isSelected
+                        bottomView.enableComponentButtonMode(enabled: isSavabled() && areChangesMade(), animated: true)
                         self.navigationController?.popViewController(animated: true, completion: { [weak self] in
                             self?.delegate?.newAnswerViewController(didInsert: objToSave)
                         })
@@ -239,7 +325,8 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate {
             }else{
                 if let saved = answer?.save(), saved{
                     originalAnswer = answer?.copy()
-                    bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
+                    originalCheckboxStatus = checkBox.isSelected
+                    bottomView.enableComponentButtonMode(enabled: isSavabled() && areChangesMade(), animated: true)
                     delegate?.newAnswerViewController(didChange: answer!, at: originTableViewIndexPath)
                 }
             }

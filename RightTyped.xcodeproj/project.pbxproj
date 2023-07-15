@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01063BEC2A629BBA00B0E7C7 /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01063BEB2A629BBA00B0E7C7 /* UICheckBox.swift */; };
 		0120274F2A25123F00B62039 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120274E2A25123F00B62039 /* Constant.swift */; };
 		012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012027502A2514ED00B62039 /* AnswerTableViewCell.swift */; };
 		012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012027512A2514ED00B62039 /* AnswerTableViewCell.xib */; };
@@ -115,6 +116,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01063BEB2A629BBA00B0E7C7 /* UICheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
 		0120274E2A25123F00B62039 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		012027502A2514ED00B62039 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		012027512A2514ED00B62039 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				01DA1C2C2A2CFF7800A28CE7 /* CustomTextArea */,
 				01DA1C2B2A2B52FE00A28CE7 /* CustomTextField */,
 				01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */,
+				01063BEB2A629BBA00B0E7C7 /* UICheckBox.swift */,
 			);
 			path = CustomComponent;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */,
 				019EEC472A4DEE1C004C2761 /* UISwitch.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
+				01063BEC2A629BBA00B0E7C7 /* UICheckBox.swift in Sources */,
 				01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */,
 				01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,

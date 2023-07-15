@@ -24,9 +24,18 @@ class CustomTextArea: UIView, UITextViewDelegate {
         }
     }
     
+    //MARK: Configuration
+    public func inizalize(inView view : UIView, withText text: String? = nil, placheolder: String? = nil){
+        setUp(inView: view)
+        
+        if let p = placheolder, !p.isEmpty{
+            placeholderLabel.text = p
+        }
+        currentText = text
+        setEditingMode(enabled: false)
+    }
     
     private func setUp(inView view: UIView){
-        
         view.addSubview(self)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -49,9 +58,9 @@ class CustomTextArea: UIView, UITextViewDelegate {
         self.contentView.layer.borderColor = UIColor.clear.cgColor
         
         placeholderLabel.isHidden = true
-        
     }
     
+    //MARK: Events
     @objc private func buttonPressed(){
         if isEditing{
             textView.endEditing(true)
@@ -61,6 +70,18 @@ class CustomTextArea: UIView, UITextViewDelegate {
         }
     }
     
+    internal func textViewDidEndEditing(_ textView: UITextView) {
+        disableEditing()
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        currentText = textView.text
+        if let currentText = currentText{
+            delegate?.didSetNewValue(component: self, newValue: currentText)
+        }
+    }
+    
+    //MARK: Private event manager
     private func disableEditing(){
         currentText = textView.text
         setEditingMode(enabled: false)
@@ -70,10 +91,6 @@ class CustomTextArea: UIView, UITextViewDelegate {
         if let currentText = currentText{
             delegate?.didSetNewValue(component: self, newValue: currentText)
         }
-    }
-    
-    internal func textViewDidEndEditing(_ textView: UITextView) {
-        disableEditing()
     }
     
     private func toggleBorder(enabled : Bool){
@@ -102,16 +119,11 @@ class CustomTextArea: UIView, UITextViewDelegate {
         }
     }
     
-    
-    
-    public func inizalize(inView view : UIView, withText text: String? = nil, placheolder: String? = nil){
-        setUp(inView: view)
-        
-        if let p = placheolder, !p.isEmpty{
-            placeholderLabel.text = p
+    public func showError(animated: Bool = true){
+        if animated{
+            self.contentView.animateBorderColor(toColor: UIColor.red, duration: 0.2)
+        }else{
+            self.contentView.layer.borderColor = UIColor.red.cgColor
         }
-        currentText = text
-        setEditingMode(enabled: false)
     }
-
 }

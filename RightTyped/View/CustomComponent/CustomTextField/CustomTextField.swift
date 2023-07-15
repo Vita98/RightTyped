@@ -25,14 +25,15 @@ class CustomTextField: UIView, UITextFieldDelegate {
     
     private var isEditing = false
     
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    //MARK: Configuration
+    public func inizalize(inView view : UIView, withText text: String? = nil, placheolder: String? = nil){
+        setUp(inView: view)
+        
+        textField.placeholder = placheolder
+        currentText = text
+        
+        setEditingMode(enabled: false)
     }
-    */
     
     private func setUp(inView view: UIView){
         
@@ -57,23 +58,13 @@ class CustomTextField: UIView, UITextFieldDelegate {
         self.contentView.layer.borderColor = UIColor.clear.cgColor
     }
     
+    //MARK: Events
     @objc private func buttonPressed(){
         if isEditing{
             endEditing(true)
         }else{
             isEditing = true
             setEditingMode(enabled: true)
-        }
-    }
-    
-    private func disableEditing(){
-        currentText = textField.text
-        setEditingMode(enabled: false)
-        isEditing = false
-        endEditing(true)
-        
-        if let currentText = currentText{
-            delegate?.didSetNewValue(component: self, newValue: currentText)
         }
     }
     
@@ -85,8 +76,25 @@ class CustomTextField: UIView, UITextFieldDelegate {
         disableEditing()
         return false
     }
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        currentText = textField.text
+        if let currentText = currentText{
+            delegate?.didSetNewValue(component: self, newValue: currentText)
+        }
+    }
     
-    
+    //MARK: Private event manager
+    private func disableEditing(){
+        currentText = textField.text
+        setEditingMode(enabled: false)
+        isEditing = false
+        endEditing(true)
+        
+        if let currentText = currentText{
+            delegate?.didSetNewValue(component: self, newValue: currentText)
+        }
+    }
     
     private func toggleBorder(enabled : Bool){
         if enabled{
@@ -121,14 +129,11 @@ class CustomTextField: UIView, UITextFieldDelegate {
         }
     }
     
-    
-    public func inizalize(inView view : UIView, withText text: String? = nil, placheolder: String? = nil){
-        setUp(inView: view)
-        
-        textField.placeholder = placheolder
-        currentText = text
-        
-        setEditingMode(enabled: false)
+    public func showError(animated: Bool = true){
+        if animated{
+            self.contentView.animateBorderColor(toColor: UIColor.red, duration: 0.2)
+        }else{
+            self.contentView.layer.borderColor = UIColor.red.cgColor
+        }
     }
-
 }

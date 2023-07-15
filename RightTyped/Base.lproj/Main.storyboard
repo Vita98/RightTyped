@@ -115,6 +115,19 @@ when and how you want!</string>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="binIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xde-8v-1z1">
+                                                        <rect key="frame" x="340" y="15" width="20" height="23"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="5uA-I8-UUQ"/>
+                                                            <constraint firstAttribute="height" constant="23" id="Uvu-Gs-xDy"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancella" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVU-Zd-AMk">
+                                                        <rect key="frame" x="332.66666666666669" y="38" width="35" height="13"/>
+                                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="9"/>
+                                                        <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Fill in all the fields of the answer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="942-6P-fSg">
                                                         <rect key="frame" x="15" y="39.333333333333329" width="307.66666666666669" height="20"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
@@ -135,7 +148,7 @@ when and how you want!</string>
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-5w-BgA">
-                                                        <rect key="frame" x="23" y="83.333333333333343" width="285" height="29"/>
+                                                        <rect key="frame" x="23" y="83.666666666666657" width="285" height="28.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -148,29 +161,82 @@ when and how you want!</string>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-Jm-J1Y">
-                                                        <rect key="frame" x="23" y="134.33333333333334" width="344" height="29"/>
+                                                        <rect key="frame" x="23" y="134.33333333333334" width="344" height="28.666666666666657"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It appears in the keyboard as the title of the answer, it must be short" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-st-Dkc">
-                                                        <rect key="frame" x="15" y="163.33333333333334" width="360" height="40"/>
+                                                        <rect key="frame" x="15" y="163" width="360" height="40"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-PS-9Fg">
+                                                        <rect key="frame" x="23" y="213" width="344" height="40"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="M0A-Z9-cLG"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUo-Zk-QZg">
+                                                        <rect key="frame" x="54.333333333333343" y="273" width="281.33333333333326" height="20"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lcf-Zb-aOL" customClass="UICheckBox" customModule="RightTyped" customModuleProvider="target">
+                                                                <rect key="frame" x="0.6666666666666643" y="1.6666666666666856" width="17" height="17"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="17" id="NSW-a2-2OI"/>
+                                                                    <constraint firstAttribute="width" constant="17" id="Wzj-XS-IzS"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="use the title as the content of the answer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqm-9Q-iNR">
+                                                                <rect key="frame" x="27.666666666666671" y="0.0" width="253.66666666666663" height="20"/>
+                                                                <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="Cqm-9Q-iNR" secondAttribute="bottom" id="3ef-U4-kJf"/>
+                                                            <constraint firstItem="Cqm-9Q-iNR" firstAttribute="leading" secondItem="Lcf-Zb-aOL" secondAttribute="trailing" constant="10" id="XnJ-Z5-VmH"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Cqm-9Q-iNR" secondAttribute="trailing" id="olC-gk-6Qq"/>
+                                                            <constraint firstItem="Lcf-Zb-aOL" firstAttribute="leading" secondItem="cUo-Zk-QZg" secondAttribute="leading" constant="0.67000000000000004" id="wVw-fK-I7W"/>
+                                                            <constraint firstItem="Cqm-9Q-iNR" firstAttribute="centerY" secondItem="Lcf-Zb-aOL" secondAttribute="centerY" id="xgt-er-PYL"/>
+                                                            <constraint firstItem="Cqm-9Q-iNR" firstAttribute="top" secondItem="cUo-Zk-QZg" secondAttribute="top" id="xr6-rQ-3wu"/>
+                                                        </constraints>
+                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-hg-OaX">
-                                                        <rect key="frame" x="23" y="263.33333333333331" width="344" height="29"/>
+                                                        <rect key="frame" x="23" y="313" width="344" height="28.666666666666686"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is the text that is written as an answer, it can be long and detailed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF1-0f-XXW">
-                                                        <rect key="frame" x="15" y="292.33333333333331" width="360" height="40"/>
+                                                        <rect key="frame" x="15" y="341.66666666666669" width="360" height="40"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R7-VX-w5t">
+                                                        <rect key="frame" x="23" y="391.66666666666669" width="344" height="41"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEv-Ug-Rdz">
+                                                                <rect key="frame" x="23" y="10" width="298" height="21"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="aEv-Ug-Rdz" secondAttribute="trailing" constant="23" id="Qhf-Se-5BH"/>
+                                                            <constraint firstItem="aEv-Ug-Rdz" firstAttribute="leading" secondItem="5R7-VX-w5t" secondAttribute="leading" constant="23" id="iMw-dh-Ubi"/>
+                                                            <constraint firstAttribute="bottom" secondItem="aEv-Ug-Rdz" secondAttribute="bottom" constant="10" id="pLQ-7c-1VP"/>
+                                                            <constraint firstItem="aEv-Ug-Rdz" firstAttribute="top" secondItem="5R7-VX-w5t" secondAttribute="top" constant="10" id="raG-Lv-MRi"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFV-Y2-Myb">
                                                         <rect key="frame" x="23" y="683" width="344" height="50"/>
                                                         <subviews>
@@ -190,44 +256,6 @@ when and how you want!</string>
                                                             <constraint firstAttribute="height" constant="50" id="nci-cq-Sxo"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-PS-9Fg">
-                                                        <rect key="frame" x="23" y="213.33333333333331" width="344" height="40"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="M0A-Z9-cLG"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R7-VX-w5t">
-                                                        <rect key="frame" x="23" y="342.33333333333331" width="344" height="41"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEv-Ug-Rdz">
-                                                                <rect key="frame" x="23" y="10" width="298" height="21"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="aEv-Ug-Rdz" secondAttribute="trailing" constant="23" id="Qhf-Se-5BH"/>
-                                                            <constraint firstItem="aEv-Ug-Rdz" firstAttribute="leading" secondItem="5R7-VX-w5t" secondAttribute="leading" constant="23" id="iMw-dh-Ubi"/>
-                                                            <constraint firstAttribute="bottom" secondItem="aEv-Ug-Rdz" secondAttribute="bottom" constant="10" id="pLQ-7c-1VP"/>
-                                                            <constraint firstItem="aEv-Ug-Rdz" firstAttribute="top" secondItem="5R7-VX-w5t" secondAttribute="top" constant="10" id="raG-Lv-MRi"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="binIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xde-8v-1z1">
-                                                        <rect key="frame" x="340" y="15" width="20" height="23"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="5uA-I8-UUQ"/>
-                                                            <constraint firstAttribute="height" constant="23" id="Uvu-Gs-xDy"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancella" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVU-Zd-AMk">
-                                                        <rect key="frame" x="332.66666666666669" y="38" width="35" height="13"/>
-                                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="9"/>
-                                                        <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -235,12 +263,12 @@ when and how you want!</string>
                                                     <constraint firstItem="lVU-Zd-AMk" firstAttribute="top" secondItem="xde-8v-1z1" secondAttribute="bottom" id="0yQ-mn-TUG"/>
                                                     <constraint firstItem="942-6P-fSg" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="1Lh-IR-gaB"/>
                                                     <constraint firstAttribute="trailing" secondItem="Uba-st-Dkc" secondAttribute="trailing" constant="15" id="26z-p5-o1h"/>
+                                                    <constraint firstItem="cUo-Zk-QZg" firstAttribute="top" secondItem="O5c-PS-9Fg" secondAttribute="bottom" constant="20" id="2el-QJ-QcO"/>
                                                     <constraint firstItem="xde-8v-1z1" firstAttribute="centerX" secondItem="lVU-Zd-AMk" secondAttribute="centerX" id="3C9-Pe-ifI"/>
                                                     <constraint firstAttribute="trailing" secondItem="hG9-hg-OaX" secondAttribute="trailing" constant="23" id="5TG-Py-CQK"/>
                                                     <constraint firstItem="5R7-VX-w5t" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="CHk-L9-F1a"/>
                                                     <constraint firstItem="7wt-7S-h2R" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="10" id="CfP-2E-XpU"/>
                                                     <constraint firstAttribute="trailing" secondItem="PyR-Lk-sO6" secondAttribute="trailing" constant="10" id="EZz-jx-OeT"/>
-                                                    <constraint firstItem="hG9-hg-OaX" firstAttribute="top" secondItem="O5c-PS-9Fg" secondAttribute="bottom" constant="10" id="JDN-N1-ttM"/>
                                                     <constraint firstAttribute="trailing" secondItem="YFV-Y2-Myb" secondAttribute="trailing" constant="23" id="Jje-i4-S8K"/>
                                                     <constraint firstAttribute="bottom" secondItem="YFV-Y2-Myb" secondAttribute="bottom" constant="20" id="KEt-4Y-sr7"/>
                                                     <constraint firstItem="5R7-VX-w5t" firstAttribute="top" secondItem="NF1-0f-XXW" secondAttribute="bottom" constant="10" id="KdI-WG-TQT"/>
@@ -253,6 +281,7 @@ when and how you want!</string>
                                                     <constraint firstAttribute="trailing" secondItem="7wt-7S-h2R" secondAttribute="trailing" constant="10" id="TQy-Mw-rAg"/>
                                                     <constraint firstItem="942-6P-fSg" firstAttribute="top" secondItem="M2r-MJ-iQW" secondAttribute="bottom" id="WHp-6M-8Bt"/>
                                                     <constraint firstItem="O5c-PS-9Fg" firstAttribute="top" secondItem="Uba-st-Dkc" secondAttribute="bottom" constant="10" id="XVs-h2-PI4"/>
+                                                    <constraint firstItem="hG9-hg-OaX" firstAttribute="top" secondItem="cUo-Zk-QZg" secondAttribute="bottom" constant="20" id="Xdh-dj-wZr"/>
                                                     <constraint firstItem="O5c-PS-9Fg" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="YUj-bJ-Hfw"/>
                                                     <constraint firstItem="7wt-7S-h2R" firstAttribute="top" secondItem="tb3-bk-Yfk" secondAttribute="bottom" constant="10" id="Zgk-KT-pHK"/>
                                                     <constraint firstItem="M2r-MJ-iQW" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="a5k-vj-bN1"/>
@@ -273,6 +302,7 @@ when and how you want!</string>
                                                     <constraint firstAttribute="trailing" secondItem="NF1-0f-XXW" secondAttribute="trailing" constant="15" id="pir-in-RXc"/>
                                                     <constraint firstItem="tb3-bk-Yfk" firstAttribute="top" secondItem="PyR-Lk-sO6" secondAttribute="bottom" constant="10" id="rSg-Vy-u1n"/>
                                                     <constraint firstItem="PyR-Lk-sO6" firstAttribute="top" secondItem="942-6P-fSg" secondAttribute="bottom" constant="12" id="skD-xK-B4g"/>
+                                                    <constraint firstItem="cUo-Zk-QZg" firstAttribute="centerX" secondItem="JNv-tT-KBF" secondAttribute="centerX" id="vrg-WA-mzJ"/>
                                                     <constraint firstItem="tb3-bk-Yfk" firstAttribute="leading" secondItem="qAE-5w-BgA" secondAttribute="trailing" constant="10" id="xBh-tE-qrP"/>
                                                 </constraints>
                                             </view>
@@ -312,7 +342,10 @@ when and how you want!</string>
                         <outlet property="binImageView" destination="xde-8v-1z1" id="Bd6-KY-5JD"/>
                         <outlet property="binLabel" destination="lVU-Zd-AMk" id="gan-IQ-0bj"/>
                         <outlet property="bottomView" destination="YFV-Y2-Myb" id="v5f-J1-Yop"/>
+                        <outlet property="checkBox" destination="Lcf-Zb-aOL" id="VFA-lV-Wgu"/>
                         <outlet property="containerView" destination="NgR-Bq-yTl" id="kZl-7e-xM3"/>
+                        <outlet property="contentDescrLabel" destination="NF1-0f-XXW" id="ylS-rk-Ysn"/>
+                        <outlet property="contentTitleLabel" destination="hG9-hg-OaX" id="EWs-Gz-CXg"/>
                         <outlet property="enableSwitch" destination="tb3-bk-Yfk" id="93e-38-dJk"/>
                         <outlet property="scrollView" destination="dT8-Dm-6bs" id="Tic-TS-TbB"/>
                         <outlet property="textAreaLabelPlaceholder" destination="aEv-Ug-Rdz" id="GW8-8e-Dac"/>
@@ -387,7 +420,7 @@ when and how you want!</string>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veb-g3-as4">
-                                        <rect key="frame" x="23" y="295" width="245" height="29"/>
+                                        <rect key="frame" x="23" y="295.33333333333331" width="245" height="28.666666666666686"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
