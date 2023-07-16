@@ -6,6 +6,9 @@
   MARK: ITALIAN
 */
 
+//MARK: Language
+"LOCALIZED_LANGUAGE" = "IT";
+
 //MARK: General
 "GENERAL_CATEGORY" = "Categoria";
 "GENERAL_CATEGORIES" = "Categorie";

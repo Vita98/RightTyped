@@ -9,6 +9,15 @@ import Foundation
 
 struct AppString{
     
+    struct Language{
+        static let localizedLanguage: String = LocalizableString("LOCALIZED_LANGUAGE").locale
+        
+        enum InstalledLanguages: String{
+            case IT = "IT"
+            case EN = "EN"
+        }
+    }
+    
     struct General{
         static let category: String = LocalizableString("GENERAL_CATEGORY").locale
         static let categories: String = LocalizableString("GENERAL_CATEGORIES").locale
