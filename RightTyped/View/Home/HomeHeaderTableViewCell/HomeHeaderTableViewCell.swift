@@ -22,6 +22,7 @@ class HomeHeaderTableViewCell: UITableViewCell {
     private var isFirstTimeOpening = true
     public var delegate: HomeHeaderTableViewCellDelegate?
     private var enabled: Bool = true
+    private var addButtonEnabled: Bool = true
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet private weak var categorySwitch: UISwitch!
@@ -72,7 +73,7 @@ class HomeHeaderTableViewCell: UITableViewCell {
     private func configureString(){
         titleLabel.text = AppString.General.categories
         addLabel.text = AppString.General.category
-        descLabel.text = AppString.HomeHeaderTableViewCell.description
+        descLabel.text = String(format: AppString.HomeHeaderTableViewCell.description, MAXIMUM_CATEGORIES_AVAILABLE) 
         enableCatLable.text = AppString.HomeHeaderTableViewCell.enableCategory
         editLabel.text = AppString.General.edit
         deleteLabel.text = AppString.General.delete
@@ -81,11 +82,11 @@ class HomeHeaderTableViewCell: UITableViewCell {
     //MARK: events
     @objc func buttonsPressed(sender: UITapGestureRecognizer){
         if let delegate = delegate{
-            if sender.view is UIImageView{
+            if sender.view == addImageView, addButtonEnabled {
                 delegate.homeHeaderTableViewCellDidPressed(event: .AddNew)
             }else if sender.view == changeContentView, self.enabled{
                 delegate.homeHeaderTableViewCellDidPressed(event: .Change)
-            }else if self.enabled{
+            }else if sender.view == deleteContentView, self.enabled{
                 delegate.homeHeaderTableViewCellDidPressed(event: .Delete)
             }
         }
@@ -114,6 +115,20 @@ class HomeHeaderTableViewCell: UITableViewCell {
                 strongSelf.deleteLabel.textColor = .componentColor.disabled()
                 strongSelf.editIconImageView.image = strongSelf.editIconImageView.image?.withTintColor(.componentColor.disabled())
                 strongSelf.deleteIconImageView.image = strongSelf.deleteIconImageView.image?.withTintColor(.componentColor.disabled())
+            }
+        }
+    }
+    
+    public func enableAddButton(_ enabled: Bool, animated: Bool = false){
+        addButtonEnabled = enabled
+        UIView.animate(withDuration: animated ? 0.3 : 0) {[weak self] in
+            guard let strongSelf = self else { return }
+            if enabled{
+                strongSelf.addLabel.textColor = .componentColor
+                strongSelf.addImageView.image = strongSelf.addImageView.image?.withTintColor(.componentColor)
+            }else{
+                strongSelf.addLabel.textColor = .componentColor.disabled()
+                strongSelf.addImageView.image = strongSelf.addImageView.image?.withTintColor(.componentColor.disabled())
             }
         }
     }

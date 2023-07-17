@@ -35,7 +35,7 @@
 "SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD" = "Come personalizzare la tastiera utilizzando quest'app";
 
 //MARK: HomeHeaderTableViewCell
-"HomeHeaderTableViewCell_DESC" = "Hai a disposizione fino a 10 categorie";
+"HomeHeaderTableViewCell_DESC" = "Hai a disposizione fino a %d categorie";
 "HomeHeaderTableViewCell_ENABLE_CATEGORY" = "Abilita categoria selezionata";
 
 //MARK: NewCategoryViewController

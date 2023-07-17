@@ -124,6 +124,13 @@ class ViewController: UIViewController {
         }
     }
     
+    private func updateAddCatIconVisibility(){
+        //Updating the add category icon
+        if let count = categoryFetchedResultsController.fetchedObjects?.count{
+            homeHeaderTableViewCell?.enableAddButton(count < 5, animated: true)
+        }
+    }
+    
     //MARK: Keyboard events
     private func addObservers(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -154,14 +161,19 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, NewCategoryViewControllerDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let categories = categoryFetchedResultsController.fetchedObjects
-        if categories == nil{
+        guard let cat = categories, !cat.isEmpty else {
             collectionView.setEmptyMessage(AppString.ViewController.emptyCategories)
             toggleComponent(enabled: false)
+            homeHeaderTableViewCell?.enableAddButton(true)
             return 0
-        }else if categories!.isEmpty{
-            collectionView.setEmptyMessage(AppString.ViewController.emptyCategories)
-            toggleComponent(enabled: false)
-            return 0
+        }
+        
+        if categories!.count  < 5{
+            //enable the add button
+            homeHeaderTableViewCell?.enableAddButton(true)
+        }else{
+            //disable the add button
+            homeHeaderTableViewCell?.enableAddButton(false)
         }
         
         collectionView.restore()
@@ -285,6 +297,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                     cell.selectedCategory = selectedCategory
                 }
             }
+            updateAddCatIconVisibility()
         }
     }
     
@@ -604,6 +617,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
                 self.searchedAnswers = nil
                 answersTableView.reloadSections(IndexSet(integer: 1), with: .fade)
             }
+            updateAddCatIconVisibility()
         }
     }
 }

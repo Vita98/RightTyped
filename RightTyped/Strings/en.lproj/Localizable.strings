@@ -35,7 +35,7 @@
 "SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD" = "How to customize your keyboard using this app";
 
 //MARK: HomeHeaderTableViewCell
-"HomeHeaderTableViewCell_DESC" = "You have maximum 10 categories";
+"HomeHeaderTableViewCell_DESC" = "You have maximum %d categories";
 "HomeHeaderTableViewCell_ENABLE_CATEGORY" = "Enable selected category";
 
 //MARK: NewCategoryViewController

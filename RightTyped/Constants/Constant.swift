@@ -9,3 +9,4 @@ import Foundation
 import UIKit
 
 let SEARCH_BAR_SECTION_HEADER_HEIGHT : CGFloat = 59
+let MAXIMUM_CATEGORIES_AVAILABLE = 5
