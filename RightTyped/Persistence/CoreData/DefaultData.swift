@@ -13,7 +13,7 @@ private let ANSWERS_KEY = "ANSWERS"
 private let TITLE_KEY = "TITLE"
 private let DESC_KEY = "DESC"
 
-private let HARD_CODED_DATA_IT: [[String:Any]] = [[NAME_KEY:"Italia: più usate ", ANSWERS_KEY:[[TITLE_KEY:"Ti amo!", DESC_KEY: "Ti amo!"],
+private let HARD_CODED_DATA_IT: [[String:Any]] = [[NAME_KEY:"Italia: più usate 🫶", ANSWERS_KEY:[[TITLE_KEY:"Ti amo!", DESC_KEY: "Ti amo!"],
                                                                                               [TITLE_KEY:"Quando torni?", DESC_KEY: "Quando torni?"],
                                                                                               [TITLE_KEY:"Dove sei?", DESC_KEY: "Dove sei?"],
                                                                                               [TITLE_KEY:"Ci vediamo dopo!", DESC_KEY: "Ci vediamo dopo!"]]],
@@ -26,10 +26,20 @@ private let HARD_CODED_DATA_IT: [[String:Any]] = [[NAME_KEY:"Italia: più usate 
                                                                                            [TITLE_KEY:"Vieni dallo spazio?", DESC_KEY: "Vieni dallo spazio? No, perché la tua bellezza è fuori da questo mondo."],
                                                                                            [TITLE_KEY:"Dimenticanze", DESC_KEY: "Sei così bella che ho dimenticato la frase da rimorchio."]]]]
 
-private let HARD_CODED_DATA_EN: [[String:Any]] = [[NAME_KEY:"Bella categoria0", ANSWERS_KEY:[[TITLE_KEY:"Titolo della risposta0", DESC_KEY: "Descrizione della risposta0"],
-                                                                                           [TITLE_KEY:"Titolo della risposta12", DESC_KEY: "Descrizione della risposta12"]]],
-                                                [NAME_KEY:"Bella categoria1", ANSWERS_KEY:[[TITLE_KEY:"Titolo della risposta1", DESC_KEY: "Descrizione della risposta1"]]],
-                                                [NAME_KEY:"Bella categoria2", ANSWERS_KEY:[[TITLE_KEY:"Titolo della risposta2", DESC_KEY: "Descrizione della risposta2"]]]]
+private let HARD_CODED_DATA_EN: [[String:Any]] = [[NAME_KEY:"Most common 🫶", ANSWERS_KEY:[[TITLE_KEY:"I love you!", DESC_KEY: "I love you!"],
+                                                                                              [TITLE_KEY:"When are you coming back?", DESC_KEY: "When are you coming back?"],
+                                                                                              [TITLE_KEY:"Where are you?", DESC_KEY: "Where are you?"],
+                                                                                              [TITLE_KEY:"See you later!", DESC_KEY: "See you later!"]]],
+                                                  [NAME_KEY:"Office 📈", ANSWERS_KEY:[[TITLE_KEY:"We will talk tomorrow", DESC_KEY: "Hi, now I can't answer and it's late, we'll talk directly tomorrow in the early morning"],
+                                                                                 [TITLE_KEY:"I'll send you an email", DESC_KEY: "Sure, as soon as I have a free moment, I'll email it to you"],
+                                                                                 [TITLE_KEY:"Greetings", DESC_KEY: "By! Have a nice evening!"],
+                                                                                 [TITLE_KEY:"I'm in a meeting!", DESC_KEY: "Hi, I'm in a meeting and can't answer. I'll call you back as soon as I'm free."]]],
+                                                [NAME_KEY:"Pick up lines 😜", ANSWERS_KEY:[[TITLE_KEY:"Five cents", DESC_KEY: "If I had a nickel for every time I saw someone as cute as you, I’d have five cents."],
+                                                                                           [TITLE_KEY:"Are you from Disneyland?", DESC_KEY: "Are you from Disneyland? They say it’s the happiest place on earth, so I figured it would be wherever you are."],
+                                                                                           [TITLE_KEY:"Blinded by your beauty", DESC_KEY: "Look, I’ve been blinded by your beauty. My insurance company is going to need your name and number."],
+                                                                                           [TITLE_KEY:"Your eyes are like Ikea.", DESC_KEY: "Your eyes are like Ikea. I’m totally lost in them."],
+                                                                                           [TITLE_KEY:"Yoda I am", DESC_KEY: "Roses are red. Violets are blue. Yoda I am. Go out with me will you?"],
+                                                                                           [TITLE_KEY:"Hide and seek!", DESC_KEY: "You must be terrible at hide and seek. Someone like you is so hard to find!"]]]]
 
 class DefaultData{
     
