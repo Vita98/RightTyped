@@ -169,7 +169,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             return 0
         }
         
-        if categories!.count  < 5{
+        if categories!.count < MAXIMUM_CATEGORIES_AVAILABLE{
             //enable the add button
             homeHeaderTableViewCell?.enableAddButton(true)
         }else{

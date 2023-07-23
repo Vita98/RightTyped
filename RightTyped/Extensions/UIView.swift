@@ -96,7 +96,6 @@ extension UIView{
     /// - Parameter nibName: the name of the associated xib file
     /// - Returns: the results UIView
     /// - Warning: if nibName is nil, the xib files will have the same name as the given Generic class T. Force casting to the give T to specify the generic
-    /// - Discussion: ciao
     class func instanceFromNib<T : UIView>(withNibName nibName: String?) -> T? {
         if let nibName = nibName{
             return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
