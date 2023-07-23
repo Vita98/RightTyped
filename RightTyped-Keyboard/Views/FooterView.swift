@@ -76,13 +76,21 @@ class FooterView: UIView {
         self.addSubview(hStackView)
         
         hStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        hStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        if withGlobe{
+            hStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        }else{
+            hStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        }
         
-        self.addSubview(goToAppButton)
         goToAppButton.heightAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.height).isActive = true
         goToAppButton.widthAnchor.constraint(equalToConstant: GLOBE_ICON_SIZE.width).isActive = true
-        goToAppButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
-        goToAppButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        if withGlobe{
+            self.addSubview(goToAppButton)
+            goToAppButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+            goToAppButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        }else{
+            hStackView.addArrangedSubview(goToAppButton)
+        }
     }
     
     public func textDidChange(appearance: UIKeyboardAppearance){

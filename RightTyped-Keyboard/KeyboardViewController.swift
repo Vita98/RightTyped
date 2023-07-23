@@ -94,7 +94,7 @@ class KeyboardViewController: UIInputViewController {
             actualCategoryCount = Category.getCategoryCount(withAtLeastOneEnabledAnswer: true)
             print("CAT COUNT: \(actualCategoryCount)")
             if actualCategoryCount > 0{
-                let maxHeight = CATEGORY_TABLE_VIEW_CELL_HEIGHT * CGFloat(actualCategoryCount) + (self.needsInputModeSwitchKey ? FOOTER_VIEW_HEIGHT : 0)
+                let maxHeight = (CATEGORY_TABLE_VIEW_CELL_HEIGHT * CGFloat(actualCategoryCount)) + FOOTER_VIEW_HEIGHT
                 if maxHeight <= size.height / 2 {
                     contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: maxHeight)
                 }else{
