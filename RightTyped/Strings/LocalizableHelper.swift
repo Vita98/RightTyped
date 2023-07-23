@@ -69,6 +69,7 @@ struct AppString{
     struct ViewController{
         static let deleteCategoryAlertDescription: String = LocalizableString("ViewController_DEL_CAT_ALERT_DESCRIPTION").locale
         static let emptyCategories: String = LocalizableString("ViewController_EMPTY_CATEGORIES").locale
+        static let emptyAnswers: String = LocalizableString("ViewController_EMPTY_ANSWERS").locale
     }
     
     struct EnableKeyboardViewController{

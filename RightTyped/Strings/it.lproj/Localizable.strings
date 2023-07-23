@@ -51,6 +51,7 @@
 //MARK: ViewController
 "ViewController_DEL_CAT_ALERT_DESCRIPTION" = "Sei sicuro di voler cancellare questa categoria?\nTutte le domande associate verranno anch'esse cancellate";
 "ViewController_EMPTY_CATEGORIES" = "Non hai nessuna categoria!";
+"ViewController_EMPTY_ANSWERS" = "Non ci sono risposte associate a questa categoria!";
 
 //MARK: EnableKeyboardViewController
 "EnableKeyboardViewController_KEYBOARD_DISABLED" = "Tastiera disabilitata";

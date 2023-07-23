@@ -67,6 +67,7 @@
 		01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */; };
 		01A765A02A27B64400D50C4B /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A7659F2A27B64400D50C4B /* Cells.swift */; };
 		01ADB21E2A23929C007613EB /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB21D2A23929C007613EB /* FooterView.swift */; };
+		01B2D6C32A6D407E00C2A18C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B2D6C22A6D407E00C2A18C /* UIFont.swift */; };
 		01BE0A002A40C385003B39F8 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BE09FF2A40C385003B39F8 /* PopoverView.swift */; };
 		01BE0A012A422262003B39F8 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D514362A35061300B9FF2B /* UserDefaultsManager.swift */; };
 		01C84C182A508CE300C8AD77 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C84C172A508CE300C8AD77 /* UINavigationController.swift */; };
@@ -178,6 +179,7 @@
 		01A765992A27AF9600D50C4B /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		01A7659F2A27B64400D50C4B /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		01ADB21D2A23929C007613EB /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		01B2D6C22A6D407E00C2A18C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		01BE09FF2A40C385003B39F8 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		01C84C172A508CE300C8AD77 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		01C8A0322A323E7E001DBC8D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				01595FED2A47C532003EAE79 /* UITableCollectionViewController.swift */,
 				019EEC462A4DEE1C004C2761 /* UISwitch.swift */,
 				01C84C172A508CE300C8AD77 /* UINavigationController.swift */,
+				01B2D6C22A6D407E00C2A18C /* UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */,
 				019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */,
 				012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */,
+				01B2D6C32A6D407E00C2A18C /* UIFont.swift in Sources */,
 				019EEC452A4DDE4E004C2761 /* NewCategoryViewController.swift in Sources */,
 				01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */,
 				015B9E622A596DE400171360 /* SettingsViewController.swift in Sources */,

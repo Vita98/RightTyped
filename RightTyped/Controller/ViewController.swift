@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     private var homeHeaderTableViewCell: HomeHeaderTableViewCell?
     private var answerHeaderView: AnswersHeaderView?
     private var addAnswerView: AddAnswerCustomView?
+    private var tableViewEmptyMessageHeight: Double = 0
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -176,7 +177,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             homeHeaderTableViewCell?.enableAddButton(false)
         }
         
-        collectionView.restore()
+        collectionView.restoreEmptyMessage()
         toggleComponent(enabled: true, withSearchBar: false)
         return categories!.count
     }
@@ -437,6 +438,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             if let answers = answers{
                 answerHeaderView?.setSearchBarStatus(enabled: !answers.isEmpty)
             }
+            
+            //Managing the empty answer message
+            if let searchedAnswers = searchedAnswers, searchedAnswers.isEmpty{
+                tableView.setEmptyMessage(AppString.ViewController.emptyAnswers, height: tableViewEmptyMessageHeight)
+            }else{
+                tableView.restoreEmptyMessage()
+            }
+            
             return searchedAnswers != nil ? searchedAnswers!.count : 0
         }
     }
@@ -469,6 +478,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
         
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeHeaderTableViewCell.reuseID, for: indexPath) as! HomeHeaderTableViewCell
+            if tableViewEmptyMessageHeight == 0{
+                tableViewEmptyMessageHeight = tableView.bounds.height - (cell.bounds.height + SEARCH_BAR_SECTION_HEADER_HEIGHT) + 20
+            }
             cell.categoryCollectionView.dataSource = self
             cell.categoryCollectionView.delegate = self
             cell.categoryCollectionView.dragDelegate = self

@@ -56,7 +56,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.textLabel?.font = UIFont(name: "Trakya Rounded 300 Light", size: 12)
+        header.textLabel?.font = UIFont.customFont(.normal, size: 12)
         header.textLabel?.textColor = .black
         header.automaticallyUpdatesBackgroundConfiguration = false
     }

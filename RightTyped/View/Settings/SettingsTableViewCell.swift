@@ -29,7 +29,10 @@ class SettingsTableViewCell: UITableViewCell {
     }
     
     private func setSwitchMode(isOn: Bool?){
-        rowButton.removeFromSuperview()
+        if rowButton != nil{
+            rowButton.removeFromSuperview()
+        }
+        guard !switchComponent.isDescendant(of: contentView) else { return }
         
         containerView.addSubview(switchComponent)
         switchComponent.isOn = isOn ?? false

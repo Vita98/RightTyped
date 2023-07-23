@@ -51,6 +51,7 @@
 //MARK: ViewController
 "ViewController_DEL_CAT_ALERT_DESCRIPTION" = "Are you sure you want to delete this category?\nAll associated questions will also be deleted";
 "ViewController_EMPTY_CATEGORIES" = "You have no category!";
+"ViewController_EMPTY_ANSWERS" = "There are no answers associated with this category!";
 
 //MARK: EnableKeyboardViewController
 "EnableKeyboardViewController_KEYBOARD_DISABLED" = "Keyboard disabled";
