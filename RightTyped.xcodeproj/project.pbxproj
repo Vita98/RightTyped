@@ -43,6 +43,8 @@
 		01766B452A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
 		01766B472A22394100BA359C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B462A22394100BA359C /* GlobalConstant.swift */; };
 		01766B482A22394100BA359C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B462A22394100BA359C /* GlobalConstant.swift */; };
+		01930A412A7EBDE1005EE27A /* GenericTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01930A402A7EBDE1005EE27A /* GenericTutorialViewController.swift */; };
+		01930A432A7EBE6F005EE27A /* GenericTutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01930A422A7EBE6F005EE27A /* GenericTutorialPageViewController.swift */; };
 		019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F072A1E8C39005A8021 /* AppDelegate.swift */; };
 		019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F092A1E8C39005A8021 /* SceneDelegate.swift */; };
 		019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E2F0B2A1E8C39005A8021 /* ViewController.swift */; };
@@ -154,6 +156,8 @@
 		01766B462A22394100BA359C /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		018ED41E2A3CB97200E9A90C /* RightTyped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightTyped.entitlements; sourceTree = "<group>"; };
 		018ED41F2A3CB9C600E9A90C /* RightTyped-Keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RightTyped-Keyboard.entitlements"; sourceTree = "<group>"; };
+		01930A402A7EBDE1005EE27A /* GenericTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTutorialViewController.swift; sourceTree = "<group>"; };
+		01930A422A7EBE6F005EE27A /* GenericTutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTutorialPageViewController.swift; sourceTree = "<group>"; };
 		019E2F042A1E8C39005A8021 /* RightTyped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightTyped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019E2F072A1E8C39005A8021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019E2F092A1E8C39005A8021 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 				0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */,
 				019EEC442A4DDE4E004C2761 /* NewCategoryViewController.swift */,
 				015B9E612A596DE400171360 /* SettingsViewController.swift */,
+				01930A3F2A7EBDB3005EE27A /* Tutorials */,
 				01D514352A34FDF700B9FF2B /* EnableKeyboard */,
 			);
 			path = Controller;
@@ -332,6 +337,15 @@
 				013E08562A221CC200FF7928 /* AnswersCollectionViewCell */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		01930A3F2A7EBDB3005EE27A /* Tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				01930A402A7EBDE1005EE27A /* GenericTutorialViewController.swift */,
+				01930A422A7EBE6F005EE27A /* GenericTutorialPageViewController.swift */,
+			);
+			path = Tutorials;
 			sourceTree = "<group>";
 		};
 		019E2EFB2A1E8C39005A8021 = {
@@ -679,12 +693,14 @@
 				019EEC472A4DEE1C004C2761 /* UISwitch.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				01063BEC2A629BBA00B0E7C7 /* UICheckBox.swift in Sources */,
+				01930A412A7EBDE1005EE27A /* GenericTutorialViewController.swift in Sources */,
 				01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */,
 				01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				015B9E682A59F10300171360 /* SettingsTableViewCell.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
 				01A3913A2A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift in Sources */,
+				01930A432A7EBE6F005EE27A /* GenericTutorialPageViewController.swift in Sources */,
 				01C8A0332A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */,
 				01C8A0362A323F03001DBC8D /* DataModelPersistentContainer.swift in Sources */,
 				01C8A03C2A324323001DBC8D /* Category+CoreDataClass.swift in Sources */,
