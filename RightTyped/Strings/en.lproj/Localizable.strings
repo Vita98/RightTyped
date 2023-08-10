@@ -56,3 +56,10 @@
 //MARK: EnableKeyboardViewController
 "EnableKeyboardViewController_KEYBOARD_DISABLED" = "Keyboard disabled";
 "EnableKeyboardViewController_KEYBOARD_ENABLED" = "Keyboard already enabled";
+
+//MARK: Tutorials
+"Tutorials_HOW_TO_USE_KEYBOARD_TITLE" = "How to use the keyboard";
+"Tutorials_HOW_TO_USE_KEYBOARD_openKeyboard" = "Open the keyboard and hold the globe icon";
+"Tutorials_HOW_TO_USE_KEYBOARD_selectKeyboard" = "Select RightTyped";
+"Tutorials_HOW_TO_USE_KEYBOARD_selectAnswer" = "Click the answer that best suits you and you're ready to answer!";
+"Tutorials_HOW_TO_USE_KEYBOARD_clickSend" = "Click the send button!";

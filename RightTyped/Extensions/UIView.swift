@@ -23,6 +23,7 @@ public enum ShadowType{
     case collectionViewCell
     case contentView
     case categoryAppCollectionViewCell
+    case tutorialGifShadow
     
     /// Associatiion between the type and the hardcoded constants
     var value : Shadow {
@@ -34,6 +35,8 @@ public enum ShadowType{
                 return CONTENT_VIEW_SHADOW
             case .categoryAppCollectionViewCell:
                 return CATEGORY_CELL_APP_SHADOW
+            case .tutorialGifShadow:
+                return TUTORIAL_GIF_SHADOW
             }
         }
     }
@@ -64,6 +67,22 @@ extension UIView{
         self.layer.shadowRadius = shadow.radius
         self.layer.shadowOpacity = shadow.opacity
         self.layer.masksToBounds = false
+    }
+    
+    public func dropShadow(shadowType : ShadowType, cornerRadius: Double){
+        let shadowLayer = CAShapeLayer()
+        let shadow = shadowType.value
+              
+        shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+        shadowLayer.fillColor = UIColor.red.cgColor
+
+        shadowLayer.shadowColor = shadow.color
+        shadowLayer.shadowPath = shadowLayer.path
+        shadowLayer.shadowOffset = shadow.offset
+        shadowLayer.shadowOpacity = shadow.opacity
+        shadowLayer.shadowRadius = shadow.radius
+
+        layer.insertSublayer(shadowLayer, at: 0)
     }
     
     func animateBorderColor(toColor: UIColor, duration: Double) {
@@ -102,5 +121,15 @@ extension UIView{
         }else{
             return UINib(nibName: String(describing: T.self), bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
         }
+    }
+}
+
+extension UIImageView{
+    
+}
+
+extension UIImage{
+    public func getAspectRatio() -> Double{
+        return self.size.height / self.size.width
     }
 }

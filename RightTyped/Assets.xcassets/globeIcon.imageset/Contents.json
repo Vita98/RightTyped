@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ios-globe-4-64.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

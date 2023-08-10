@@ -96,4 +96,15 @@ struct SettingsModelHelper{
     static func numberOfTutorial(for settingsTypeEnum: SettingsTypeEnum) -> Int{
         return SettingsModelHelper.values.filter({$0.type == settingsTypeEnum}).count
     }
+    
+    static func getTutorial(for settingsItem: SettingsItem) -> TutorialModel?{
+        switch settingsItem {
+        case .howToUseKeyboard:
+            return Tutorials.HOW_TO_USE_KEYBOARD
+        case .howToCustomizeKeyboard:
+            return nil
+        default:
+            return nil
+        }
+    }
 }

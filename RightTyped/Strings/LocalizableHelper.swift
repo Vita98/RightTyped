@@ -10,6 +10,7 @@ import Foundation
 struct AppString{
     
     struct Language{
+        private init(){}
         static let localizedLanguage: String = LocalizableString("LOCALIZED_LANGUAGE").locale
         
         enum InstalledLanguages: String{
@@ -19,6 +20,7 @@ struct AppString{
     }
     
     struct General{
+        private init(){}
         static let category: String = LocalizableString("GENERAL_CATEGORY").locale
         static let categories: String = LocalizableString("GENERAL_CATEGORIES").locale
         static let edit: String = LocalizableString("GENERAL_EDIT").locale
@@ -28,6 +30,7 @@ struct AppString{
     }
     
     struct Alerts{
+        private init(){}
         static let yes: String = LocalizableString("Alerts_YES").locale
         static let no: String = LocalizableString("Alerts_NO").locale
         static let titleAreYouSure: String = LocalizableString("Alerts_TITLE_ARE_YOU_SURE").locale
@@ -35,12 +38,14 @@ struct AppString{
     }
     
     struct SettingsTypeEnum{
+        private init(){}
         static let app: String = LocalizableString("SettingsTypeEnum_APP").locale
         static let keyboard: String = LocalizableString("SettingsTypeEnum_KEYBOARD").locale
         static let tutorial: String = LocalizableString("SettingsTypeEnum_TUTORIAL").locale
     }
     
     struct SettingsModel{
+        private init(){}
         static let touchIDText: String = LocalizableString("SettingsModel_TOUCH_ID").locale
         static let goBackToDefaultKeyboardText: String = LocalizableString("SettingsModel_GO_BACK_TO_DEFAULT_KEYBOARD").locale
         static let howToEnableKeyboardText: String = LocalizableString("SettingsModel_HOW_TO_ENABLE_KEYBOARD").locale
@@ -48,31 +53,48 @@ struct AppString{
         static let howToCustomizeKeyboardText: String = LocalizableString("SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD").locale
     }
     
+    struct Tutorials{
+        private init(){}
+        struct HOW_TO_USE_KEYBOARD{
+            private init(){}
+            static let title: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_TITLE").locale
+            static let openKeyboard: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_openKeyboard").locale
+            static let selectKeyboard: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_selectKeyboard").locale
+            static let selectAnswer: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_selectAnswer").locale
+            static let clickSend: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_clickSend").locale
+        }
+    }
+    
     //MARK: Controller - cell - xib
     struct HomeHeaderTableViewCell{
+        private init(){}
         static let description: String = LocalizableString("HomeHeaderTableViewCell_DESC").locale
         static let enableCategory: String = LocalizableString("HomeHeaderTableViewCell_ENABLE_CATEGORY").locale
     }
     
     struct NewCategoryViewController{
+        private init(){}
         static let newCategory: String = LocalizableString("NewCategoryViewController_NEW_CATEGORY").locale
         static let editCategory: String = LocalizableString("NewCategoryViewController_EDIT_CATEGORY").locale
         static let categoryNamePlaceholder: String = LocalizableString("NewCategoryViewController_CAT_NAME_PLACEHOLDER").locale
     }
     
     struct NewAnswerViewController{
+        private init(){}
         static let answerTitlePlaceholder: String = LocalizableString("NewAnswerViewController_ANSW_TITLE_PLACEHOLDER").locale
         static let answerContentPlaceholder: String = LocalizableString("NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER").locale
         static let deleteAnswerAlertDescription: String = LocalizableString("NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION").locale
     }
     
     struct ViewController{
+        private init(){}
         static let deleteCategoryAlertDescription: String = LocalizableString("ViewController_DEL_CAT_ALERT_DESCRIPTION").locale
         static let emptyCategories: String = LocalizableString("ViewController_EMPTY_CATEGORIES").locale
         static let emptyAnswers: String = LocalizableString("ViewController_EMPTY_ANSWERS").locale
     }
     
     struct EnableKeyboardViewController{
+        private init(){}
         static let keyboardDisabled: String = LocalizableString("EnableKeyboardViewController_KEYBOARD_DISABLED").locale
         static let keyboardEnabled: String = LocalizableString("EnableKeyboardViewController_KEYBOARD_ENABLED").locale
     }

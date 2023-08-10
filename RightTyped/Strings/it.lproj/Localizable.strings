@@ -56,3 +56,10 @@
 //MARK: EnableKeyboardViewController
 "EnableKeyboardViewController_KEYBOARD_DISABLED" = "Tastiera disabilitata";
 "EnableKeyboardViewController_KEYBOARD_ENABLED" = "Tastiera già abilitata";
+
+//MARK: Tutorials
+"Tutorials_HOW_TO_USE_KEYBOARD_TITLE" = "Come usare la tastiera";
+"Tutorials_HOW_TO_USE_KEYBOARD_openKeyboard" = "Apri la tastiera e tieni premuto l'icona del globo";
+"Tutorials_HOW_TO_USE_KEYBOARD_selectKeyboard" = "Seleziona RightTyped";
+"Tutorials_HOW_TO_USE_KEYBOARD_selectAnswer" = "Clicca la risposta che più si addice e sei pronto a rispondere!";
+"Tutorials_HOW_TO_USE_KEYBOARD_clickSend" = "Clicca Invio!";
