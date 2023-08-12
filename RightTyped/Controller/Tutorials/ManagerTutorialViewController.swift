@@ -15,6 +15,9 @@ class ManagerTutorialViewController: UIViewController {
     @IBOutlet weak var navigateLeftButton: UIButton!
     @IBOutlet weak var pageControlContainerView: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
+    var fromSettings = false
+    var customFinalAction: (() -> Void)?
+    var isFinalTutorial: Bool = false
     
     //MARK: Custom component
     var pageViewController: GenericTutorialPageViewController?
@@ -34,6 +37,10 @@ class ManagerTutorialViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is GenericTutorialPageViewController{
             pageViewController = segue.destination as? GenericTutorialPageViewController
+            pageViewController?.customDelegate = self
+            pageViewController?.fromSettings = fromSettings
+            pageViewController?.customFinalAction = customFinalAction
+            pageViewController?.isFinalTutorial = isFinalTutorial
         }
     }
     
@@ -45,6 +52,7 @@ class ManagerTutorialViewController: UIViewController {
         closeButton.setTitle("", for: .normal)
         navigateRightButton.setTitle("", for: .normal)
         navigateLeftButton.setTitle("", for: .normal)
+        navigateLeftButton.setImage(navigateLeftButton.image(for: .normal)?.withTintColor(.componentColor.disabled()), for: .normal)
         
         pageControlContainerView.layer.cornerRadius = 12.5
         pageControl.layer.cornerRadius = 12.5
@@ -56,6 +64,9 @@ class ManagerTutorialViewController: UIViewController {
     private func configureModel(){
         guard let model = self.model else { return }
         pageViewController?.model = model
+        pageViewController?.fromSettings = fromSettings
+        pageViewController?.customFinalAction = customFinalAction
+        pageViewController?.isFinalTutorial = isFinalTutorial
     }
     
     
@@ -71,5 +82,19 @@ class ManagerTutorialViewController: UIViewController {
     @IBAction func navigateLeftEvent(_ sender: Any) {
         pageViewController?.navigate(direction: .before)
     }
-    
+}
+
+extension ManagerTutorialViewController: GenericTutorialPageViewControllerDelegate{
+    func genericTutorialPageViewController(isShowing viewController: UIViewController, atIndex index: Int) {
+        if index == 0{
+            //Disable the left
+            navigateLeftButton.setImage(navigateLeftButton.image(for: .normal)?.withTintColor(.componentColor.disabled()), for: .normal)
+        }else if index + 1 == model?.pageModels.count{
+            //Disable the right
+            navigateRightButton.setImage(navigateRightButton.image(for: .normal)?.withTintColor(.componentColor.disabled()), for: .normal)
+        }else{
+            navigateLeftButton.setImage(navigateLeftButton.image(for: .normal)?.withTintColor(.componentColor), for: .normal)
+            navigateRightButton.setImage(navigateRightButton.image(for: .normal)?.withTintColor(.componentColor), for: .normal)
+        }
+    }
 }

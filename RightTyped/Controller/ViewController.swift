@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     var selectedCategoryIndex : IndexPath?
     var selectedCategory : Category?
+    var showTutorial = false
     
     @IBOutlet var containerView: CustomBaseView!
     @IBOutlet weak var tableShadowView: UIView!
@@ -35,6 +36,14 @@ class ViewController: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if showTutorial{
+            let viewC = storyboard?.instantiateViewController(withIdentifier: "enableKeyboardViewControllerID") as! EnableKeyboardViewController
+            let navContr = UINavigationController(rootViewController: viewC)
+            navContr.navigationBar.isHidden = true
+            navContr.modalPresentationStyle = .fullScreen
+            self.present(navContr, animated: true)
+        }
         
         addObservers()
         configureView()

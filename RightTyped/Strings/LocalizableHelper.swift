@@ -27,6 +27,8 @@ struct AppString{
         static let delete: String = LocalizableString("GENERAL_DELETE").locale
         static let answerSearchBarPlaceholder: String = LocalizableString("GENERAL_ANSW_SEARCH_BAR_PLACEHOLDER").locale
         static let answer: String = LocalizableString("GENERAL_ANSWER").locale
+        static let next: String = LocalizableString("GENERAL_NEXT").locale
+        static let done: String = LocalizableString("GENERAL_DONE").locale
     }
     
     struct Alerts{
@@ -62,6 +64,11 @@ struct AppString{
             static let selectKeyboard: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_selectKeyboard").locale
             static let selectAnswer: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_selectAnswer").locale
             static let clickSend: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_clickSend").locale
+            static let mindChanged: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_mindChanged").locale
+            static let clickBack: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_clickBack").locale
+            static let personalizeKeyboard: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_personalizeKeyboard").locale
+            static let clickAppIcon: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_clickAppIcon").locale
+            static let finalTitle: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_finalTitle").locale
         }
     }
     

@@ -16,6 +16,8 @@
 "GENERAL_DELETE" = "Cancella";
 "GENERAL_ANSW_SEARCH_BAR_PLACEHOLDER" = "Cerca risposta";
 "GENERAL_ANSWER" = "Risposta";
+"GENERAL_NEXT" = "Avanti";
+"GENERAL_DONE" = "Fatto!";
 
 //MARK: Alert
 "Alerts_YES" = "Si";
@@ -63,3 +65,8 @@
 "Tutorials_HOW_TO_USE_KEYBOARD_selectKeyboard" = "Seleziona RightTyped";
 "Tutorials_HOW_TO_USE_KEYBOARD_selectAnswer" = "Clicca la risposta che più si addice e sei pronto a rispondere!";
 "Tutorials_HOW_TO_USE_KEYBOARD_clickSend" = "Clicca Invio!";
+"Tutorials_HOW_TO_USE_KEYBOARD_mindChanged" = "Hai sbagliato risposta o ci hai ripensato?";
+"Tutorials_HOW_TO_USE_KEYBOARD_clickBack" = "Clicca l’icona indietro e la risposta verrà cancellata";
+"Tutorials_HOW_TO_USE_KEYBOARD_personalizeKeyboard" = "Vuoi personalizzare la tua tastiera?";
+"Tutorials_HOW_TO_USE_KEYBOARD_clickAppIcon" = "Clicca sull’icona dell’app per aprirla";
+"Tutorials_HOW_TO_USE_KEYBOARD_finalTitle" = "Sei pronto per usare la tastiera!";

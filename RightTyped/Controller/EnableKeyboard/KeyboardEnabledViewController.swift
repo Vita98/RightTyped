@@ -11,6 +11,7 @@ class KeyboardEnabledViewController: UIViewController {
 
     @IBOutlet weak var doneButtonView: UIView!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var nextLabel: UILabel!
     
     var fromSettings = false
     
@@ -22,10 +23,30 @@ class KeyboardEnabledViewController: UIViewController {
         self.view.backgroundColor = .backgroundColor
         doneButtonView.enableComponentButtonMode()
         doneButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(doneButtonViewPressed)))
+        nextLabel.text = fromSettings ? AppString.General.done : AppString.General.next
     }
     
     @objc private func doneButtonViewPressed(){
-        closeView()
+        if fromSettings{
+            closeView()
+        }else{
+            let viewC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "managerTutorialViewControllerID") as! ManagerTutorialViewController
+            viewC.model = Tutorials.HOW_TO_USE_KEYBOARD
+            viewC.fromSettings = self.fromSettings
+            viewC.customFinalAction = {[weak self] in
+                //Implement the second tutorial
+                guard let strongSelf = self else { return }
+                let secondTutorial = strongSelf.storyboard?.instantiateViewController(withIdentifier: "managerTutorialViewControllerID") as! ManagerTutorialViewController
+                secondTutorial.model = Tutorials.HOW_TO_USE_KEYBOARD
+                secondTutorial.fromSettings = strongSelf.fromSettings
+                secondTutorial.isFinalTutorial = true
+                secondTutorial.customFinalAction = {[weak self] in
+                    self?.dismiss(animated: true)
+                }
+                strongSelf.navigationController?.pushViewController(secondTutorial, animated: true)
+            }
+            self.navigationController?.pushViewController(viewC, animated: true)
+        }
     }
     
     @IBAction func closeButtonAction(_ sender: Any) {
@@ -33,21 +54,7 @@ class KeyboardEnabledViewController: UIViewController {
     }
     
     private func closeView(){
-        if fromSettings{
-            self.dismiss(animated: true)
-        }else{
-            SceneDelegate.goToHome(animated: true)
-        }
+        self.dismiss(animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

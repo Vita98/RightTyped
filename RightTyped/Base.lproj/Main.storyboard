@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i9y-SJ-MIe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -715,7 +715,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1m-v2-OTa">
                                 <rect key="frame" x="40" y="700" width="310" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0o-gh-l0P">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0o-gh-l0P">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -760,6 +760,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                     <connections>
                         <outlet property="closeButton" destination="oWk-55-KiC" id="4gm-f6-RrO"/>
                         <outlet property="doneButtonView" destination="B1m-v2-OTa" id="Xgr-KE-DbI"/>
+                        <outlet property="nextLabel" destination="O0o-gh-l0P" id="tlD-2P-iPs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeR-hV-KwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -794,7 +795,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlX-lM-U2S">
-                                <rect key="frame" x="0.0" y="113" width="390" height="642"/>
+                                <rect key="frame" x="0.0" y="113" width="390" height="652"/>
                                 <connections>
                                     <segue destination="qfb-5b-Dp1" kind="embed" id="E4V-BX-RYv"/>
                                 </connections>
@@ -842,7 +843,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                             <constraint firstItem="QgL-E2-dqv" firstAttribute="trailing" secondItem="jlX-lM-U2S" secondAttribute="trailing" id="8T7-Xs-0Ah"/>
                             <constraint firstItem="1T9-aJ-mc5" firstAttribute="centerX" secondItem="UYs-hl-Aae" secondAttribute="centerX" id="DQr-aS-CtG"/>
                             <constraint firstItem="jlX-lM-U2S" firstAttribute="leading" secondItem="QgL-E2-dqv" secondAttribute="leading" id="E1d-G2-1eu"/>
-                            <constraint firstItem="0aI-kC-9Ik" firstAttribute="top" secondItem="jlX-lM-U2S" secondAttribute="bottom" constant="10" id="GTv-ui-0xd"/>
+                            <constraint firstItem="0aI-kC-9Ik" firstAttribute="top" secondItem="jlX-lM-U2S" secondAttribute="bottom" id="GTv-ui-0xd"/>
                             <constraint firstItem="QgL-E2-dqv" firstAttribute="trailing" secondItem="wA6-CU-aTt" secondAttribute="trailing" constant="18" id="JTl-NT-pL1"/>
                             <constraint firstItem="1T9-aJ-mc5" firstAttribute="centerY" secondItem="KTU-DJ-OiX" secondAttribute="centerY" id="Reh-aE-NO8"/>
                             <constraint firstItem="0aI-kC-9Ik" firstAttribute="centerY" secondItem="1T9-aJ-mc5" secondAttribute="centerY" id="UrY-51-vEo"/>
@@ -876,24 +877,6 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJ4-hY-i1U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3892" y="800"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="FYJ-zX-deM">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i9y-SJ-MIe" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MTU-Yu-XCb">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="goo-zS-ilS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h4p-VD-iKD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1056.9230769230769" y="-27.72511848341232"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="GyF-YN-1lv">
@@ -967,12 +950,17 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aWO-GQ-Bus">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="321"/>
                                     </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-3d-tyu">
+                                        <rect key="frame" x="165" y="150.66666666666666" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="aWO-GQ-Bus" firstAttribute="top" secondItem="Szv-nB-Etb" secondAttribute="top" id="3VG-9b-3DK"/>
+                                    <constraint firstItem="8z9-3d-tyu" firstAttribute="centerX" secondItem="aWO-GQ-Bus" secondAttribute="centerX" id="7yp-ob-VgZ"/>
                                     <constraint firstAttribute="bottom" secondItem="aWO-GQ-Bus" secondAttribute="bottom" id="QGr-8o-H2T"/>
                                     <constraint firstAttribute="width" constant="350" id="V8l-8w-dKj"/>
+                                    <constraint firstItem="8z9-3d-tyu" firstAttribute="centerY" secondItem="aWO-GQ-Bus" secondAttribute="centerY" id="ddG-Ad-TAn"/>
                                     <constraint firstAttribute="trailing" secondItem="aWO-GQ-Bus" secondAttribute="trailing" id="kpF-A5-KvB"/>
                                     <constraint firstItem="aWO-GQ-Bus" firstAttribute="leading" secondItem="Szv-nB-Etb" secondAttribute="leading" id="pqh-bV-BnR"/>
                                 </constraints>
@@ -982,6 +970,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ESp-sd-jcr"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="HgP-r4-8Xs" secondAttribute="trailing" constant="10" id="5Mx-bT-fbT"/>
@@ -998,6 +987,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                     </view>
                     <size key="freeformSize" width="390" height="642"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="8z9-3d-tyu" id="laa-7I-NQh"/>
                         <outlet property="containerView" destination="RwY-iA-fld" id="0m4-cI-F7E"/>
                         <outlet property="gifHeightConstraint" destination="YM5-K0-d04" id="qj1-VD-Lwc"/>
                         <outlet property="gifImageView" destination="aWO-GQ-Bus" id="twn-Wn-pyN"/>
@@ -1008,7 +998,68 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcs-hx-f87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4849" y="800"/>
+            <point key="canvasLocation" x="4534" y="796"/>
+        </scene>
+        <!--Final Tutorial View Controller-->
+        <scene sceneID="4Vq-02-mKO">
+            <objects>
+                <viewController storyboardIdentifier="finalTutorialViewControllerID" id="ffT-5x-gFP" customClass="FinalTutorialViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F3i-LB-OBv">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="642"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5P-Kn-Wyv">
+                                <rect key="frame" x="40" y="0.0" width="310" height="34.333333333333336"/>
+                                <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickIcon" translatesAutoresizingMaskIntoConstraints="NO" id="OA6-B2-Nif">
+                                <rect key="frame" x="96" y="134.33333333333334" width="198" height="200.00000000000003"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4T-8V-Jqy">
+                                <rect key="frame" x="56" y="532" width="278" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rd0-Lx-RVd">
+                                        <rect key="frame" x="0.0" y="0.0" width="278" height="50"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Rd0-Lx-RVd" firstAttribute="top" secondItem="Z4T-8V-Jqy" secondAttribute="top" id="2x6-rW-hUJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rd0-Lx-RVd" secondAttribute="trailing" id="8zK-DF-fH5"/>
+                                    <constraint firstItem="Rd0-Lx-RVd" firstAttribute="leading" secondItem="Z4T-8V-Jqy" secondAttribute="leading" id="O8F-1G-YiM"/>
+                                    <constraint firstAttribute="height" constant="50" id="j7o-DB-XEU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rd0-Lx-RVd" secondAttribute="bottom" id="lgY-4r-hJq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z4T-8V-Jqy" secondAttribute="trailing" constant="40" id="ExT-RQ-KW6"/>
+                            <constraint firstItem="Z4T-8V-Jqy" firstAttribute="leading" secondItem="F3i-LB-OBv" secondAttribute="leadingMargin" constant="40" id="NG8-7q-mBC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OA6-B2-Nif" secondAttribute="trailing" constant="80" id="OXf-mI-t7j"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Z4T-8V-Jqy" secondAttribute="bottom" constant="60" id="Q62-xr-7Ya"/>
+                            <constraint firstItem="OA6-B2-Nif" firstAttribute="leading" secondItem="F3i-LB-OBv" secondAttribute="leadingMargin" constant="80" id="Qwt-ey-Fqi"/>
+                            <constraint firstItem="K5P-Kn-Wyv" firstAttribute="leading" secondItem="F3i-LB-OBv" secondAttribute="leading" constant="40" id="VCI-Qy-tEr"/>
+                            <constraint firstAttribute="trailing" secondItem="K5P-Kn-Wyv" secondAttribute="trailing" constant="40" id="iYM-jx-gN6"/>
+                            <constraint firstItem="OA6-B2-Nif" firstAttribute="top" secondItem="K5P-Kn-Wyv" secondAttribute="bottom" constant="100" id="nYi-0B-j2Y"/>
+                            <constraint firstItem="K5P-Kn-Wyv" firstAttribute="top" secondItem="F3i-LB-OBv" secondAttribute="top" id="rcN-0I-nx8"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="390" height="642"/>
+                    <connections>
+                        <outlet property="bottomLabel" destination="Rd0-Lx-RVd" id="VrJ-C0-S3s"/>
+                        <outlet property="bottomView" destination="Z4T-8V-Jqy" id="WxA-H3-a6d"/>
+                        <outlet property="titleLabel" destination="K5P-Kn-Wyv" id="giW-XY-DKG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grZ-MZ-chn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5212" y="795"/>
         </scene>
     </scenes>
     <resources>

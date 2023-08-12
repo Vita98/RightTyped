@@ -132,4 +132,8 @@ extension UIImage{
     public func getAspectRatio() -> Double{
         return self.size.height / self.size.width
     }
+    
+    static func loadFromBundle(_ name: String) -> UIImage?{
+        return UIImage(named: name, in: Bundle.main, compatibleWith: nil)
+    }
 }

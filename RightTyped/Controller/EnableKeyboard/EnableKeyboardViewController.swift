@@ -52,11 +52,7 @@ class EnableKeyboardViewController: UIViewController {
     
     
     @IBAction func closeButtonPression(_ sender: Any) {
-        if fromSettings{
-            self.dismiss(animated: true)
-        }else{
-            SceneDelegate.goToHome(animated: true)
-        }
+        self.dismiss(animated: true)
     }
     
     @objc private func willEnterForeground(){

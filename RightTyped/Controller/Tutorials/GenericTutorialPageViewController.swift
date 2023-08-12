@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol GenericTutorialPageViewControllerDelegate{
+    func genericTutorialPageViewController(isShowing viewController: UIViewController, atIndex index: Int)
+}
+
 class GenericTutorialPageViewController: UIPageViewController {
     
     // MARK: - Models
@@ -17,6 +21,11 @@ class GenericTutorialPageViewController: UIPageViewController {
     }
     var modelControllers: [UIViewController]?
     var pageControl: UIPageControl?
+    var fromSettings: Bool = false
+    var customFinalAction: (() -> Void)?
+    var isFinalTutorial: Bool = false
+    
+    var customDelegate: GenericTutorialPageViewControllerDelegate?
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -33,7 +42,7 @@ class GenericTutorialPageViewController: UIPageViewController {
     
     private func configureModel(){
         guard let model = self.model else { return }
-        modelControllers = model.getControllers()
+        modelControllers = model.getControllers(fromSettings: fromSettings, finalAction: customFinalAction, isFinalTutorial: isFinalTutorial)
         guard let modelControllers = self.modelControllers else { return }
         
         setViewControllers([modelControllers[0]], direction: .forward, animated: true)
@@ -67,6 +76,7 @@ class GenericTutorialPageViewController: UIPageViewController {
         let previousIndex = pageControl.currentPage
         let pageContentViewC = self.viewControllers![0]
         pageControl.currentPage = modelControllers.firstIndex(of: pageContentViewC)!
+        self.customDelegate?.genericTutorialPageViewController(isShowing: pageContentViewC, atIndex: pageControl.currentPage)
         if previousIndex == pageControl.currentPage { return }
     }
     

@@ -17,6 +17,7 @@ class GenericTutorialViewController: UIViewController {
     @IBOutlet weak var gifHeightConstraint: NSLayoutConstraint!
     var gifHeightValue: Double?
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var model: TutorialPageModel?{
         didSet{
@@ -27,13 +28,20 @@ class GenericTutorialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
         configureModel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.main.async {[weak self] in
+            self?.configureGif()
+        }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         gifHeightValue = self.view.frame.height * gifHeightConstraint.multiplier
-        configureGif()
         
         gifImageView.clipsToBounds = true
         gifImageView.layer.cornerRadius = 30
@@ -56,13 +64,27 @@ class GenericTutorialViewController: UIViewController {
             if let image = UIImage.gifImageWithName(model.gifPath){
                 let aspR = image.getAspectRatio()
                 gifWidthConstraint.constant = (gifHeightValue / aspR)
-                gifImageView.image = image
+                UIView.transition(with: gifImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                    gifImageView.image = image
+                })
+            }else if let image = UIImage.loadFromBundle(model.gifPath){
+                let aspR = image.getAspectRatio()
+                gifWidthConstraint.constant = (gifHeightValue / aspR)
+                UIView.transition(with: gifImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                    gifImageView.image = image
+                })
             }
         }
+        activityIndicator.stopAnimating()
     }
     
     private func configureContainerView(items: [StackContentItem]){
         guard let containerView = containerView else { return }
+        
+        var topPadding: CGFloat = 10
+        if UIDevice.current.isSmall() {
+            topPadding = 0
+        }
         
         if items.count < 3{
             gifHeightValue = self.view.frame.height * 0.55
@@ -71,12 +93,13 @@ class GenericTutorialViewController: UIViewController {
             newC.isActive = true
             gifShadowView.layoutIfNeeded()
             gifHeightConstraint = newC
-            configureGif()
+            topPadding = 20
         }
         
         let middleView = UIView()
         var lastView: UIView?
         var i = -1
+        var lastIsImage = false
         
         for item in items {
             i = i + 1
@@ -85,7 +108,7 @@ class GenericTutorialViewController: UIViewController {
             case .text:
                 newV = configureText(text: item.content)
             case .image:
-                newV = configureImage(imagePath: item.content, size: CGSize(width: 35, height: 35))
+                newV = configureImage(imagePath: item.content, size: item.size)
             }
             
             guard let newV = newV else { return }
@@ -99,7 +122,7 @@ class GenericTutorialViewController: UIViewController {
             }else if i == items.count - 1{
                 newV.translatesAutoresizingMaskIntoConstraints = false
                 middleView.addSubview(newV)
-                newV.topAnchor.constraint(equalTo: lastView!.bottomAnchor).isActive = true
+                newV.topAnchor.constraint(equalTo: lastView!.bottomAnchor, constant: topPadding + (lastIsImage ? 5 : 0)).isActive = true
                 newV.bottomAnchor.constraint(equalTo: middleView.bottomAnchor).isActive = true
                 newV.leadingAnchor.constraint(equalTo: middleView.leadingAnchor, constant: 0).isActive = true
                 newV.trailingAnchor.constraint(equalTo: middleView.trailingAnchor, constant: 0).isActive = true
@@ -107,11 +130,12 @@ class GenericTutorialViewController: UIViewController {
             }else{
                 newV.translatesAutoresizingMaskIntoConstraints = false
                 middleView.addSubview(newV)
-                newV.topAnchor.constraint(equalTo: lastView!.bottomAnchor).isActive = true
+                newV.topAnchor.constraint(equalTo: lastView!.bottomAnchor, constant: topPadding + (item.type == .image ? 5 : 0)).isActive = true
                 newV.leadingAnchor.constraint(equalTo: middleView.leadingAnchor, constant: 0).isActive = true
                 newV.trailingAnchor.constraint(equalTo: middleView.trailingAnchor, constant: 0).isActive = true
                 lastView = newV
             }
+            lastIsImage = item.type == .image
         }
         
         containerView.addSubview(middleView)
@@ -153,11 +177,11 @@ class GenericTutorialViewController: UIViewController {
         cView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 0).isActive = true
         cView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: 0).isActive = true
         cView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        cView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        cView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
+        cView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
+        cView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5).isActive = true
         
-        label.topAnchor.constraint(equalTo: cView.topAnchor, constant: 10).isActive = true
-        label.bottomAnchor.constraint(equalTo: cView.bottomAnchor, constant: -10).isActive = true
+        label.topAnchor.constraint(equalTo: cView.topAnchor, constant: 5).isActive = true
+        label.bottomAnchor.constraint(equalTo: cView.bottomAnchor, constant: -5).isActive = true
         label.trailingAnchor.constraint(equalTo: cView.trailingAnchor, constant: -20).isActive = true
         label.leadingAnchor.constraint(equalTo: cView.leadingAnchor, constant: 20).isActive = true
         

@@ -16,6 +16,8 @@
 "GENERAL_DELETE" = "Delete";
 "GENERAL_ANSW_SEARCH_BAR_PLACEHOLDER" = "Search answer";
 "GENERAL_ANSWER" = "Answer";
+"GENERAL_NEXT" = "Next";
+"GENERAL_DONE" = "Done!";
 
 //MARK: Alert
 "Alerts_YES" = "Yes";
@@ -63,3 +65,8 @@
 "Tutorials_HOW_TO_USE_KEYBOARD_selectKeyboard" = "Select RightTyped";
 "Tutorials_HOW_TO_USE_KEYBOARD_selectAnswer" = "Click the answer that best suits you and you're ready to answer!";
 "Tutorials_HOW_TO_USE_KEYBOARD_clickSend" = "Click the send button!";
+"Tutorials_HOW_TO_USE_KEYBOARD_mindChanged" = "Wrong answer or have you changed your mind?";
+"Tutorials_HOW_TO_USE_KEYBOARD_clickBack" = "Click the back icon and the answer will be deleted";
+"Tutorials_HOW_TO_USE_KEYBOARD_personalizeKeyboard" = "Do you want to customize your keyboard?";
+"Tutorials_HOW_TO_USE_KEYBOARD_clickAppIcon" = "Click on the app icon to open it";
+"Tutorials_HOW_TO_USE_KEYBOARD_finalTitle" = "You are ready to use the keyboard!";

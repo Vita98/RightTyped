@@ -109,6 +109,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
             print("Vai al tutorial su come usare la tastiera")
             let viewC = storyboard?.instantiateViewController(withIdentifier: "managerTutorialViewControllerID") as! ManagerTutorialViewController
             viewC.model = Tutorials.HOW_TO_USE_KEYBOARD
+            viewC.fromSettings = true
             let navContr = UINavigationController(rootViewController: viewC)
             navContr.navigationBar.isHidden = true
             navContr.modalPresentationStyle = .fullScreen
