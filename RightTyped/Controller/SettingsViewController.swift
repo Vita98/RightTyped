@@ -96,27 +96,23 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
         let cellModel = SettingsModelHelper.value(at: indexPath)
         
         switch cellModel.itemType{
-        case .howToEnableKeyboard:
-            print("Vai al tutorial su come abilitare la tastiera")
-            let viewC = storyboard?.instantiateViewController(withIdentifier: "enableKeyboardViewControllerID") as! EnableKeyboardViewController
-            viewC.fromSettings = true
-            let navContr = UINavigationController(rootViewController: viewC)
-            navContr.navigationBar.isHidden = true
-            navContr.modalPresentationStyle = .fullScreen
-            self.present(navContr, animated: true)
+        case .howToEnableKeyboard:            
+            guard let rNC = UINavigationController.instantiateNavController(withRoot: EnableKeyboardViewController.self) else { break }
+            rNC.root.fromSettings = true
+            self.present(rNC.navController, animated: true)
             tableView.deselectRow(at: indexPath, animated: true)
         case .howToUseKeyboard:
-            print("Vai al tutorial su come usare la tastiera")
-            let viewC = storyboard?.instantiateViewController(withIdentifier: "managerTutorialViewControllerID") as! ManagerTutorialViewController
-            viewC.model = Tutorials.HOW_TO_USE_KEYBOARD
-            viewC.fromSettings = true
-            let navContr = UINavigationController(rootViewController: viewC)
-            navContr.navigationBar.isHidden = true
-            navContr.modalPresentationStyle = .fullScreen
-            self.present(navContr, animated: true)
+            guard let rNC = UINavigationController.instantiateNavController(withRoot: ManagerTutorialViewController.self) else { break }
+            rNC.root.model = Tutorials.HOW_TO_USE_KEYBOARD
+            rNC.root.fromSettings = true
+            self.present(rNC.navController, animated: true)
             tableView.deselectRow(at: indexPath, animated: true)
         case .howToCustomizeKeyboard:
-            print("Vai al tutorial su come personalizzare la tastiera")
+            guard let rNC = UINavigationController.instantiateNavController(withRoot: ManagerTutorialViewController.self) else { break }
+            rNC.root.model = Tutorials.HOW_TO_CUSTOMIZE_KEYBOARD
+            rNC.root.fromSettings = true
+            self.present(rNC.navController, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
         default:
             break
         }

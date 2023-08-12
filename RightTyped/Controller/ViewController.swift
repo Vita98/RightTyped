@@ -37,12 +37,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if showTutorial{
-            let viewC = storyboard?.instantiateViewController(withIdentifier: "enableKeyboardViewControllerID") as! EnableKeyboardViewController
-            let navContr = UINavigationController(rootViewController: viewC)
-            navContr.navigationBar.isHidden = true
-            navContr.modalPresentationStyle = .fullScreen
-            self.present(navContr, animated: true)
+        if showTutorial, let rNC = UINavigationController.instantiateNavController(withRoot: EnableKeyboardViewController.self){
+            self.present(rNC.navController, animated: true)
         }
         
         addObservers()

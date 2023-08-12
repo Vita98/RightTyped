@@ -38,6 +38,7 @@
 		015B9E6B2A5ABA0300171360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015B9E6A2A5ABA0300171360 /* Assets.xcassets */; };
 		015B9E702A5AEF2400171360 /* AppNavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B9E6F2A5AEF2400171360 /* AppNavigationHelper.swift */; };
 		015DF52F2A87C9CF00C00064 /* FinalTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015DF52E2A87C9CF00C00064 /* FinalTutorialViewController.swift */; };
+		015DF5312A88182F00C00064 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015DF5302A88182F00C00064 /* UIStoryboard.swift */; };
 		0160F8C92A2946F3005B97CB /* NewAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */; };
 		0160F8CC2A2949AE005B97CB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8CB2A2949AE005B97CB /* UIViewController.swift */; };
 		016782A62A5B2E4E00DA8A11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 016782A82A5B2E4E00DA8A11 /* Localizable.strings */; };
@@ -159,6 +160,7 @@
 		015B9E6A2A5ABA0300171360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		015B9E6F2A5AEF2400171360 /* AppNavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationHelper.swift; sourceTree = "<group>"; };
 		015DF52E2A87C9CF00C00064 /* FinalTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTutorialViewController.swift; sourceTree = "<group>"; };
+		015DF5302A88182F00C00064 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnswerViewController.swift; sourceTree = "<group>"; };
 		0160F8CB2A2949AE005B97CB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		016782A72A5B2E4E00DA8A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				01B2D6C22A6D407E00C2A18C /* UIFont.swift */,
 				014240422A85477900006F2B /* NSLayoutConstraint.swift */,
 				014240482A865FD600006F2B /* UIDevice.swift */,
+				015DF5302A88182F00C00064 /* UIStoryboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				01C84C182A508CE300C8AD77 /* UINavigationController.swift in Sources */,
 				01A391382A2F8F980051FBE4 /* EnableKeyboardViewController.swift in Sources */,
 				016782AD2A5B3BB500DA8A11 /* LocalizableHelper.swift in Sources */,
+				015DF5312A88182F00C00064 /* UIStoryboard.swift in Sources */,
 				01595FF22A486374003EAE79 /* AddAnswerCustomView.swift in Sources */,
 				015B9E642A5974BD00171360 /* SettingsModel.swift in Sources */,
 				01525E182A352CFE00E1E5E9 /* DefaultData.swift in Sources */,

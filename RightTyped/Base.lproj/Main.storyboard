@@ -520,7 +520,7 @@ when and how you want!</string>
         <!--Enable Keyboard View Controller-->
         <scene sceneID="bPD-xu-Avw">
             <objects>
-                <viewController storyboardIdentifier="enableKeyboardViewControllerID" id="Kt6-Ob-U90" customClass="EnableKeyboardViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EnableKeyboardViewController" id="Kt6-Ob-U90" customClass="EnableKeyboardViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sCj-hf-8cD">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -770,7 +770,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
         <!--Manager Tutorial View Controller-->
         <scene sceneID="Yqb-aq-HEr">
             <objects>
-                <viewController storyboardIdentifier="managerTutorialViewControllerID" id="I9x-om-jKW" customClass="ManagerTutorialViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManagerTutorialViewController" id="I9x-om-jKW" customClass="ManagerTutorialViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UYs-hl-Aae">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

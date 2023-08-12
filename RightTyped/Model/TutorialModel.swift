@@ -66,6 +66,7 @@ struct TutorialModel{
 
 // MARK: List of all tutorials
 struct Tutorials{
+    private init(){}
     static let HOW_TO_USE_KEYBOARD: TutorialModel =
     TutorialModel(title: AppString.Tutorials.HOW_TO_USE_KEYBOARD.title, pageModels: [
         TutorialPageModel(gifPath: "tut2-1", stackContent: [
@@ -79,6 +80,20 @@ struct Tutorials{
             StackContentItem(content: AppString.Tutorials.HOW_TO_USE_KEYBOARD.mindChanged, type: .text),
             StackContentItem(content: "undoIcon", type: .image, size: CGSize(width: 35, height: 25)),
             StackContentItem(content: AppString.Tutorials.HOW_TO_USE_KEYBOARD.clickBack, type: .text)]),
+        TutorialPageModel(gifPath: "tut2-4", stackContent: [
+            StackContentItem(content: AppString.Tutorials.HOW_TO_USE_KEYBOARD.personalizeKeyboard, type: .text),
+            StackContentItem(content: "rIcon", type: .image, size: CGSize(width: 35, height: 30)),
+            StackContentItem(content: AppString.Tutorials.HOW_TO_USE_KEYBOARD.clickAppIcon, type: .text)]),
+        TutorialPageModel(stackContent: [
+            StackContentItem(content: AppString.Tutorials.HOW_TO_USE_KEYBOARD.finalTitle, type: .text)], final: true)])
+    
+    //TODO: Change this tutorial with the proper one
+    static let HOW_TO_CUSTOMIZE_KEYBOARD: TutorialModel =
+    TutorialModel(title: AppString.Tutorials.HOW_TO_USE_KEYBOARD.title, pageModels: [
+        TutorialPageModel(gifPath: "tut2-1", stackContent: [
+            StackContentItem(content: AppString.Tutorials.HOW_TO_USE_KEYBOARD.openKeyboard, type: .text),
+            StackContentItem(content: "globeIcon", type: .image, size: CGSize(width: 35, height: 35)),
+            StackContentItem(content: AppString.Tutorials.HOW_TO_USE_KEYBOARD.selectKeyboard, type: .text)]),
         TutorialPageModel(gifPath: "tut2-4", stackContent: [
             StackContentItem(content: AppString.Tutorials.HOW_TO_USE_KEYBOARD.personalizeKeyboard, type: .text),
             StackContentItem(content: "rIcon", type: .image, size: CGSize(width: 35, height: 30)),

@@ -8,6 +8,16 @@
 import Foundation
 import UIKit
 
+class RootNavController<T: UIViewController>{
+    let navController: UINavigationController
+    let root: T
+    
+    internal init(navController: UINavigationController, root: T) {
+        self.navController = navController
+        self.root = root
+    }
+}
+
 extension UINavigationController {
     func pushViewController(viewController: UIViewController, animated: Bool, completion: @escaping () -> Void) {
         pushViewController(viewController, animated: animated)
@@ -31,5 +41,13 @@ extension UINavigationController {
         } else {
             completion()
         }
+    }
+    
+    static func instantiateNavController<T : UIViewController>(withRoot viewController: T.Type) -> RootNavController<T>?{
+        guard let viewC : T = UIStoryboard.main().instantiate(viewController) else { return nil }
+        let navContr = UINavigationController(rootViewController: viewC)
+        navContr.navigationBar.isHidden = true
+        navContr.modalPresentationStyle = .fullScreen
+        return RootNavController(navController: navContr, root: viewC)
     }
 }
