@@ -13,11 +13,11 @@ extension UIStoryboard{
         return UIStoryboard(name: "Main", bundle: nil)
     }
     
-    func instantiate<T: UIViewController>(_ viewController: T.Type) -> T?{
-        return self.instantiateViewController(withIdentifier: String(describing: viewController)) as? T
+    func instantiate<T: UIViewController>() -> T?{
+        return self.instantiateViewController(withIdentifier: String(describing: T.self)) as? T
     }
     
-    func instantiate<T: UIViewController>(_ viewController: T.Type) -> T{
-        return self.instantiateViewController(withIdentifier: String(describing: viewController)) as! T
+    func instantiate<T: UIViewController>() -> T{
+        return self.instantiateViewController(withIdentifier: String(describing: T.self)) as! T
     }
 }

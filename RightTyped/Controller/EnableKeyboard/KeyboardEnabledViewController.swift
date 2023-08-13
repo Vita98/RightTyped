@@ -30,13 +30,13 @@ class KeyboardEnabledViewController: UIViewController {
         if fromSettings{
             closeView()
         }else{
-            let viewC: ManagerTutorialViewController = UIStoryboard.main().instantiate(ManagerTutorialViewController.self)
+            let viewC: ManagerTutorialViewController = UIStoryboard.main().instantiate()
             viewC.model = Tutorials.HOW_TO_USE_KEYBOARD
             viewC.fromSettings = self.fromSettings
             viewC.customFinalAction = {[weak self] in
                 //Implement the second tutorial
                 guard let strongSelf = self else { return }
-                let secondTutorial: ManagerTutorialViewController = UIStoryboard.main().instantiate(ManagerTutorialViewController.self)
+                let secondTutorial: ManagerTutorialViewController = UIStoryboard.main().instantiate()
                 secondTutorial.model = Tutorials.HOW_TO_CUSTOMIZE_KEYBOARD
                 secondTutorial.fromSettings = strongSelf.fromSettings
                 secondTutorial.isFinalTutorial = true

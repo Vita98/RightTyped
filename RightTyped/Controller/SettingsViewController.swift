@@ -117,7 +117,4 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
             break
         }
     }
-    
-    
-    
 }
