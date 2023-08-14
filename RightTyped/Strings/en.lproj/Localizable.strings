@@ -70,3 +70,11 @@
 "Tutorials_HOW_TO_USE_KEYBOARD_personalizeKeyboard" = "Do you want to customize your keyboard?";
 "Tutorials_HOW_TO_USE_KEYBOARD_clickAppIcon" = "Click on the app icon to open it";
 "Tutorials_HOW_TO_USE_KEYBOARD_finalTitle" = "You are ready to use the keyboard!";
+
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_TITLE" = "How to customize the keyboard using the app";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_dragAndDrop" = "Reorder categories with a simple drag and drop";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_orderInApp" = "The order presented in the app will be preserved in the keyboard";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_answerDragAndDrop" = "Reorder answers with a simple drag and drop";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_possibleAction" = "Add, edit or delete categories and answers using the following buttons";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle" = "You are ready to customize your keyboard!";
+"Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Press and hold your finger on an answer to see its content";

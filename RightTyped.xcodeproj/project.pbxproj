@@ -39,6 +39,11 @@
 		015B9E702A5AEF2400171360 /* AppNavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B9E6F2A5AEF2400171360 /* AppNavigationHelper.swift */; };
 		015DF52F2A87C9CF00C00064 /* FinalTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015DF52E2A87C9CF00C00064 /* FinalTutorialViewController.swift */; };
 		015DF5312A88182F00C00064 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015DF5302A88182F00C00064 /* UIStoryboard.swift */; };
+		015DF5362A892E7200C00064 /* tut3-1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 015DF5352A892E7200C00064 /* tut3-1.gif */; };
+		015DF5382A89326300C00064 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015DF5372A89326300C00064 /* UIImage.swift */; };
+		015DF53E2A8A0E1400C00064 /* tut3-2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 015DF53D2A8A0E1400C00064 /* tut3-2.gif */; };
+		015DF5402A8A37B200C00064 /* tut3-3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 015DF53F2A8A37B200C00064 /* tut3-3.gif */; };
+		015DF5422A8A9A7500C00064 /* tut2-5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 015DF5412A8A9A7500C00064 /* tut2-5.gif */; };
 		0160F8C92A2946F3005B97CB /* NewAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */; };
 		0160F8CC2A2949AE005B97CB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160F8CB2A2949AE005B97CB /* UIViewController.swift */; };
 		016782A62A5B2E4E00DA8A11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 016782A82A5B2E4E00DA8A11 /* Localizable.strings */; };
@@ -161,6 +166,11 @@
 		015B9E6F2A5AEF2400171360 /* AppNavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationHelper.swift; sourceTree = "<group>"; };
 		015DF52E2A87C9CF00C00064 /* FinalTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalTutorialViewController.swift; sourceTree = "<group>"; };
 		015DF5302A88182F00C00064 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		015DF5352A892E7200C00064 /* tut3-1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "tut3-1.gif"; sourceTree = "<group>"; };
+		015DF5372A89326300C00064 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		015DF53D2A8A0E1400C00064 /* tut3-2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "tut3-2.gif"; sourceTree = "<group>"; };
+		015DF53F2A8A37B200C00064 /* tut3-3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "tut3-3.gif"; sourceTree = "<group>"; };
+		015DF5412A8A9A7500C00064 /* tut2-5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "tut2-5.gif"; sourceTree = "<group>"; };
 		0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnswerViewController.swift; sourceTree = "<group>"; };
 		0160F8CB2A2949AE005B97CB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		016782A72A5B2E4E00DA8A11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -277,6 +287,7 @@
 				014240422A85477900006F2B /* NSLayoutConstraint.swift */,
 				014240482A865FD600006F2B /* UIDevice.swift */,
 				015DF5302A88182F00C00064 /* UIStoryboard.swift */,
+				015DF5372A89326300C00064 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -311,10 +322,8 @@
 		0142403F2A83E8F100006F2B /* TutorialsGIF */ = {
 			isa = PBXGroup;
 			children = (
-				01B07EE62A80FA700045DC06 /* tut2-1.gif */,
-				014240402A84072500006F2B /* tut2-2.gif */,
-				0142404A2A866DD900006F2B /* tut2-3.gif */,
-				014240522A86780900006F2B /* tut2-4.png */,
+				015DF5332A892E4F00C00064 /* tut2 */,
+				015DF5342A892E5800C00064 /* tut3 */,
 			);
 			path = TutorialsGIF;
 			sourceTree = "<group>";
@@ -334,6 +343,28 @@
 				015B9E6F2A5AEF2400171360 /* AppNavigationHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		015DF5332A892E4F00C00064 /* tut2 */ = {
+			isa = PBXGroup;
+			children = (
+				01B07EE62A80FA700045DC06 /* tut2-1.gif */,
+				014240402A84072500006F2B /* tut2-2.gif */,
+				0142404A2A866DD900006F2B /* tut2-3.gif */,
+				014240522A86780900006F2B /* tut2-4.png */,
+				015DF5412A8A9A7500C00064 /* tut2-5.gif */,
+			);
+			path = tut2;
+			sourceTree = "<group>";
+		};
+		015DF5342A892E5800C00064 /* tut3 */ = {
+			isa = PBXGroup;
+			children = (
+				015DF5352A892E7200C00064 /* tut3-1.gif */,
+				015DF53D2A8A0E1400C00064 /* tut3-2.gif */,
+				015DF53F2A8A37B200C00064 /* tut3-3.gif */,
+			);
+			path = tut3;
 			sourceTree = "<group>";
 		};
 		0160F8CA2A2947CB005B97CB /* Controller */ = {
@@ -675,12 +706,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				01DA1C282A2B52E200A28CE7 /* CustomTextField.xib in Resources */,
+				015DF53E2A8A0E1400C00064 /* tut3-2.gif in Resources */,
 				014240412A84072500006F2B /* tut2-2.gif in Resources */,
+				015DF5402A8A37B200C00064 /* tut3-3.gif in Resources */,
 				019E2F142A1E8C3B005A8021 /* LaunchScreen.storyboard in Resources */,
 				014240532A86780900006F2B /* tut2-4.png in Resources */,
 				01A680312A278D6200DD67DC /* HomeHeaderTableViewCell.xib in Resources */,
 				019E2F2E2A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-300-light.otf in Resources */,
 				01A680382A27902600DD67DC /* AnswersHeaderView.xib in Resources */,
+				015DF5422A8A9A7500C00064 /* tut2-5.gif in Resources */,
 				01DA1C2E2A2CFF8C00A28CE7 /* CustomTextArea.xib in Resources */,
 				015B9E692A59F10300171360 /* SettingsTableViewCell.xib in Resources */,
 				019E2F302A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
@@ -688,6 +722,7 @@
 				0142404B2A866DD900006F2B /* tut2-3.gif in Resources */,
 				016782A62A5B2E4E00DA8A11 /* Localizable.strings in Resources */,
 				01B07EE72A80FA700045DC06 /* tut2-1.gif in Resources */,
+				015DF5362A892E7200C00064 /* tut3-1.gif in Resources */,
 				01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */,
 				019E2F112A1E8C3B005A8021 /* Assets.xcassets in Resources */,
 				014240472A86565F00006F2B /* Assets.xcassets in Resources */,
@@ -753,6 +788,7 @@
 				015B9E682A59F10300171360 /* SettingsTableViewCell.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
 				01A3913A2A2FB4D80051FBE4 /* KeyboardEnabledViewController.swift in Sources */,
+				015DF5382A89326300C00064 /* UIImage.swift in Sources */,
 				01930A432A7EBE6F005EE27A /* GenericTutorialPageViewController.swift in Sources */,
 				01C8A0332A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */,
 				01C8A0362A323F03001DBC8D /* DataModelPersistentContainer.swift in Sources */,

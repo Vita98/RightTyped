@@ -42,7 +42,7 @@ class PopoverView: UIView {
     //MARK: Configuration
     private func setLayout(){
         self.addSubview(label)
-        label.setFloodConstrait(in: self)
+        label.setFloodConstrait(in: self, leading: 10, trailing: -10)
         self.alpha = 0
     }
     

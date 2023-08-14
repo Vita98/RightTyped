@@ -70,3 +70,11 @@
 "Tutorials_HOW_TO_USE_KEYBOARD_personalizeKeyboard" = "Vuoi personalizzare la tua tastiera?";
 "Tutorials_HOW_TO_USE_KEYBOARD_clickAppIcon" = "Clicca sull’icona dell’app per aprirla";
 "Tutorials_HOW_TO_USE_KEYBOARD_finalTitle" = "Sei pronto per usare la tastiera!";
+
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_TITLE" = "Come personalizzare la tastiera mediante l’app";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_dragAndDrop" = "Riordina le categoria tramite un semplice drag e drop";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_orderInApp" = "L'ordine presente nell'app verrà mantenuto nella tastiera";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_answerDragAndDrop" = "Riordina le risposte tramite un semplice drag e drop";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_possibleAction" = "Aggiungi, modifica o cancella le categorie e le risposte usando i seguenti bottoni";
+"Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle" = "Sei pronto a personalizzare la tua tastiera!";
+"Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Tieni premuto il dito su di una risposta per vederene il contenuto";

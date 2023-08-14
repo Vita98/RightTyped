@@ -102,7 +102,7 @@ struct SettingsModelHelper{
         case .howToUseKeyboard:
             return Tutorials.HOW_TO_USE_KEYBOARD
         case .howToCustomizeKeyboard:
-            return nil
+            return Tutorials.HOW_TO_CUSTOMIZE_KEYBOARD
         default:
             return nil
         }

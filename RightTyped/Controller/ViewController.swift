@@ -133,7 +133,7 @@ class ViewController: UIViewController {
     private func updateAddCatIconVisibility(){
         //Updating the add category icon
         if let count = categoryFetchedResultsController.fetchedObjects?.count{
-            homeHeaderTableViewCell?.enableAddButton(count < 5, animated: true)
+            homeHeaderTableViewCell?.enableAddButton(count < MAXIMUM_CATEGORIES_AVAILABLE, animated: true)
         }
     }
     

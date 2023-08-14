@@ -69,6 +69,17 @@ struct AppString{
             static let personalizeKeyboard: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_personalizeKeyboard").locale
             static let clickAppIcon: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_clickAppIcon").locale
             static let finalTitle: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_finalTitle").locale
+            static let keyboardPopUp: String = LocalizableString("Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp").locale
+        }
+        
+        struct HOW_TO_CUSTOMIZE_KEYBOARD{
+            private init(){}
+            static let title: String = LocalizableString("Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_TITLE").locale
+            static let dragAndDrop: String = LocalizableString("Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_dragAndDrop").locale
+            static let orderInApp: String = LocalizableString("Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_orderInApp").locale
+            static let answerDragAndDrop: String = LocalizableString("Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_answerDragAndDrop").locale
+            static let possibleAction: String = LocalizableString("Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_possibleAction").locale
+            static let finalTitle: String = LocalizableString("Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle").locale
         }
     }
     

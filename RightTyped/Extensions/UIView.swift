@@ -49,10 +49,10 @@ extension UIView{
     
     /// Method that set the constraint in a way to fill the superview component
     /// - Parameter view: the superview in which the self component must be filled
-    public func setFloodConstrait(in view: UIView){
+    public func setFloodConstrait(in view: UIView, leading: Double = 0, trailing: Double = 0){
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        self.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leading).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: trailing).isActive = true
         self.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
@@ -113,27 +113,13 @@ extension UIView{
     
     /// Method to instanciate a view from a xib file
     /// - Parameter nibName: the name of the associated xib file
-    /// - Returns: the results UIView
-    /// - Warning: if nibName is nil, the xib files will have the same name as the given Generic class T. Force casting to the give T to specify the generic
+    /// - Returns: the result UIView
+    /// - Warning: if nibName is nil, the xib file must have the same name as the given Generic class T. Force casting to the give T to specify the generic
     class func instanceFromNib<T : UIView>(withNibName nibName: String?) -> T? {
         if let nibName = nibName{
             return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
         }else{
             return UINib(nibName: String(describing: T.self), bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
         }
-    }
-}
-
-extension UIImageView{
-    
-}
-
-extension UIImage{
-    public func getAspectRatio() -> Double{
-        return self.size.height / self.size.width
-    }
-    
-    static func loadFromBundle(_ name: String) -> UIImage?{
-        return UIImage(named: name, in: Bundle.main, compatibleWith: nil)
     }
 }

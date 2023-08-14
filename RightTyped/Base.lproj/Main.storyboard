@@ -938,7 +938,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <rect key="frame" x="0.0" y="0.0" width="390" height="642"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgP-r4-8Xs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgP-r4-8Xs">
                                 <rect key="frame" x="10" y="0.0" width="370" height="34.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -992,13 +992,14 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <outlet property="gifHeightConstraint" destination="YM5-K0-d04" id="qj1-VD-Lwc"/>
                         <outlet property="gifImageView" destination="aWO-GQ-Bus" id="twn-Wn-pyN"/>
                         <outlet property="gifShadowView" destination="Szv-nB-Etb" id="SLO-vZ-hMP"/>
+                        <outlet property="gifTopSpacingConstraint" destination="erd-jF-VxM" id="PbZ-dW-d9q"/>
                         <outlet property="gifWidthConstraint" destination="V8l-8w-dKj" id="kKc-eW-dLe"/>
                         <outlet property="titleLabel" destination="HgP-r4-8Xs" id="dKt-If-MDv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcs-hx-f87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4534" y="796"/>
+            <point key="canvasLocation" x="4533.8461538461534" y="795.4976303317535"/>
         </scene>
         <!--Final Tutorial View Controller-->
         <scene sceneID="4Vq-02-mKO">

@@ -31,7 +31,7 @@ class FinalTutorialViewController: UIViewController {
     // MARK: - Utility
     private func configure(){
         guard let model = model, model.final, model.stackContent.count == 1, model.stackContent.first?.type == .text else { return }
-        titleLabel.text = model.stackContent.first?.content
+        titleLabel.text = model.stackContent.first?.content.first
         bottomLabel.text = fromSettings || isFinal ? AppString.General.done : AppString.General.next
     }
     

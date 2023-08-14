@@ -95,24 +95,20 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellModel = SettingsModelHelper.value(at: indexPath)
         
-        switch cellModel.itemType{
-        case .howToEnableKeyboard:            
-            guard let rNC = UINavigationController.instantiateNavController(withRoot: EnableKeyboardViewController.self) else { break }
-            rNC.root.fromSettings = true
-            self.present(rNC.navController, animated: true)
-            tableView.deselectRow(at: indexPath, animated: true)
-        case .howToUseKeyboard:
-            guard let rNC = UINavigationController.instantiateNavController(withRoot: ManagerTutorialViewController.self) else { break }
-            rNC.root.model = Tutorials.HOW_TO_USE_KEYBOARD
-            rNC.root.fromSettings = true
-            self.present(rNC.navController, animated: true)
-            tableView.deselectRow(at: indexPath, animated: true)
-        case .howToCustomizeKeyboard:
-            guard let rNC = UINavigationController.instantiateNavController(withRoot: ManagerTutorialViewController.self) else { break }
-            rNC.root.model = Tutorials.HOW_TO_CUSTOMIZE_KEYBOARD
-            rNC.root.fromSettings = true
-            self.present(rNC.navController, animated: true)
-            tableView.deselectRow(at: indexPath, animated: true)
+        switch cellModel.type{
+        case .Tutorial:
+            if cellModel.itemType == .howToEnableKeyboard{
+                guard let rNC = UINavigationController.instantiateNavController(withRoot: EnableKeyboardViewController.self) else { break }
+                rNC.root.fromSettings = true
+                self.present(rNC.navController, animated: true)
+                tableView.deselectRow(at: indexPath, animated: true)
+            }else{
+                guard let rNC = UINavigationController.instantiateNavController(withRoot: ManagerTutorialViewController.self) else { break }
+                rNC.root.model = SettingsModelHelper.getTutorial(for: cellModel.itemType)
+                rNC.root.fromSettings = true
+                self.present(rNC.navController, animated: true)
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
         default:
             break
         }
