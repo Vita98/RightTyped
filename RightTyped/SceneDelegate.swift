@@ -77,6 +77,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let initialViewController = storyboard.instantiateViewController(withIdentifier: "viewControllerID") as! ViewController
+        
+        if !UserDefaultManager.shared.isKeyboardExtensionEnabled(), let boolVal = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY), !boolVal{
+            initialViewController.showTutorial = true
+        }
+        
         let navController = UINavigationController(rootViewController: initialViewController)
         navController.navigationBar.isHidden = true
 
