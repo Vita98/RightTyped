@@ -22,6 +22,7 @@
 //MARK: Alert
 "Alerts_YES" = "Si";
 "Alerts_NO" = "No";
+"Alerts_OK" = "Ok";
 "Alerts_TITLE_ARE_YOU_SURE" = "Sei sicuro?";
 "Alerts_GO_BACK_WSAVING" = "Sei sicuro di voler tornare indietro?\nLe modifiche effettuate non verranno salvate";
 
@@ -30,11 +31,23 @@
 "SettingsTypeEnum_KEYBOARD" = "Tastiera";
 "SettingsTypeEnum_TUTORIAL" = "Guide";
 
-"SettingsModel_TOUCH_ID" = "";
 "SettingsModel_GO_BACK_TO_DEFAULT_KEYBOARD" = "Ritorna sulla tastiera di default dopo aver inserito una risposta";
 "SettingsModel_HOW_TO_ENABLE_KEYBOARD" = "Come abilitare la tastiera";
 "SettingsModel_HOW_TO_USE_KEYBOARD" = "Come usare la tastiera";
 "SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD" = "Come personalizzare la tastiera utilizzando quest'app";
+
+//MARK: Biometric
+"Biometric_REASON" = "Devi essere autenticato per procedere";
+"Biometric_Alerts_BIOMETRIC_ENABLED_TITLE" = "Autenticazione biometrica abilitata!";
+"Biometric_Alerts_BIOMETRIC_ENABLED_MESSAGE" = "L'autenticazione biometrica e stata correttamente abilitata";
+"Biometric_Alerts_BIOMETRIC_DISABLED_TITLE" = "Autenticazione biometrica disabilitata!";
+"Biometric_Alerts_BIOMETRIC_DISABLED_MESSAGE" = "L'autenticazione biometrica e stata correttamente disabilitata";
+"Biometric_Alerts_AUTHENTICATION_FAILED_TITLE" = "Autenticazione fallita!";
+"Biometric_Alerts_AUTHENTICATION_FAILED_MESSAGE" = "Non e stato possibile verificare la tua identità, riprova più tardi";
+
+//MARK: BiometricViewController
+"BiometricViewController_MIDDLE_MESSAGE" = "RightTyped è bloccata\nUtilizza il %@ per sbloccarla";
+"BiometricViewController_BUTTON_TEXT" = "Utilizza il %@";
 
 //MARK: HomeHeaderTableViewCell
 "HomeHeaderTableViewCell_DESC" = "Hai a disposizione fino a %d categorie";

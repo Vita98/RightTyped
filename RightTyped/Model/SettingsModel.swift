@@ -7,63 +7,46 @@
 
 import Foundation
 
+fileprivate var VALUES_MODEL: [SettingsCellModel] = {
+    return [SettingsCellModel(type: .App, itemType: .biometric, text: BiometricHelper.biometricType() ?? "", enabled: BiometricHelper.isBiometricPossible()),
+            SettingsCellModel(type: .Keyboard, itemType: .goBackToDefaultKeyboard, text: AppString.SettingsModel.goBackToDefaultKeyboardText),
+            SettingsCellModel(type: .Tutorial, itemType: .howToEnableKeyboard, text: AppString.SettingsModel.howToEnableKeyboardText),
+            SettingsCellModel(type: .Tutorial, itemType: .howToUseKeyboard, text: AppString.SettingsModel.howToUseKeyboardText),
+            SettingsCellModel(type: .Tutorial, itemType: .howToCustomizeKeyboard, text: AppString.SettingsModel.howToCustomizeKeyboardText),]
+}()
+
 
 typealias SettingsAction = (Bool) -> ()
 
-enum SettingsTypeEnum: String{
+
+enum SettingsTypeEnum: String, CaseIterable{
     case App = "App"
     case Keyboard = "Tastiera"
     case Tutorial = "Tutorial"
     
+    public func getOrderedVector() -> [SettingsTypeEnum]{
+        return [.App, .Keyboard, .Tutorial]
+    }
+    
     public func getType() -> SettingsType {
         switch self {
         case .App:
-            return SettingsType(name: AppString.SettingsTypeEnum.app, index: 0)
+            return SettingsType(type: .App, name: AppString.SettingsTypeEnum.app)
         case .Keyboard:
-            return SettingsType(name: AppString.SettingsTypeEnum.keyboard, index: 1)
+            return SettingsType(type: .Keyboard, name: AppString.SettingsTypeEnum.keyboard)
         case .Tutorial:
-            return SettingsType(name: AppString.SettingsTypeEnum.tutorial, index: 2)
+            return SettingsType(type: .Tutorial, name: AppString.SettingsTypeEnum.tutorial)
         }
     }
-    
-    public static func getTypeAtIndex(index: Int) -> SettingsType? {
-        switch index {
-        case 0:
-            return SettingsTypeEnum.App.getType()
-        case 1:
-            return SettingsTypeEnum.Keyboard.getType()
-        case 2:
-            return SettingsTypeEnum.Tutorial.getType()
-        default:
-            return nil
-        }
-    }
-    
-    public static func getTypeEnumAtIndex(index: Int) -> SettingsTypeEnum? {
-        switch index {
-        case 0:
-            return SettingsTypeEnum.App
-        case 1:
-            return SettingsTypeEnum.Keyboard
-        case 2:
-            return SettingsTypeEnum.Tutorial
-        default:
-            return nil
-        }
-    }
-    
-    public static var count: Int = {
-       return 3
-    }()
 }
 
 struct SettingsType{
+    var type: SettingsTypeEnum
     var name: String
-    var index: Int
 }
 
 enum SettingsItem{
-    case touchID
+    case biometric
     case goBackToDefaultKeyboard
     case howToEnableKeyboard
     case howToUseKeyboard
@@ -76,25 +59,53 @@ struct SettingsCellModel{
     var text: String
     var status: Bool?
     var action: SettingsAction?
+    var enabled: Bool = true
 }
 
 struct SettingsModelHelper{
-    private init(){}
+    public static let shared: SettingsModelHelper = SettingsModelHelper()
     
-    static var values: [SettingsCellModel] = {
-        return [SettingsCellModel(type: .App, itemType: .touchID, text: AppString.SettingsModel.touchIDText),
-                SettingsCellModel(type: .Keyboard, itemType: .goBackToDefaultKeyboard, text: AppString.SettingsModel.goBackToDefaultKeyboardText),
-                SettingsCellModel(type: .Tutorial, itemType: .howToEnableKeyboard, text: AppString.SettingsModel.howToEnableKeyboardText),
-                SettingsCellModel(type: .Tutorial, itemType: .howToUseKeyboard, text: AppString.SettingsModel.howToUseKeyboardText),
-                SettingsCellModel(type: .Tutorial, itemType: .howToCustomizeKeyboard, text: AppString.SettingsModel.howToCustomizeKeyboardText),]
-    }()
-    
-    static func value(at index: IndexPath) -> SettingsCellModel{
-        return SettingsModelHelper.values[index.row+index.section]
+    private init(){
+        //populating the vector
+        var typeAlreadyInserted: [SettingsTypeEnum] = []
+        
+        for value in VALUES_MODEL{
+            if value.enabled{
+                values.append(value)
+                if !typeAlreadyInserted.contains(value.type){
+                    settingsType.append(value.type.getType())
+                    typeAlreadyInserted.append(value.type)
+                }
+            }
+        }
     }
     
-    static func numberOfTutorial(for settingsTypeEnum: SettingsTypeEnum) -> Int{
-        return SettingsModelHelper.values.filter({$0.type == settingsTypeEnum}).count
+    private var values: [SettingsCellModel] = []
+    private var settingsType: [SettingsType] = []
+    
+    func getNumberOfSection() -> Int{
+        var num = 0
+        for type in SettingsTypeEnum.allCases{
+            if numberOfSettings(for: type) > 0{
+                num = num + 1
+            }
+        }
+        return num
+    }
+    
+    func getTypeAtIndex(index: Int) -> SettingsType? {
+        if index < settingsType.count{
+            return settingsType[index]
+        }
+        return nil
+    }
+    
+    func value(at index: IndexPath) -> SettingsCellModel{
+        return values[index.row+index.section]
+    }
+    
+    func numberOfSettings(for settingsTypeEnum: SettingsTypeEnum) -> Int{
+        return values.filter({$0.type == settingsTypeEnum && $0.enabled  == true}).count
     }
     
     static func getTutorial(for settingsItem: SettingsItem) -> TutorialModel?{

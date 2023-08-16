@@ -22,6 +22,7 @@
 //MARK: Alert
 "Alerts_YES" = "Yes";
 "Alerts_NO" = "No";
+"Alerts_OK" = "Ok";
 "Alerts_TITLE_ARE_YOU_SURE" = "Are you sure?";
 "Alerts_GO_BACK_WSAVING" = "Are you sure you want to go back?\nThe changes you made will not be saved";
 
@@ -30,11 +31,23 @@
 "SettingsTypeEnum_KEYBOARD" = "Keyboard";
 "SettingsTypeEnum_TUTORIAL" = "Tutorial";
 
-"SettingsModel_TOUCH_ID" = "Touch ID";
 "SettingsModel_GO_BACK_TO_DEFAULT_KEYBOARD" = "Return to the default keyboard after entering an answer";
 "SettingsModel_HOW_TO_ENABLE_KEYBOARD" = "How to enable keyboard";
 "SettingsModel_HOW_TO_USE_KEYBOARD" = "How to use the keyboard";
 "SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD" = "How to customize your keyboard using this app";
+
+//MARK: Biometric
+"Biometric_REASON" = "Please authenticate to procede";
+"Biometric_Alerts_BIOMETRIC_ENABLED_TITLE" = "Biometrics enabled!";
+"Biometric_Alerts_BIOMETRIC_ENABLED_MESSAGE" = "The biometric has been correctly enabled";
+"Biometric_Alerts_BIOMETRIC_DISABLED_TITLE" = "Biometrics disabled!";
+"Biometric_Alerts_BIOMETRIC_DISABLED_MESSAGE" = "The biometric has been correctly disabled";
+"Biometric_Alerts_AUTHENTICATION_FAILED_TITLE" = "Authentication failed!";
+"Biometric_Alerts_AUTHENTICATION_FAILED_MESSAGE" = "You could not be verified, please try again";
+
+//MARK: BiometricViewController
+"BiometricViewController_MIDDLE_MESSAGE" = "RightTyped is locked\nUse the %@ to unlock it";
+"BiometricViewController_BUTTON_TEXT" = "Use %@";
 
 //MARK: HomeHeaderTableViewCell
 "HomeHeaderTableViewCell_DESC" = "You have maximum %d categories";

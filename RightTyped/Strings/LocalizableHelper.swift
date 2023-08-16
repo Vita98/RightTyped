@@ -8,6 +8,7 @@
 import Foundation
 
 struct AppString{
+    private init(){}
     
     struct Language{
         private init(){}
@@ -35,6 +36,7 @@ struct AppString{
         private init(){}
         static let yes: String = LocalizableString("Alerts_YES").locale
         static let no: String = LocalizableString("Alerts_NO").locale
+        static let ok: String = LocalizableString("Alerts_OK").locale
         static let titleAreYouSure: String = LocalizableString("Alerts_TITLE_ARE_YOU_SURE").locale
         static let genericGoBackWithoutSaving: String = LocalizableString("Alerts_GO_BACK_WSAVING").locale
     }
@@ -48,11 +50,25 @@ struct AppString{
     
     struct SettingsModel{
         private init(){}
-        static let touchIDText: String = LocalizableString("SettingsModel_TOUCH_ID").locale
         static let goBackToDefaultKeyboardText: String = LocalizableString("SettingsModel_GO_BACK_TO_DEFAULT_KEYBOARD").locale
         static let howToEnableKeyboardText: String = LocalizableString("SettingsModel_HOW_TO_ENABLE_KEYBOARD").locale
         static let howToUseKeyboardText: String = LocalizableString("SettingsModel_HOW_TO_USE_KEYBOARD").locale
         static let howToCustomizeKeyboardText: String = LocalizableString("SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD").locale
+    }
+    
+    struct Biometric{
+        private init(){}
+        static let reason: String = LocalizableString("Biometric_REASON").locale
+        
+        struct Alerts{
+            private init(){}
+            static let biometricEnabledTitle: String = LocalizableString("Biometric_Alerts_BIOMETRIC_ENABLED_TITLE").locale
+            static let biometricEnabledMessage: String = LocalizableString("Biometric_Alerts_BIOMETRIC_ENABLED_MESSAGE").locale
+            static let biometricDisabledTitle: String = LocalizableString("Biometric_Alerts_BIOMETRIC_DISABLED_TITLE").locale
+            static let biometricDisabledMessage: String = LocalizableString("Biometric_Alerts_BIOMETRIC_DISABLED_MESSAGE").locale
+            static let authenticationFailedTitle: String = LocalizableString("Biometric_Alerts_AUTHENTICATION_FAILED_TITLE").locale
+            static let authenticationFailedMessage: String = LocalizableString("Biometric_Alerts_AUTHENTICATION_FAILED_MESSAGE").locale
+        }
     }
     
     struct Tutorials{
@@ -115,5 +131,11 @@ struct AppString{
         private init(){}
         static let keyboardDisabled: String = LocalizableString("EnableKeyboardViewController_KEYBOARD_DISABLED").locale
         static let keyboardEnabled: String = LocalizableString("EnableKeyboardViewController_KEYBOARD_ENABLED").locale
+    }
+    
+    struct BiometricViewController{
+        private init(){}
+        static let middleMessage: String = LocalizableString("BiometricViewController_MIDDLE_MESSAGE").locale
+        static let buttonText: String = LocalizableString("BiometricViewController_BUTTON_TEXT").locale
     }
 }

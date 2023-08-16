@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: UIView!
-    private let model = SettingsModelHelper.values
+    private let settingsModel = SettingsModelHelper.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,22 @@ class SettingsViewController: UIViewController {
         containerView.backgroundColor = .white
     }
     
+    private func showAuthenticationAlert(successful: Bool, enabled: Bool){
+        var ac: UIAlertController?
+        if successful && enabled{
+            ac = UIAlertController(title: AppString.Biometric.Alerts.biometricEnabledTitle, message: AppString.Biometric.Alerts.biometricEnabledMessage, preferredStyle: .alert)
+            ac?.addAction(UIAlertAction(title: AppString.Alerts.ok, style: .default))
+        }else if successful && !enabled{
+            ac = UIAlertController(title: AppString.Biometric.Alerts.biometricDisabledTitle, message: AppString.Biometric.Alerts.biometricDisabledMessage, preferredStyle: .alert)
+            ac?.addAction(UIAlertAction(title: AppString.Alerts.ok, style: .default))
+        }else if !successful{
+            ac = UIAlertController(title: AppString.Biometric.Alerts.authenticationFailedTitle, message: AppString.Biometric.Alerts.authenticationFailedMessage, preferredStyle: .alert)
+            ac?.addAction(UIAlertAction(title: AppString.Alerts.ok, style: .default))
+        }
+        guard ac != nil else { return }
+        self.present(ac!, animated: true)
+    }
+    
     //MARK: Controller lifecycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -47,11 +64,11 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return SettingsTypeEnum.count
+        return settingsModel.getNumberOfSection()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return SettingsTypeEnum.getTypeAtIndex(index: section)?.name
+        return settingsModel.getTypeAtIndex(index: section)?.name
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -62,22 +79,41 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let setTypeEnum = SettingsTypeEnum.getTypeEnumAtIndex(index: section){
-            return SettingsModelHelper.numberOfTutorial(for: setTypeEnum)
+        if let setTypeEnum = settingsModel.getTypeAtIndex(index: section)?.type{
+            return settingsModel.numberOfSettings(for: setTypeEnum)
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseID, for: indexPath) as! SettingsTableViewCell
-        var cellModel = SettingsModelHelper.value(at: indexPath)
+        var cellModel = settingsModel.value(at: indexPath)
         
         switch cellModel.itemType{
-        case .touchID:
-            //TODO: Configure the cellModel.status
-            cellModel.action = {[weak self] isEnabled in
-                guard let strongSelf = self else { return }
-                //TODO: do all the thing to enable or disable the touch id
+        case .biometric:
+            cellModel.status = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.BIOMETRIC_ENABLED_KEY)
+            cellModel.action = {isEnabled in
+                if isEnabled{
+                    BiometricHelper.askForBiometric {[weak self] isSuccessful, error in
+                        UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.BIOMETRIC_ENABLED_KEY, enabled: isSuccessful)
+                        if isSuccessful{
+                            self?.showAuthenticationAlert(successful: true, enabled: true)
+                        }else{
+                            cell.setSwitch(false)
+                            self?.showAuthenticationAlert(successful: false, enabled: true)
+                        }
+                    }
+                }else{
+                    BiometricHelper.askForBiometric {[weak self] isSuccessful, error in
+                        if isSuccessful{
+                            UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.BIOMETRIC_ENABLED_KEY, enabled: false)
+                            self?.showAuthenticationAlert(successful: true, enabled: false)
+                        }else{
+                            cell.setSwitch(true)
+                            self?.showAuthenticationAlert(successful: false, enabled: false)
+                        }
+                    }
+                }
             }
         case .goBackToDefaultKeyboard:
             cellModel.status = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.GO_BACK_TO_DEF_KEYBOARD_KEY)
@@ -93,7 +129,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellModel = SettingsModelHelper.value(at: indexPath)
+        let cellModel = settingsModel.value(at: indexPath)
         
         switch cellModel.type{
         case .Tutorial:

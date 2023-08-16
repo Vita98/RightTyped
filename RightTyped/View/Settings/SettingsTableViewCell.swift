@@ -60,7 +60,10 @@ class SettingsTableViewCell: UITableViewCell {
         default:
             break
         }
-        
+    }
+    
+    public func setSwitch(_ enabled: Bool){
+        switchComponent.setOn(enabled, animated: true)
     }
     
 }

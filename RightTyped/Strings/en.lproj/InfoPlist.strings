@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  RightTyped
+
+  Created by Vitandrea Sorino on 16/08/23.
+  
+*/
+
+//MARK: Face ID
+"NSFaceIDUsageDescription" = "Use Face ID to unlock the App";

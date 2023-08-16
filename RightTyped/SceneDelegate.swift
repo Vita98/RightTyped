@@ -22,13 +22,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         let window = UIWindow(windowScene: windowScene)
-        let initialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "viewControllerID") as! ViewController
-
-        if !UserDefaultManager.shared.isKeyboardExtensionEnabled(), let boolVal = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY), !boolVal{
-            initialViewController.showTutorial = true
+        let initialViewController: UIViewController?
+        
+        if let biometricLogEnabled = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.BIOMETRIC_ENABLED_KEY), biometricLogEnabled, let viewC: BiometricViewController = UIStoryboard.main().instantiate() {
+            initialViewController = viewC
+        }else{
+            initialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "viewControllerID") as! ViewController
+            if !UserDefaultManager.shared.isKeyboardExtensionEnabled(), let boolVal = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY), !boolVal, let initialViewController = initialViewController as? ViewController{
+                initialViewController.showTutorial = true
+            }
         }
         
-        let navController = UINavigationController(rootViewController: initialViewController)
+        let navController = UINavigationController(rootViewController: initialViewController!)
         window.rootViewController = navController
         self.window = window
         window.makeKeyAndVisible()
