@@ -27,10 +27,10 @@ extension UIColor{
 
 /** DEFINITION OF ALL THE CUSTOM COLOR FOR THE APP **/
 extension UIColor{
-    public static let backgroundColor = UIColor(red: 245, green: 245, blue: 233)
+    public static let backgroundColor = UIColor(named: "backgroundColor")
     public static let componentColor = UIColor(red: 238, green: 108, blue: 77)
-    public static let lightComponentColor = UIColor(red: 238, green: 108, blue: 77, alpha: 0.12)
-    public static let placeholderColor = UIColor(red: 60, green: 60, blue: 67, alpha: 0.60)
+    public static let lightComponentColor = UIColor(named: "lightComponentColor")
+    public static let placeholderColor = UIColor(named: "placeholderColor")
     
     public static let cellDarkBackgroudColor = UIColor.white.withAlphaComponent(0.2)
     public static let cellLightBackgroudColor = UIColor.white

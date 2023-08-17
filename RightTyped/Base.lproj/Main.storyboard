@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -139,7 +140,6 @@ when and how you want!</string>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="aIP-bj-mxL" firstAttribute="leading" secondItem="2a8-Bt-QhJ" secondAttribute="leading" id="0tZ-tO-iQn"/>
                                     <constraint firstAttribute="trailing" secondItem="aIP-bj-mxL" secondAttribute="trailing" id="ClD-Ej-vnk"/>
@@ -402,7 +402,7 @@ when and how you want!</string>
                                         <viewLayoutGuide key="frameLayoutGuide" id="wM9-gK-K8p"/>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dT8-Dm-6bs" secondAttribute="trailing" id="09y-u9-Ycl"/>
                                     <constraint firstItem="dT8-Dm-6bs" firstAttribute="top" secondItem="NgR-Bq-yTl" secondAttribute="top" id="Iw5-Ek-SeH"/>
@@ -580,7 +580,7 @@ when and how you want!</string>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ue-WB-zIT"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundGradientColor"/>
                         <constraints>
                             <constraint firstItem="QZ9-Av-jJV" firstAttribute="leading" secondItem="3ue-WB-zIT" secondAttribute="leading" constant="20" id="GS1-Q8-iiJ"/>
                             <constraint firstItem="QZ9-Av-jJV" firstAttribute="centerY" secondItem="BRd-fI-VE5" secondAttribute="centerY" id="JAg-EJ-i2z"/>
@@ -982,7 +982,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                         <rect key="frame" x="0.0" y="44.333333333333314" width="390" height="742.66666666666674"/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="e3H-NZ-Nnh" secondAttribute="trailing" id="1Vq-Bn-xsj"/>
                                     <constraint firstItem="e3H-NZ-Nnh" firstAttribute="top" secondItem="9eS-kY-g5a" secondAttribute="bottom" id="CdV-G1-n7M"/>
@@ -1158,6 +1158,9 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
         <image name="rightTutorialArrow" width="27.000017166137695" height="18.000036239624023"/>
         <image name="settingsIcon" width="30" height="30"/>
         <image name="tickIcon" width="200" height="200"/>
+        <namedColor name="backgroundGradientColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -30,7 +30,6 @@ class SettingsViewController: UIViewController {
         self.view.backgroundColor = .backgroundColor
         containerView.applyCustomRoundCorner()
         containerView.dropShadow(shadowType: .contentView)
-        containerView.backgroundColor = .white
     }
     
     private func showAuthenticationAlert(successful: Bool, enabled: Bool){
@@ -74,8 +73,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.font = UIFont.customFont(.normal, size: 12)
-        header.textLabel?.textColor = .black
-        header.automaticallyUpdatesBackgroundConfiguration = false
+        header.textLabel?.textColor = UIColor(named: "textColor")
+        header.automaticallyUpdatesBackgroundConfiguration = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

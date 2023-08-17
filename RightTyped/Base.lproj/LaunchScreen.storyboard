@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundColorSplash" translatesAutoresizingMaskIntoConstraints="NO" id="3W2-AF-yan">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="XbL-A0-3rj">
                                 <rect key="frame" x="50" y="408" width="293" height="36"/>
                                 <constraints>
@@ -24,10 +27,13 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XbL-A0-3rj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1FH-JQ-xOZ"/>
+                            <constraint firstItem="3W2-AF-yan" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="CEe-rs-GNk"/>
                             <constraint firstItem="XbL-A0-3rj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="JK7-dm-2Ie"/>
+                            <constraint firstAttribute="bottom" secondItem="3W2-AF-yan" secondAttribute="bottom" id="i7N-IY-8FU"/>
+                            <constraint firstItem="3W2-AF-yan" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qxJ-eS-9jz"/>
+                            <constraint firstItem="3W2-AF-yan" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tdo-xH-45y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XbL-A0-3rj" secondAttribute="trailing" constant="50" id="xfZ-KF-GbB"/>
                         </constraints>
                     </view>
@@ -39,5 +45,6 @@
     </scenes>
     <resources>
         <image name="appLogo" width="177" height="19"/>
+        <image name="backgroundColorSplash" width="393" height="852"/>
     </resources>
 </document>

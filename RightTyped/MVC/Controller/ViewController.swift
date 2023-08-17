@@ -89,7 +89,6 @@ class ViewController: UIViewController {
         answersTableView.delegate = self
         answersTableView.dragDelegate = self
         answersTableView.dropDelegate = self
-        answersTableView.backgroundColor = .white
         answersTableView.clipsToBounds = true
         answersTableView.layer.cornerRadius = 45
         answersTableView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]

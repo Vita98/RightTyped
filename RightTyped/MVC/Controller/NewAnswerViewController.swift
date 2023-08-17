@@ -163,7 +163,6 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
         self.view.backgroundColor = .backgroundColor
         containerView.applyCustomRoundCorner()
         containerView.dropShadow(shadowType: .contentView)
-        containerView.backgroundColor = .white
         scrollView.applyCustomRoundCorner()
     }
     
