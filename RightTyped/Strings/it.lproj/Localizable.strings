@@ -35,6 +35,8 @@
 "SettingsModel_HOW_TO_ENABLE_KEYBOARD" = "Come abilitare la tastiera";
 "SettingsModel_HOW_TO_USE_KEYBOARD" = "Come usare la tastiera";
 "SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD" = "Come personalizzare la tastiera utilizzando quest'app";
+"SettingsModel_PREMIUM" = "Premium";
+"SettingsModel_MY_PURCHASES" = "I miei acquisti";
 
 //MARK: Biometric
 "Biometric_REASON" = "Devi essere autenticato per procedere";

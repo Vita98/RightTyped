@@ -54,6 +54,8 @@ struct AppString{
         static let howToEnableKeyboardText: String = LocalizableString("SettingsModel_HOW_TO_ENABLE_KEYBOARD").locale
         static let howToUseKeyboardText: String = LocalizableString("SettingsModel_HOW_TO_USE_KEYBOARD").locale
         static let howToCustomizeKeyboardText: String = LocalizableString("SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD").locale
+        static let premiumText: String = LocalizableString("SettingsModel_PREMIUM").locale
+        static let myPurchasesText: String = LocalizableString("SettingsModel_MY_PURCHASES").locale
     }
     
     struct Biometric{

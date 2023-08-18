@@ -13,6 +13,10 @@ extension UIStoryboard{
         return UIStoryboard(name: "Main", bundle: nil)
     }
     
+    static func premium() -> UIStoryboard{
+        return UIStoryboard(name: "Premium", bundle: nil)
+    }
+    
     func instantiate<T: UIViewController>() -> T?{
         return self.instantiateViewController(withIdentifier: String(describing: T.self)) as? T
     }

@@ -35,6 +35,8 @@
 "SettingsModel_HOW_TO_ENABLE_KEYBOARD" = "How to enable keyboard";
 "SettingsModel_HOW_TO_USE_KEYBOARD" = "How to use the keyboard";
 "SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD" = "How to customize your keyboard using this app";
+"SettingsModel_PREMIUM" = "Premium";
+"SettingsModel_MY_PURCHASES" = "My purchases";
 
 //MARK: Biometric
 "Biometric_REASON" = "Please authenticate to procede";

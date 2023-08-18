@@ -55,6 +55,8 @@
 		016782BA2A5D6CC000DA8A11 /* LocalizableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016782B92A5D6CC000DA8A11 /* LocalizableModel.swift */; };
 		016782BB2A5D6CD000DA8A11 /* LocalizableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016782B92A5D6CC000DA8A11 /* LocalizableModel.swift */; };
 		016782BE2A5D6CF900DA8A11 /* LocalizableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016782BD2A5D6CF900DA8A11 /* LocalizableHelper.swift */; };
+		016DC9AE2A8FCFB300529A26 /* Premium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016DC9AD2A8FCFB300529A26 /* Premium.storyboard */; };
+		016DC9B22A8FD0DB00529A26 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */; };
 		01766B442A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
 		01766B452A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
 		01766B472A22394100BA359C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B462A22394100BA359C /* GlobalConstant.swift */; };
@@ -189,6 +191,8 @@
 		016782B82A5D6B3200DA8A11 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		016782B92A5D6CC000DA8A11 /* LocalizableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableModel.swift; sourceTree = "<group>"; };
 		016782BD2A5D6CF900DA8A11 /* LocalizableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableHelper.swift; sourceTree = "<group>"; };
+		016DC9AD2A8FCFB300529A26 /* Premium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Premium.storyboard; sourceTree = "<group>"; };
+		016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		01766B432A22379B00BA359C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		01766B462A22394100BA359C /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		017CE8162A8CDDD900FEAFB7 /* BiometricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricHelper.swift; sourceTree = "<group>"; };
@@ -405,6 +409,7 @@
 				0160F8C82A2946F3005B97CB /* NewAnswerViewController.swift */,
 				019EEC442A4DDE4E004C2761 /* NewCategoryViewController.swift */,
 				015B9E612A596DE400171360 /* SettingsViewController.swift */,
+				016DC9B02A8FD0B500529A26 /* Premium */,
 				01930A3F2A7EBDB3005EE27A /* Tutorials */,
 				01D514352A34FDF700B9FF2B /* EnableKeyboard */,
 			);
@@ -429,6 +434,24 @@
 				016782BD2A5D6CF900DA8A11 /* LocalizableHelper.swift */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		016DC9AF2A8FCFBE00529A26 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				019E2F0D2A1E8C39005A8021 /* Main.storyboard */,
+				019E2F122A1E8C3B005A8021 /* LaunchScreen.storyboard */,
+				016DC9AD2A8FCFB300529A26 /* Premium.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		016DC9B02A8FD0B500529A26 /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */,
+			);
+			path = Premium;
 			sourceTree = "<group>";
 		};
 		01766B492A223E0800BA359C /* Cells */ = {
@@ -483,9 +506,8 @@
 				018ED41E2A3CB97200E9A90C /* RightTyped.entitlements */,
 				019E2F072A1E8C39005A8021 /* AppDelegate.swift */,
 				019E2F092A1E8C39005A8021 /* SceneDelegate.swift */,
-				019E2F0D2A1E8C39005A8021 /* Main.storyboard */,
-				019E2F122A1E8C3B005A8021 /* LaunchScreen.storyboard */,
 				019E2F152A1E8C3B005A8021 /* Info.plist */,
+				016DC9AF2A8FCFBE00529A26 /* Storyboards */,
 				0103B9CC2A8E8975001AFE2F /* Assets */,
 				01D514382A35061C00B9FF2B /* Persistence */,
 				016782A32A5B2E2700DA8A11 /* Strings */,
@@ -745,6 +767,7 @@
 				01DA1C282A2B52E200A28CE7 /* CustomTextField.xib in Resources */,
 				015DF53E2A8A0E1400C00064 /* tut3-2.gif in Resources */,
 				014240412A84072500006F2B /* tut2-2.gif in Resources */,
+				016DC9AE2A8FCFB300529A26 /* Premium.storyboard in Resources */,
 				015DF5402A8A37B200C00064 /* tut3-3.gif in Resources */,
 				019E2F142A1E8C3B005A8021 /* LaunchScreen.storyboard in Resources */,
 				014240532A86780900006F2B /* tut2-4.png in Resources */,
@@ -791,6 +814,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CCF1632A49FCBD00656277 /* CustomBaseView.swift in Sources */,
+				016DC9B22A8FD0DB00529A26 /* PremiumViewController.swift in Sources */,
 				0160F8CC2A2949AE005B97CB /* UIViewController.swift in Sources */,
 				01595FEC2A47794F003EAE79 /* IndexPath.swift in Sources */,
 				0120274F2A25123F00B62039 /* Constant.swift in Sources */,

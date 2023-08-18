@@ -8,8 +8,10 @@
 import Foundation
 
 fileprivate var VALUES_MODEL: [SettingsCellModel] = {
-    return [SettingsCellModel(type: .App, itemType: .biometric, text: BiometricHelper.biometricType() ?? "", enabled: BiometricHelper.isBiometricPossible()),
-            SettingsCellModel(type: .Keyboard, itemType: .goBackToDefaultKeyboard, text: AppString.SettingsModel.goBackToDefaultKeyboardText),
+    return [SettingsCellModel(type: .App, itemType: .biometric, text: BiometricHelper.biometricType() ?? "", enabled: BiometricHelper.isBiometricPossible(), cellType: .uiswitch),
+            SettingsCellModel(type: .App, itemType: .premium, text: AppString.SettingsModel.premiumText),
+            SettingsCellModel(type: .App, itemType: .myPurchases, text: AppString.SettingsModel.myPurchasesText),
+            SettingsCellModel(type: .Keyboard, itemType: .goBackToDefaultKeyboard, text: AppString.SettingsModel.goBackToDefaultKeyboardText, cellType: .uiswitch),
             SettingsCellModel(type: .Tutorial, itemType: .howToEnableKeyboard, text: AppString.SettingsModel.howToEnableKeyboardText),
             SettingsCellModel(type: .Tutorial, itemType: .howToUseKeyboard, text: AppString.SettingsModel.howToUseKeyboardText),
             SettingsCellModel(type: .Tutorial, itemType: .howToCustomizeKeyboard, text: AppString.SettingsModel.howToCustomizeKeyboardText),]
@@ -47,10 +49,17 @@ struct SettingsType{
 
 enum SettingsItem{
     case biometric
+    case premium
+    case myPurchases
     case goBackToDefaultKeyboard
     case howToEnableKeyboard
     case howToUseKeyboard
     case howToCustomizeKeyboard
+}
+
+enum SettingsCellType{
+    case uiswitch
+    case plain
 }
 
 struct SettingsCellModel{
@@ -60,6 +69,7 @@ struct SettingsCellModel{
     var status: Bool?
     var action: SettingsAction?
     var enabled: Bool = true
+    var cellType: SettingsCellType = .plain
 }
 
 struct SettingsModelHelper{
@@ -101,7 +111,12 @@ struct SettingsModelHelper{
     }
     
     func value(at index: IndexPath) -> SettingsCellModel{
-        return values[index.row+index.section]
+        var count = 0
+        for i in 0..<index.section{
+            guard let st = getTypeAtIndex(index: i)?.type else { continue }
+            count = count + numberOfSettings(for: st)
+        }
+        return values[count + index.row]
     }
     
     func numberOfSettings(for settingsTypeEnum: SettingsTypeEnum) -> Int{

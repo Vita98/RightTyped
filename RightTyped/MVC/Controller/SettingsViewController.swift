@@ -74,7 +74,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.textLabel?.font = UIFont.customFont(.normal, size: 12)
         header.textLabel?.textColor = UIColor(named: "textColor")
-        header.automaticallyUpdatesBackgroundConfiguration = true
+        header.automaticallyUpdatesBackgroundConfiguration = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

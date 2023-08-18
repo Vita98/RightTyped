@@ -53,8 +53,8 @@ class SettingsTableViewCell: UITableViewCell {
         self.cellModel = cellModel
         self.titleLabel.text = cellModel.text
         
-        switch cellModel.type{
-        case .App,.Keyboard:
+        switch cellModel.cellType{
+        case .uiswitch:
             setSwitchMode(isOn: cellModel.status)
             self.selectionStyle = .none
         default:
