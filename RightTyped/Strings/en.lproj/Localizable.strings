@@ -93,3 +93,7 @@
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_possibleAction" = "Add, edit or delete categories and answers using the following buttons";
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle" = "You are ready to customize your keyboard!";
 "Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Press and hold your finger on an answer to see its content";
+
+//MARK: My Purchases
+"Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Restore purchases";
+"Premium_MyPurchases_NO_PURCHASES_FOUND" = "No purchases found";

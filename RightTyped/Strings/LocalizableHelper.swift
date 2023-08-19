@@ -101,6 +101,15 @@ struct AppString{
         }
     }
     
+    struct Premium{
+        private init(){}
+        struct MyPurchases{
+            private init(){}
+            static let restorePurchasesButtonTitle: String =  LocalizableString("Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE").locale
+            static let noPurchasesFound: String =  LocalizableString("Premium_MyPurchases_NO_PURCHASES_FOUND").locale
+        }
+    }
+    
     //MARK: Controller - cell - xib
     struct HomeHeaderTableViewCell{
         private init(){}

@@ -57,6 +57,7 @@
 		016782BE2A5D6CF900DA8A11 /* LocalizableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016782BD2A5D6CF900DA8A11 /* LocalizableHelper.swift */; };
 		016DC9AE2A8FCFB300529A26 /* Premium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016DC9AD2A8FCFB300529A26 /* Premium.storyboard */; };
 		016DC9B22A8FD0DB00529A26 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */; };
+		016DC9B42A90FEFC00529A26 /* MyPurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */; };
 		01766B442A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
 		01766B452A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
 		01766B472A22394100BA359C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B462A22394100BA359C /* GlobalConstant.swift */; };
@@ -193,6 +194,7 @@
 		016782BD2A5D6CF900DA8A11 /* LocalizableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableHelper.swift; sourceTree = "<group>"; };
 		016DC9AD2A8FCFB300529A26 /* Premium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Premium.storyboard; sourceTree = "<group>"; };
 		016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
+		016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPurchasesViewController.swift; sourceTree = "<group>"; };
 		01766B432A22379B00BA359C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		01766B462A22394100BA359C /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		017CE8162A8CDDD900FEAFB7 /* BiometricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricHelper.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */,
+				016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */,
 			);
 			path = Premium;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */,
 				019EEC472A4DEE1C004C2761 /* UISwitch.swift in Sources */,
 				014240492A865FD600006F2B /* UIDevice.swift in Sources */,
+				016DC9B42A90FEFC00529A26 /* MyPurchasesViewController.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				01063BEC2A629BBA00B0E7C7 /* UICheckBox.swift in Sources */,
 				01930A412A7EBDE1005EE27A /* ManagerTutorialViewController.swift in Sources */,

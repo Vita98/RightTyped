@@ -144,6 +144,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
                 self.present(rNC.navController, animated: true)
                 tableView.deselectRow(at: indexPath, animated: true)
             }
+        case .App:
+            if cellModel.itemType == .myPurchases{
+                let cv: MyPurchasesViewController = UIStoryboard.premium().instantiate()
+                self.navigationController?.pushViewController(cv, animated: true)
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
         default:
             break
         }

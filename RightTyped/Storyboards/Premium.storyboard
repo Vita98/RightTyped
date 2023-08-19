@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="bulent-yuksel-trakya-rounded-300-light.otf">
+            <string>Trakya-Rounded-300-Light</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Premium View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="PremiumViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -20,6 +27,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="-34"/>
+        </scene>
+        <!--My Purchases View Controller-->
+        <scene sceneID="qA8-ZO-Sz6">
+            <objects>
+                <viewController storyboardIdentifier="MyPurchasesViewController" id="Lrl-rN-ybO" customClass="MyPurchasesViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eSc-78-7uP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAo-IE-l7z">
+                                <rect key="frame" x="0.0" y="69" width="393" height="783"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="I miei acquisti" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmz-mI-PCx">
+                                        <rect key="frame" x="23" y="10" width="347" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-5b-R9K">
+                                        <rect key="frame" x="0.0" y="44.333333333333314" width="393" height="738.66666666666674"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="vvT-5b-R9K" firstAttribute="leading" secondItem="cAo-IE-l7z" secondAttribute="leading" id="1Nm-cG-hFe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tmz-mI-PCx" secondAttribute="trailing" constant="23" id="YCN-Nq-0TG"/>
+                                    <constraint firstAttribute="trailing" secondItem="vvT-5b-R9K" secondAttribute="trailing" id="axh-pI-zvN"/>
+                                    <constraint firstItem="vvT-5b-R9K" firstAttribute="top" secondItem="Tmz-mI-PCx" secondAttribute="bottom" id="eka-Tu-sUC"/>
+                                    <constraint firstAttribute="bottom" secondItem="vvT-5b-R9K" secondAttribute="bottom" id="fYi-Jw-Rof"/>
+                                    <constraint firstItem="Tmz-mI-PCx" firstAttribute="top" secondItem="cAo-IE-l7z" secondAttribute="top" constant="10" id="hgA-VT-H5W"/>
+                                    <constraint firstItem="Tmz-mI-PCx" firstAttribute="leading" secondItem="cAo-IE-l7z" secondAttribute="leading" constant="23" id="jYb-g3-lJE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ets-zw-pT2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ets-zw-pT2" firstAttribute="trailing" secondItem="cAo-IE-l7z" secondAttribute="trailing" id="QFs-kr-FU1"/>
+                            <constraint firstItem="cAo-IE-l7z" firstAttribute="top" secondItem="ets-zw-pT2" secondAttribute="top" constant="10" id="gfy-w5-5zy"/>
+                            <constraint firstAttribute="bottom" secondItem="cAo-IE-l7z" secondAttribute="bottom" id="i3z-YI-nwC"/>
+                            <constraint firstItem="cAo-IE-l7z" firstAttribute="leading" secondItem="ets-zw-pT2" secondAttribute="leading" id="uVB-Hr-sNe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gsP-0A-dkL"/>
+                    <connections>
+                        <outlet property="containerView" destination="cAo-IE-l7z" id="T4s-En-eSU"/>
+                        <outlet property="tableView" destination="vvT-5b-R9K" id="eWm-ac-xaF"/>
+                        <outlet property="titleLabel" destination="Tmz-mI-PCx" id="0K4-il-5sq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xoT-4g-E7L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="-776"/>
         </scene>
     </scenes>
     <resources>

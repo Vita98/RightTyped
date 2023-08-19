@@ -93,3 +93,7 @@
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_possibleAction" = "Aggiungi, modifica o cancella le categorie e le risposte usando i seguenti bottoni";
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle" = "Sei pronto a personalizzare la tua tastiera!";
 "Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Tieni premuto il dito su di una risposta per vederene il contenuto";
+
+//MARK: My Purchases
+"Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Ripristina acquisti";
+"Premium_MyPurchases_NO_PURCHASES_FOUND" = "Non sono presenti acquisti";
