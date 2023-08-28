@@ -105,8 +105,49 @@ struct AppString{
         private init(){}
         struct MyPurchases{
             private init(){}
-            static let restorePurchasesButtonTitle: String =  LocalizableString("Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE").locale
-            static let noPurchasesFound: String =  LocalizableString("Premium_MyPurchases_NO_PURCHASES_FOUND").locale
+            static let restorePurchasesButtonTitle: String = LocalizableString("Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE").locale
+            static let noPurchasesFound: String = LocalizableString("Premium_MyPurchases_NO_PURCHASES_FOUND").locale
+        }
+        
+        struct Plans{
+            private init(){}
+            static let baseText: String = LocalizableString("Premium_Plans_BASE_TEXT").locale
+            static let proText: String = LocalizableString("Premium_Plans_PRO_TEXT").locale
+            static let ppuText: String = LocalizableString("Premium_Plans_PAYPERUSE_TEXT").locale
+        }
+        
+        struct SubscriptionType{
+            private init(){}
+            static let included: String = LocalizableString("Premium_SubscriptionType_INCLUDED").locale
+            static let yearly: String = LocalizableString("Premium_SubscriptionType_YEARLY").locale
+            static let montly: String = LocalizableString("Premium_SubscriptionType_MONTLY").locale
+            static let aggregated: String = LocalizableString("Premium_SubscriptionType_AGGREGATED").locale
+        }
+        
+        struct FirstBasePlan{
+            private init(){}
+            static let description: String = LocalizableString("Premium_Plans_FirstBasePlan_DESCRIPTION").locale
+            static let buttonTitle: String = LocalizableString("Premium_Plans_FirstBasePlan_BUTTON_TITLE").locale
+            static let firstStackText: String = LocalizableString("Premium_Plans_FirstBasePlan_FIRST_STACK_TEXT").locale
+            static let secondStackText: String = LocalizableString("Premium_Plans_FirstBasePlan_SECOND_STACK_TEXT").locale
+            static let thirdStackText: String = LocalizableString("Premium_Plans_FirstBasePlan_THIRD_STACK_TEXT").locale
+        }
+        
+        struct FirstProPlan{
+            private init(){}
+            static let description: String = LocalizableString("Premium_Plans_FirstProPlan_DESCRIPTION").locale
+            static let buttonTitle: String = LocalizableString("Premium_Plans_FirstProPlan_BUTTON_TITLE").locale
+            static let firstStackText: String = LocalizableString("Premium_Plans_FirstProPlan_FIRST_STACK_TEXT").locale
+            static let secondStackText: String = LocalizableString("Premium_Plans_FirstProPlan_SECOND_STACK_TEXT").locale
+            static let thirdStackText: String = LocalizableString("Premium_Plans_FirstProPlan_THIRD_STACK_TEXT").locale
+        }
+        
+        struct FirstPpuPlan{
+            private init(){}
+            static let description: String = LocalizableString("Premium_Plans_FirstPpuPlan_DESCRIPTION").locale
+            static let buttonTitle: String = LocalizableString("Premium_Plans_FirstPpuPlan_BUTTON_TITLE").locale
+            static let firstStackText: String = LocalizableString("Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT").locale
+            static let secondStackText: String = LocalizableString("Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT").locale
         }
     }
     

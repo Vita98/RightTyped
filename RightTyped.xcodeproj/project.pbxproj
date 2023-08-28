@@ -14,6 +14,7 @@
 		0120274F2A25123F00B62039 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120274E2A25123F00B62039 /* Constant.swift */; };
 		012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012027502A2514ED00B62039 /* AnswerTableViewCell.swift */; };
 		012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012027512A2514ED00B62039 /* AnswerTableViewCell.xib */; };
+		012259DA2A9B5E8600B69721 /* PremiumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012259D92A9B5E8600B69721 /* PremiumModel.swift */; };
 		01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */; };
 		013E08432A21327100FF7928 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08422A21327100FF7928 /* ContentView.xib */; };
 		013E08452A21328100FF7928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08442A21328100FF7928 /* ContentView.swift */; };
@@ -151,6 +152,7 @@
 		0120274E2A25123F00B62039 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		012027502A2514ED00B62039 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		012027512A2514ED00B62039 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
+		012259D92A9B5E8600B69721 /* PremiumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumModel.swift; sourceTree = "<group>"; };
 		01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomComponentProtocol.swift; sourceTree = "<group>"; };
 		013E08422A21327100FF7928 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
 		013E08442A21328100FF7928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				01A7659F2A27B64400D50C4B /* Cells.swift */,
 				015B9E632A5974BD00171360 /* SettingsModel.swift */,
 				01930A462A7F9581005EE27A /* TutorialModel.swift */,
+				012259D92A9B5E8600B69721 /* PremiumModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 				01C84C182A508CE300C8AD77 /* UINavigationController.swift in Sources */,
 				01A391382A2F8F980051FBE4 /* EnableKeyboardViewController.swift in Sources */,
 				016782AD2A5B3BB500DA8A11 /* LocalizableHelper.swift in Sources */,
+				012259DA2A9B5E8600B69721 /* PremiumModel.swift in Sources */,
 				015DF5312A88182F00C00064 /* UIStoryboard.swift in Sources */,
 				01595FF22A486374003EAE79 /* AddAnswerCustomView.swift in Sources */,
 				015B9E642A5974BD00171360 /* SettingsModel.swift in Sources */,

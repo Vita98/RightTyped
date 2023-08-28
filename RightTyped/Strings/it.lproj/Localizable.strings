@@ -97,3 +97,35 @@
 //MARK: My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Ripristina acquisti";
 "Premium_MyPurchases_NO_PURCHASES_FOUND" = "Non sono presenti acquisti";
+
+//Plans
+"Premium_Plans_BASE_TEXT" = "Base";
+"Premium_Plans_PRO_TEXT" = "Pro";
+"Premium_Plans_PAYPERUSE_TEXT" = "Pay per use";
+
+//Subscription Types
+"Premium_SubscriptionType_INCLUDED" = "Incluso";
+"Premium_SubscriptionType_YEARLY" = "anno";
+"Premium_SubscriptionType_MONTLY" = "mese";
+"Premium_SubscriptionType_AGGREGATED" = "totale";
+
+// First base plan
+"Premium_Plans_FirstBasePlan_DESCRIPTION" = "Include tutte le funzionalità diponibili nella versione gratuita gia abilitate di default.";
+"Premium_Plans_FirstBasePlan_BUTTON_TITLE" = "Già attivo";
+"Premium_Plans_FirstBasePlan_FIRST_STACK_TEXT" = "Massimo %d categorie";
+"Premium_Plans_FirstBasePlan_SECOND_STACK_TEXT" = "Massimo %d risposte per ogni categoria";
+"Premium_Plans_FirstBasePlan_THIRD_STACK_TEXT" = "Tutte le funzionalità disponibili in futuro";
+
+// First pro plan
+"Premium_Plans_FirstProPlan_DESCRIPTION" = "Sbocca tutte le funzionalità disponibili ad oggi più tutte quelle disponibili in aggioramenti futuri.";
+"Premium_Plans_FirstProPlan_BUTTON_TITLE" = "Compra";
+"Premium_Plans_FirstProPlan_FIRST_STACK_TEXT" = "Categorie illimitate";
+"Premium_Plans_FirstProPlan_SECOND_STACK_TEXT" = "Risposte illimitate per ogni categoria";
+"Premium_Plans_FirstProPlan_THIRD_STACK_TEXT" = "Tutte le funzionalità disponibili in futuro";
+
+
+//First pay per use plan
+"Premium_Plans_FirstPpuPlan_DESCRIPTION" = "Compra solo le funzionalità che più ti servono, senza alcun impegno o ricorrenza annuale. Quello che compri rimane per sempre.";
+"Premium_Plans_FirstPpuPlan_BUTTON_TITLE" = "Compra";
+"Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT" = "Singola categoria con %d risposte";
+"Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT" = "%d categorie con %d risposte l'una";

@@ -97,3 +97,34 @@
 //MARK: My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Restore purchases";
 "Premium_MyPurchases_NO_PURCHASES_FOUND" = "No purchases found";
+
+//Plans
+"Premium_Plans_BASE_TEXT" = "Base";
+"Premium_Plans_PRO_TEXT" = "Pro";
+"Premium_Plans_PAYPERUSE_TEXT" = "Pay per use";
+
+//Subscription Types
+"Premium_SubscriptionType_INCLUDED" = "Included";
+"Premium_SubscriptionType_YEARLY" = "year";
+"Premium_SubscriptionType_MONTLY" = "month";
+"Premium_SubscriptionType_AGGREGATED" = "total";
+
+// First base plan
+"Premium_Plans_FirstBasePlan_DESCRIPTION" = "It includes all the features available in the free version already enabled by default.";
+"Premium_Plans_FirstBasePlan_BUTTON_TITLE" = "Già attivo";
+"Premium_Plans_FirstBasePlan_FIRST_STACK_TEXT" = "Max %d categories";
+"Premium_Plans_FirstBasePlan_SECOND_STACK_TEXT" = "Max %d answers for each category";
+"Premium_Plans_FirstBasePlan_THIRD_STACK_TEXT" = "All features available in the future";
+
+// First pro plan
+"Premium_Plans_FirstProPlan_DESCRIPTION" = "Unlocks all features available to date plus all features available in future updates.";
+"Premium_Plans_FirstProPlan_BUTTON_TITLE" = "Buy";
+"Premium_Plans_FirstProPlan_FIRST_STACK_TEXT" = "Unlimited categories";
+"Premium_Plans_FirstProPlan_SECOND_STACK_TEXT" = "Unlimited answers for each category";
+"Premium_Plans_FirstProPlan_THIRD_STACK_TEXT" = "All features available in the future";
+
+// First pay per use plan
+"Premium_Plans_FirstPpuPlan_DESCRIPTION" = "Buy only the features you need most, with no commitment or annual recurrence. What you buy stays forever.";
+"Premium_Plans_FirstPpuPlan_BUTTON_TITLE" = "Buy";
+"Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT" = "Single category with %d responses";
+"Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT" = "%d categories with %d answers each";

@@ -12,22 +12,92 @@
         <array key="bulent-yuksel-trakya-rounded-300-light.otf">
             <string>Trakya-Rounded-300-Light</string>
         </array>
+        <array key="bulent-yuksel-trakya-rounded-alt-300-light.otf">
+            <string>Trakya-Rounded-Alt-300-Light</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Premium View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="PremiumViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PremiumViewController" id="Y6W-OH-hqX" customClass="PremiumViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPd-Tl-Rr3">
+                                <rect key="frame" x="151" y="49" width="91" height="35"/>
+                                <fontDescription key="fontDescription" name="Trakya-Rounded-Alt-300-Light" family="Trakya Rounded Alt" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEr-Il-JIH">
+                                <rect key="frame" x="0.0" y="92" width="393" height="681"/>
+                                <connections>
+                                    <segue destination="F3L-cy-KPC" kind="embed" id="YYQ-wg-Jbi"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-PC-uUY">
+                                <rect key="frame" x="10" y="773" width="51" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="leftTutorialArrow"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1v-1N-uog">
+                                <rect key="frame" x="120.66666666666667" y="778" width="151.66666666666663" height="25"/>
+                                <subviews>
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="E7j-Ed-7oY">
+                                        <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="25"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
+                                        <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="E7j-Ed-7oY" firstAttribute="leading" secondItem="V1v-1N-uog" secondAttribute="leading" id="DOm-WJ-HtI"/>
+                                    <constraint firstItem="E7j-Ed-7oY" firstAttribute="top" secondItem="V1v-1N-uog" secondAttribute="top" id="Sxn-Y5-axr"/>
+                                    <constraint firstAttribute="bottom" secondItem="E7j-Ed-7oY" secondAttribute="bottom" id="pZy-vt-IaB"/>
+                                    <constraint firstAttribute="height" constant="25" id="rRV-ms-lLs"/>
+                                    <constraint firstAttribute="trailing" secondItem="E7j-Ed-7oY" secondAttribute="trailing" id="smm-cY-6Ps"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccf-lz-Jit">
+                                <rect key="frame" x="332" y="773" width="51" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="rightTutorialArrow"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bd4-PC-uUY" secondAttribute="bottom" constant="10" id="30b-yA-lc1"/>
+                            <constraint firstItem="cEr-Il-JIH" firstAttribute="top" secondItem="RPd-Tl-Rr3" secondAttribute="bottom" constant="8" symbolic="YES" id="7nl-oC-m8d"/>
+                            <constraint firstItem="V1v-1N-uog" firstAttribute="centerY" secondItem="bd4-PC-uUY" secondAttribute="centerY" id="86r-0t-KXu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="V1v-1N-uog" secondAttribute="bottom" constant="15" id="Ghk-GQ-zT1"/>
+                            <constraint firstItem="ccf-lz-Jit" firstAttribute="top" secondItem="cEr-Il-JIH" secondAttribute="bottom" id="KKG-pK-TK1"/>
+                            <constraint firstItem="ccf-lz-Jit" firstAttribute="centerY" secondItem="bd4-PC-uUY" secondAttribute="centerY" id="M2z-yI-Nuk"/>
+                            <constraint firstItem="ccf-lz-Jit" firstAttribute="centerY" secondItem="V1v-1N-uog" secondAttribute="centerY" id="Sor-TD-3hs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ccf-lz-Jit" secondAttribute="bottom" constant="10" id="T7g-ZR-e1G"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ccf-lz-Jit" secondAttribute="trailing" constant="10" id="bAi-OS-cGH"/>
+                            <constraint firstItem="cEr-Il-JIH" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="jGO-w5-boo"/>
+                            <constraint firstItem="cEr-Il-JIH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lXS-rN-VNY"/>
+                            <constraint firstItem="RPd-Tl-Rr3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="-10" id="mSp-8A-PHY"/>
+                            <constraint firstItem="V1v-1N-uog" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nqy-tQ-1hv"/>
+                            <constraint firstItem="bd4-PC-uUY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="pg6-au-ngd"/>
+                            <constraint firstItem="RPd-Tl-Rr3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="v2g-Ob-tyN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navigateLeftButton" destination="bd4-PC-uUY" id="IbJ-FV-Puo"/>
+                        <outlet property="navigateRightButton" destination="ccf-lz-Jit" id="tKy-XU-ljs"/>
+                        <outlet property="pageControl" destination="E7j-Ed-7oY" id="W3b-0C-giW"/>
+                        <outlet property="pageControlContainerView" destination="V1v-1N-uog" id="od0-5Y-uhb"/>
+                        <outlet property="premiumLabel" destination="RPd-Tl-Rr3" id="EVc-9N-nD8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
         <!--My Purchases View Controller-->
         <scene sceneID="qA8-ZO-Sz6">
@@ -82,10 +152,29 @@
             </objects>
             <point key="canvasLocation" x="131" y="-776"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="N9h-UX-lIp">
+            <objects>
+                <viewController id="F3L-cy-KPC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KbD-6S-J4N">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="681"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82X-W5-l6R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="-35"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="leftTutorialArrow" width="27.000017166137695" height="18.000036239624023"/>
+        <image name="rightTutorialArrow" width="27.000017166137695" height="18.000036239624023"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

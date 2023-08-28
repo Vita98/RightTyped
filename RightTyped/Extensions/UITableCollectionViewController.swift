@@ -46,7 +46,6 @@ extension UITableView{
         
         let topMessageLabel = UILabel()
         topMessageLabel.text = labelText
-        topMessageLabel.textColor = .black
         topMessageLabel.numberOfLines = 0;
         topMessageLabel.textAlignment = .center;
         topMessageLabel.font = UIFont.customFont(.normal, size: 18)

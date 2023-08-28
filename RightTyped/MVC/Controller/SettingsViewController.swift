@@ -136,22 +136,26 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
                 guard let rNC = UINavigationController.instantiateNavController(withRoot: EnableKeyboardViewController.self) else { break }
                 rNC.root.fromSettings = true
                 self.present(rNC.navController, animated: true)
-                tableView.deselectRow(at: indexPath, animated: true)
             }else{
                 guard let rNC = UINavigationController.instantiateNavController(withRoot: ManagerTutorialViewController.self) else { break }
                 rNC.root.model = SettingsModelHelper.getTutorial(for: cellModel.itemType)
                 rNC.root.fromSettings = true
                 self.present(rNC.navController, animated: true)
-                tableView.deselectRow(at: indexPath, animated: true)
             }
         case .App:
-            if cellModel.itemType == .myPurchases{
+            switch cellModel.itemType{
+            case .myPurchases:
                 let cv: MyPurchasesViewController = UIStoryboard.premium().instantiate()
                 self.navigationController?.pushViewController(cv, animated: true)
-                tableView.deselectRow(at: indexPath, animated: true)
+            case .premium:
+                let cv: PremiumViewController = UIStoryboard.premium().instantiate()
+                self.navigationController?.pushViewController(cv, animated: true)
+            default:
+                break
             }
         default:
             break
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
