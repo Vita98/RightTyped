@@ -109,6 +109,12 @@ struct AppString{
             static let noPurchasesFound: String = LocalizableString("Premium_MyPurchases_NO_PURCHASES_FOUND").locale
         }
         
+        struct PremiumPage{
+            private init(){}
+            static let noPremiumOptions: String = LocalizableString("Premium_Plans_NO_PREMIUM_OPTIONS").locale
+            static let refreshButtonTitle: String = LocalizableString("Premium_Plans_REFRESH_BUTTON_TITLE").locale
+        }
+        
         struct Plans{
             private init(){}
             static let baseText: String = LocalizableString("Premium_Plans_BASE_TEXT").locale
@@ -121,6 +127,8 @@ struct AppString{
             static let included: String = LocalizableString("Premium_SubscriptionType_INCLUDED").locale
             static let yearly: String = LocalizableString("Premium_SubscriptionType_YEARLY").locale
             static let montly: String = LocalizableString("Premium_SubscriptionType_MONTLY").locale
+            static let weekly: String = LocalizableString("Premium_SubscriptionType_WEEKLY").locale
+            static let daily: String = LocalizableString("Premium_SubscriptionType_DAILY").locale
             static let aggregated: String = LocalizableString("Premium_SubscriptionType_AGGREGATED").locale
         }
         

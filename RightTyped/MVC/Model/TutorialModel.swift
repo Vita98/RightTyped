@@ -44,23 +44,23 @@ struct TutorialPageModel{
     }
 }
 
-struct TutorialModel{
+struct TutorialModel: ControllerAssociable{
     let title: String
     let pageModels: [TutorialPageModel]
     
-    func getControllers(fromSettings: Bool = false, finalAction: (() -> Void)?, isFinalTutorial: Bool = false) -> [UIViewController] {
+    func getControllers(fromSettings: Bool, finalAction: (() -> Void)?, isFinal: Bool) -> [UIViewController] {
         var controllers: [UIViewController] = []
         for pageModel in pageModels {
             if pageModel.final{
                 //Instantiate the final controller
-                if let c = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "finalTutorialViewControllerID") as? FinalTutorialViewController{
+                if let c: FinalTutorialViewController = UIStoryboard.main().instantiate(){
                     c.model = pageModel
                     c.fromSettings = fromSettings
                     c.customPressionAction = finalAction
-                    c.isFinal = isFinalTutorial
+                    c.isFinal = isFinal
                     controllers.append(c)
                 }
-            }else if let c = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "genericTutorialViewControllerID") as? GenericTutorialViewController{
+            }else if let c: GenericTutorialViewController = UIStoryboard.main().instantiate(){
                 c.model = pageModel
                 c.tutTitle = self.title
                 controllers.append(c)

@@ -1,51 +1,69 @@
 //
-//  GenericTutorialPageViewController.swift
+//  CustomPageViewController.swift
 //  RightTyped
 //
-//  Created by Vitandrea Sorino on 05/08/23.
+//  Created by Vitandrea Sorino on 03/09/23.
 //
 
 import UIKit
 
-protocol GenericTutorialPageViewControllerDelegate{
-    func genericTutorialPageViewController(isShowing viewController: UIViewController, atIndex index: Int)
+
+protocol CustomPageViewControllerDelegate{
+    func customPageViewController(isShowing viewController: UIViewController, atIndex index: Int)
 }
 
-class GenericTutorialPageViewController: UIPageViewController {
+protocol ControllerAssociable{
+    func getControllers(fromSettings: Bool, finalAction: (() -> Void)?, isFinal: Bool) -> [UIViewController] 
+}
+
+class CustomPageViewController: UIPageViewController {
     
-    // MARK: - Models
-    var model: TutorialModel?{
-        didSet{
-            configureModel()
-        }
-    }
     var modelControllers: [UIViewController]?
     var pageControl: UIPageControl?
+    var navigateRightButton: UIButton!
+    var navigateLeftButton: UIButton!
     var fromSettings: Bool = false
     var customFinalAction: (() -> Void)?
     var isFinalTutorial: Bool = false
     
-    var customDelegate: GenericTutorialPageViewControllerDelegate?
+    var customDelegate: CustomPageViewControllerDelegate?
     
-    // MARK: - LifeCycle
+    // MARK: - Models
+    var model: ControllerAssociable?{
+        didSet{
+            configureModel()
+        }
+    }
+    
+    //MARK: - Custom initializer
+    override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
+    }
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
-        configureModel()
+        
+        //Setting up the delegates
+        delegate = self
+        dataSource = self
+        customDelegate = self
     }
     
     // MARK: - Configuration
-    private func configure(){
-        dataSource = self
-        delegate = self
-    }
-    
     private func configureModel(){
         guard let model = self.model else { return }
-        modelControllers = model.getControllers(fromSettings: fromSettings, finalAction: customFinalAction, isFinalTutorial: isFinalTutorial)
+        modelControllers = model.getControllers(fromSettings: fromSettings, finalAction: customFinalAction, isFinal: isFinalTutorial)
         guard let modelControllers = self.modelControllers else { return }
+        pageControl?.numberOfPages = modelControllers.count
+        pageControl?.currentPage = 1
         
-        setViewControllers([modelControllers[0]], direction: .forward, animated: true)
+        setViewControllers([modelControllers[1]], direction: .forward, animated: true)
+        customPageViewController(isShowing: modelControllers[1], atIndex: 1)
     }
     
     // MARK: - Private utilities
@@ -76,7 +94,7 @@ class GenericTutorialPageViewController: UIPageViewController {
         let previousIndex = pageControl.currentPage
         let pageContentViewC = self.viewControllers![0]
         pageControl.currentPage = modelControllers.firstIndex(of: pageContentViewC)!
-        self.customDelegate?.genericTutorialPageViewController(isShowing: pageContentViewC, atIndex: pageControl.currentPage)
+        self.customDelegate?.customPageViewController(isShowing: pageContentViewC, atIndex: pageControl.currentPage)
         if previousIndex == pageControl.currentPage { return }
     }
     
@@ -95,7 +113,20 @@ class GenericTutorialPageViewController: UIPageViewController {
     }
 }
 
-extension GenericTutorialPageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource{
+extension CustomPageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource, CustomPageViewControllerDelegate{
+    func customPageViewController(isShowing viewController: UIViewController, atIndex index: Int) {
+        if index == 0{
+            //Disable the left
+            navigateLeftButton.setImage(navigateLeftButton.image(for: .normal)?.withTintColor(.componentColor.disabled()), for: .normal)
+        }else if index + 1 == modelControllers?.count{
+            //Disable the right
+            navigateRightButton.setImage(navigateRightButton.image(for: .normal)?.withTintColor(.componentColor.disabled()), for: .normal)
+        }else{
+            navigateLeftButton.setImage(navigateLeftButton.image(for: .normal)?.withTintColor(.componentColor), for: .normal)
+            navigateRightButton.setImage(navigateRightButton.image(for: .normal)?.withTintColor(.componentColor), for: .normal)
+        }
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         return getController(direction: .before, viewController: viewController)
     }
@@ -107,5 +138,4 @@ extension GenericTutorialPageViewController: UIPageViewControllerDelegate, UIPag
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         updatePageControl()
     }
-    
 }

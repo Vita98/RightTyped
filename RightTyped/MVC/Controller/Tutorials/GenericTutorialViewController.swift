@@ -18,7 +18,7 @@ class GenericTutorialViewController: UIViewController {
     @IBOutlet weak var gifHeightConstraint: NSLayoutConstraint!
     var gifHeightValue: Double?
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var activityIndicator: CustomActivityIndicatorView!
     
     var model: TutorialPageModel?{
         didSet{

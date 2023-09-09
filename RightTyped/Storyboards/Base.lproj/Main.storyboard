@@ -953,10 +953,10 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
             </objects>
             <point key="canvasLocation" x="2927.6923076923076" y="799.76303317535542"/>
         </scene>
-        <!--Generic Tutorial Page View Controller-->
+        <!--Custom Page View Controller-->
         <scene sceneID="hWP-j8-xsJ">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="qfb-5b-Dp1" customClass="GenericTutorialPageViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="qfb-5b-Dp1" customClass="CustomPageViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJ4-hY-i1U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3892" y="800"/>
@@ -1016,7 +1016,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
         <!--Generic Tutorial View Controller-->
         <scene sceneID="z39-MK-Ydw">
             <objects>
-                <viewController storyboardIdentifier="genericTutorialViewControllerID" id="98D-4z-mb6" customClass="GenericTutorialViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GenericTutorialViewController" id="98D-4z-mb6" customClass="GenericTutorialViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zbe-ds-uXk">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="642"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1033,7 +1033,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aWO-GQ-Bus">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="321"/>
                                     </imageView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-3d-tyu">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-3d-tyu" customClass="CustomActivityIndicatorView" customModule="RightTyped" customModuleProvider="target">
                                         <rect key="frame" x="165" y="150.66666666666666" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -1087,7 +1087,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
         <!--Final Tutorial View Controller-->
         <scene sceneID="4Vq-02-mKO">
             <objects>
-                <viewController storyboardIdentifier="finalTutorialViewControllerID" id="ffT-5x-gFP" customClass="FinalTutorialViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinalTutorialViewController" id="ffT-5x-gFP" customClass="FinalTutorialViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F3i-LB-OBv">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="642"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import UIKit
+import StoreKit
+
 
 enum PremiumType{
     case base
@@ -28,6 +31,9 @@ enum SubscriptionType{
     case included
     case yearly
     case montly
+    case weekly
+    case daily
+    case notASubscription
     case aggregated
     
     var value: String {
@@ -38,8 +44,14 @@ enum SubscriptionType{
             return AppString.Premium.SubscriptionType.yearly
         case .montly:
             return AppString.Premium.SubscriptionType.montly
+        case .weekly:
+            return AppString.Premium.SubscriptionType.montly //TODO: Add the correct one
+        case .daily:
+            return AppString.Premium.SubscriptionType.montly //TODO: Add the correct one
         case .aggregated:
             return AppString.Premium.SubscriptionType.aggregated
+        case .notASubscription:
+            return ""
         }
     }
 }
@@ -51,19 +63,36 @@ enum PremiumStackContentType{
 }
 
 struct PremiumStackContent{
+    var associatedID: String?
+    var product: SKProduct?
     let included: Bool
     let title: String
     let type: PremiumStackContentType
+    var price: Double?
+    var currencySymbol: String?
+    
+    internal init(associatedID: String? = nil, included: Bool, title: String, type: PremiumStackContentType, price: Double? = nil) {
+        self.included = included
+        self.title = title
+        self.type = type
+        self.price = price
+        self.currencySymbol = nil
+        self.associatedID = associatedID
+        self.product = nil
+    }
 }
 
-//MARK: Premium model
-struct PremiumModel{
+//MARK: Premium page model
+struct PremiumPageModel{
+    let associatedIDs: [String]?
+    var products: [SKProduct]?
     let type: PremiumType
     let description: String
-    let price: Double? = nil
-    let subscriptionType: SubscriptionType
+    var price: Double?
+    var currencySymbol: String?
+    var subscriptionType: SubscriptionType?
     let buttonTitle: String
-    let stackContent: [PremiumStackContent]
+    var stackContent: [PremiumStackContent]
     
     /// Initializer for a base model
     init(description: String, buttonTitle: String, stackContent: [PremiumStackContent]){
@@ -72,14 +101,111 @@ struct PremiumModel{
         self.subscriptionType = .included
         self.buttonTitle = buttonTitle
         self.stackContent = stackContent
+        self.price = nil
+        self.associatedIDs = nil
+        self.currencySymbol = nil
+    }
+    
+    /// Initializer for a pro model
+    init(associatedID: String, description: String, buttonTitle: String, stackContent: [PremiumStackContent]) {
+        self.description = description
+        self.buttonTitle = buttonTitle
+        self.price = nil
+        self.stackContent = stackContent
+        self.type = .pro
+        self.associatedIDs = [associatedID]
+        self.subscriptionType = nil
+    }
+    
+    /// Initializer for a Pay per Use model
+    init(associatedIDs: [String]? = nil, description: String, buttonTitle: String, stackContent: [PremiumStackContent]) {
+        self.description = description
+        self.buttonTitle = buttonTitle
+        self.price = nil
+        self.subscriptionType = .aggregated
+        self.stackContent = stackContent
+        self.type = .payPerUse
+        self.associatedIDs = associatedIDs
     }
 }
 
 
 
 //MARK: - List of all the Premium Model
-struct PremiumList{
+struct PremiumModel: ControllerAssociable{
+    var pageModels: [PremiumPageModel]
+    
+    func getControllers(fromSettings: Bool, finalAction: (() -> Void)?, isFinal: Bool) -> [UIViewController] {
+        var controllers: [UIViewController] = []
+        
+        for pageModel in pageModels.filter({ $0.type == .base || $0.products?.count ?? 0 > 0 || ($0.stackContent.filter({$0.product != nil}).count > 0) }) {
+            switch pageModel.type{
+            case .base, .pro:
+                if let c: PlainPremiumViewController = UIStoryboard.premium().instantiate(){
+                    c.model = pageModel
+                    controllers.append(c)
+                }
+            case .payPerUse:
+                if let c: SelectablePremiumViewController = UIStoryboard.premium().instantiate(){
+                    c.model = pageModel
+                    controllers.append(c)
+                }
+                break
+            }
+            
+        }
+        return controllers
+    }
+}
+
+struct Premium{
     private init(){}
     
-    static let firstBase: PremiumModel = PremiumModel(description: AppString.Premium.FirstBasePlan.description, buttonTitle: AppString.Premium.FirstBasePlan.buttonTitle, stackContent: [])
+    static var PREMIUMS: PremiumModel = PremiumModel(pageModels: [
+        PremiumPageModel( description: AppString.Premium.FirstBasePlan.description, buttonTitle: AppString.Premium.FirstBasePlan.buttonTitle, stackContent: [
+            PremiumStackContent(included: true, title: AppString.Premium.FirstBasePlan.firstStackText, type: .plainItem),
+            PremiumStackContent(included: true, title: AppString.Premium.FirstBasePlan.secondStackText, type: .plainItem),
+            PremiumStackContent(included: false, title: AppString.Premium.FirstBasePlan.thirdStackText, type: .plainItem),]),
+        PremiumPageModel(associatedID: Products.YearlyProPlan.rawValue, description: AppString.Premium.FirstProPlan.description, buttonTitle: AppString.Premium.FirstProPlan.buttonTitle, stackContent: [
+            PremiumStackContent(included: true, title: AppString.Premium.FirstProPlan.firstStackText, type: .plainItem),
+            PremiumStackContent(included: true, title: AppString.Premium.FirstProPlan.secondStackText, type: .plainItem),
+            PremiumStackContent(included: true, title: AppString.Premium.FirstProPlan.thirdStackText, type: .plainItem),]),
+        PremiumPageModel(associatedIDs: nil, description: AppString.Premium.FirstPpuPlan.description, buttonTitle: AppString.Premium.FirstPpuPlan.buttonTitle, stackContent: [
+            PremiumStackContent(associatedID: Products.SingleCatTenAnsw.rawValue, included: false, title: AppString.Premium.FirstPpuPlan.firstStackText, type: .selectableItem),
+            PremiumStackContent(associatedID: Products.FiveCatTenAnsw.rawValue, included: false, title: AppString.Premium.FirstPpuPlan.secondStackText, type: .selectableItem),
+        ]),])
+    
+    static func inflateWith(products : [SKProduct]){
+        for product in products {
+            
+            //iterating among the page model
+            for i in 0..<PREMIUMS.pageModels.count{
+                switch PREMIUMS.pageModels[i].type{
+                case  .pro:
+                    if PREMIUMS.pageModels[i].associatedIDs!.contains(product.productIdentifier){
+                        if PREMIUMS.pageModels[i].products != nil{
+                            PREMIUMS.pageModels[i].products?.append(product)
+                        }else{
+                            PREMIUMS.pageModels[i].products = [product]
+                        }
+                        PREMIUMS.pageModels[i].price = product.price.doubleValue
+                        PREMIUMS.pageModels[i].currencySymbol = product.priceLocale.currencySymbol
+                        PREMIUMS.pageModels[i].subscriptionType = product.convertSubscriptionPeriod()
+                    }
+                case .payPerUse:
+                    for k in 0..<PREMIUMS.pageModels[i].stackContent.count{
+                        if PREMIUMS.pageModels[i].stackContent[k].associatedID == product.productIdentifier {
+                            PREMIUMS.pageModels[i].stackContent[k].product = product
+                            PREMIUMS.pageModels[i].stackContent[k].price = product.price.doubleValue
+                            PREMIUMS.pageModels[i].stackContent[k].currencySymbol = product.priceLocale.currencySymbol
+                            PREMIUMS.pageModels[i].subscriptionType = product.convertSubscriptionPeriod()
+                        }
+                    }
+                default:
+                    break
+                }
+            }
+        }
+        
+    }
 }

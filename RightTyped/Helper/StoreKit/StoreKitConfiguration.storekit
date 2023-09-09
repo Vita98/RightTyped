@@ -1,0 +1,98 @@
+{
+  "identifier" : "D1770028",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "6464433456",
+      "localizations" : [
+        {
+          "description" : "Buy 5 categories of 10 answers each!",
+          "displayName" : "Pay per Use - Pack",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Compra 5 categorie da 10 risposte l'una!",
+          "displayName" : "Pay per Use - Pacchetto",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "com.vitAndreAS.RightTyped_5_cat_10_answ",
+      "referenceName" : "5_cat_10_answ",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6464433281",
+      "localizations" : [
+        {
+          "description" : "Compra una singola categoria con 10 risposte!",
+          "displayName" : "Pay per Use",
+          "locale" : "it"
+        },
+        {
+          "description" : "Buy a single category with 10 answers!",
+          "displayName" : "Pay per Use",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.vitAndreAS.RightTyped_single_cat_ten_answ",
+      "referenceName" : "single_cat_10_answ",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6464432582",
+    "_developerTeamID" : "NY4EPMGM8S",
+    "_lastSynchronizedDate" : 715717470.51897001
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21385017",
+      "localizations" : [
+
+      ],
+      "name" : "Pro Plan Group",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "8.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6464432763",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlocks all features available!",
+              "displayName" : "Pro Plan",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Sbocca tutte le funzionalità disponibili!",
+              "displayName" : "Piano Pro",
+              "locale" : "it"
+            }
+          ],
+          "productID" : "com.vitAndreAS.RightTyped.pro.plan.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pro_Plan_Yearly",
+          "subscriptionGroupID" : "21385017",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

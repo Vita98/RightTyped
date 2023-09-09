@@ -94,9 +94,14 @@
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle" = "Sei pronto a personalizzare la tua tastiera!";
 "Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Tieni premuto il dito su di una risposta per vederene il contenuto";
 
-//MARK: My Purchases
+//MARK: Premium
+//My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Ripristina acquisti";
 "Premium_MyPurchases_NO_PURCHASES_FOUND" = "Non sono presenti acquisti";
+
+//PremiumPage
+"Premium_Plans_NO_PREMIUM_OPTIONS" = "Non ci sono offerte premium disponibili in questo momento!";
+"Premium_Plans_REFRESH_BUTTON_TITLE" = "Ricarica";
 
 //Plans
 "Premium_Plans_BASE_TEXT" = "Base";
@@ -107,6 +112,8 @@
 "Premium_SubscriptionType_INCLUDED" = "Incluso";
 "Premium_SubscriptionType_YEARLY" = "anno";
 "Premium_SubscriptionType_MONTLY" = "mese";
+"Premium_SubscriptionType_WEEKLY" = "settimana";
+"Premium_SubscriptionType_DAILY" = "giorno";
 "Premium_SubscriptionType_AGGREGATED" = "totale";
 
 // First base plan

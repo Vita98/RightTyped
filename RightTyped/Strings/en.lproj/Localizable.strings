@@ -94,9 +94,14 @@
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle" = "You are ready to customize your keyboard!";
 "Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Press and hold your finger on an answer to see its content";
 
-//MARK: My Purchases
+//MARK: Premium
+//My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Restore purchases";
 "Premium_MyPurchases_NO_PURCHASES_FOUND" = "No purchases found";
+
+//PremiumPage
+"Premium_Plans_NO_PREMIUM_OPTIONS" = "No premium option available at the moment!";
+"Premium_Plans_REFRESH_BUTTON_TITLE" = "Refresh";
 
 //Plans
 "Premium_Plans_BASE_TEXT" = "Base";
@@ -107,6 +112,8 @@
 "Premium_SubscriptionType_INCLUDED" = "Included";
 "Premium_SubscriptionType_YEARLY" = "year";
 "Premium_SubscriptionType_MONTLY" = "month";
+"Premium_SubscriptionType_WEEKLY" = "week";
+"Premium_SubscriptionType_DAILY" = "day";
 "Premium_SubscriptionType_AGGREGATED" = "total";
 
 // First base plan

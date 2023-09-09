@@ -20,7 +20,7 @@ class ManagerTutorialViewController: UIViewController {
     var isFinalTutorial: Bool = false
     
     //MARK: Custom component
-    var pageViewController: GenericTutorialPageViewController?
+    var pageViewController: CustomPageViewController?
     var model: TutorialModel? {
         didSet{
             configureModel()
@@ -35,12 +35,13 @@ class ManagerTutorialViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is GenericTutorialPageViewController{
-            pageViewController = segue.destination as? GenericTutorialPageViewController
-            pageViewController?.customDelegate = self
+        if segue.destination is CustomPageViewController{
+            pageViewController = segue.destination as? CustomPageViewController
             pageViewController?.fromSettings = fromSettings
             pageViewController?.customFinalAction = customFinalAction
             pageViewController?.isFinalTutorial = isFinalTutorial
+            pageViewController?.navigateLeftButton = navigateLeftButton
+            pageViewController?.navigateRightButton = navigateRightButton
         }
     }
     
@@ -81,20 +82,5 @@ class ManagerTutorialViewController: UIViewController {
     
     @IBAction func navigateLeftEvent(_ sender: Any) {
         pageViewController?.navigate(direction: .before)
-    }
-}
-
-extension ManagerTutorialViewController: GenericTutorialPageViewControllerDelegate{
-    func genericTutorialPageViewController(isShowing viewController: UIViewController, atIndex index: Int) {
-        if index == 0{
-            //Disable the left
-            navigateLeftButton.setImage(navigateLeftButton.image(for: .normal)?.withTintColor(.componentColor.disabled()), for: .normal)
-        }else if index + 1 == model?.pageModels.count{
-            //Disable the right
-            navigateRightButton.setImage(navigateRightButton.image(for: .normal)?.withTintColor(.componentColor.disabled()), for: .normal)
-        }else{
-            navigateLeftButton.setImage(navigateLeftButton.image(for: .normal)?.withTintColor(.componentColor), for: .normal)
-            navigateRightButton.setImage(navigateRightButton.image(for: .normal)?.withTintColor(.componentColor), for: .normal)
-        }
     }
 }
