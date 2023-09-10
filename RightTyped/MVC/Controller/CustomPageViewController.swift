@@ -20,11 +20,22 @@ class CustomPageViewController: UIPageViewController {
     
     var modelControllers: [UIViewController]?
     var pageControl: UIPageControl?
-    var navigateRightButton: UIButton!
-    var navigateLeftButton: UIButton!
+    var navigateRightButton: UIButton! {
+        didSet{
+            guard let navigateRightButton = navigateRightButton else { return }
+            navigateRightButton.addTarget(self, action: #selector(navigateRightEvent), for: .touchUpInside)
+        }
+    }
+    var navigateLeftButton: UIButton! {
+        didSet{
+            guard let navigateLeftButton = navigateLeftButton else { return }
+            navigateLeftButton.addTarget(self, action: #selector(navigateLeftEvent), for: .touchUpInside)
+        }
+    }
     var fromSettings: Bool = false
     var customFinalAction: (() -> Void)?
     var isFinalTutorial: Bool = false
+    var initialPageIndex: Int = 0
     
     var customDelegate: CustomPageViewControllerDelegate?
     
@@ -60,10 +71,12 @@ class CustomPageViewController: UIPageViewController {
         modelControllers = model.getControllers(fromSettings: fromSettings, finalAction: customFinalAction, isFinal: isFinalTutorial)
         guard let modelControllers = self.modelControllers else { return }
         pageControl?.numberOfPages = modelControllers.count
-        pageControl?.currentPage = 1
         
-        setViewControllers([modelControllers[1]], direction: .forward, animated: true)
-        customPageViewController(isShowing: modelControllers[1], atIndex: 1)
+        let actualPageIndex = initialPageIndex < modelControllers.count ? initialPageIndex : 0
+        pageControl?.currentPage = actualPageIndex
+        
+        setViewControllers([modelControllers[actualPageIndex]], direction: .forward, animated: true)
+        customPageViewController(isShowing: modelControllers[1], atIndex: actualPageIndex)
     }
     
     // MARK: - Private utilities
@@ -105,6 +118,16 @@ class CustomPageViewController: UIPageViewController {
         self.setViewControllers([newC], direction: direction == .after ? .forward : .reverse, animated: true)
         updatePageControl()
     }
+    
+    //MARK: - Events
+    @objc func navigateRightEvent(){
+        navigate(direction: .after)
+    }
+    
+    @objc func navigateLeftEvent(){
+        navigate(direction: .before)
+    }
+    
     
     // MARK: - Custom models
     enum Direction{

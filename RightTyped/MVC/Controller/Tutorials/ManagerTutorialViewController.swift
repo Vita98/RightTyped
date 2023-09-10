@@ -75,12 +75,4 @@ class ManagerTutorialViewController: UIViewController {
     @IBAction func closeButtonEvent(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
-    @IBAction func navigateRightEvent(_ sender: Any) {
-        pageViewController?.navigate(direction: .after)
-    }
-    
-    @IBAction func navigateLeftEvent(_ sender: Any) {
-        pageViewController?.navigate(direction: .before)
-    }
 }

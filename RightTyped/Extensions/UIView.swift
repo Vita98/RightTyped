@@ -69,22 +69,6 @@ extension UIView{
         self.layer.masksToBounds = false
     }
     
-    public func dropShadow(shadowType : ShadowType, cornerRadius: Double){
-        let shadowLayer = CAShapeLayer()
-        let shadow = shadowType.value
-              
-        shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
-        shadowLayer.fillColor = UIColor.red.cgColor
-
-        shadowLayer.shadowColor = shadow.color
-        shadowLayer.shadowPath = shadowLayer.path
-        shadowLayer.shadowOffset = shadow.offset
-        shadowLayer.shadowOpacity = shadow.opacity
-        shadowLayer.shadowRadius = shadow.radius
-
-        layer.insertSublayer(shadowLayer, at: 0)
-    }
-    
     func animateBorderColor(toColor: UIColor, duration: Double) {
         let animation = CABasicAnimation(keyPath: "borderColor")
         animation.fromValue = layer.borderColor

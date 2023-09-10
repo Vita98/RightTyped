@@ -45,9 +45,9 @@ enum SubscriptionType{
         case .montly:
             return AppString.Premium.SubscriptionType.montly
         case .weekly:
-            return AppString.Premium.SubscriptionType.montly //TODO: Add the correct one
+            return AppString.Premium.SubscriptionType.weekly
         case .daily:
-            return AppString.Premium.SubscriptionType.montly //TODO: Add the correct one
+            return AppString.Premium.SubscriptionType.daily
         case .aggregated:
             return AppString.Premium.SubscriptionType.aggregated
         case .notASubscription:
@@ -115,6 +115,7 @@ struct PremiumPageModel{
         self.type = .pro
         self.associatedIDs = [associatedID]
         self.subscriptionType = nil
+        self.currencySymbol = nil
     }
     
     /// Initializer for a Pay per Use model
@@ -126,6 +127,7 @@ struct PremiumPageModel{
         self.stackContent = stackContent
         self.type = .payPerUse
         self.associatedIDs = associatedIDs
+        self.currencySymbol = nil
     }
 }
 
@@ -163,16 +165,16 @@ struct Premium{
     
     static var PREMIUMS: PremiumModel = PremiumModel(pageModels: [
         PremiumPageModel( description: AppString.Premium.FirstBasePlan.description, buttonTitle: AppString.Premium.FirstBasePlan.buttonTitle, stackContent: [
-            PremiumStackContent(included: true, title: AppString.Premium.FirstBasePlan.firstStackText, type: .plainItem),
-            PremiumStackContent(included: true, title: AppString.Premium.FirstBasePlan.secondStackText, type: .plainItem),
+            PremiumStackContent(included: true, title: String(format: AppString.Premium.FirstBasePlan.firstStackText, MAXIMUM_CATEGORIES_AVAILABLE), type: .plainItem),
+            PremiumStackContent(included: true, title: String(format: AppString.Premium.FirstBasePlan.secondStackText, MAXIMUM_ANSWERS_FOR_CATEGORIES), type: .plainItem),
             PremiumStackContent(included: false, title: AppString.Premium.FirstBasePlan.thirdStackText, type: .plainItem),]),
         PremiumPageModel(associatedID: Products.YearlyProPlan.rawValue, description: AppString.Premium.FirstProPlan.description, buttonTitle: AppString.Premium.FirstProPlan.buttonTitle, stackContent: [
             PremiumStackContent(included: true, title: AppString.Premium.FirstProPlan.firstStackText, type: .plainItem),
             PremiumStackContent(included: true, title: AppString.Premium.FirstProPlan.secondStackText, type: .plainItem),
             PremiumStackContent(included: true, title: AppString.Premium.FirstProPlan.thirdStackText, type: .plainItem),]),
         PremiumPageModel(associatedIDs: nil, description: AppString.Premium.FirstPpuPlan.description, buttonTitle: AppString.Premium.FirstPpuPlan.buttonTitle, stackContent: [
-            PremiumStackContent(associatedID: Products.SingleCatTenAnsw.rawValue, included: false, title: AppString.Premium.FirstPpuPlan.firstStackText, type: .selectableItem),
-            PremiumStackContent(associatedID: Products.FiveCatTenAnsw.rawValue, included: false, title: AppString.Premium.FirstPpuPlan.secondStackText, type: .selectableItem),
+            PremiumStackContent(associatedID: Products.SingleCatTenAnsw.rawValue, included: false, title: String(format: AppString.Premium.FirstPpuPlan.firstStackText, ANS_NUM_PPU_FIRST) , type: .selectableItem),
+            PremiumStackContent(associatedID: Products.FiveCatTenAnsw.rawValue, included: false, title: String(format: AppString.Premium.FirstPpuPlan.secondStackText, CAT_NUM_PPU_SECOND, ANS_NUM_PPU_SECOND), type: .selectableItem),
         ]),])
     
     static func inflateWith(products : [SKProduct]){
@@ -198,7 +200,6 @@ struct Premium{
                             PREMIUMS.pageModels[i].stackContent[k].product = product
                             PREMIUMS.pageModels[i].stackContent[k].price = product.price.doubleValue
                             PREMIUMS.pageModels[i].stackContent[k].currencySymbol = product.priceLocale.currencySymbol
-                            PREMIUMS.pageModels[i].subscriptionType = product.convertSubscriptionPeriod()
                         }
                     }
                 default:

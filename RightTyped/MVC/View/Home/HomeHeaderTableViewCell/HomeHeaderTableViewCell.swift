@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeHeaderTableViewCellDelegate{
-    func homeHeaderTableViewCellDidPressed(event: HomeHeaderTableViewCell.PressionEvent)
+    func homeHeaderTableViewCellDidPressed(event: HomeHeaderTableViewCell.PressionEvent, withComponentStatus status: Bool)
 }
 
 class HomeHeaderTableViewCell: UITableViewCell {
@@ -82,12 +82,12 @@ class HomeHeaderTableViewCell: UITableViewCell {
     //MARK: events
     @objc func buttonsPressed(sender: UITapGestureRecognizer){
         if let delegate = delegate{
-            if sender.view == addImageView, addButtonEnabled {
-                delegate.homeHeaderTableViewCellDidPressed(event: .AddNew)
+            if sender.view == addImageView {
+                delegate.homeHeaderTableViewCellDidPressed(event: .AddNew, withComponentStatus: addButtonEnabled)
             }else if sender.view == changeContentView, self.enabled{
-                delegate.homeHeaderTableViewCellDidPressed(event: .Change)
+                delegate.homeHeaderTableViewCellDidPressed(event: .Change, withComponentStatus: true)
             }else if sender.view == deleteContentView, self.enabled{
-                delegate.homeHeaderTableViewCellDidPressed(event: .Delete)
+                delegate.homeHeaderTableViewCellDidPressed(event: .Delete, withComponentStatus: true)
             }
         }
     }

@@ -8,8 +8,6 @@
 import Foundation
 import StoreKit
 
-//fileprivate let PRODUCT_IDS = ["com.vitAndreAS.RightTyped_5_cat_10_answ","com.vitAndreAS.RightTyped_single_cat_ten_answ","com.vitAndreAS.RightTyped.pro.plan.yearly"]
-
 enum Products: String, CaseIterable{
     case YearlyProPlan = "com.vitAndreAS.RightTyped.pro.plan.yearly"
     case FiveCatTenAnsw = "com.vitAndreAS.RightTyped_5_cat_10_answ"

@@ -566,15 +566,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
     }
     
     //MARK: HomeHeaderTableViewCell delegate
-    func homeHeaderTableViewCellDidPressed(event: HomeHeaderTableViewCell.PressionEvent) {
+    func homeHeaderTableViewCellDidPressed(event: HomeHeaderTableViewCell.PressionEvent, withComponentStatus status: Bool) {
         switch event{
         case .AddNew:
-            let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newCategoryViewController") as! NewCategoryViewController
-            VC.modalTransitionStyle = .crossDissolve
-            VC.modalPresentationStyle = .overFullScreen
-            VC.delegate = self
-            self.view.endEditing(true)
-            self.present(VC, animated: true)
+            if status{
+                let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newCategoryViewController") as! NewCategoryViewController
+                VC.modalTransitionStyle = .crossDissolve
+                VC.modalPresentationStyle = .overFullScreen
+                VC.delegate = self
+                self.view.endEditing(true)
+                self.present(VC, animated: true)
+            }else{
+                let alert = UIAlertController(title: AppString.Alerts.noMoreCategoriesAvailable, message: AppString.Alerts.noMoreCategoriesAvailableDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: AppString.Alerts.goToPremiumSection, style: .default, handler: {alertAction in
+                    let VC: PremiumViewController = UIStoryboard.premium().instantiate()
+                    self.view.endEditing(true)
+                    self.navigationController?.pushViewController(VC, animated: true)
+                }))
+                alert.addAction(UIAlertAction(title: AppString.Alerts.no, style: .cancel))
+                self.present(alert, animated: true)
+            }
         case .Change:
             let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newCategoryViewController") as! NewCategoryViewController
             VC.modalTransitionStyle = .crossDissolve

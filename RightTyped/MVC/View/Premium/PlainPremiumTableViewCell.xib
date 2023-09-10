@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="bulent-yuksel-trakya-rounded-300-light.otf">
+            <string>Trakya-Rounded-300-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlainPremiumTableViewCell" rowHeight="75" id="KGk-i7-Jjw" customClass="PlainPremiumTableViewCell" customModule="RightTyped" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b8d-ku-0ma">
+                        <rect key="frame" x="30" y="27.666666666666671" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="D8G-Oy-LYw"/>
+                            <constraint firstAttribute="width" constant="20" id="MhV-6t-vl3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FO-aI-UVM">
+                        <rect key="frame" x="70" y="10" width="268" height="55"/>
+                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="0FO-aI-UVM" secondAttribute="trailing" constant="20" id="4Jp-qd-F9J"/>
+                    <constraint firstItem="0FO-aI-UVM" firstAttribute="centerY" secondItem="b8d-ku-0ma" secondAttribute="centerY" id="7kE-BM-rSk"/>
+                    <constraint firstItem="b8d-ku-0ma" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="AAP-bR-nt4"/>
+                    <constraint firstItem="0FO-aI-UVM" firstAttribute="leading" secondItem="b8d-ku-0ma" secondAttribute="trailing" constant="20" id="CVg-Ri-T60"/>
+                    <constraint firstItem="0FO-aI-UVM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="JcQ-8z-bo5"/>
+                    <constraint firstAttribute="bottom" secondItem="0FO-aI-UVM" secondAttribute="bottom" constant="10" id="iJf-Vl-zo3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentImageView" destination="b8d-ku-0ma" id="ITB-Cf-0Wo"/>
+                <outlet property="contentLabel" destination="0FO-aI-UVM" id="Vf7-jJ-vcb"/>
+            </connections>
+            <point key="canvasLocation" x="158.77862595419847" y="-0.35211267605633806"/>
+        </tableViewCell>
+    </objects>
+</document>

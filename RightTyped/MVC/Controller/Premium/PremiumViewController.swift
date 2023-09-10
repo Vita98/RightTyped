@@ -23,11 +23,17 @@ class PremiumViewController: UIViewController {
     
     //MARK: Custom component
     var pageViewController: CustomPageViewController?
-    var firstLoad = true
     
+    
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        setNavigationBarView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        overrideBackAction(action: #selector(backTouch))
     }
     
     // MARK: - Navigation
@@ -91,11 +97,13 @@ class PremiumViewController: UIViewController {
     
     //MARK: - Event
     @objc private func refreshButtonPressed(){
-        //TODO: Implement the refresh of the page view
         showEmptyView(false)
         StoreKitHelper.shared.fetchProducts(delegate: self)
     }
     
+    @objc private func backTouch(){
+        self.navigationController!.popViewController(animated: true)
+    }
 }
 
 extension PremiumViewController: StoreKitHelperDelegate{
@@ -110,6 +118,7 @@ extension PremiumViewController: StoreKitHelperDelegate{
             
             //Show the pages
             if let pageViewController = pageViewController{
+                pageViewController.initialPageIndex = 1
                 pageViewController.model = Premium.PREMIUMS
             }
             

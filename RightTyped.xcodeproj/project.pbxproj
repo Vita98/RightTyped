@@ -63,6 +63,8 @@
 		016D5C2F2AAA431D00F327B9 /* SelectablePremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C2E2AAA431D00F327B9 /* SelectablePremiumViewController.swift */; };
 		016D5C312AACBBC500F327B9 /* SKProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C302AACBBC500F327B9 /* SKProduct.swift */; };
 		016D5C352AACDA4800F327B9 /* CustomActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C342AACDA4800F327B9 /* CustomActivityIndicatorView.swift */; };
+		016D5C392AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C372AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift */; };
+		016D5C3A2AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016D5C382AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib */; };
 		016DC9AE2A8FCFB300529A26 /* Premium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016DC9AD2A8FCFB300529A26 /* Premium.storyboard */; };
 		016DC9B22A8FD0DB00529A26 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */; };
 		016DC9B42A90FEFC00529A26 /* MyPurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */; };
@@ -208,6 +210,8 @@
 		016D5C2E2AAA431D00F327B9 /* SelectablePremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectablePremiumViewController.swift; sourceTree = "<group>"; };
 		016D5C302AACBBC500F327B9 /* SKProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKProduct.swift; sourceTree = "<group>"; };
 		016D5C342AACDA4800F327B9 /* CustomActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicatorView.swift; sourceTree = "<group>"; };
+		016D5C372AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainPremiumTableViewCell.swift; sourceTree = "<group>"; };
+		016D5C382AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlainPremiumTableViewCell.xib; sourceTree = "<group>"; };
 		016DC9AD2A8FCFB300529A26 /* Premium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Premium.storyboard; sourceTree = "<group>"; };
 		016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPurchasesViewController.swift; sourceTree = "<group>"; };
@@ -474,6 +478,15 @@
 			path = StoreKit;
 			sourceTree = "<group>";
 		};
+		016D5C362AAE0ECD00F327B9 /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				016D5C372AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift */,
+				016D5C382AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
 		016DC9AF2A8FCFBE00529A26 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +673,7 @@
 		01A765A22A27B64F00D50C4B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				016D5C362AAE0ECD00F327B9 /* Premium */,
 				015B9E652A59910500171360 /* Settings */,
 				01A391362A2F8F0B0051FBE4 /* CustomComponent */,
 				01A7659E2A27B5DA00D50C4B /* Home */,
@@ -828,6 +842,7 @@
 				0142404B2A866DD900006F2B /* tut2-3.gif in Resources */,
 				016782A62A5B2E4E00DA8A11 /* Localizable.strings in Resources */,
 				01B07EE72A80FA700045DC06 /* tut2-1.gif in Resources */,
+				016D5C3A2AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib in Resources */,
 				015DF5362A892E7200C00064 /* tut3-1.gif in Resources */,
 				01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */,
 				019E2F112A1E8C3B005A8021 /* Assets.xcassets in Resources */,
@@ -898,6 +913,7 @@
 				01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */,
 				01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */,
 				015DF52F2A87C9CF00C00064 /* FinalTutorialViewController.swift in Sources */,
+				016D5C392AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				015B9E682A59F10300171360 /* SettingsTableViewCell.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,

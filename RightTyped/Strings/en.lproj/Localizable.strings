@@ -25,6 +25,9 @@
 "Alerts_OK" = "Ok";
 "Alerts_TITLE_ARE_YOU_SURE" = "Are you sure?";
 "Alerts_GO_BACK_WSAVING" = "Are you sure you want to go back?\nThe changes you made will not be saved";
+"Alerts_NO_MORE_CATEGORIES_AVAILABLE" = "You've run out of categories!";
+"Alerts_NO_MORE_CATEGORIES_AVAILABLE_DESCR" = "You cannot create a new category with your current subscription!\n\nGo to the premium section to continue!";
+"Alerts_GO_TO_PREMIUM" = "Premium";
 
 //MARK: Settings
 "SettingsTypeEnum_APP" = "App";
@@ -118,7 +121,7 @@
 
 // First base plan
 "Premium_Plans_FirstBasePlan_DESCRIPTION" = "It includes all the features available in the free version already enabled by default.";
-"Premium_Plans_FirstBasePlan_BUTTON_TITLE" = "Già attivo";
+"Premium_Plans_FirstBasePlan_BUTTON_TITLE" = "Active";
 "Premium_Plans_FirstBasePlan_FIRST_STACK_TEXT" = "Max %d categories";
 "Premium_Plans_FirstBasePlan_SECOND_STACK_TEXT" = "Max %d answers for each category";
 "Premium_Plans_FirstBasePlan_THIRD_STACK_TEXT" = "All features available in the future";
@@ -133,5 +136,5 @@
 // First pay per use plan
 "Premium_Plans_FirstPpuPlan_DESCRIPTION" = "Buy only the features you need most, with no commitment or annual recurrence. What you buy stays forever.";
 "Premium_Plans_FirstPpuPlan_BUTTON_TITLE" = "Buy";
-"Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT" = "Single category with %d responses";
+"Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT" = "Single category with %d answers";
 "Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT" = "%d categories with %d answers each";

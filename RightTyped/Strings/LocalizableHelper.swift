@@ -39,6 +39,9 @@ struct AppString{
         static let ok: String = LocalizableString("Alerts_OK").locale
         static let titleAreYouSure: String = LocalizableString("Alerts_TITLE_ARE_YOU_SURE").locale
         static let genericGoBackWithoutSaving: String = LocalizableString("Alerts_GO_BACK_WSAVING").locale
+        static let noMoreCategoriesAvailable: String = LocalizableString("Alerts_NO_MORE_CATEGORIES_AVAILABLE").locale
+        static let noMoreCategoriesAvailableDescription: String = LocalizableString("Alerts_NO_MORE_CATEGORIES_AVAILABLE_DESCR").locale
+        static let goToPremiumSection: String = LocalizableString("Alerts_GO_TO_PREMIUM").locale
     }
     
     struct SettingsTypeEnum{

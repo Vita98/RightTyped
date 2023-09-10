@@ -9,4 +9,14 @@ import Foundation
 import UIKit
 
 let SEARCH_BAR_SECTION_HEADER_HEIGHT : CGFloat = 59
-let MAXIMUM_CATEGORIES_AVAILABLE = 4
+
+//MARK: - Business Constants
+let MAXIMUM_CATEGORIES_AVAILABLE = 3
+let MAXIMUM_ANSWERS_FOR_CATEGORIES = 10
+
+//com.vitAndreAS.RightTyped_single_cat_ten_answ
+let ANS_NUM_PPU_FIRST = 10
+
+//com.vitAndreAS.RightTyped_5_cat_10_answ constants
+let CAT_NUM_PPU_SECOND = 5
+let ANS_NUM_PPU_SECOND = 10

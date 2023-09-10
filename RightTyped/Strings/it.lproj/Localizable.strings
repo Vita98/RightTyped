@@ -25,6 +25,9 @@
 "Alerts_OK" = "Ok";
 "Alerts_TITLE_ARE_YOU_SURE" = "Sei sicuro?";
 "Alerts_GO_BACK_WSAVING" = "Sei sicuro di voler tornare indietro?\nLe modifiche effettuate non verranno salvate";
+"Alerts_NO_MORE_CATEGORIES_AVAILABLE" = "Hai terminato le categorie!";
+"Alerts_NO_MORE_CATEGORIES_AVAILABLE_DESCR" = "Non puoi creare una nuova categoria con il tuo attuale abbonamento!\n\nVai nella sezione premium per poter proseguire!";
+"Alerts_GO_TO_PREMIUM" = "Premium";
 
 //MARK: Settings
 "SettingsTypeEnum_APP" = "App";

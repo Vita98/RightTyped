@@ -50,4 +50,12 @@ extension UINavigationController {
         navContr.modalPresentationStyle = .fullScreen
         return RootNavController(navController: navContr, root: viewC)
     }
+    
+    static func instantiateNavController<T : UIViewController>(withRoot viewController: T.Type, from storyboard: UIStoryboard) -> RootNavController<T>?{
+        guard let viewC : T = storyboard.instantiate() else { return nil }
+        let navContr = UINavigationController(rootViewController: viewC)
+        navContr.navigationBar.isHidden = true
+        navContr.modalPresentationStyle = .fullScreen
+        return RootNavController(navController: navContr, root: viewC)
+    }
 }
