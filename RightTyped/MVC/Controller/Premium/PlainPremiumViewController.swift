@@ -31,6 +31,7 @@ class PlainPremiumViewController: UIViewController {
             configureModel()
         }
     }
+    private var buttonViewEnabled: Bool = false
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -63,6 +64,7 @@ class PlainPremiumViewController: UIViewController {
             cardShadowViewTopConstraint.constant = 40
             cardShadowViewBottomConstraint.constant = 40
         }
+        buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonViewPressed)))
     }
     
     private func configurePlanType(){
@@ -91,12 +93,23 @@ class PlainPremiumViewController: UIViewController {
         }
         if let _ = model.products?.first{
             buttonView.enableComponentButtonMode()
+            buttonViewEnabled = true
         }else{
             buttonView.enableComponentButtonMode(enabled: false)
+            buttonViewEnabled = false
         }
         
         buttonViewLabel.text = model.buttonTitle
         planLabel.text = model.type.value
+    }
+    
+    //MARK: - Events
+    @objc private func buttonViewPressed(){
+        if buttonViewEnabled{
+            //MAKE THE PAYMENT
+            guard let product = model?.products?.first else { return }
+            StoreKitHelper.shared.buy(product: product)
+        }
     }
 }
 

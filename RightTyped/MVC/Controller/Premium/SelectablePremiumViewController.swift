@@ -68,6 +68,7 @@ class SelectablePremiumViewController: UIViewController {
             cardShadowViewTopConstraint.constant = 40
             cardShadowViewBottomConstraint.constant = 40
         }
+        buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonViewPressed)))
     }
     
     private func configurePlanType(){
@@ -98,6 +99,14 @@ class SelectablePremiumViewController: UIViewController {
     
     private func setPrice(_ price: Double, currencySymbol: String){
         priceLabel.text = "\(currencySymbol) \(String(format: "%.2f", price))"
+    }
+    
+    //MARK: - Events
+    @objc private func buttonViewPressed(){
+        if let productSelected = productSelected, let product = productSelected.product{
+            //MAKE THE PAYMENT
+            StoreKitHelper.shared.buy(product: product)
+        }
     }
 
 }

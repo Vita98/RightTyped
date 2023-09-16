@@ -18,6 +18,7 @@
 "GENERAL_ANSWER" = "Risposta";
 "GENERAL_NEXT" = "Avanti";
 "GENERAL_DONE" = "Fatto!";
+"GENERAL_CLOSE" = "Chiudi";
 
 //MARK: Alert
 "Alerts_YES" = "Si";
@@ -98,6 +99,14 @@
 "Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Tieni premuto il dito su di una risposta per vederene il contenuto";
 
 //MARK: Premium
+//Popup
+"Premium_Popup_SuccessPpu_TITLE" = "Acquisto effettuato!";
+"Premium_Popup_SuccessPpu_DESCRIPTION" = "Puoi continuare a creare nuove categorie! ";
+"Premium_Popup_SuccessPro_TITLE" = "Acquisto effettuato!";
+"Premium_Popup_SuccessPro_DESCRIPTION" = "Hai correttamente acquistato il l’abbonamento annuale!\nPuoi continuare a creare categorie e risposte illimitatamente!";
+"Premium_Popup_Failure_TITLE" = "Qualcosa è andato storto!";
+"Premium_Popup_Failure_DESCRIPTION" = "Qualcosa è adato storto durante l’acquisto del prodotto.\nVai nella sezione supporto per inviare una segnalazione.";
+
 //My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Ripristina acquisti";
 "Premium_MyPurchases_NO_PURCHASES_FOUND" = "Non sono presenti acquisti";

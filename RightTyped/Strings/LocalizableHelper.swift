@@ -30,6 +30,7 @@ struct AppString{
         static let answer: String = LocalizableString("GENERAL_ANSWER").locale
         static let next: String = LocalizableString("GENERAL_NEXT").locale
         static let done: String = LocalizableString("GENERAL_DONE").locale
+        static let close: String = LocalizableString("GENERAL_CLOSE").locale
     }
     
     struct Alerts{
@@ -106,6 +107,26 @@ struct AppString{
     
     struct Premium{
         private init(){}
+        
+        struct Popup{
+            private init(){}
+            struct SuccessPpu{
+                private init(){}
+                static let title: String = LocalizableString("Premium_Popup_SuccessPpu_TITLE").locale
+                static let description: String = LocalizableString("Premium_Popup_SuccessPpu_DESCRIPTION").locale
+            }
+            struct SuccessPro{
+                private init(){}
+                static let title: String = LocalizableString("Premium_Popup_SuccessPro_TITLE").locale
+                static let description: String = LocalizableString("Premium_Popup_SuccessPro_DESCRIPTION").locale
+            }
+            struct Failure{
+                private init(){}
+                static let title: String = LocalizableString("Premium_Popup_Failure_TITLE").locale
+                static let description: String = LocalizableString("Premium_Popup_Failure_DESCRIPTION").locale
+            }
+        }
+        
         struct MyPurchases{
             private init(){}
             static let restorePurchasesButtonTitle: String = LocalizableString("Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE").locale

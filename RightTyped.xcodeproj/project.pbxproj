@@ -65,6 +65,11 @@
 		016D5C352AACDA4800F327B9 /* CustomActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C342AACDA4800F327B9 /* CustomActivityIndicatorView.swift */; };
 		016D5C392AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C372AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift */; };
 		016D5C3A2AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016D5C382AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib */; };
+		016D5C3C2AAF8EB700F327B9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C3B2AAF8EB700F327B9 /* LoadingViewController.swift */; };
+		016D5C452AB5C44B00F327B9 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C432AB5C44B00F327B9 /* Product+CoreDataClass.swift */; };
+		016D5C462AB5C44B00F327B9 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C432AB5C44B00F327B9 /* Product+CoreDataClass.swift */; };
+		016D5C472AB5C44B00F327B9 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C442AB5C44B00F327B9 /* Product+CoreDataProperties.swift */; };
+		016D5C482AB5C44B00F327B9 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C442AB5C44B00F327B9 /* Product+CoreDataProperties.swift */; };
 		016DC9AE2A8FCFB300529A26 /* Premium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016DC9AD2A8FCFB300529A26 /* Premium.storyboard */; };
 		016DC9B22A8FD0DB00529A26 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */; };
 		016DC9B42A90FEFC00529A26 /* MyPurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */; };
@@ -124,6 +129,9 @@
 		01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */; };
 		01DA1C2E2A2CFF8C00A28CE7 /* CustomTextArea.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */; };
 		01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */; };
+		01E5E5B62AB604FF005A8790 /* StoreKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C2C2AA8FCB700F327B9 /* StoreKitHelper.swift */; };
+		01E5E5B72AB6050A005A8790 /* StoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 016D5C292AA8FB5B00F327B9 /* StoreKitConfiguration.storekit */; };
+		01E5E5B92AB628AA005A8790 /* PremiumResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5E5B82AB628AA005A8790 /* PremiumResultViewController.swift */; };
 		01EC3BE62AA7A2170026DF1B /* PlainPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EC3BE52AA7A2170026DF1B /* PlainPremiumViewController.swift */; };
 		01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FDAA3C2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift */; };
 /* End PBXBuildFile section */
@@ -212,6 +220,9 @@
 		016D5C342AACDA4800F327B9 /* CustomActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicatorView.swift; sourceTree = "<group>"; };
 		016D5C372AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainPremiumTableViewCell.swift; sourceTree = "<group>"; };
 		016D5C382AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlainPremiumTableViewCell.xib; sourceTree = "<group>"; };
+		016D5C3B2AAF8EB700F327B9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		016D5C432AB5C44B00F327B9 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		016D5C442AB5C44B00F327B9 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		016DC9AD2A8FCFB300529A26 /* Premium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Premium.storyboard; sourceTree = "<group>"; };
 		016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPurchasesViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +276,7 @@
 		01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextArea.xib; sourceTree = "<group>"; };
 		01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextArea.swift; sourceTree = "<group>"; };
+		01E5E5B82AB628AA005A8790 /* PremiumResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumResultViewController.swift; sourceTree = "<group>"; };
 		01EC3BE52AA7A2170026DF1B /* PlainPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainPremiumViewController.swift; sourceTree = "<group>"; };
 		01FDAA3C2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -312,6 +324,8 @@
 		011987562A3260FF007D76B9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				016D5C432AB5C44B00F327B9 /* Product+CoreDataClass.swift */,
+				016D5C442AB5C44B00F327B9 /* Product+CoreDataProperties.swift */,
 				01C8A0382A324323001DBC8D /* Category+CoreDataClass.swift */,
 				01C8A0392A324323001DBC8D /* Category+CoreDataProperties.swift */,
 				01C8A03A2A324323001DBC8D /* Answer+CoreDataClass.swift */,
@@ -437,6 +451,7 @@
 				01930A3F2A7EBDB3005EE27A /* Tutorials */,
 				01D514352A34FDF700B9FF2B /* EnableKeyboard */,
 				012259DD2AA4CDBA00B69721 /* CustomPageViewController.swift */,
+				016D5C3B2AAF8EB700F327B9 /* LoadingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -504,6 +519,7 @@
 				016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */,
 				01EC3BE52AA7A2170026DF1B /* PlainPremiumViewController.swift */,
 				016D5C2E2AAA431D00F327B9 /* SelectablePremiumViewController.swift */,
+				01E5E5B82AB628AA005A8790 /* PremiumResultViewController.swift */,
 			);
 			path = Premium;
 			sourceTree = "<group>";
@@ -862,6 +878,7 @@
 				016782B52A5D6B2C00DA8A11 /* Localizable.strings in Resources */,
 				019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
 				015B9E6B2A5ABA0300171360 /* Assets.xcassets in Resources */,
+				01E5E5B72AB6050A005A8790 /* StoreKitConfiguration.storekit in Resources */,
 				013E084E2A21FD7600FF7928 /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -887,6 +904,7 @@
 				01C84C182A508CE300C8AD77 /* UINavigationController.swift in Sources */,
 				01A391382A2F8F980051FBE4 /* EnableKeyboardViewController.swift in Sources */,
 				016D5C2D2AA8FCB700F327B9 /* StoreKitHelper.swift in Sources */,
+				016D5C472AB5C44B00F327B9 /* Product+CoreDataProperties.swift in Sources */,
 				016782AD2A5B3BB500DA8A11 /* LocalizableHelper.swift in Sources */,
 				012259DA2A9B5E8600B69721 /* PremiumModel.swift in Sources */,
 				016D5C2F2AAA431D00F327B9 /* SelectablePremiumViewController.swift in Sources */,
@@ -906,6 +924,7 @@
 				019EEC472A4DEE1C004C2761 /* UISwitch.swift in Sources */,
 				014240492A865FD600006F2B /* UIDevice.swift in Sources */,
 				016DC9B42A90FEFC00529A26 /* MyPurchasesViewController.swift in Sources */,
+				016D5C452AB5C44B00F327B9 /* Product+CoreDataClass.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				01063BEC2A629BBA00B0E7C7 /* UICheckBox.swift in Sources */,
 				01930A412A7EBDE1005EE27A /* ManagerTutorialViewController.swift in Sources */,
@@ -915,6 +934,7 @@
 				015DF52F2A87C9CF00C00064 /* FinalTutorialViewController.swift in Sources */,
 				016D5C392AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
+				01E5E5B92AB628AA005A8790 /* PremiumResultViewController.swift in Sources */,
 				015B9E682A59F10300171360 /* SettingsTableViewCell.swift in Sources */,
 				019E2F082A1E8C39005A8021 /* AppDelegate.swift in Sources */,
 				017CE8172A8CDDD900FEAFB7 /* BiometricHelper.swift in Sources */,
@@ -924,6 +944,7 @@
 				01C8A0362A323F03001DBC8D /* DataModelPersistentContainer.swift in Sources */,
 				01C8A03C2A324323001DBC8D /* Category+CoreDataClass.swift in Sources */,
 				01C8A03E2A324323001DBC8D /* Category+CoreDataProperties.swift in Sources */,
+				016D5C3C2AAF8EB700F327B9 /* LoadingViewController.swift in Sources */,
 				016D5C352AACDA4800F327B9 /* CustomActivityIndicatorView.swift in Sources */,
 				01595FEE2A47C532003EAE79 /* UITableCollectionViewController.swift in Sources */,
 				01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */,
@@ -952,14 +973,17 @@
 				016782BB2A5D6CD000DA8A11 /* LocalizableModel.swift in Sources */,
 				01C8A0342A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */,
 				015B9E702A5AEF2400171360 /* AppNavigationHelper.swift in Sources */,
+				01E5E5B62AB604FF005A8790 /* StoreKitHelper.swift in Sources */,
 				013E08452A21328100FF7928 /* ContentView.swift in Sources */,
 				01766B482A22394100BA359C /* GlobalConstant.swift in Sources */,
 				01ADB21E2A23929C007613EB /* FooterView.swift in Sources */,
 				016782BE2A5D6CF900DA8A11 /* LocalizableHelper.swift in Sources */,
 				01C8A0432A324323001DBC8D /* Answer+CoreDataProperties.swift in Sources */,
+				016D5C482AB5C44B00F327B9 /* Product+CoreDataProperties.swift in Sources */,
 				013E08482A21348D00FF7928 /* UIColor.swift in Sources */,
 				01766B452A22379B00BA359C /* UIView.swift in Sources */,
 				019E2F222A1E8EFC005A8021 /* KeyboardViewController.swift in Sources */,
+				016D5C462AB5C44B00F327B9 /* Product+CoreDataClass.swift in Sources */,
 				01C8A0372A323F03001DBC8D /* DataModelPersistentContainer.swift in Sources */,
 				013E08542A221CBC00FF7928 /* AnswersCollectionViewCell.swift in Sources */,
 				013E084D2A21FD7600FF7928 /* CategoryTableViewCell.swift in Sources */,

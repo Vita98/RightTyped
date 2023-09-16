@@ -61,6 +61,8 @@ class DefaultData{
         for category in DATA {
             let catObj = Category(context: DataModelManagerPersistentContainer.shared.context)
             catObj.name = category[NAME_KEY] as! String
+            catObj.maxAnswers = Int64(MAXIMUM_ANSWERS_FOR_CATEGORIES)
+            catObj.productId = Products.SingleCatTenAnsw.rawValue
             
             let answ_keys = category[ANSWERS_KEY] as! [[String:Any]]
             var order = 0.0
@@ -74,5 +76,16 @@ class DefaultData{
             }
             Category.saveNewCategory(category: catObj)
         }
+        
+        //Saving the default categories number
+        saveProductData()
+    }
+    
+    private func saveProductData(){
+        let product = Product(context: DataModelManagerPersistentContainer.shared.context)
+        product.productId = Products.SingleCatTenAnsw.rawValue
+        product.maxCatNum = Int64(MAXIMUM_CATEGORIES_AVAILABLE)
+        product.maxAnsNum = Int64(MAXIMUM_ANSWERS_FOR_CATEGORIES)
+        DataModelManagerPersistentContainer.shared.saveContext()
     }
 }

@@ -16,6 +16,8 @@ extension Category {
         return NSFetchRequest<Category>(entityName: "Category")
     }
 
+    @NSManaged public var maxAnswers: Int64
+    @NSManaged public var productId: String
     @NSManaged public var name: String
     @NSManaged public var answers: NSSet?
     @NSManaged public var creationDate: Date

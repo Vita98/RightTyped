@@ -18,6 +18,7 @@
 "GENERAL_ANSWER" = "Answer";
 "GENERAL_NEXT" = "Next";
 "GENERAL_DONE" = "Done!";
+"GENERAL_CLOSE" = "Close";
 
 //MARK: Alert
 "Alerts_YES" = "Yes";
@@ -98,6 +99,14 @@
 "Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Press and hold your finger on an answer to see its content";
 
 //MARK: Premium
+//Popup
+"Premium_Popup_SuccessPpu_TITLE" = "Purchase made!";
+"Premium_Popup_SuccessPpu_DESCRIPTION" = "You can continue to create new categories!";
+"Premium_Popup_SuccessPro_TITLE" = "Purchase made!";
+"Premium_Popup_SuccessPro_DESCRIPTION" = "You have successfully purchased your annual subscription!\nYou can continue to create categories and answers unlimitedly!";
+"Premium_Popup_Failure_TITLE" = "Something went wrong!";
+"Premium_Popup_Failure_DESCRIPTION" = "Something went wrong during the purchase of the product.\nGo to the support section to send a report.";
+
 //My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Restore purchases";
 "Premium_MyPurchases_NO_PURCHASES_FOUND" = "No purchases found";

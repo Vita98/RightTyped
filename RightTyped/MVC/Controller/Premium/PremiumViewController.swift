@@ -23,6 +23,7 @@ class PremiumViewController: UIViewController {
     
     //MARK: Custom component
     var pageViewController: CustomPageViewController?
+    var loadingViewController: LoadingViewController?
     
     
     //MARK: Lifecycle
@@ -95,6 +96,16 @@ class PremiumViewController: UIViewController {
         
     }
     
+    private func toggleLoadingViewController(){
+        if let loadingViewController = loadingViewController{
+            loadingViewController.dismiss(animated: true)
+            self.loadingViewController = nil
+        }else{
+            loadingViewController = LoadingViewController()
+            loadingViewController?.show(in: self)
+        }
+    }
+    
     //MARK: - Event
     @objc private func refreshButtonPressed(){
         showEmptyView(false)
@@ -125,5 +136,32 @@ extension PremiumViewController: StoreKitHelperDelegate{
             setComponentStatus(true)
             emptyView.removeFromSuperview()
         }
+    }
+    
+    func paymentProcessDone(of productId: String, withStatus status: PaymentStatus) {
+        toggleLoadingViewController()
+        let alert: PremiumResultViewController = UIStoryboard.premium().instantiate()
+        alert.modalTransitionStyle = .crossDissolve
+        alert.modalPresentationStyle = .overFullScreen
+        alert.closeClosure = {[weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        if status == .purchased{
+            guard let prod = Products.fromId(id: productId) else { return }
+            
+            if Product.saveBoughtProduct(prod){
+                alert.configure(for: .success, with: prod)
+            }else{
+                alert.configure(for: .failure, with: prod)
+            }
+        }else{
+            guard let prod = Products.fromId(id: productId) else { return }
+            alert.configure(for: .failure, with: prod)
+        }
+        self.present(alert, animated: true)
+    }
+    
+    func paymentInProcess(of productId: String) {
+        toggleLoadingViewController()
     }
 }

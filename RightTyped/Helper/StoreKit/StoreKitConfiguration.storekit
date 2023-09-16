@@ -7,7 +7,7 @@
     {
       "displayPrice" : "3.99",
       "familyShareable" : false,
-      "internalID" : "6464433456",
+      "internalID" : "6466718736",
       "localizations" : [
         {
           "description" : "Buy 5 categories of 10 answers each!",
@@ -20,35 +20,35 @@
           "locale" : "it"
         }
       ],
-      "productID" : "com.vitAndreAS.RightTyped_5_cat_10_answ",
-      "referenceName" : "5_cat_10_answ",
-      "type" : "NonConsumable"
+      "productID" : "com.vitAndreAS.RightTyped_5_cat_10_answe",
+      "referenceName" : "5_cat_10_answe",
+      "type" : "Consumable"
     },
     {
       "displayPrice" : "0.99",
       "familyShareable" : false,
-      "internalID" : "6464433281",
+      "internalID" : "6466718749",
       "localizations" : [
-        {
-          "description" : "Compra una singola categoria con 10 risposte!",
-          "displayName" : "Pay per Use",
-          "locale" : "it"
-        },
         {
           "description" : "Buy a single category with 10 answers!",
           "displayName" : "Pay per Use",
           "locale" : "en_US"
+        },
+        {
+          "description" : "Compra una singola categoria con 10 risposte!",
+          "displayName" : "Pay per Use",
+          "locale" : "it"
         }
       ],
-      "productID" : "com.vitAndreAS.RightTyped_single_cat_ten_answ",
-      "referenceName" : "single_cat_10_answ",
-      "type" : "NonConsumable"
+      "productID" : "com.vitAndreAS.RightTyped_single_cat_ten_answe",
+      "referenceName" : "single_cat_10_answe",
+      "type" : "Consumable"
     }
   ],
   "settings" : {
     "_applicationInternalID" : "6464432582",
     "_developerTeamID" : "NY4EPMGM8S",
-    "_lastSynchronizedDate" : 715717470.51897001
+    "_lastSynchronizedDate" : 716575958.90060997
   },
   "subscriptionGroups" : [
     {

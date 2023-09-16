@@ -25,5 +25,4 @@ extension UIViewController{
     public func overrideBackAction(action: Selector?){
         self.navigationController?.navigationBar.subviews[1].subviews[1].addGestureRecognizer(UITapGestureRecognizer(target: self, action: action))
     }
-
 }
