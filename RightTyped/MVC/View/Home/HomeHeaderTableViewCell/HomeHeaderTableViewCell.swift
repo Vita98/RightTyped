@@ -73,7 +73,11 @@ class HomeHeaderTableViewCell: UITableViewCell {
     private func configureString(){
         titleLabel.text = AppString.General.categories
         addLabel.text = AppString.General.category
-        descLabel.text = String(format: AppString.HomeHeaderTableViewCell.description, MAXIMUM_CATEGORIES_AVAILABLE) 
+        if UserDefaultManager.shared.getProPlanStatus(){
+            descLabel.text = AppString.HomeHeaderTableViewCell.proDescription
+        }else{
+            descLabel.text = String(format: AppString.HomeHeaderTableViewCell.description, Product.getMaximumCategoriesCount())
+        }
         enableCatLable.text = AppString.HomeHeaderTableViewCell.enableCategory
         editLabel.text = AppString.General.edit
         deleteLabel.text = AppString.General.delete
@@ -131,6 +135,10 @@ class HomeHeaderTableViewCell: UITableViewCell {
                 strongSelf.addImageView.image = strongSelf.addImageView.image?.withTintColor(.componentColor.disabled())
             }
         }
+    }
+    
+    public func updateCatCount(){
+        descLabel.text = String(format: AppString.HomeHeaderTableViewCell.description, Product.getMaximumCategoriesCount())
     }
     
     public func setSwitch(enabled: Bool){

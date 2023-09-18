@@ -27,7 +27,9 @@
 "Alerts_TITLE_ARE_YOU_SURE" = "Sei sicuro?";
 "Alerts_GO_BACK_WSAVING" = "Sei sicuro di voler tornare indietro?\nLe modifiche effettuate non verranno salvate";
 "Alerts_NO_MORE_CATEGORIES_AVAILABLE" = "Hai terminato le categorie!";
-"Alerts_NO_MORE_CATEGORIES_AVAILABLE_DESCR" = "Non puoi creare una nuova categoria con il tuo attuale abbonamento!\n\nVai nella sezione premium per poter proseguire!";
+"Alerts_NO_MORE_CATEGORIES_AVAILABLE_DESCR" = "\nNon puoi creare una nuova categoria con il tuo attuale abbonamento!\n\nVai nella sezione premium per poter proseguire!";
+"Alerts_NO_MORE_ANSWERS_AVAILABLE" = "Hai terminato le risposte per questa categoria!";
+"Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR" = "\nIl numero massimo di risposte per questa categoria è %d.\n\nVai nella sezione premium per poter proseguire!";
 "Alerts_GO_TO_PREMIUM" = "Premium";
 
 //MARK: Settings
@@ -57,6 +59,7 @@
 
 //MARK: HomeHeaderTableViewCell
 "HomeHeaderTableViewCell_DESC" = "Hai a disposizione fino a %d categorie";
+"HomeHeaderTableViewCell_DESC_WITH_PRO" = "Hai categorie illimitate!";
 "HomeHeaderTableViewCell_ENABLE_CATEGORY" = "Abilita categoria selezionata";
 
 //MARK: NewCategoryViewController

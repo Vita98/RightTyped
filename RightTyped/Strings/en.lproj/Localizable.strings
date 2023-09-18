@@ -27,7 +27,9 @@
 "Alerts_TITLE_ARE_YOU_SURE" = "Are you sure?";
 "Alerts_GO_BACK_WSAVING" = "Are you sure you want to go back?\nThe changes you made will not be saved";
 "Alerts_NO_MORE_CATEGORIES_AVAILABLE" = "You've run out of categories!";
-"Alerts_NO_MORE_CATEGORIES_AVAILABLE_DESCR" = "You cannot create a new category with your current subscription!\n\nGo to the premium section to continue!";
+"Alerts_NO_MORE_CATEGORIES_AVAILABLE_DESCR" = "\nYou cannot create a new category with your current subscription!\n\nGo to the premium section to continue!";
+"Alerts_NO_MORE_ANSWERS_AVAILABLE" = "You've run out of answers for this category!";
+"Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR" = "\nThe maximum number of answers for this category is %d.\n\nGo to the premium section to continue!";
 "Alerts_GO_TO_PREMIUM" = "Premium";
 
 //MARK: Settings
@@ -57,6 +59,7 @@
 
 //MARK: HomeHeaderTableViewCell
 "HomeHeaderTableViewCell_DESC" = "You have maximum %d categories";
+"HomeHeaderTableViewCell_DESC_WITH_PRO" = "You have unlimited categories!";
 "HomeHeaderTableViewCell_ENABLE_CATEGORY" = "Enable selected category";
 
 //MARK: NewCategoryViewController

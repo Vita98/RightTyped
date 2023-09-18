@@ -42,6 +42,8 @@ struct AppString{
         static let genericGoBackWithoutSaving: String = LocalizableString("Alerts_GO_BACK_WSAVING").locale
         static let noMoreCategoriesAvailable: String = LocalizableString("Alerts_NO_MORE_CATEGORIES_AVAILABLE").locale
         static let noMoreCategoriesAvailableDescription: String = LocalizableString("Alerts_NO_MORE_CATEGORIES_AVAILABLE_DESCR").locale
+        static let noMoreAnswersAvailable: String = LocalizableString("Alerts_NO_MORE_ANSWERS_AVAILABLE").locale
+        static let noMoreAnswersAvailableDescription: String = LocalizableString("Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR").locale
         static let goToPremiumSection: String = LocalizableString("Alerts_GO_TO_PREMIUM").locale
     }
     
@@ -187,6 +189,7 @@ struct AppString{
     struct HomeHeaderTableViewCell{
         private init(){}
         static let description: String = LocalizableString("HomeHeaderTableViewCell_DESC").locale
+        static let proDescription: String = LocalizableString("HomeHeaderTableViewCell_DESC_WITH_PRO").locale
         static let enableCategory: String = LocalizableString("HomeHeaderTableViewCell_ENABLE_CATEGORY").locale
     }
     

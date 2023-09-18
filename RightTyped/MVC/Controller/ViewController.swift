@@ -66,6 +66,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        updateAddCatIconVisibility()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -107,13 +108,24 @@ class ViewController: UIViewController {
     private func configureAddAnswerCustomView(){
         addAnswerView = AddAnswerCustomView(inside: self.view)
         addAnswerView!.setCustomTapAction {[weak self] in
-            guard let strongSelf = self else { return }
-            let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newAnswerViewControllerID") as! NewAnswerViewController
-            VC.delegate = self
-            VC.isNewAnswer = true
-            if strongSelf.selectedCategory != nil{ VC.setAnswerCategory(strongSelf.selectedCategory!) }
-            strongSelf.view.endEditing(true)
-            strongSelf.navigationController?.pushViewController(VC, animated: true)
+            guard let strongSelf = self, let selectedCategory = self?.selectedCategory, let answersCount = selectedCategory.answers?.count else { return }
+            
+            if UserDefaultManager.shared.getProPlanStatus() || answersCount < Int(selectedCategory.maxAnswers){
+                let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newAnswerViewControllerID") as! NewAnswerViewController
+                VC.delegate = self
+                VC.isNewAnswer = true
+                VC.setAnswerCategory(selectedCategory)
+                strongSelf.view.endEditing(true)
+                strongSelf.navigationController?.pushViewController(VC, animated: true)
+            }else{
+                let alert = UIAlertController(title: AppString.Alerts.noMoreAnswersAvailable, message: String(format: AppString.Alerts.noMoreAnswersAvailableDescription, Int(selectedCategory.maxAnswers)) , preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: AppString.Alerts.goToPremiumSection, style: .default, handler: {alertAction in
+                    let VC: PremiumViewController = UIStoryboard.premium().instantiate()
+                    strongSelf.navigationController?.pushViewController(VC, animated: true)
+                }))
+                alert.addAction(UIAlertAction(title: AppString.Alerts.no, style: .cancel))
+                strongSelf.present(alert, animated: true)
+            }
         }
     }
     
@@ -132,7 +144,12 @@ class ViewController: UIViewController {
     private func updateAddCatIconVisibility(){
         //Updating the add category icon
         if let count = categoryFetchedResultsController.fetchedObjects?.count{
-            homeHeaderTableViewCell?.enableAddButton(count < MAXIMUM_CATEGORIES_AVAILABLE, animated: true)
+            if UserDefaultManager.shared.getProPlanStatus(){
+                homeHeaderTableViewCell?.enableAddButton(true, animated: true)
+            }else{
+                homeHeaderTableViewCell?.enableAddButton(count < Product.getMaximumCategoriesCount(), animated: true)
+                homeHeaderTableViewCell?.updateCatCount()
+            }
         }
     }
     
@@ -173,7 +190,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             return 0
         }
         
-        if categories!.count < MAXIMUM_CATEGORIES_AVAILABLE{
+        if categories!.count < Product.getMaximumCategoriesCount() || UserDefaultManager.shared.getProPlanStatus(){
             //enable the add button
             homeHeaderTableViewCell?.enableAddButton(true)
         }else{
@@ -435,6 +452,10 @@ extension ViewController: UICollectionViewDragDelegate, UICollectionViewDropDele
 
 //MARK: Answers table view delegate and datasource
 extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerViewControllerDelegate, HomeHeaderTableViewCellDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             return 1
@@ -452,10 +473,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             
             return searchedAnswers != nil ? searchedAnswers!.count : 0
         }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -479,7 +496,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: HomeHeaderTableViewCell.reuseID, for: indexPath) as! HomeHeaderTableViewCell
             if tableViewEmptyMessageHeight == 0{

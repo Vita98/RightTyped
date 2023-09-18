@@ -129,6 +129,7 @@
 		01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */; };
 		01DA1C2E2A2CFF8C00A28CE7 /* CustomTextArea.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */; };
 		01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */; };
+		01DB4E3C2AB71C7B00B1BB52 /* ReceiptValidatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DB4E3B2AB71C7B00B1BB52 /* ReceiptValidatorHelper.swift */; };
 		01E5E5B62AB604FF005A8790 /* StoreKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C2C2AA8FCB700F327B9 /* StoreKitHelper.swift */; };
 		01E5E5B72AB6050A005A8790 /* StoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 016D5C292AA8FB5B00F327B9 /* StoreKitConfiguration.storekit */; };
 		01E5E5B92AB628AA005A8790 /* PremiumResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5E5B82AB628AA005A8790 /* PremiumResultViewController.swift */; };
@@ -276,6 +277,7 @@
 		01DA1C292A2B52F900A28CE7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextArea.xib; sourceTree = "<group>"; };
 		01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextArea.swift; sourceTree = "<group>"; };
+		01DB4E3B2AB71C7B00B1BB52 /* ReceiptValidatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptValidatorHelper.swift; sourceTree = "<group>"; };
 		01E5E5B82AB628AA005A8790 /* PremiumResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumResultViewController.swift; sourceTree = "<group>"; };
 		01EC3BE52AA7A2170026DF1B /* PlainPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainPremiumViewController.swift; sourceTree = "<group>"; };
 		01FDAA3C2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 			children = (
 				016D5C292AA8FB5B00F327B9 /* StoreKitConfiguration.storekit */,
 				016D5C2C2AA8FCB700F327B9 /* StoreKitHelper.swift */,
+				01DB4E3B2AB71C7B00B1BB52 /* ReceiptValidatorHelper.swift */,
 			);
 			path = StoreKit;
 			sourceTree = "<group>";
@@ -714,8 +717,8 @@
 				011987562A3260FF007D76B9 /* Models */,
 				01C8A0352A323F03001DBC8D /* DataModelPersistentContainer.swift */,
 				01525E172A352CFE00E1E5E9 /* DefaultData.swift */,
-				01C8A0312A323E7E001DBC8D /* DataModel.xcdatamodeld */,
 				01FDAA3C2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift */,
+				01C8A0312A323E7E001DBC8D /* DataModel.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				0120274F2A25123F00B62039 /* Constant.swift in Sources */,
 				01B07EE52A80F8C70045DC06 /* iOSDevCenters+GIF.swift in Sources */,
 				016782BA2A5D6CC000DA8A11 /* LocalizableModel.swift in Sources */,
+				01DB4E3C2AB71C7B00B1BB52 /* ReceiptValidatorHelper.swift in Sources */,
 				01A680302A278D6200DD67DC /* HomeHeaderTableViewCell.swift in Sources */,
 				014240432A85477900006F2B /* NSLayoutConstraint.swift in Sources */,
 				01766B472A22394100BA359C /* GlobalConstant.swift in Sources */,

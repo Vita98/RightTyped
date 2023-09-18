@@ -18,6 +18,9 @@ class UserDefaultManager{
     static let BIOMETRIC_ENABLED_KEY = "BIOMETRIC_ENABLED_KEY"
     static let GO_BACK_TO_DEF_KEYBOARD_KEY = "GO_BACK_TO_DEF_KEYBOARD_KEY"
     
+    //MARK: Pro plan
+    static let PRO_PLAN_ENABLED_KEY = "PRO_PLAN_ENABLED_KEY"
+    
     private let SHARED_GROUP_NAME = "group.vitAndreAS.RightTypedGroup"
     
     
@@ -54,6 +57,14 @@ class UserDefaultManager{
             return false
         }else{
             return true
+        }
+    }
+    
+    public func getProPlanStatus() -> Bool{
+        if let status = UserDefaults(suiteName: SHARED_GROUP_NAME)?.bool(forKey: UserDefaultManager.PRO_PLAN_ENABLED_KEY){
+            return status
+        }else {
+            return false
         }
     }
 }

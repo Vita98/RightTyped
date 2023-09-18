@@ -149,10 +149,19 @@ extension PremiumViewController: StoreKitHelperDelegate{
         if status == .purchased{
             guard let prod = Products.fromId(id: productId) else { return }
             
-            if Product.saveBoughtProduct(prod){
-                alert.configure(for: .success, with: prod)
+            if prod != .YearlyProPlan{
+                if Product.saveBoughtProduct(prod){
+                    alert.configure(for: .success, with: prod)
+                }else{
+                    alert.configure(for: .failure, with: prod)
+                }
             }else{
-                alert.configure(for: .failure, with: prod)
+                alert.configure(for: .success, with: prod)
+                //TODO: Implement all the logic to enable the pro plan
+                
+                if ReceiptValidatorHelper.processReceipt(){
+                    UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_ENABLED_KEY, enabled: true)
+                }
             }
         }else{
             guard let prod = Products.fromId(id: productId) else { return }

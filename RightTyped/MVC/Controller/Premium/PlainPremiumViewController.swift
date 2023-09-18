@@ -91,15 +91,22 @@ class PlainPremiumViewController: UIViewController {
         if let price = model.price, let currSym = model.currencySymbol{
             priceLabel.text = "\(currSym) \(price)"
         }
+        buttonViewLabel.text = model.buttonTitle
+        
         if let _ = model.products?.first{
-            buttonView.enableComponentButtonMode()
-            buttonViewEnabled = true
+            if UserDefaultManager.shared.getProPlanStatus(){
+                buttonView.enableComponentButtonMode(enabled: false)
+                buttonViewLabel.text = AppString.Premium.FirstBasePlan.buttonTitle
+                buttonViewEnabled = false
+            }else{
+                buttonView.enableComponentButtonMode()
+                buttonViewEnabled = true
+            }
         }else{
             buttonView.enableComponentButtonMode(enabled: false)
             buttonViewEnabled = false
         }
         
-        buttonViewLabel.text = model.buttonTitle
         planLabel.text = model.type.value
     }
     

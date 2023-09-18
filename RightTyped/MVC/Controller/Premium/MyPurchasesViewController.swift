@@ -36,6 +36,7 @@ class MyPurchasesViewController: UIViewController {
     private func setEmptyView(){
         tableView.setEmptyViewForPurchases(withButtonText: AppString.Premium.MyPurchases.restorePurchasesButtonTitle, topLabelText: AppString.Premium.MyPurchases.noPurchasesFound) {
             //TODO: Implement the action to restore all purchases from the app store
+            StoreKitHelper.shared.restorePurchase()
         }
     }
     
