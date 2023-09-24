@@ -8,7 +8,15 @@
 import Foundation
 import UIKit
 
-extension UICollectionView{
+protocol AdvanceDequeuable{
+    func dequeue<T>(for indexPath: IndexPath) -> T?
+}
+
+protocol AdvanceRegistrable{
+    func register<T>(_ cellType: T.Type)
+}
+
+extension UICollectionView: AdvanceDequeuable, AdvanceRegistrable{
     func setEmptyMessage(_ message: String) {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         messageLabel.text = message
@@ -28,10 +36,17 @@ extension UICollectionView{
             self.backgroundView = nil
         }
     }
+    
+    func dequeue<T>(for indexPath: IndexPath) -> T?{
+        return self.dequeueReusableCell(withReuseIdentifier: String(describing: T.self), for: indexPath) as? T
+    }
+    
+    func register<T>(_ cellType: T.Type) {
+        self.register(UINib(nibName: String(describing: T.self), bundle: nil), forCellWithReuseIdentifier: String(describing: T.self))
+    }
 }
 
-extension UITableView{
-    
+extension UITableView: AdvanceDequeuable, AdvanceRegistrable{
     func setEmptyViewForPurchases(withButtonText buttonText: String, topLabelText labelText: String, action: @escaping () -> Void){
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         
@@ -106,5 +121,13 @@ extension UITableView{
         UIView.animate(withDuration: 0.2) {
             self.backgroundView = nil
         }
+    }
+    
+    func dequeue<T>(for indexPath: IndexPath) -> T?{
+        return self.dequeueReusableCell(withIdentifier: String(describing: T.self), for: indexPath) as? T
+    }
+    
+    func register<T>(_ cellType: T.Type) {
+        self.register(UINib(nibName: String(describing: T.self), bundle: nil), forCellReuseIdentifier: String(describing: T.self))
     }
 }

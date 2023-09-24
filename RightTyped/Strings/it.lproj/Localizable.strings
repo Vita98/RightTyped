@@ -32,6 +32,13 @@
 "Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR" = "\nIl numero massimo di risposte per questa categoria è %d.\n\nVai nella sezione premium per poter proseguire!";
 "Alerts_GO_TO_PREMIUM" = "Premium";
 
+"Alerts_ProNotRenewed_TITLE" = "Non è stato possibile rinnovare il tuo abbonamento!";
+"Alerts_ProNotRenewed_DESCRIPTION" = "Qualcosa è andato storto durante il rinnovo dell’abbonamento oppure è stato disabilitato il rinnovo automatico.\nRinnova l’abbonamento nella sezione Premium oppure seleziona quali categorie mantenere";
+"Alerts_ProNotRenewed_SELECT_CATEGORIES_TITLE" = "Seleziona le categorie";
+
+"Alerts_ErrorRestoringPurchase_TITLE" = "Attenzione!";
+"Alerts_ErrorRestoringPurchase_DESCRIPTION" = "Si è verificato un errore durante il ripristino degli acquisti.\nRiprova più tardi!";
+
 //MARK: Settings
 "SettingsTypeEnum_APP" = "App";
 "SettingsTypeEnum_KEYBOARD" = "Tastiera";
@@ -109,10 +116,14 @@
 "Premium_Popup_SuccessPro_DESCRIPTION" = "Hai correttamente acquistato il l’abbonamento annuale!\nPuoi continuare a creare categorie e risposte illimitatamente!";
 "Premium_Popup_Failure_TITLE" = "Qualcosa è andato storto!";
 "Premium_Popup_Failure_DESCRIPTION" = "Qualcosa è adato storto durante l’acquisto del prodotto.\nVai nella sezione supporto per inviare una segnalazione.";
+"Premium_Popup_SuccessProRestoration_TITLE" = "Abbonamento Pro correttamente ripristinato!";
+"Premium_Popup_SuccessProRestoration_DESCRIPTION" = "Il tuo abbonamento Pro è stato correttamente ripristinato!\nPotrai usufruire delle funzionalità fino al %@.";
 
 //My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Ripristina acquisti";
 "Premium_MyPurchases_NO_PURCHASES_FOUND" = "Non sono presenti acquisti";
+"Premium_MyPurchases_PURCHASE_DATE" = "Acquistato il %@";
+"Premium_MyPurchases_EXPIRATION_DATE" = "Scade il %@";
 
 //PremiumPage
 "Premium_Plans_NO_PREMIUM_OPTIONS" = "Non ci sono offerte premium disponibili in questo momento!";

@@ -45,6 +45,19 @@ struct AppString{
         static let noMoreAnswersAvailable: String = LocalizableString("Alerts_NO_MORE_ANSWERS_AVAILABLE").locale
         static let noMoreAnswersAvailableDescription: String = LocalizableString("Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR").locale
         static let goToPremiumSection: String = LocalizableString("Alerts_GO_TO_PREMIUM").locale
+        
+        struct ProNotRenewed{
+            private init(){}
+            static let title: String = LocalizableString("Alerts_ProNotRenewed_TITLE").locale
+            static let description: String = LocalizableString("Alerts_ProNotRenewed_DESCRIPTION").locale
+            static let selectCategoriesButton: String = LocalizableString("Alerts_ProNotRenewed_SELECT_CATEGORIES_TITLE").locale
+        }
+        
+        struct ErrorRestoringPurchase{
+            private init(){}
+            static let title: String = LocalizableString("Alerts_ErrorRestoringPurchase_TITLE").locale
+            static let description: String = LocalizableString("Alerts_ErrorRestoringPurchase_DESCRIPTION").locale
+        }
     }
     
     struct SettingsTypeEnum{
@@ -127,12 +140,19 @@ struct AppString{
                 static let title: String = LocalizableString("Premium_Popup_Failure_TITLE").locale
                 static let description: String = LocalizableString("Premium_Popup_Failure_DESCRIPTION").locale
             }
+            struct SuccessProRestoration{
+                private init(){}
+                static let title: String = LocalizableString("Premium_Popup_SuccessProRestoration_TITLE").locale
+                static let description: String = LocalizableString("Premium_Popup_SuccessProRestoration_DESCRIPTION").locale
+            }
         }
         
         struct MyPurchases{
             private init(){}
             static let restorePurchasesButtonTitle: String = LocalizableString("Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE").locale
             static let noPurchasesFound: String = LocalizableString("Premium_MyPurchases_NO_PURCHASES_FOUND").locale
+            static let purchaseDate: String = LocalizableString("Premium_MyPurchases_PURCHASE_DATE").locale
+            static let expirationDate: String = LocalizableString("Premium_MyPurchases_EXPIRATION_DATE").locale
         }
         
         struct PremiumPage{

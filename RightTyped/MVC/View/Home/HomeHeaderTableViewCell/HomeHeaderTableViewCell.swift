@@ -138,7 +138,11 @@ class HomeHeaderTableViewCell: UITableViewCell {
     }
     
     public func updateCatCount(){
-        descLabel.text = String(format: AppString.HomeHeaderTableViewCell.description, Product.getMaximumCategoriesCount())
+        if UserDefaultManager.shared.getProPlanStatus(){
+            descLabel.text = AppString.HomeHeaderTableViewCell.proDescription
+        }else{
+            descLabel.text = String(format: AppString.HomeHeaderTableViewCell.description, Product.getMaximumCategoriesCount())
+        }
     }
     
     public func setSwitch(enabled: Bool){

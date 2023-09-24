@@ -11,12 +11,15 @@
 		0103B9C92A8D3AAD001AFE2F /* BiometricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103B9C82A8D3AAD001AFE2F /* BiometricViewController.swift */; };
 		0103B9CB2A8E6F7A001AFE2F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0103B9CA2A8E6F7A001AFE2F /* Colors.xcassets */; };
 		01063BEC2A629BBA00B0E7C7 /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01063BEB2A629BBA00B0E7C7 /* UICheckBox.swift */; };
+		011A5CF62ABF64C6006D563C /* PurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011A5CF42ABF64C6006D563C /* PurchaseTableViewCell.swift */; };
+		011A5CF72ABF64C6006D563C /* PurchaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011A5CF52ABF64C6006D563C /* PurchaseTableViewCell.xib */; };
 		0120274F2A25123F00B62039 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120274E2A25123F00B62039 /* Constant.swift */; };
 		012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012027502A2514ED00B62039 /* AnswerTableViewCell.swift */; };
 		012027532A2514ED00B62039 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012027512A2514ED00B62039 /* AnswerTableViewCell.xib */; };
 		012259DA2A9B5E8600B69721 /* PremiumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012259D92A9B5E8600B69721 /* PremiumModel.swift */; };
 		012259DE2AA4CDBA00B69721 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012259DD2AA4CDBA00B69721 /* CustomPageViewController.swift */; };
 		01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */; };
+		0136BE852ABF27B000268393 /* GenericResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136BE842ABF27B000268393 /* GenericResultViewController.swift */; };
 		013E08432A21327100FF7928 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08422A21327100FF7928 /* ContentView.xib */; };
 		013E08452A21328100FF7928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08442A21328100FF7928 /* ContentView.swift */; };
 		013E08472A21348D00FF7928 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08462A21348D00FF7928 /* UIColor.swift */; };
@@ -73,11 +76,20 @@
 		016DC9AE2A8FCFB300529A26 /* Premium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 016DC9AD2A8FCFB300529A26 /* Premium.storyboard */; };
 		016DC9B22A8FD0DB00529A26 /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */; };
 		016DC9B42A90FEFC00529A26 /* MyPurchasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */; };
+		0172CCB62AC057830019A49C /* StoreKitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0172CCB52AC057830019A49C /* StoreKitModels.swift */; };
+		0172CCB72AC057830019A49C /* StoreKitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0172CCB52AC057830019A49C /* StoreKitModels.swift */; };
+		0172CCB92AC0A1DC0019A49C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0172CCB82AC0A1DC0019A49C /* DateFormatter.swift */; };
+		0172CCBC2AC0AFE70019A49C /* ProPurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0172CCBA2AC0AFE70019A49C /* ProPurchaseTableViewCell.swift */; };
+		0172CCBD2AC0AFE70019A49C /* ProPurchaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0172CCBB2AC0AFE70019A49C /* ProPurchaseTableViewCell.xib */; };
 		01766B442A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
 		01766B452A22379B00BA359C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B432A22379B00BA359C /* UIView.swift */; };
 		01766B472A22394100BA359C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B462A22394100BA359C /* GlobalConstant.swift */; };
 		01766B482A22394100BA359C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01766B462A22394100BA359C /* GlobalConstant.swift */; };
 		017CE8172A8CDDD900FEAFB7 /* BiometricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017CE8162A8CDDD900FEAFB7 /* BiometricHelper.swift */; };
+		0181597E2AC02D8200D278CA /* InAppTransaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181597C2AC02D8200D278CA /* InAppTransaction+CoreDataClass.swift */; };
+		0181597F2AC02D8200D278CA /* InAppTransaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181597C2AC02D8200D278CA /* InAppTransaction+CoreDataClass.swift */; };
+		018159802AC02D8200D278CA /* InAppTransaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181597D2AC02D8200D278CA /* InAppTransaction+CoreDataProperties.swift */; };
+		018159812AC02D8200D278CA /* InAppTransaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181597D2AC02D8200D278CA /* InAppTransaction+CoreDataProperties.swift */; };
 		01930A412A7EBDE1005EE27A /* ManagerTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01930A402A7EBDE1005EE27A /* ManagerTutorialViewController.swift */; };
 		01930A452A7F936B005EE27A /* GenericTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01930A442A7F936B005EE27A /* GenericTutorialViewController.swift */; };
 		01930A472A7F9581005EE27A /* TutorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01930A462A7F9581005EE27A /* TutorialModel.swift */; };
@@ -130,11 +142,11 @@
 		01DA1C2E2A2CFF8C00A28CE7 /* CustomTextArea.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA1C2D2A2CFF8C00A28CE7 /* CustomTextArea.xib */; };
 		01DA1C302A2CFF9A00A28CE7 /* CustomTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA1C2F2A2CFF9A00A28CE7 /* CustomTextArea.swift */; };
 		01DB4E3C2AB71C7B00B1BB52 /* ReceiptValidatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DB4E3B2AB71C7B00B1BB52 /* ReceiptValidatorHelper.swift */; };
-		01E5E5B62AB604FF005A8790 /* StoreKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D5C2C2AA8FCB700F327B9 /* StoreKitHelper.swift */; };
-		01E5E5B72AB6050A005A8790 /* StoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 016D5C292AA8FB5B00F327B9 /* StoreKitConfiguration.storekit */; };
 		01E5E5B92AB628AA005A8790 /* PremiumResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5E5B82AB628AA005A8790 /* PremiumResultViewController.swift */; };
 		01EC3BE62AA7A2170026DF1B /* PlainPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EC3BE52AA7A2170026DF1B /* PlainPremiumViewController.swift */; };
 		01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FDAA3C2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift */; };
+		5E34020227548CE4734D6616 /* Pods_RightTyped_Keyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3678F643EEF326C4B38B68 /* Pods_RightTyped_Keyboard.framework */; };
+		9C0941F137893C30A9668841 /* Pods_RightTyped.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB18DD56C340A96656D10A5 /* Pods_RightTyped.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,12 +179,15 @@
 		0103B9C82A8D3AAD001AFE2F /* BiometricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricViewController.swift; sourceTree = "<group>"; };
 		0103B9CA2A8E6F7A001AFE2F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		01063BEB2A629BBA00B0E7C7 /* UICheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
+		011A5CF42ABF64C6006D563C /* PurchaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTableViewCell.swift; sourceTree = "<group>"; };
+		011A5CF52ABF64C6006D563C /* PurchaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseTableViewCell.xib; sourceTree = "<group>"; };
 		0120274E2A25123F00B62039 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		012027502A2514ED00B62039 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		012027512A2514ED00B62039 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		012259D92A9B5E8600B69721 /* PremiumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumModel.swift; sourceTree = "<group>"; };
 		012259DD2AA4CDBA00B69721 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomComponentProtocol.swift; sourceTree = "<group>"; };
+		0136BE842ABF27B000268393 /* GenericResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResultViewController.swift; sourceTree = "<group>"; };
 		013E08422A21327100FF7928 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
 		013E08442A21328100FF7928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		013E08462A21348D00FF7928 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -227,9 +242,15 @@
 		016DC9AD2A8FCFB300529A26 /* Premium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Premium.storyboard; sourceTree = "<group>"; };
 		016DC9B12A8FD0DB00529A26 /* PremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		016DC9B32A90FEFC00529A26 /* MyPurchasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPurchasesViewController.swift; sourceTree = "<group>"; };
+		0172CCB52AC057830019A49C /* StoreKitModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitModels.swift; sourceTree = "<group>"; };
+		0172CCB82AC0A1DC0019A49C /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		0172CCBA2AC0AFE70019A49C /* ProPurchaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProPurchaseTableViewCell.swift; sourceTree = "<group>"; };
+		0172CCBB2AC0AFE70019A49C /* ProPurchaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProPurchaseTableViewCell.xib; sourceTree = "<group>"; };
 		01766B432A22379B00BA359C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		01766B462A22394100BA359C /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		017CE8162A8CDDD900FEAFB7 /* BiometricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricHelper.swift; sourceTree = "<group>"; };
+		0181597C2AC02D8200D278CA /* InAppTransaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InAppTransaction+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		0181597D2AC02D8200D278CA /* InAppTransaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InAppTransaction+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		018ED41E2A3CB97200E9A90C /* RightTyped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RightTyped.entitlements; sourceTree = "<group>"; };
 		018ED41F2A3CB9C600E9A90C /* RightTyped-Keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RightTyped-Keyboard.entitlements"; sourceTree = "<group>"; };
 		01930A402A7EBDE1005EE27A /* ManagerTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTutorialViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +302,12 @@
 		01E5E5B82AB628AA005A8790 /* PremiumResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumResultViewController.swift; sourceTree = "<group>"; };
 		01EC3BE52AA7A2170026DF1B /* PlainPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainPremiumViewController.swift; sourceTree = "<group>"; };
 		01FDAA3C2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
+		43F5A577E8E691D2B068D8D6 /* Pods-RightTyped.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RightTyped.release.xcconfig"; path = "Target Support Files/Pods-RightTyped/Pods-RightTyped.release.xcconfig"; sourceTree = "<group>"; };
+		5D3678F643EEF326C4B38B68 /* Pods_RightTyped_Keyboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RightTyped_Keyboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B820945CB8C4F75C9185374 /* Pods-RightTyped.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RightTyped.debug.xcconfig"; path = "Target Support Files/Pods-RightTyped/Pods-RightTyped.debug.xcconfig"; sourceTree = "<group>"; };
+		79B5D99EFF119772CAFD321D /* Pods-RightTyped-Keyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RightTyped-Keyboard.release.xcconfig"; path = "Target Support Files/Pods-RightTyped-Keyboard/Pods-RightTyped-Keyboard.release.xcconfig"; sourceTree = "<group>"; };
+		C84B365CB733A543E2791CA9 /* Pods-RightTyped-Keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RightTyped-Keyboard.debug.xcconfig"; path = "Target Support Files/Pods-RightTyped-Keyboard/Pods-RightTyped-Keyboard.debug.xcconfig"; sourceTree = "<group>"; };
+		CBB18DD56C340A96656D10A5 /* Pods_RightTyped.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RightTyped.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				016D5C282AA7CA3B00F327B9 /* StoreKit.framework in Frameworks */,
+				9C0941F137893C30A9668841 /* Pods_RightTyped.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +324,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E34020227548CE4734D6616 /* Pods_RightTyped_Keyboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +355,8 @@
 		011987562A3260FF007D76B9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0181597C2AC02D8200D278CA /* InAppTransaction+CoreDataClass.swift */,
+				0181597D2AC02D8200D278CA /* InAppTransaction+CoreDataProperties.swift */,
 				016D5C432AB5C44B00F327B9 /* Product+CoreDataClass.swift */,
 				016D5C442AB5C44B00F327B9 /* Product+CoreDataProperties.swift */,
 				01C8A0382A324323001DBC8D /* Category+CoreDataClass.swift */,
@@ -362,6 +393,7 @@
 				015DF5302A88182F00C00064 /* UIStoryboard.swift */,
 				015DF5372A89326300C00064 /* UIImage.swift */,
 				016D5C302AACBBC500F327B9 /* SKProduct.swift */,
+				0172CCB82AC0A1DC0019A49C /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +486,7 @@
 				01D514352A34FDF700B9FF2B /* EnableKeyboard */,
 				012259DD2AA4CDBA00B69721 /* CustomPageViewController.swift */,
 				016D5C3B2AAF8EB700F327B9 /* LoadingViewController.swift */,
+				0136BE842ABF27B000268393 /* GenericResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -482,6 +515,8 @@
 			isa = PBXGroup;
 			children = (
 				016D5C272AA7CA3B00F327B9 /* StoreKit.framework */,
+				CBB18DD56C340A96656D10A5 /* Pods_RightTyped.framework */,
+				5D3678F643EEF326C4B38B68 /* Pods_RightTyped_Keyboard.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -492,6 +527,7 @@
 				016D5C292AA8FB5B00F327B9 /* StoreKitConfiguration.storekit */,
 				016D5C2C2AA8FCB700F327B9 /* StoreKitHelper.swift */,
 				01DB4E3B2AB71C7B00B1BB52 /* ReceiptValidatorHelper.swift */,
+				0172CCB52AC057830019A49C /* StoreKitModels.swift */,
 			);
 			path = StoreKit;
 			sourceTree = "<group>";
@@ -501,6 +537,10 @@
 			children = (
 				016D5C372AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift */,
 				016D5C382AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib */,
+				011A5CF42ABF64C6006D563C /* PurchaseTableViewCell.swift */,
+				011A5CF52ABF64C6006D563C /* PurchaseTableViewCell.xib */,
+				0172CCBA2AC0AFE70019A49C /* ProPurchaseTableViewCell.swift */,
+				0172CCBB2AC0AFE70019A49C /* ProPurchaseTableViewCell.xib */,
 			);
 			path = Premium;
 			sourceTree = "<group>";
@@ -562,6 +602,7 @@
 				019E2F202A1E8EFC005A8021 /* RightTyped-Keyboard */,
 				019E2F052A1E8C39005A8021 /* Products */,
 				016D5C262AA7CA3B00F327B9 /* Frameworks */,
+				0FB282F79008BB5318C054A9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -759,6 +800,17 @@
 			path = CustomTextArea;
 			sourceTree = "<group>";
 		};
+		0FB282F79008BB5318C054A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B820945CB8C4F75C9185374 /* Pods-RightTyped.debug.xcconfig */,
+				43F5A577E8E691D2B068D8D6 /* Pods-RightTyped.release.xcconfig */,
+				C84B365CB733A543E2791CA9 /* Pods-RightTyped-Keyboard.debug.xcconfig */,
+				79B5D99EFF119772CAFD321D /* Pods-RightTyped-Keyboard.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -766,10 +818,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 019E2F182A1E8C3B005A8021 /* Build configuration list for PBXNativeTarget "RightTyped" */;
 			buildPhases = (
+				DAB2719CB20C19EDC4A20CA0 /* [CP] Check Pods Manifest.lock */,
 				019E2F002A1E8C39005A8021 /* Sources */,
 				019E2F012A1E8C39005A8021 /* Frameworks */,
 				019E2F022A1E8C39005A8021 /* Resources */,
 				019E2F272A1E8EFC005A8021 /* Embed Foundation Extensions */,
+				9C6A07A2A8EEE97AC086309F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -785,6 +839,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 019E2F2A2A1E8EFC005A8021 /* Build configuration list for PBXNativeTarget "RightTyped-Keyboard" */;
 			buildPhases = (
+				4774BAD837A8CB3D0C774CD5 /* [CP] Check Pods Manifest.lock */,
 				019E2F1B2A1E8EFC005A8021 /* Sources */,
 				019E2F1C2A1E8EFC005A8021 /* Frameworks */,
 				019E2F1D2A1E8EFC005A8021 /* Resources */,
@@ -861,6 +916,7 @@
 				0142404B2A866DD900006F2B /* tut2-3.gif in Resources */,
 				016782A62A5B2E4E00DA8A11 /* Localizable.strings in Resources */,
 				01B07EE72A80FA700045DC06 /* tut2-1.gif in Resources */,
+				011A5CF72ABF64C6006D563C /* PurchaseTableViewCell.xib in Resources */,
 				016D5C3A2AAE0EEF00F327B9 /* PlainPremiumTableViewCell.xib in Resources */,
 				015DF5362A892E7200C00064 /* tut3-1.gif in Resources */,
 				01A7659B2A27AF9600D50C4B /* CategoryCollectionViewCell.xib in Resources */,
@@ -868,6 +924,7 @@
 				0103B9CB2A8E6F7A001AFE2F /* Colors.xcassets in Resources */,
 				014240472A86565F00006F2B /* Assets.xcassets in Resources */,
 				019E2F0F2A1E8C39005A8021 /* Main.storyboard in Resources */,
+				0172CCBD2AC0AFE70019A49C /* ProPurchaseTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,12 +938,75 @@
 				016782B52A5D6B2C00DA8A11 /* Localizable.strings in Resources */,
 				019E2F312A1E8F47005A8021 /* bulent-yuksel-trakya-rounded-alt-300-light.otf in Resources */,
 				015B9E6B2A5ABA0300171360 /* Assets.xcassets in Resources */,
-				01E5E5B72AB6050A005A8790 /* StoreKitConfiguration.storekit in Resources */,
 				013E084E2A21FD7600FF7928 /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4774BAD837A8CB3D0C774CD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RightTyped-Keyboard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C6A07A2A8EEE97AC086309F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RightTyped/Pods-RightTyped-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RightTyped/Pods-RightTyped-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RightTyped/Pods-RightTyped-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAB2719CB20C19EDC4A20CA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RightTyped-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		019E2F002A1E8C39005A8021 /* Sources */ = {
@@ -903,6 +1023,7 @@
 				01DB4E3C2AB71C7B00B1BB52 /* ReceiptValidatorHelper.swift in Sources */,
 				01A680302A278D6200DD67DC /* HomeHeaderTableViewCell.swift in Sources */,
 				014240432A85477900006F2B /* NSLayoutConstraint.swift in Sources */,
+				0172CCB92AC0A1DC0019A49C /* DateFormatter.swift in Sources */,
 				01766B472A22394100BA359C /* GlobalConstant.swift in Sources */,
 				0103B9C92A8D3AAD001AFE2F /* BiometricViewController.swift in Sources */,
 				01C84C182A508CE300C8AD77 /* UINavigationController.swift in Sources */,
@@ -913,6 +1034,7 @@
 				012259DA2A9B5E8600B69721 /* PremiumModel.swift in Sources */,
 				016D5C2F2AAA431D00F327B9 /* SelectablePremiumViewController.swift in Sources */,
 				015DF5312A88182F00C00064 /* UIStoryboard.swift in Sources */,
+				0172CCB62AC057830019A49C /* StoreKitModels.swift in Sources */,
 				01595FF22A486374003EAE79 /* AddAnswerCustomView.swift in Sources */,
 				015B9E642A5974BD00171360 /* SettingsModel.swift in Sources */,
 				01525E182A352CFE00E1E5E9 /* DefaultData.swift in Sources */,
@@ -931,12 +1053,15 @@
 				016D5C452AB5C44B00F327B9 /* Product+CoreDataClass.swift in Sources */,
 				019E2F0C2A1E8C39005A8021 /* ViewController.swift in Sources */,
 				01063BEC2A629BBA00B0E7C7 /* UICheckBox.swift in Sources */,
+				0172CCBC2AC0AFE70019A49C /* ProPurchaseTableViewCell.swift in Sources */,
 				01930A412A7EBDE1005EE27A /* ManagerTutorialViewController.swift in Sources */,
 				012259DE2AA4CDBA00B69721 /* CustomPageViewController.swift in Sources */,
 				01FDAA3D2A37BDB3004F1AE8 /* NSManagedObjectExtension.swift in Sources */,
+				0136BE852ABF27B000268393 /* GenericResultViewController.swift in Sources */,
 				01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */,
 				015DF52F2A87C9CF00C00064 /* FinalTutorialViewController.swift in Sources */,
 				016D5C392AAE0EEF00F327B9 /* PlainPremiumTableViewCell.swift in Sources */,
+				0181597E2AC02D8200D278CA /* InAppTransaction+CoreDataClass.swift in Sources */,
 				013E08472A21348D00FF7928 /* UIColor.swift in Sources */,
 				01E5E5B92AB628AA005A8790 /* PremiumResultViewController.swift in Sources */,
 				015B9E682A59F10300171360 /* SettingsTableViewCell.swift in Sources */,
@@ -946,11 +1071,13 @@
 				015DF5382A89326300C00064 /* UIImage.swift in Sources */,
 				01C8A0332A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */,
 				01C8A0362A323F03001DBC8D /* DataModelPersistentContainer.swift in Sources */,
+				011A5CF62ABF64C6006D563C /* PurchaseTableViewCell.swift in Sources */,
 				01C8A03C2A324323001DBC8D /* Category+CoreDataClass.swift in Sources */,
 				01C8A03E2A324323001DBC8D /* Category+CoreDataProperties.swift in Sources */,
 				016D5C3C2AAF8EB700F327B9 /* LoadingViewController.swift in Sources */,
 				016D5C352AACDA4800F327B9 /* CustomActivityIndicatorView.swift in Sources */,
 				01595FEE2A47C532003EAE79 /* UITableCollectionViewController.swift in Sources */,
+				018159802AC02D8200D278CA /* InAppTransaction+CoreDataProperties.swift in Sources */,
 				01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */,
 				019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */,
 				012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */,
@@ -972,19 +1099,21 @@
 				01C8A0412A324323001DBC8D /* Answer+CoreDataClass.swift in Sources */,
 				01BE0A012A422262003B39F8 /* UserDefaultsManager.swift in Sources */,
 				01BE0A002A40C385003B39F8 /* PopoverView.swift in Sources */,
+				0172CCB72AC057830019A49C /* StoreKitModels.swift in Sources */,
 				01C8A03F2A324323001DBC8D /* Category+CoreDataProperties.swift in Sources */,
 				01C8A03D2A324323001DBC8D /* Category+CoreDataClass.swift in Sources */,
 				016782BB2A5D6CD000DA8A11 /* LocalizableModel.swift in Sources */,
 				01C8A0342A323E7E001DBC8D /* DataModel.xcdatamodeld in Sources */,
 				015B9E702A5AEF2400171360 /* AppNavigationHelper.swift in Sources */,
-				01E5E5B62AB604FF005A8790 /* StoreKitHelper.swift in Sources */,
 				013E08452A21328100FF7928 /* ContentView.swift in Sources */,
 				01766B482A22394100BA359C /* GlobalConstant.swift in Sources */,
 				01ADB21E2A23929C007613EB /* FooterView.swift in Sources */,
 				016782BE2A5D6CF900DA8A11 /* LocalizableHelper.swift in Sources */,
+				018159812AC02D8200D278CA /* InAppTransaction+CoreDataProperties.swift in Sources */,
 				01C8A0432A324323001DBC8D /* Answer+CoreDataProperties.swift in Sources */,
 				016D5C482AB5C44B00F327B9 /* Product+CoreDataProperties.swift in Sources */,
 				013E08482A21348D00FF7928 /* UIColor.swift in Sources */,
+				0181597F2AC02D8200D278CA /* InAppTransaction+CoreDataClass.swift in Sources */,
 				01766B452A22379B00BA359C /* UIView.swift in Sources */,
 				019E2F222A1E8EFC005A8021 /* KeyboardViewController.swift in Sources */,
 				016D5C462AB5C44B00F327B9 /* Product+CoreDataClass.swift in Sources */,
@@ -1162,6 +1291,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -1170,6 +1300,7 @@
 		};
 		019E2F192A1E8C3B005A8021 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B820945CB8C4F75C9185374 /* Pods-RightTyped.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1201,6 +1332,7 @@
 		};
 		019E2F1A2A1E8C3B005A8021 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43F5A577E8E691D2B068D8D6 /* Pods-RightTyped.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1232,6 +1364,7 @@
 		};
 		019E2F282A1E8EFC005A8021 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C84B365CB733A543E2791CA9 /* Pods-RightTyped-Keyboard.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "RightTyped-Keyboard/RightTyped-Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -1259,6 +1392,7 @@
 		};
 		019E2F292A1E8EFC005A8021 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79B5D99EFF119772CAFD321D /* Pods-RightTyped-Keyboard.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "RightTyped-Keyboard/RightTyped-Keyboard.entitlements";
 				CODE_SIGN_STYLE = Automatic;

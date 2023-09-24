@@ -134,7 +134,9 @@ extension PremiumViewController: StoreKitHelperDelegate{
             }
             
             setComponentStatus(true)
-            emptyView.removeFromSuperview()
+            if let emptyView = emptyView{
+                emptyView.removeFromSuperview()
+            }
         }
     }
     
@@ -157,10 +159,11 @@ extension PremiumViewController: StoreKitHelperDelegate{
                 }
             }else{
                 alert.configure(for: .success, with: prod)
-                //TODO: Implement all the logic to enable the pro plan
-                
-                if ReceiptValidatorHelper.processReceipt(){
+                if ReceiptValidatorHelper.shared.checkReceipt(){
                     UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_ENABLED_KEY, enabled: true)
+                    UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
+                }else{
+                    alert.configure(for: .failure, with: prod)
                 }
             }
         }else{

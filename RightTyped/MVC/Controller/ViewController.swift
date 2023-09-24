@@ -69,6 +69,26 @@ class ViewController: UIViewController {
         updateAddCatIconVisibility()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if UserDefaultManager.shared.hasProPlanJustBeenDisabled(){
+            let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+            alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Alerts.ProNotRenewed.title, description: AppString.Alerts.ProNotRenewed.description)
+            alert.addButton(withText: AppString.SettingsModel.premiumText){[weak self] in
+                alert.dismiss(animated: true)
+                let VC: PremiumViewController = UIStoryboard.premium().instantiate()
+                self?.navigationController?.pushViewController(VC, animated: true)
+            }
+            alert.addButton(withText: AppString.Alerts.ProNotRenewed.selectCategoriesButton){[weak self] in
+                //TODO: Implement the action
+            }
+            alert.modalTransitionStyle = .crossDissolve
+            alert.modalPresentationStyle = .overFullScreen
+            self.present(alert, animated: true)
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -148,8 +168,8 @@ class ViewController: UIViewController {
                 homeHeaderTableViewCell?.enableAddButton(true, animated: true)
             }else{
                 homeHeaderTableViewCell?.enableAddButton(count < Product.getMaximumCategoriesCount(), animated: true)
-                homeHeaderTableViewCell?.updateCatCount()
             }
+            homeHeaderTableViewCell?.updateCatCount()
         }
     }
     

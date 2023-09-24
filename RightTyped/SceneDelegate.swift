@@ -21,6 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             DefaultData.shared.saveDefaultData()
         }
 
+        if UserDefaultManager.shared.getProPlanStatus() && ReceiptValidatorHelper.shared.checkReceipt(){
+            ReceiptValidatorHelper.shared.updateProPlanStatus()
+        }
+
         let window = UIWindow(windowScene: windowScene)
         let initialViewController: UIViewController?
         

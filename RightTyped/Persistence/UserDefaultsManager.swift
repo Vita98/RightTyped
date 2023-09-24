@@ -20,6 +20,7 @@ class UserDefaultManager{
     
     //MARK: Pro plan
     static let PRO_PLAN_ENABLED_KEY = "PRO_PLAN_ENABLED_KEY"
+    static let PRO_PLAN_HAS_JUST_BEEN_DISABLED = "PRO_PLAN_HAS_JUST_BEEN_DISABLED"
     
     private let SHARED_GROUP_NAME = "group.vitAndreAS.RightTypedGroup"
     
@@ -62,6 +63,14 @@ class UserDefaultManager{
     
     public func getProPlanStatus() -> Bool{
         if let status = UserDefaults(suiteName: SHARED_GROUP_NAME)?.bool(forKey: UserDefaultManager.PRO_PLAN_ENABLED_KEY){
+            return status
+        }else {
+            return false
+        }
+    }
+    
+    public func hasProPlanJustBeenDisabled() -> Bool{
+        if let status = UserDefaults(suiteName: SHARED_GROUP_NAME)?.bool(forKey: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED){
             return status
         }else {
             return false

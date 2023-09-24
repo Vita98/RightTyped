@@ -177,6 +177,11 @@ struct Premium{
             PremiumStackContent(associatedID: Products.FiveCatTenAnsw.rawValue, included: false, title: String(format: AppString.Premium.FirstPpuPlan.secondStackText, CAT_NUM_PPU_SECOND, ANS_NUM_PPU_SECOND), type: .selectableItem),
         ]),])
     
+    static func getProductTitle(for productId: String) -> String{
+        if let title = PREMIUMS.pageModels.filter({$0.associatedIDs?.contains(productId) ?? false}).first?.type.value { return title }
+        return PREMIUMS.pageModels.filter({$0.type == .payPerUse}).first?.stackContent.filter({$0.associatedID == productId}).first?.title ?? ""
+    }
+    
     static func inflateWith(products : [SKProduct]){
         for product in products {
             

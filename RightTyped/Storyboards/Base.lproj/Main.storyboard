@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -711,7 +711,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="do not show this message again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q03-9H-ffK">
-                                        <rect key="frame" x="27" y="5" width="198.66666666666666" height="20"/>
+                                        <rect key="frame" x="27" y="5" width="198.66666666666663" height="20"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -894,10 +894,10 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 <buttonConfiguration key="configuration" style="plain" image="leftTutorialArrow"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1T9-aJ-mc5">
-                                <rect key="frame" x="119.33333333333333" y="770" width="151.66666666666669" height="25"/>
+                                <rect key="frame" x="119.66666666666667" y="770" width="150.66666666666663" height="25"/>
                                 <subviews>
                                     <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="GCO-if-Mct">
-                                        <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150.66666666666666" height="25"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
                                         <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1139,6 +1139,82 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grZ-MZ-chn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5212" y="795"/>
+        </scene>
+        <!--Generic Result View Controller-->
+        <scene sceneID="bkT-4d-uWd">
+            <objects>
+                <viewController storyboardIdentifier="GenericResultViewController" id="idm-XD-n9c" customClass="GenericResultViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zks-XC-UlT">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25c-ZW-hG9">
+                                <rect key="frame" x="20" y="282" width="350" height="280"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hm8-wR-pnj">
+                                        <rect key="frame" x="145" y="25" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="NN5-fn-dwB"/>
+                                            <constraint firstAttribute="width" constant="60" id="Ogl-NR-cOd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifica Categoria" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWg-DS-t1K">
+                                        <rect key="frame" x="10" y="100" width="330" height="34.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
+                                        <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLJ-E8-nC9">
+                                        <rect key="frame" x="20" y="154.33333333333331" width="310" height="25.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLO-MY-1Uo">
+                                        <rect key="frame" x="20" y="210" width="310" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SJN-qK-w8w"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gLO-MY-1Uo" secondAttribute="bottom" constant="20" id="0uj-bJ-jho"/>
+                                    <constraint firstItem="CWg-DS-t1K" firstAttribute="top" secondItem="hm8-wR-pnj" secondAttribute="bottom" constant="15" id="3Vg-TZ-U04"/>
+                                    <constraint firstItem="gLO-MY-1Uo" firstAttribute="leading" secondItem="25c-ZW-hG9" secondAttribute="leading" constant="20" id="A4F-LF-CHu"/>
+                                    <constraint firstAttribute="trailing" secondItem="gLO-MY-1Uo" secondAttribute="trailing" constant="20" id="AuD-pj-Cu5"/>
+                                    <constraint firstItem="hm8-wR-pnj" firstAttribute="centerX" secondItem="25c-ZW-hG9" secondAttribute="centerX" id="IGA-G9-KAm"/>
+                                    <constraint firstItem="CWg-DS-t1K" firstAttribute="leading" secondItem="25c-ZW-hG9" secondAttribute="leading" constant="10" id="LZM-Xi-Ikc"/>
+                                    <constraint firstItem="gLO-MY-1Uo" firstAttribute="top" secondItem="KLJ-E8-nC9" secondAttribute="bottom" constant="30" id="NLy-9v-dYj"/>
+                                    <constraint firstAttribute="trailing" secondItem="KLJ-E8-nC9" secondAttribute="trailing" constant="20" id="Om6-GU-vWq"/>
+                                    <constraint firstItem="KLJ-E8-nC9" firstAttribute="top" secondItem="CWg-DS-t1K" secondAttribute="bottom" constant="20" id="a56-Nd-hCe"/>
+                                    <constraint firstItem="hm8-wR-pnj" firstAttribute="top" secondItem="25c-ZW-hG9" secondAttribute="top" constant="25" id="cPD-YJ-CKR"/>
+                                    <constraint firstItem="KLJ-E8-nC9" firstAttribute="leading" secondItem="25c-ZW-hG9" secondAttribute="leading" constant="20" id="qyJ-ei-jkx"/>
+                                    <constraint firstAttribute="trailing" secondItem="CWg-DS-t1K" secondAttribute="trailing" constant="10" id="vyI-bR-JJS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fzo-Ob-CfN"/>
+                        <color key="backgroundColor" name="backgroundGradientColor"/>
+                        <constraints>
+                            <constraint firstItem="25c-ZW-hG9" firstAttribute="leading" secondItem="Fzo-Ob-CfN" secondAttribute="leading" constant="20" id="U9m-2O-DHg"/>
+                            <constraint firstItem="25c-ZW-hG9" firstAttribute="centerY" secondItem="zks-XC-UlT" secondAttribute="centerY" id="XRv-4o-Gfi"/>
+                            <constraint firstItem="Fzo-Ob-CfN" firstAttribute="trailing" secondItem="25c-ZW-hG9" secondAttribute="trailing" constant="20" id="oKJ-yN-vv7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonsContainerView" destination="gLO-MY-1Uo" id="9QF-hj-DJx"/>
+                        <outlet property="buttonsContainerViewHeightConstraint" destination="SJN-qK-w8w" id="0Vn-T8-VsZ"/>
+                        <outlet property="contentLabel" destination="KLJ-E8-nC9" id="7V4-8I-kAW"/>
+                        <outlet property="contentView" destination="25c-ZW-hG9" id="r3T-8F-2fH"/>
+                        <outlet property="iconImageView" destination="hm8-wR-pnj" id="Pld-Og-PRp"/>
+                        <outlet property="titleLabel" destination="CWg-DS-t1K" id="Afp-uh-VgA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bGd-PA-5iL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.9230769230769" y="1601.6587677725117"/>
         </scene>
     </scenes>
     <resources>

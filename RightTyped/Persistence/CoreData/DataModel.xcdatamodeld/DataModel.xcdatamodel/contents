@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G90" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="22G120" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Answer" representedClassName="Answer" syncable="YES">
         <attribute name="descr" attributeType="String"/>
         <attribute name="enabled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
@@ -16,14 +16,17 @@
         <attribute name="productId" optional="YES" attributeType="String"/>
         <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="category" inverseEntity="Answer"/>
     </entity>
+    <entity name="InAppTransaction" representedClassName="InAppTransaction" syncable="YES">
+        <attribute name="locale" attributeType="String"/>
+        <attribute name="pricePaid" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="productId" attributeType="String"/>
+        <attribute name="purchaseDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="purchaseDescription" attributeType="String"/>
+        <attribute name="transactionId" attributeType="String"/>
+    </entity>
     <entity name="Product" representedClassName="Product" syncable="YES">
         <attribute name="maxAnsNum" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="maxCatNum" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="productId" attributeType="String"/>
-    </entity>
-    <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
-        <attribute name="productId" optional="YES" attributeType="String"/>
-        <attribute name="purchaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
 </model>

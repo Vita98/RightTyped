@@ -1,0 +1,22 @@
+PODS:
+  - ASN1Swift (1.2.3)
+  - TPInAppReceipt (3.3.4):
+    - TPInAppReceipt/Core (= 3.3.4)
+  - TPInAppReceipt/Core (3.3.4):
+    - ASN1Swift (~> 1.2.3)
+
+DEPENDENCIES:
+  - TPInAppReceipt
+
+SPEC REPOS:
+  trunk:
+    - ASN1Swift
+    - TPInAppReceipt
+
+SPEC CHECKSUMS:
+  ASN1Swift: 73ba94f1d97c1c1d059d180708ad42845aeac4f9
+  TPInAppReceipt: 75ff97f2484a463cf46c172fe7f94225612aeda1
+
+PODFILE CHECKSUM: 9457e8061bb6882af8331588cae519d24e6756ef
+
+COCOAPODS: 1.12.1

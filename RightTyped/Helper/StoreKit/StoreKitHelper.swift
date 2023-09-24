@@ -8,27 +8,6 @@
 import Foundation
 import StoreKit
 
-public enum Products: String, CaseIterable{
-    case YearlyProPlan = "com.vitAndreAS.RightTyped.pro.plan.yearly"
-    case FiveCatTenAnsw = "com.vitAndreAS.RightTyped_5_cat_10_answe"
-    case SingleCatTenAnsw = "com.vitAndreAS.RightTyped_single_cat_ten_answe"
-    
-    static var array : [String]{
-        return Products.allCases.map({ return $0.rawValue })
-    }
-    
-    static func fromId(id: String) -> Products?{
-        return Products.allCases.filter({$0.rawValue == id}).first
-    }
-}
-
-enum PaymentStatus{
-    case disabled
-    case restored
-    case purchased
-    case failed
-    case deferred
-}
 
 protocol StoreKitRestoreHelperDelegate{
     func paymentRestored(with transaction: SKPaymentTransaction)
@@ -53,6 +32,7 @@ class StoreKitHelper: NSObject{
     private override init(){
         super.init()
         SKPaymentQueue.default().add(self)
+        self.fetchProducts()
     }
     
     var products: [String: SKProduct] = [:]
@@ -61,7 +41,7 @@ class StoreKitHelper: NSObject{
     private var paymentDelegate: StoreKitPaymentHelperDelegate?
     private var restorePaymentsDelegate: StoreKitRestoreHelperDelegate?
     
-    public func fetchProducts(delegate: StoreKitHelperDelegate){
+    public func fetchProducts(delegate: StoreKitHelperDelegate? = nil){
         let request = SKProductsRequest(productIdentifiers: Set(Products.array))
         request.delegate = self
         self.fetchDelegate = delegate
@@ -77,12 +57,13 @@ class StoreKitHelper: NSObject{
             paymentDelegate?.paymentProcessDone(of: product.productIdentifier, withStatus: .disabled)
             return
         }
-        SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().add(SKPayment(product: product))
     }
     
-    public func restorePurchase(){
-        SKPaymentQueue.default().add(self)
+    public func restorePurchase(delegate: StoreKitRestoreHelperDelegate? = nil){
+        if let delegate = delegate{
+            restorePaymentsDelegate = delegate
+        }
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
 }
@@ -98,6 +79,7 @@ extension StoreKitHelper: SKProductsRequestDelegate{
         }
 
         if found{
+            Premium.inflateWith(products: Array(products.values))
             fetchDelegate?.productListFound(products: products)
         }else{
             fetchDelegate?.productListFound(products: nil)
@@ -114,15 +96,20 @@ extension StoreKitHelper: SKPaymentTransactionObserver{
         for transaction in transactions {
             switch transaction.transactionState{
             case .purchased:
+                if let prod = products[transaction.payment.productIdentifier]{
+                    InAppTransaction.addTransaction(for: prod, withTitle: Premium.getProductTitle(for: prod.productIdentifier), transactionId: transaction.transactionIdentifier ?? "")
+                }
                 paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .purchased)
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .failed:
                 paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .failed)
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .restored:
+                if let prod = products[transaction.payment.productIdentifier]{
+                    InAppTransaction.addRestoredTransaction(for: transaction, for: prod, withTitle: Premium.getProductTitle(for: prod.productIdentifier))
+                }
                 restorePaymentsDelegate?.paymentRestored(with: transaction)
                 paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .restored)
-                print("RESTOREDDDDD")
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .purchasing:
                 paymentDelegate?.paymentInProcess(of: transaction.payment.productIdentifier)
@@ -137,12 +124,10 @@ extension StoreKitHelper: SKPaymentTransactionObserver{
     
     internal func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
         restorePaymentsDelegate?.restoreEnded(with: error)
-        print("RESTOREDDDDD ERROR")
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         restorePaymentsDelegate?.restoreEnded(with: nil)
-        print("RESTORE ENDED")
     }
     
     internal func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
