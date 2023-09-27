@@ -158,10 +158,9 @@ extension PremiumViewController: StoreKitHelperDelegate{
                     alert.configure(for: .failure, with: prod)
                 }
             }else{
-                alert.configure(for: .success, with: prod)
                 if ReceiptValidatorHelper.shared.checkReceipt(){
-                    UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_ENABLED_KEY, enabled: true)
-                    UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
+                    alert.configure(for: .success, with: prod)
+                    ReceiptValidatorHelper.shared.updateProPlanStatus()
                 }else{
                     alert.configure(for: .failure, with: prod)
                 }

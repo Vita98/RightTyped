@@ -45,19 +45,6 @@ struct AppString{
         static let noMoreAnswersAvailable: String = LocalizableString("Alerts_NO_MORE_ANSWERS_AVAILABLE").locale
         static let noMoreAnswersAvailableDescription: String = LocalizableString("Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR").locale
         static let goToPremiumSection: String = LocalizableString("Alerts_GO_TO_PREMIUM").locale
-        
-        struct ProNotRenewed{
-            private init(){}
-            static let title: String = LocalizableString("Alerts_ProNotRenewed_TITLE").locale
-            static let description: String = LocalizableString("Alerts_ProNotRenewed_DESCRIPTION").locale
-            static let selectCategoriesButton: String = LocalizableString("Alerts_ProNotRenewed_SELECT_CATEGORIES_TITLE").locale
-        }
-        
-        struct ErrorRestoringPurchase{
-            private init(){}
-            static let title: String = LocalizableString("Alerts_ErrorRestoringPurchase_TITLE").locale
-            static let description: String = LocalizableString("Alerts_ErrorRestoringPurchase_DESCRIPTION").locale
-        }
     }
     
     struct SettingsTypeEnum{
@@ -144,6 +131,28 @@ struct AppString{
                 private init(){}
                 static let title: String = LocalizableString("Premium_Popup_SuccessProRestoration_TITLE").locale
                 static let description: String = LocalizableString("Premium_Popup_SuccessProRestoration_DESCRIPTION").locale
+            }
+            struct NothingToRestore{
+                private init(){}
+                static let title: String = LocalizableString("Premium_Popup_NothingToRestore_TITLE").locale
+                static let description: String = LocalizableString("Premium_Popup_NothingToRestore_DESCRIPTION").locale
+            }
+            struct ProNotRenewed{
+                private init(){}
+                static let title: String = LocalizableString("Alerts_ProNotRenewed_TITLE").locale
+                static let description: String = LocalizableString("Alerts_ProNotRenewed_DESCRIPTION").locale
+                static let selectCategoriesButton: String = LocalizableString("Alerts_ProNotRenewed_SELECT_CATEGORIES_TITLE").locale
+            }
+            struct ProNotRenewedNoCatSelection{
+                private init(){}
+                static let title: String = LocalizableString("Alerts_ProNotRenewedNoCatSelection_TITLE").locale
+                static let description: String = LocalizableString("Alerts_ProNotRenewedNoCatSelection_DESCRIPTION").locale
+                static let notInterested: String = LocalizableString("Alerts_ProNotRenewedNoCatSelection_NOT_INTERESTED").locale
+            }
+            struct ErrorRestoringPurchase{
+                private init(){}
+                static let title: String = LocalizableString("Alerts_ErrorRestoringPurchase_TITLE").locale
+                static let description: String = LocalizableString("Alerts_ErrorRestoringPurchase_DESCRIPTION").locale
             }
         }
         

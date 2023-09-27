@@ -59,6 +59,18 @@ final class DataModelManagerPersistentContainer: NSPersistentContainer{
             return false
         }
     }
+    
+    func saveContextWithRollback(backgroundContext: NSManagedObjectContext? = nil) -> Bool {
+        let context = backgroundContext ?? viewContext
+        guard context.hasChanges else { return false }
+        do {
+            try context.save()
+            return true
+        } catch _ as NSError {
+            context.rollback()
+            return false
+        }
+    }
 }
 
 public extension URL {

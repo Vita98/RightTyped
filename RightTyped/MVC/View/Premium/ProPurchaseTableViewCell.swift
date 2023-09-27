@@ -16,10 +16,17 @@ class ProPurchaseTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configure()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    //MARK: - Configuration
+    private func configure(){
+        purchaseDateLabel.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -5).isActive = true
+        expirationLabel.leadingAnchor.constraint(equalTo: self.centerXAnchor, constant: 5).isActive = true
     }
     
 }

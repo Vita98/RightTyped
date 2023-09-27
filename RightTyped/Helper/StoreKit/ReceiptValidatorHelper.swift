@@ -88,18 +88,24 @@ class ReceiptValidatorHelper{
                 //Means has been deactivated
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_ENABLED_KEY, enabled: false)
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: true)
+                UserDefaultManager.shared.setProPlanExpirationDate(nil)
                 completion?(false, nil)
             }else if !found{
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_ENABLED_KEY, enabled: false)
+                UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
+                UserDefaultManager.shared.setProPlanExpirationDate(nil)
                 completion?(false, nil)
             }else{
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_ENABLED_KEY, enabled: true)
+                UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
+                if let expDate = expDate { UserDefaultManager.shared.setProPlanExpirationDate(expDate) }
                 completion?(true, expDate)
             }
         } catch _{
             if UserDefaultManager.shared.getProPlanStatus(){
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_ENABLED_KEY, enabled: false)
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: true)
+                UserDefaultManager.shared.setProPlanExpirationDate(nil)
             }
             refreshReceipt(){[weak self] in
                 if retry { self?.updateProPlanStatus(completion, retry: false) } 
@@ -110,7 +116,7 @@ class ReceiptValidatorHelper{
     public func getAllProPlans(retry: Bool = false) -> [InAppPurchase]{
         do {
             let receipt = try InAppReceipt.localReceipt()
-            return receipt.autoRenewablePurchases.sorted {$0.originalPurchaseDate > $1.originalPurchaseDate}
+            return receipt.autoRenewablePurchases.sorted {$0.originalPurchaseDate < $1.originalPurchaseDate}
         } catch _{
             refreshReceipt(){}
             return []

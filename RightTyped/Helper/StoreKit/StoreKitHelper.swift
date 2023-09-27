@@ -32,7 +32,6 @@ class StoreKitHelper: NSObject{
     private override init(){
         super.init()
         SKPaymentQueue.default().add(self)
-        self.fetchProducts()
     }
     
     var products: [String: SKProduct] = [:]
@@ -96,10 +95,25 @@ extension StoreKitHelper: SKPaymentTransactionObserver{
         for transaction in transactions {
             switch transaction.transactionState{
             case .purchased:
-                if let prod = products[transaction.payment.productIdentifier]{
-                    InAppTransaction.addTransaction(for: prod, withTitle: Premium.getProductTitle(for: prod.productIdentifier), transactionId: transaction.transactionIdentifier ?? "")
+                if ReceiptValidatorHelper.shared.checkReceipt(){
+                    if let prod = products[transaction.payment.productIdentifier]{
+                        if InAppTransaction.addTransaction(transaction, for: prod, withTitle: Premium.getProductTitle(for: prod.productIdentifier)){
+                            ReceiptValidatorHelper.shared.updateProPlanStatus()
+                            paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .purchased)
+                        }else{
+                            paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .internalError)
+                        }
+                    }else{
+                        if InAppTransaction.addTransactionFromOrigin(transaction){
+                            ReceiptValidatorHelper.shared.updateProPlanStatus()
+                            paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .purchased)
+                        }else{
+                            paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .internalError)
+                        }
+                    }
+                }else{
+                    paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .internalError)
                 }
-                paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .purchased)
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .failed:
                 paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .failed)

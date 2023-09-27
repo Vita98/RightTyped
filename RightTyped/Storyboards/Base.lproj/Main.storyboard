@@ -711,7 +711,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="do not show this message again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q03-9H-ffK">
-                                        <rect key="frame" x="27" y="5" width="198.66666666666663" height="20"/>
+                                        <rect key="frame" x="27" y="5" width="198.66666666666666" height="20"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1149,7 +1149,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25c-ZW-hG9">
-                                <rect key="frame" x="20" y="282" width="350" height="280"/>
+                                <rect key="frame" x="20" y="279.66666666666669" width="350" height="285.00000000000006"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hm8-wR-pnj">
                                         <rect key="frame" x="145" y="25" width="60" height="60"/>
@@ -1180,7 +1180,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="gLO-MY-1Uo" secondAttribute="bottom" constant="20" id="0uj-bJ-jho"/>
+                                    <constraint firstAttribute="bottom" secondItem="gLO-MY-1Uo" secondAttribute="bottom" constant="25" id="0uj-bJ-jho"/>
                                     <constraint firstItem="CWg-DS-t1K" firstAttribute="top" secondItem="hm8-wR-pnj" secondAttribute="bottom" constant="15" id="3Vg-TZ-U04"/>
                                     <constraint firstItem="gLO-MY-1Uo" firstAttribute="leading" secondItem="25c-ZW-hG9" secondAttribute="leading" constant="20" id="A4F-LF-CHu"/>
                                     <constraint firstAttribute="trailing" secondItem="gLO-MY-1Uo" secondAttribute="trailing" constant="20" id="AuD-pj-Cu5"/>
@@ -1232,13 +1232,13 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
             <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

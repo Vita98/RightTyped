@@ -73,19 +73,8 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if UserDefaultManager.shared.hasProPlanJustBeenDisabled(){
-            let alert : GenericResultViewController = UIStoryboard.main().instantiate()
-            alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Alerts.ProNotRenewed.title, description: AppString.Alerts.ProNotRenewed.description)
-            alert.addButton(withText: AppString.SettingsModel.premiumText){[weak self] in
-                alert.dismiss(animated: true)
-                let VC: PremiumViewController = UIStoryboard.premium().instantiate()
-                self?.navigationController?.pushViewController(VC, animated: true)
-            }
-            alert.addButton(withText: AppString.Alerts.ProNotRenewed.selectCategoriesButton){[weak self] in
-                //TODO: Implement the action
-            }
-            alert.modalTransitionStyle = .crossDissolve
-            alert.modalPresentationStyle = .overFullScreen
-            self.present(alert, animated: true)
+            if Category.needToChooseCategories(){ showChooseCategories() }
+            else { showProDisabled() }
         }
     }
     
@@ -96,6 +85,40 @@ class ViewController: UIViewController {
     
     deinit{
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: Alerts
+    private func showChooseCategories(){
+        let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+        alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Premium.Popup.ProNotRenewed.title, description: AppString.Premium.Popup.ProNotRenewed.description)
+        alert.addButton(withText: AppString.SettingsModel.premiumText){[weak self] in
+            alert.dismiss(animated: true)
+            let VC: PremiumViewController = UIStoryboard.premium().instantiate()
+            self?.navigationController?.pushViewController(VC, animated: true)
+        }
+        alert.addButton(withText: AppString.Premium.Popup.ProNotRenewed.selectCategoriesButton){//[weak self] in
+            //TODO: Implement the action
+        }
+        alert.modalTransitionStyle = .crossDissolve
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: true)
+    }
+    
+    private func showProDisabled(){
+        let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+        alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Premium.Popup.ProNotRenewedNoCatSelection.title, description: String(format: AppString.Premium.Popup.ProNotRenewedNoCatSelection.description, MAXIMUM_ANSWERS_FOR_CATEGORIES))
+        alert.addButton(withText: AppString.SettingsModel.premiumText){[weak self] in
+            alert.dismiss(animated: true)
+            let VC: PremiumViewController = UIStoryboard.premium().instantiate()
+            self?.navigationController?.pushViewController(VC, animated: true)
+        }
+        alert.addButton(withText: AppString.Premium.Popup.ProNotRenewedNoCatSelection.notInterested){
+            UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
+            alert.dismiss(animated: true)
+        }
+        alert.modalTransitionStyle = .crossDissolve
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: true)
     }
     
     //MARK: Configuration

@@ -10,6 +10,7 @@
     <entity name="Category" representedClassName="Category" syncable="YES">
         <attribute name="creationDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="enabled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="forceDisabled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="maxAnswers" attributeType="Integer 64" defaultValueString="10" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="order" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>

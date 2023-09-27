@@ -20,6 +20,7 @@ class UserDefaultManager{
     
     //MARK: Pro plan
     static let PRO_PLAN_ENABLED_KEY = "PRO_PLAN_ENABLED_KEY"
+    static let PRO_PLAN_EXPIRATION_DATE_KEY = "PRO_PLAN_EXPIRATION_DATE_KEY"
     static let PRO_PLAN_HAS_JUST_BEEN_DISABLED = "PRO_PLAN_HAS_JUST_BEEN_DISABLED"
     
     private let SHARED_GROUP_NAME = "group.vitAndreAS.RightTypedGroup"
@@ -31,6 +32,14 @@ class UserDefaultManager{
     //MARK: Access method
     public func setBoolValue(key: String, enabled: Bool){
         UserDefaults(suiteName: SHARED_GROUP_NAME)?.set(enabled, forKey: key)
+    }
+    
+    public func setProPlanExpirationDate(_ date: Date?){
+        if let date = date {
+            UserDefaults(suiteName: SHARED_GROUP_NAME)?.set(date, forKey: UserDefaultManager.PRO_PLAN_EXPIRATION_DATE_KEY)
+        }else{
+            UserDefaults(suiteName: SHARED_GROUP_NAME)?.removeObject(forKey: UserDefaultManager.PRO_PLAN_EXPIRATION_DATE_KEY)
+        }
     }
     
     public func getBoolValue(key: String) -> Bool? {
@@ -74,6 +83,14 @@ class UserDefaultManager{
             return status
         }else {
             return false
+        }
+    }
+    
+    public func isProPlanExpired() -> Bool{
+        if let expDate = UserDefaults(suiteName: SHARED_GROUP_NAME)?.object(forKey: UserDefaultManager.PRO_PLAN_EXPIRATION_DATE_KEY) as? Date{
+            return expDate < Date()
+        }else {
+            return true
         }
     }
 }

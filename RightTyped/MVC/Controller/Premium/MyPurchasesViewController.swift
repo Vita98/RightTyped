@@ -13,7 +13,7 @@ class MyPurchasesViewController: UIViewController {
     
     //MARK: - Outlet
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: SelfSizedTableView!
     @IBOutlet weak var containerView: UIView!
     
     //MARK: - Custom Component
@@ -69,7 +69,7 @@ class MyPurchasesViewController: UIViewController {
         allTransactions = InAppTransaction.getAllTransactions()
         receiptProPurchase = ReceiptValidatorHelper.shared.getAllProPlans()
         
-        let ids = receiptProPurchase.map({$0.originalTransactionIdentifier})
+        let ids = receiptProPurchase.map({$0.transactionIdentifier})
         proPurchases = allTransactions?.filter({ids.contains($0.transactionId)})
         ppuPurchases = allTransactions?.filter({!ids.contains($0.transactionId)})
         
@@ -116,7 +116,7 @@ extension MyPurchasesViewController: StoreKitRestoreHelperDelegate{
         guard error == nil else {
             self.toggleLoadingViewController(animated: true){[weak self] in
                 let alert : GenericResultViewController = UIStoryboard.main().instantiate()
-                alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Alerts.ErrorRestoringPurchase.title, description: AppString.Alerts.ErrorRestoringPurchase.description)
+                alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Premium.Popup.ErrorRestoringPurchase.title, description: AppString.Premium.Popup.ErrorRestoringPurchase.description)
                 alert.withCloseButton = true
                 alert.modalTransitionStyle = .crossDissolve
                 alert.modalPresentationStyle = .overFullScreen
@@ -136,7 +136,14 @@ extension MyPurchasesViewController: StoreKitRestoreHelperDelegate{
                     self?.present(alert, animated: true)
                 }
             }else{
-                self?.toggleLoadingViewController(animated: true)
+                self?.toggleLoadingViewController(animated: true){[weak self] in
+                    let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+                    alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Premium.Popup.NothingToRestore.title, description: AppString.Premium.Popup.NothingToRestore.description)
+                    alert.withCloseButton = true
+                    alert.modalTransitionStyle = .crossDissolve
+                    alert.modalPresentationStyle = .overFullScreen
+                    self?.present(alert, animated: true)
+                }
             }
             self?.refreshPage()
         }
@@ -144,6 +151,14 @@ extension MyPurchasesViewController: StoreKitRestoreHelperDelegate{
 }
 
 extension MyPurchasesViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return aggregatedPurchases.count
     }

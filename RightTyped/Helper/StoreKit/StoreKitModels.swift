@@ -31,4 +31,5 @@ enum PaymentStatus{
     case purchased
     case failed
     case deferred
+    case internalError
 }

@@ -22,6 +22,7 @@ extension Category {
     @NSManaged public var answers: NSSet?
     @NSManaged public var creationDate: Date
     @NSManaged public var enabled: Bool
+    @NSManaged public var forceDisabled: Bool       //TODO: Will be used in future to disable the exceeding category after pro cancellation
     @NSManaged public var order: Double
     
 }

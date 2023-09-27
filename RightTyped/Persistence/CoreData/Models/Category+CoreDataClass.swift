@@ -11,6 +11,16 @@ import CoreData
 
 @objc(Category)
 public class Category: NSManagedObject {
+    
+    static func needToChooseCategories() -> Bool{
+        let request = Category.fetchRequest()
+        do{
+            let count = try DataModelManagerPersistentContainer.shared.context.count(for: request)
+            return count > Product.getMaximumCategoriesCount()
+        }catch{
+            return true
+        }
+    }
         
     @discardableResult
     static func saveNewCategory(category: Category) -> (Bool, Category?){

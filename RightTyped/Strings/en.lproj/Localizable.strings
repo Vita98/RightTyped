@@ -32,13 +32,6 @@
 "Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR" = "\nThe maximum number of answers for this category is %d.\n\nGo to the premium section to continue!";
 "Alerts_GO_TO_PREMIUM" = "Premium";
 
-"Alerts_ProNotRenewed_TITLE" = "Your subscription could not be renewed!";
-"Alerts_ProNotRenewed_DESCRIPTION" = "Something went wrong during the renewal of your subscription or the automatic renewal was disabled.\nRenew your subscription in the Premium section or select which categories to keep";
-"Alerts_ProNotRenewed_SELECT_CATEGORIES_TITLE" = "Select categories";
-
-"Alerts_ErrorRestoringPurchase_TITLE" = "Warning!";
-"Alerts_ErrorRestoringPurchase_DESCRIPTION" = "An error occurred while restoring your purchases.\nPlease try again later!";
-
 //MARK: Settings
 "SettingsTypeEnum_APP" = "App";
 "SettingsTypeEnum_KEYBOARD" = "Keyboard";
@@ -118,6 +111,16 @@
 "Premium_Popup_Failure_DESCRIPTION" = "Something went wrong during the purchase of the product.\nGo to the support section to send a report.";
 "Premium_Popup_SuccessProRestoration_TITLE" = "Pro Subscription Successfully Restored!";
 "Premium_Popup_SuccessProRestoration_DESCRIPTION" = "Your Pro subscription has been successfully restored!\nYou will be able to enjoy the features until %@.";
+"Premium_Popup_NothingToRestore_TITLE" = "Nothing to restore!";
+"Premium_Popup_NothingToRestore_DESCRIPTION" = "No purchase restored!\nIf you think this is an error, send a report from the settings.";
+"Alerts_ProNotRenewed_TITLE" = "Your subscription could not be renewed!";
+"Alerts_ProNotRenewed_DESCRIPTION" = "Something went wrong during the renewal of your subscription or the automatic renewal was disabled.\nRenew your subscription in the Premium section or select which categories to keep";
+"Alerts_ProNotRenewed_SELECT_CATEGORIES_TITLE" = "Select categories";
+"Alerts_ErrorRestoringPurchase_TITLE" = "Warning!";
+"Alerts_ErrorRestoringPurchase_DESCRIPTION" = "An error occurred while restoring your purchases.\nPlease try again later!";
+"Alerts_ProNotRenewedNoCatSelection_TITLE" = "Your subscription could not be renewed!";
+"Alerts_ProNotRenewedNoCatSelection_DESCRIPTION" = "Your subscription renewal was unsuccessful.\nIf you decide not to renew, all categories with more than %d responses will be truncated. Remaining answers cannot be used until a new Pro plan is activated.";
+"Alerts_ProNotRenewedNoCatSelection_NOT_INTERESTED" = "Not interested";
 
 //My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Restore purchases";

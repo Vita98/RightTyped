@@ -12,6 +12,7 @@ struct KeyboardStrings{
     struct General{
         static let openAppBeforeStartText: String = LocalizableString("OPEN_APP_BEFORE_START_TEXT").locale
         static let noEnabledCategoriesText: String = LocalizableString("NO_ENABLED_CATEGORIES_TEXT").locale
+        static let openAppToRenewPremium: String = LocalizableString("OPEN_APP_TO_RENEW_PREMIUM_TEXT").locale
     }
     
 }
