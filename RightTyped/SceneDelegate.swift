@@ -24,7 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             DefaultData.shared.saveDefaultData()
         }
         
-        if UserDefaultManager.shared.getProPlanStatus() && ReceiptValidatorHelper.shared.checkReceipt(){
+        if UserDefaultManager.shared.getProPlanStatus() && UserDefaultManager.shared.isProPlanExpired(){
+            ReceiptValidatorHelper.shared.checkReceipt()
             ReceiptValidatorHelper.shared.updateProPlanStatus()
         }
 

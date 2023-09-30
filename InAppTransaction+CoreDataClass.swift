@@ -16,6 +16,7 @@ public class InAppTransaction: NSManagedObject {
     @discardableResult
     static func addTransaction(_ transaction: SKPaymentTransaction, for product: SKProduct, withTitle title: String) -> Bool{
         guard let tranId = transaction.transactionIdentifier , let tranDate = transaction.transactionDate else { return false }
+        if let _ = getTransaction(forId: tranId) { return true }
         let trans = InAppTransaction(context: DataModelManagerPersistentContainer.shared.context)
         trans.productId = product.productIdentifier
         trans.purchaseDate = tranDate
@@ -30,6 +31,7 @@ public class InAppTransaction: NSManagedObject {
     static func addTransactionFromOrigin(_ transaction: SKPaymentTransaction) -> Bool{
         guard let originalTransaction = transaction.original, let orTranId = originalTransaction.transactionIdentifier, let currTranId = transaction.transactionIdentifier, let transDate = transaction.transactionDate else { return false }
         guard let inAppOriginalTrans = getTransaction(forId: orTranId ) else { return false }
+        if let _ = getTransaction(forId: currTranId) { return true }
         let trans = InAppTransaction(context: DataModelManagerPersistentContainer.shared.context)
         trans.productId = transaction.payment.productIdentifier
         trans.purchaseDate = transDate
@@ -42,10 +44,12 @@ public class InAppTransaction: NSManagedObject {
     
     @discardableResult
     static func addRestoredTransaction(for transaction: SKPaymentTransaction, for product: SKProduct, withTitle title: String) -> Bool{
+        guard let tranId = transaction.transactionIdentifier else { return false }
+        if let _ = getTransaction(forId: tranId) { return true }
         let trans = InAppTransaction(context: DataModelManagerPersistentContainer.shared.context)
         trans.productId = transaction.payment.productIdentifier
         trans.purchaseDate = transaction.transactionDate ?? Date()
-        trans.transactionId = transaction.original?.transactionIdentifier ?? ""
+        trans.originalTransactionId = transaction.original?.transactionIdentifier ?? ""
         trans.pricePaid = product.price
         trans.locale = product.priceLocale.currencySymbol ?? ""
         trans.purchaseDescription = title
@@ -54,7 +58,7 @@ public class InAppTransaction: NSManagedObject {
     
     static func getTransaction(forId transactionId: String) -> InAppTransaction?{
         let transFetc = InAppTransaction.fetchRequest()
-        let sorter = NSSortDescriptor(key: #keyPath(Product.productId), ascending: false)
+        let sorter = NSSortDescriptor(key: #keyPath(InAppTransaction.purchaseDate), ascending: false)
         transFetc.sortDescriptors = [sorter]
         transFetc.predicate = NSPredicate(format: "transactionId == %@", transactionId)
         
@@ -68,7 +72,7 @@ public class InAppTransaction: NSManagedObject {
     
     static func getAllTransactions() -> [InAppTransaction]{
         let transFetc = InAppTransaction.fetchRequest()
-        let sorter = NSSortDescriptor(key: #keyPath(Product.productId), ascending: false)
+        let sorter = NSSortDescriptor(key: #keyPath(InAppTransaction.purchaseDate), ascending: false)
         transFetc.sortDescriptors = [sorter]
         
         do {

@@ -92,7 +92,6 @@ class ReceiptValidatorHelper{
                 completion?(false, nil)
             }else if !found{
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_ENABLED_KEY, enabled: false)
-                UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
                 UserDefaultManager.shared.setProPlanExpirationDate(nil)
                 completion?(false, nil)
             }else{
@@ -100,6 +99,7 @@ class ReceiptValidatorHelper{
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
                 if let expDate = expDate { UserDefaultManager.shared.setProPlanExpirationDate(expDate) }
                 completion?(true, expDate)
+                NotificationCenter.default.post(name: NSNotification.Name(UserDefaultManager.PRO_PLAN_ENABLED_KEY), object: nil)
             }
         } catch _{
             if UserDefaultManager.shared.getProPlanStatus(){

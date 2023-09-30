@@ -70,8 +70,14 @@ class MyPurchasesViewController: UIViewController {
         receiptProPurchase = ReceiptValidatorHelper.shared.getAllProPlans()
         
         let ids = receiptProPurchase.map({$0.transactionIdentifier})
-        proPurchases = allTransactions?.filter({ids.contains($0.transactionId)})
-        ppuPurchases = allTransactions?.filter({!ids.contains($0.transactionId)})
+        proPurchases = allTransactions?.filter({
+            guard let transId = $0.transactionId else {
+                guard let orTransId = $0.originalTransactionId else { return false }
+                return ids.contains(orTransId)
+            }
+            return ids.contains(transId)
+        })
+        ppuPurchases = allTransactions?.filter({!(proPurchases?.contains($0) ?? true)})
         
         if proPurchases?.count != 0{
             aggregatedPurchases.append([PremiumType.pro: proPurchases ?? []])
@@ -112,7 +118,7 @@ class MyPurchasesViewController: UIViewController {
 extension MyPurchasesViewController: StoreKitRestoreHelperDelegate{
     func paymentRestored(with transaction: SKPaymentTransaction) { return }
     
-    func restoreEnded(with error: Error?) {
+    func restoreEnded(with error: Error?, restoredAmount: Int) {
         guard error == nil else {
             self.toggleLoadingViewController(animated: true){[weak self] in
                 let alert : GenericResultViewController = UIStoryboard.main().instantiate()
@@ -135,7 +141,7 @@ extension MyPurchasesViewController: StoreKitRestoreHelperDelegate{
                     alert.modalPresentationStyle = .overFullScreen
                     self?.present(alert, animated: true)
                 }
-            }else{
+            }else if restoredAmount == 0{
                 self?.toggleLoadingViewController(animated: true){[weak self] in
                     let alert : GenericResultViewController = UIStoryboard.main().instantiate()
                     alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Premium.Popup.NothingToRestore.title, description: AppString.Premium.Popup.NothingToRestore.description)
@@ -144,6 +150,8 @@ extension MyPurchasesViewController: StoreKitRestoreHelperDelegate{
                     alert.modalPresentationStyle = .overFullScreen
                     self?.present(alert, animated: true)
                 }
+            }else{
+                self?.toggleLoadingViewController(animated: true)
             }
             self?.refreshPage()
         }
@@ -190,9 +198,15 @@ extension MyPurchasesViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.priceLabel.isHidden = false
             }
             cell.purchaseDateLabel.text = String(format: AppString.Premium.MyPurchases.purchaseDate, DateFormatter.getFormatted(trans.purchaseDate))
-            
-            let expDate = receiptProPurchase.filter({$0.originalTransactionIdentifier == trans.transactionId}).first?.subscriptionExpirationDate ?? Date()
-            cell.expirationLabel.text = String(format: AppString.Premium.MyPurchases.expirationDate, DateFormatter.getFormatted(expDate)) 
+            let expDate = receiptProPurchase.filter({
+                guard let transId = trans.transactionId else {
+                    //transaction restored
+                    return trans.purchaseDate == $0.purchaseDate
+                }
+                //transaction executed into the app
+                return transId == $0.transactionIdentifier
+            }).first?.subscriptionExpirationDate ?? Date()
+            cell.expirationLabel.text = String(format: AppString.Premium.MyPurchases.expirationDate, DateFormatter.getFormatted(expDate))
             return cell
         }else if aggregatedPurchases[indexPath.section].first?.key == .payPerUse, let ppuPurchases = aggregatedPurchases[indexPath.section].first?.value{
             guard let cell: PurchaseTableViewCell = tableView.dequeue(for: indexPath) else { return UITableViewCell() }

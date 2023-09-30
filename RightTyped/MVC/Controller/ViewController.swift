@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     private var answerHeaderView: AnswersHeaderView?
     private var addAnswerView: AddAnswerCustomView?
     private var tableViewEmptyMessageHeight: Double = 0
+    private var loader: LoadingViewController?
+    private var loaderTimer: Timer?
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -73,8 +75,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if UserDefaultManager.shared.hasProPlanJustBeenDisabled(){
-            if Category.needToChooseCategories(){ showChooseCategories() }
-            else { showProDisabled() }
+            delayedExecution()
         }
     }
     
@@ -85,6 +86,13 @@ class ViewController: UIViewController {
     
     deinit{
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: Observers
+    private func addObservers(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(proPlanUpdate), name: Notification.Name(UserDefaultManager.PRO_PLAN_ENABLED_KEY), object: nil)
     }
     
     //MARK: Alerts
@@ -98,6 +106,17 @@ class ViewController: UIViewController {
         }
         alert.addButton(withText: AppString.Premium.Popup.ProNotRenewed.selectCategoriesButton){//[weak self] in
             //TODO: Implement the action
+        }
+        alert.modalTransitionStyle = .crossDissolve
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: true)
+    }
+    
+    private func showProEnabled(){
+        let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+        alert.configure(image: UIImage(named: "tickIcon"), title: AppString.Premium.Popup.SuccessPro.title, description: AppString.Premium.Popup.SuccessPro.description)
+        alert.addButton(withText: AppString.General.close){
+            alert.dismiss(animated: true)
         }
         alert.modalTransitionStyle = .crossDissolve
         alert.modalPresentationStyle = .overFullScreen
@@ -184,6 +203,16 @@ class ViewController: UIViewController {
         }
     }
     
+    private func toggleLoadingViewController(show: Bool = false, completion: (() -> Void)? = nil){
+        if !show && loader != nil{
+            loader?.dismiss(animated: true, completion: completion)
+            loader = nil
+        }else{
+            loader = LoadingViewController()
+            loader?.show(in: self)
+        }
+    }
+    
     private func updateAddCatIconVisibility(){
         //Updating the add category icon
         if let count = categoryFetchedResultsController.fetchedObjects?.count{
@@ -196,12 +225,44 @@ class ViewController: UIViewController {
         }
     }
     
-    //MARK: Keyboard events
-    private func addObservers(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    //MARK: Pro plan update callback
+    private func delayedExecution(){
+        toggleLoadingViewController(show: true)
+        loaderTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: {[weak self] timer in
+            guard let strongSelf = self else { return }
+            strongSelf.toggleLoadingViewController(){
+                if !UserDefaultManager.shared.getProPlanStatus(){
+                    if Category.needToChooseCategories(){ strongSelf.showChooseCategories() }
+                    else { strongSelf.showProDisabled() }
+                }
+            }
+            timer.invalidate()
+            strongSelf.loaderTimer = nil
+        })
     }
     
+    @objc private func proPlanUpdate(){
+        guard let loaderTimer = loaderTimer else { return }
+        
+        loaderTimer.invalidate()
+        self.loaderTimer = nil
+        
+        guard loader != nil else {
+            showProEnabled()
+            return
+        }
+        
+        toggleLoadingViewController(){
+            if !UserDefaultManager.shared.getProPlanStatus(){
+                if Category.needToChooseCategories(){ self.showChooseCategories() }
+                else { self.showProDisabled() }
+            }else{
+                self.updateAddCatIconVisibility()
+            }
+        }
+    }
+    
+    //MARK: Keyboard events
     @objc func keyBoardWillShow(notification: NSNotification){
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue

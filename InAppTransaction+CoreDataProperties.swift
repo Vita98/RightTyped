@@ -21,7 +21,8 @@ extension InAppTransaction {
     @NSManaged public var productId: String
     @NSManaged public var purchaseDate: Date
     @NSManaged public var purchaseDescription: String
-    @NSManaged public var transactionId: String
+    @NSManaged public var transactionId: String?
+    @NSManaged public var originalTransactionId: String?
 
 }
 

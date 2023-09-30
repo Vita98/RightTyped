@@ -11,7 +11,7 @@ import StoreKit
 
 protocol StoreKitRestoreHelperDelegate{
     func paymentRestored(with transaction: SKPaymentTransaction)
-    func restoreEnded(with error: Error?)
+    func restoreEnded(with error: Error?, restoredAmount: Int)
 }
 
 protocol StoreKitFetchHelperDelegate{
@@ -35,6 +35,7 @@ class StoreKitHelper: NSObject{
     }
     
     var products: [String: SKProduct] = [:]
+    private var restoredPurchaseCount: Int = 0
     
     private var fetchDelegate: StoreKitFetchHelperDelegate?
     private var paymentDelegate: StoreKitPaymentHelperDelegate?
@@ -63,6 +64,7 @@ class StoreKitHelper: NSObject{
         if let delegate = delegate{
             restorePaymentsDelegate = delegate
         }
+        restoredPurchaseCount = 0
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
 }
@@ -122,6 +124,7 @@ extension StoreKitHelper: SKPaymentTransactionObserver{
                 if let prod = products[transaction.payment.productIdentifier]{
                     InAppTransaction.addRestoredTransaction(for: transaction, for: prod, withTitle: Premium.getProductTitle(for: prod.productIdentifier))
                 }
+                restoredPurchaseCount += 1
                 restorePaymentsDelegate?.paymentRestored(with: transaction)
                 paymentDelegate?.paymentProcessDone(of: transaction.payment.productIdentifier, withStatus: .restored)
                 SKPaymentQueue.default().finishTransaction(transaction)
@@ -137,11 +140,11 @@ extension StoreKitHelper: SKPaymentTransactionObserver{
     }
     
     internal func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-        restorePaymentsDelegate?.restoreEnded(with: error)
+        restorePaymentsDelegate?.restoreEnded(with: error, restoredAmount: restoredPurchaseCount)
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        restorePaymentsDelegate?.restoreEnded(with: nil)
+        restorePaymentsDelegate?.restoreEnded(with: nil, restoredAmount: restoredPurchaseCount)
     }
     
     internal func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
