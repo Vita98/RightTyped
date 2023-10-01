@@ -90,7 +90,7 @@ class UserDefaultManager{
         if let expDate = UserDefaults(suiteName: SHARED_GROUP_NAME)?.object(forKey: UserDefaultManager.PRO_PLAN_EXPIRATION_DATE_KEY) as? Date{
             return expDate < Date()
         }else {
-            return true
+            return false
         }
     }
 }

@@ -106,6 +106,9 @@ class ViewController: UIViewController {
         }
         alert.addButton(withText: AppString.Premium.Popup.ProNotRenewed.selectCategoriesButton){//[weak self] in
             //TODO: Implement the action
+            //TODO: After it has selected all the categories to mantains, set this flag
+            //      UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
+            //      UserDefaultManager.shared.setProPlanExpirationDate(nil)
         }
         alert.modalTransitionStyle = .crossDissolve
         alert.modalPresentationStyle = .overFullScreen
@@ -133,6 +136,7 @@ class ViewController: UIViewController {
         }
         alert.addButton(withText: AppString.Premium.Popup.ProNotRenewedNoCatSelection.notInterested){
             UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
+            UserDefaultManager.shared.setProPlanExpirationDate(nil)
             alert.dismiss(animated: true)
         }
         alert.modalTransitionStyle = .crossDissolve
@@ -205,8 +209,10 @@ class ViewController: UIViewController {
     
     private func toggleLoadingViewController(show: Bool = false, completion: (() -> Void)? = nil){
         if !show && loader != nil{
-            loader?.dismiss(animated: true, completion: completion)
-            loader = nil
+            loader?.dismiss(animated: true){
+                completion?()
+                self.loader = nil
+            }
         }else{
             loader = LoadingViewController()
             loader?.show(in: self)
@@ -242,22 +248,28 @@ class ViewController: UIViewController {
     }
     
     @objc private func proPlanUpdate(){
-        guard let loaderTimer = loaderTimer else { return }
-        
-        loaderTimer.invalidate()
-        self.loaderTimer = nil
-        
-        guard loader != nil else {
-            showProEnabled()
-            return
+        if loaderTimer != nil{
+            self.loaderTimer!.invalidate()
+            self.loaderTimer = nil
         }
         
-        toggleLoadingViewController(){
+        if loader == nil {
             if !UserDefaultManager.shared.getProPlanStatus(){
                 if Category.needToChooseCategories(){ self.showChooseCategories() }
                 else { self.showProDisabled() }
             }else{
+                self.showProEnabled()
                 self.updateAddCatIconVisibility()
+            }
+        }else{
+            toggleLoadingViewController(){
+                if !UserDefaultManager.shared.getProPlanStatus(){
+                    if Category.needToChooseCategories(){ self.showChooseCategories() }
+                    else { self.showProDisabled() }
+                }else{
+                    self.showProEnabled()
+                    self.updateAddCatIconVisibility()
+                }
             }
         }
     }

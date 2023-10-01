@@ -35,7 +35,7 @@ class KeyboardViewController: UIInputViewController {
         self.view.backgroundColor = .none
         
         //Extecute the core data fetch
-        if !UserDefaultManager.shared.isFirstBootForExtension() && !(UserDefaultManager.shared.getProPlanStatus() && UserDefaultManager.shared.isProPlanExpired()){
+        if !UserDefaultManager.shared.isFirstBootForExtension() && !(UserDefaultManager.shared.isProPlanExpired()){
             categories = Category.getCategory(withAtLeastOneEnabledAnswer: true)
         }
     }
@@ -88,7 +88,7 @@ class KeyboardViewController: UIInputViewController {
             //set the maximum height to fit the view with the error message
             contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: size.height / 2)
             contentView.configurePlaceholderView(withContentViewHeight: size.height / 2, text: KeyboardStrings.General.openAppBeforeStartText)
-        }else if UserDefaultManager.shared.getProPlanStatus() && UserDefaultManager.shared.isProPlanExpired(){
+        }else if UserDefaultManager.shared.isProPlanExpired(){
             //set the maximum height to fit the view with the error message
             contentViewHightConstraint = contentView.heightAnchor.constraint(equalToConstant: size.height / 2)
             contentView.configurePlaceholderView(withContentViewHeight: size.height / 2, text: KeyboardStrings.General.openAppToRenewPremium)
