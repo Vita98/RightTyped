@@ -31,6 +31,7 @@ struct AppString{
         static let next: String = LocalizableString("GENERAL_NEXT").locale
         static let done: String = LocalizableString("GENERAL_DONE").locale
         static let close: String = LocalizableString("GENERAL_CLOSE").locale
+        static let save: String = LocalizableString("GENERAL_SAVE").locale
     }
     
     struct Alerts{
@@ -154,6 +155,10 @@ struct AppString{
                 static let title: String = LocalizableString("Alerts_ErrorRestoringPurchase_TITLE").locale
                 static let description: String = LocalizableString("Alerts_ErrorRestoringPurchase_DESCRIPTION").locale
             }
+            struct AreSureAboutSelection{
+                private init(){}
+                static let description: String = LocalizableString("Alerts_AreSureAboutSelection_DESCRIPTION").locale
+            }
         }
         
         struct MyPurchases{
@@ -168,6 +173,14 @@ struct AppString{
             private init(){}
             static let noPremiumOptions: String = LocalizableString("Premium_Plans_NO_PREMIUM_OPTIONS").locale
             static let refreshButtonTitle: String = LocalizableString("Premium_Plans_REFRESH_BUTTON_TITLE").locale
+        }
+        
+        struct SelectCategories{
+            private init(){}
+            static let mainTitle: String = LocalizableString("Premium_SelectCategories_MAIN_TITLE").locale
+            static let mainDescription: String = LocalizableString("Premium_SelectCategories_MAIN_DESCRIPTION").locale
+            static let selectionText: String = LocalizableString("Premium_SelectCategories_SELECTION_TEXT").locale
+            static let infoPopupDescription: String = LocalizableString("Premium_SelectCategories_INFO_POPUP_DESCRIPTION").locale
         }
         
         struct Plans{

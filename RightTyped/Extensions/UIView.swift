@@ -90,8 +90,10 @@ extension UIView{
         }
     }
     
-    public func applyCustomRoundCorner(){
-        self.layer.cornerRadius = CONTAINER_VIEW_ROUND_CORNER
+    public func applyCustomRoundCorner(_ radius: CGFloat? = nil){
+        var v = CONTAINER_VIEW_ROUND_CORNER
+        if let radius = radius { v = radius }
+        self.layer.cornerRadius = v
         self.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
     }
     

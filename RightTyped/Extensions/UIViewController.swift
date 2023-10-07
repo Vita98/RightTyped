@@ -19,6 +19,18 @@ extension UIViewController{
         navigationItem.titleView = imageView
     }
     
+    public func setRightBarButtonItem(imageName name: String, gestureRecognizer: UITapGestureRecognizer, withSize size: CGSize){
+        let menuBtn = UIButton(type: .custom)
+        menuBtn.frame = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+        menuBtn.setImage(UIImage(named:name), for: .normal)
+        menuBtn.addGestureRecognizer(gestureRecognizer)
+        
+        let button = UIBarButtonItem(customView: menuBtn)
+        button.customView?.heightAnchor.constraint(equalToConstant: size.height).isActive = true
+        button.customView?.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+        navigationItem.rightBarButtonItem = button
+    }
+    
     /// Method to change the action to execute when the navigationBar back button is pressed.
     /// Must be called in the viewDidAppear because the navigationBar must be already present in the view hierarchy
     /// - Parameter action: the new action to execute

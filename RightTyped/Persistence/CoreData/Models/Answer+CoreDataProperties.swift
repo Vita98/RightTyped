@@ -20,6 +20,7 @@ extension Answer {
     @NSManaged public var descr: String
     @NSManaged public var category: Category?
     @NSManaged public var enabled: Bool
+    @NSManaged public var forceDisabled: Bool
     @NSManaged public var order: Double
     
     //MARK: Init

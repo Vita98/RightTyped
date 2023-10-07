@@ -19,6 +19,7 @@
 "GENERAL_NEXT" = "Next";
 "GENERAL_DONE" = "Done!";
 "GENERAL_CLOSE" = "Close";
+"GENERAL_SAVE" = "Save";
 
 //MARK: Alert
 "Alerts_YES" = "Yes";
@@ -121,6 +122,7 @@
 "Alerts_ProNotRenewedNoCatSelection_TITLE" = "Your subscription could not be renewed!";
 "Alerts_ProNotRenewedNoCatSelection_DESCRIPTION" = "Your subscription renewal was unsuccessful.\nIf you decide not to renew, all categories with more than %d responses will be truncated. Remaining answers cannot be used until a new Pro plan is activated.";
 "Alerts_ProNotRenewedNoCatSelection_NOT_INTERESTED" = "Not interested";
+"Alerts_AreSureAboutSelection_DESCRIPTION" = "The chosen categories cannot be changed or used until a new Pro plan is activated or new categories are purchased.";
 
 //My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Restore purchases";
@@ -131,6 +133,12 @@
 //PremiumPage
 "Premium_Plans_NO_PREMIUM_OPTIONS" = "No premium option available at the moment!";
 "Premium_Plans_REFRESH_BUTTON_TITLE" = "Refresh";
+
+//SelectCategories
+"Premium_SelectCategories_MAIN_TITLE" = "Select categories";
+"Premium_SelectCategories_MAIN_DESCRIPTION" = "You can select a maximum of %d categories, the initial %d plus those purchased through in app purchases";
+"Premium_SelectCategories_SELECTION_TEXT" = "%d out of %d categories selected";
+"Premium_SelectCategories_INFO_POPUP_DESCRIPTION" = "All remaining categories will not be deleted but cannot be used until a new category or a new premium subscription is purchased\n\nIf there are categories with more than %d answers, the remaining ones will not be deleted but they cannot be used until a new premium subscription is activated.";
 
 //Plans
 "Premium_Plans_BASE_TEXT" = "Base";

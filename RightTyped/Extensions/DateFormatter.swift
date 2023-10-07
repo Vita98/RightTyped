@@ -14,11 +14,10 @@ extension DateFormatter{
         #elseif RELEASE
         let userFormat = DateFormatter.dateFormat(fromTemplate: "yyyyMMdd", options: 0, locale: Locale.current)
         #endif
-        if let userFormat = userFormat{
-            return userFormat
-        }else{
+        guard let userFormat = userFormat else {
             return "MM/dd/yyyy"
         }
+        return userFormat
     }
     
     static func getFormatted(_ myDate: Date) -> String {

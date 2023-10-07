@@ -72,6 +72,15 @@ class CategoryCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
+        if let associatedCategory = associatedCategory, let model = cellModel{
+            if associatedCategory.forceDisabled{
+                self.backgroundColor = .lightGray.withAlphaComponent(0)
+                self.layer.borderColor = model.selectedStyle.borderColor.withAlphaComponent(0.2).cgColor
+                self.label.alpha = 0.2
+            }else{
+                self.label.alpha = 1
+            }
+        }
     }
 
 }

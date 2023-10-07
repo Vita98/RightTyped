@@ -96,6 +96,8 @@ class ReceiptValidatorHelper{
                 completion?(false, nil)
             }else{
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_ENABLED_KEY, enabled: true)
+                Category.forceEnableAll()
+                Answer.forceEnableAllAnswers()
                 UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
                 if let expDate = expDate { UserDefaultManager.shared.setProPlanExpirationDate(expDate) }
                 completion?(true, expDate)

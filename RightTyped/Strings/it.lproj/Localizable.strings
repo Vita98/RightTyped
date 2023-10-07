@@ -19,6 +19,7 @@
 "GENERAL_NEXT" = "Avanti";
 "GENERAL_DONE" = "Fatto!";
 "GENERAL_CLOSE" = "Chiudi";
+"GENERAL_SAVE" = "Salva";
 
 //MARK: Alert
 "Alerts_YES" = "Si";
@@ -121,6 +122,7 @@
 "Alerts_ProNotRenewedNoCatSelection_TITLE" = "Non è stato possibile rinnovare il tuo abbonamento!";
 "Alerts_ProNotRenewedNoCatSelection_DESCRIPTION" = "Il rinnovo del tuo abbonamento non è andato a buon fine.\nSe decidi di non rinnovarlo tutte le categorie con più di %d risposte verranno troncate. Quelle in eccesso non potranno essere usate fino all'attivazione di un piano Pro.";
 "Alerts_ProNotRenewedNoCatSelection_NOT_INTERESTED" = "Non sono più interessato";
+"Alerts_AreSureAboutSelection_DESCRIPTION" = "Le categorie scelte non potranno essere cambiate o utilizzate fino all'attivazione di un nuovo piano Pro o all'acquisto di nuove categorie.";
 
 //My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Ripristina acquisti";
@@ -131,6 +133,12 @@
 //PremiumPage
 "Premium_Plans_NO_PREMIUM_OPTIONS" = "Non ci sono offerte premium disponibili in questo momento!";
 "Premium_Plans_REFRESH_BUTTON_TITLE" = "Ricarica";
+
+//SelectCategories
+"Premium_SelectCategories_MAIN_TITLE" = "Seleziona le categorie";
+"Premium_SelectCategories_MAIN_DESCRIPTION" = "Ne puoi selezionare un massimo di %d, le %d iniziali più quelle acquistate mediante acquisti in app";
+"Premium_SelectCategories_SELECTION_TEXT" = "%d su %d categorie selezionate";
+"Premium_SelectCategories_INFO_POPUP_DESCRIPTION" = "Tutte le categorie rimanenti non verranno cancellate ma non potranno essere utilizzate fino al’acquisto di una nuova categoria o di un nuovo abbonamento premium\n\nSe dovessero essere preseni delle categorie con più di %d risposte, le rimanenti non verranno cancellate ma non potranno essere usate fino all’attivazione di un nuovo abbonamento premium.";
 
 //Plans
 "Premium_Plans_BASE_TEXT" = "Base";

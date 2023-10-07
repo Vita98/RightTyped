@@ -70,10 +70,26 @@ public class Category: NSManagedObject {
         return nil
     }
     
-    static func getAllCategory(enabled: Bool = false) -> [Category]? {
+    static func getLowestOrder() -> Int? {
         let categoryFetch = Category.fetchRequest()
-        let sortByName = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
-        categoryFetch.sortDescriptors = [sortByName]
+        let sortBy = NSSortDescriptor(key: #keyPath(Category.order), ascending: true)
+        categoryFetch.sortDescriptors = [sortBy]
+        do {
+            let managedContext = DataModelManagerPersistentContainer.shared.context
+            let results = try managedContext.fetch(categoryFetch)
+            if let order = results.first?.order{
+                return Int(order)
+            }
+        } catch _ as NSError {
+            return nil
+        }
+        return nil
+    }
+    
+    static func getAllCategory() -> [Category]? {
+        let categoryFetch = Category.fetchRequest()
+        let sortByOrder = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
+        categoryFetch.sortDescriptors = [sortByOrder]
         var category : [Category]? = nil
         do {
             let managedContext = DataModelManagerPersistentContainer.shared.context
@@ -88,7 +104,7 @@ public class Category: NSManagedObject {
     static func getCategory(enabled: Bool = true, withAtLeastOneEnabledAnswer: Bool = false) -> [Category]? {
         let categoryFetch = Category.fetchRequest()
         let sortByName = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
-        categoryFetch.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
+        categoryFetch.predicate = NSPredicate(format: "enabled == %@ && forceDisabled == false", NSNumber(booleanLiteral: enabled))
         categoryFetch.sortDescriptors = [sortByName]
         
         var categories : [Category]? = nil
@@ -113,7 +129,7 @@ public class Category: NSManagedObject {
     static func getCategoryCount(enabled: Bool = true, withAtLeastOneEnabledAnswer: Bool = false) -> Int {
         let categoryFetch = Category.fetchRequest()
         let sortByName = NSSortDescriptor(key: #keyPath(Category.order), ascending: false)
-        categoryFetch.predicate = NSPredicate(format: "enabled == %@", NSNumber(booleanLiteral: enabled))
+        categoryFetch.predicate = NSPredicate(format: "enabled == %@ && forceDisabled == false", NSNumber(booleanLiteral: enabled))
         categoryFetch.sortDescriptors = [sortByName]
 
         var categories : [Category]? = nil
@@ -186,5 +202,29 @@ public class Category: NSManagedObject {
         // Configure Fetched Results Controller
         fetchedResultsController.delegate = delegate
         return fetchedResultsController
+    }
+    
+    @discardableResult
+    static func forceDisableAll(except avoidCategories: [Category]) -> Bool{
+        let allCat = Category.getAllCategory()
+        guard let allCat = allCat, allCat.count > 0, let maxOrder = Category.getLowestOrder() else { return false }
+        let avoidIds = avoidCategories.map { $0.id }
+        
+        var order: Double = Double(maxOrder - 1)
+        for cat in allCat{
+            if avoidIds.contains(cat.id) { continue }
+            cat.forceDisabled = true
+            cat.order = order
+            order += 1
+        }
+        return DataModelManagerPersistentContainer.shared.saveContextWithRollback()
+    }
+    
+    @discardableResult
+    static func forceEnableAll() -> Bool{
+        let allCat = Category.getAllCategory()
+        guard let allCat = allCat else { return false }
+        for cat in allCat { cat.forceDisabled = false }
+        return DataModelManagerPersistentContainer.shared.saveContextWithRollback()
     }
 }

@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     private var tableViewEmptyMessageHeight: Double = 0
     private var loader: LoadingViewController?
     private var loaderTimer: Timer?
+    private var first = true
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -67,12 +68,15 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addObservers()
         navigationController?.setNavigationBarHidden(true, animated: animated)
         updateAddCatIconVisibility()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        homeHeaderTableViewCell?.categoryCollectionView.reloadData()
+        answersTableView.reloadData()
         
         if UserDefaultManager.shared.hasProPlanJustBeenDisabled(){
             delayedExecution()
@@ -82,6 +86,7 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     deinit{
@@ -104,20 +109,21 @@ class ViewController: UIViewController {
             let VC: PremiumViewController = UIStoryboard.premium().instantiate()
             self?.navigationController?.pushViewController(VC, animated: true)
         }
-        alert.addButton(withText: AppString.Premium.Popup.ProNotRenewed.selectCategoriesButton){//[weak self] in
-            //TODO: Implement the action
-            //TODO: After it has selected all the categories to mantains, set this flag
-            //      UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
-            //      UserDefaultManager.shared.setProPlanExpirationDate(nil)
+        alert.addButton(withText: AppString.Premium.Popup.ProNotRenewed.selectCategoriesButton){[weak self] in
+            alert.dismiss(animated: true)
+            let VC: SelectCategoriesViewController = UIStoryboard.premium().instantiate()
+            self?.view.endEditing(true)
+            self?.navigationController?.pushViewController(VC, animated: true)
         }
         alert.modalTransitionStyle = .crossDissolve
         alert.modalPresentationStyle = .overFullScreen
         self.present(alert, animated: true)
     }
     
-    private func showProEnabled(){
+    private func showProRestored(){
         let alert : GenericResultViewController = UIStoryboard.main().instantiate()
-        alert.configure(image: UIImage(named: "tickIcon"), title: AppString.Premium.Popup.SuccessPro.title, description: AppString.Premium.Popup.SuccessPro.description)
+        let expDate = ReceiptValidatorHelper.shared.getProPlanExpirationDate() ?? Date()
+        alert.configure(image: UIImage(named: "tickIcon"), title: AppString.Premium.Popup.SuccessProRestoration.title, description: String(format: AppString.Premium.Popup.SuccessProRestoration.description, DateFormatter.getFormatted(expDate)))
         alert.addButton(withText: AppString.General.close){
             alert.dismiss(animated: true)
         }
@@ -233,18 +239,27 @@ class ViewController: UIViewController {
     
     //MARK: Pro plan update callback
     private func delayedExecution(){
-        toggleLoadingViewController(show: true)
-        loaderTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: {[weak self] timer in
-            guard let strongSelf = self else { return }
-            strongSelf.toggleLoadingViewController(){
-                if !UserDefaultManager.shared.getProPlanStatus(){
-                    if Category.needToChooseCategories(){ strongSelf.showChooseCategories() }
-                    else { strongSelf.showProDisabled() }
+        if first{
+            toggleLoadingViewController(show: true)
+            first = false
+            loaderTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: {[weak self] timer in
+                guard let strongSelf = self else { return }
+                strongSelf.toggleLoadingViewController(){
+                    if !UserDefaultManager.shared.getProPlanStatus(){
+                        if Category.needToChooseCategories(){ strongSelf.showChooseCategories() }
+                        else { strongSelf.showProDisabled() }
+                    }
                 }
+                timer.invalidate()
+                strongSelf.loaderTimer = nil
+            })
+        }else{
+            if !UserDefaultManager.shared.getProPlanStatus(){
+                if Category.needToChooseCategories(){ showChooseCategories() }
+                else { showProDisabled() }
             }
-            timer.invalidate()
-            strongSelf.loaderTimer = nil
-        })
+            loaderTimer = nil
+        }
     }
     
     @objc private func proPlanUpdate(){
@@ -258,7 +273,7 @@ class ViewController: UIViewController {
                 if Category.needToChooseCategories(){ self.showChooseCategories() }
                 else { self.showProDisabled() }
             }else{
-                self.showProEnabled()
+                self.showProRestored()
                 self.updateAddCatIconVisibility()
             }
         }else{
@@ -267,7 +282,7 @@ class ViewController: UIViewController {
                     if Category.needToChooseCategories(){ self.showChooseCategories() }
                     else { self.showProDisabled() }
                 }else{
-                    self.showProEnabled()
+                    self.showProRestored()
                     self.updateAddCatIconVisibility()
                 }
             }
@@ -350,6 +365,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard !categoryFetchedResultsController.object(at: indexPath).forceDisabled else { return }
+        
         //deselecting the previous
         guard let selectedCategoryIndex = selectedCategoryIndex else { return }
         let oldCell = collectionView.cellForItem(at: selectedCategoryIndex) as? CategoryCollectionViewCell
@@ -458,6 +475,7 @@ extension ViewController: UICollectionViewDragDelegate, UICollectionViewDropDele
     //MARK: UICollectionViewDragDelegate
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let categoryItem = categoryFetchedResultsController.object(at: indexPath)
+        guard !categoryItem.forceDisabled else { return [] }
         let itemProvider = NSItemProvider(object: "\(categoryItem.id.hashValue)" as NSString)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = categoryItem
@@ -466,6 +484,7 @@ extension ViewController: UICollectionViewDragDelegate, UICollectionViewDropDele
     
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
         if destinationIndexPath == nil { return UICollectionViewDropProposal(operation: .cancel) }
+        if categoryFetchedResultsController.object(at: destinationIndexPath!).forceDisabled { return UICollectionViewDropProposal(operation: .cancel) }
         if let _ = session.items.first?.localObject as? Answer { return UICollectionViewDropProposal(operation: .cancel) }
         return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
     }
@@ -634,11 +653,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
         guard let searchedAnswers = searchedAnswers else { return cell }
         let answer = searchedAnswers[indexPath.row]
         cell.answerLabel.text = answer.title
+        if answer.forceDisabled{
+            cell.selectionStyle = .none
+            cell.backgroundColor = .lightGray.withAlphaComponent(0.1)
+            cell.answerLabel.alpha = 0.2
+        }else{
+            cell.selectionStyle = .default
+            cell.backgroundColor = .none
+            cell.answerLabel.alpha = 1
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let searchedAnswers = searchedAnswers, indexPath.section > 0 else { return }
+        guard !searchedAnswers[indexPath.row].forceDisabled else { return }
         
         let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newAnswerViewControllerID") as! NewAnswerViewController
         VC.setAnswer(searchedAnswers[indexPath.row])
@@ -790,6 +819,7 @@ extension ViewController: UITableViewDragDelegate, UITableViewDropDelegate {
         guard answ.count > 0 else { return [] }
         
         let answerItem = answ[indexPath.row]
+        guard !answerItem.forceDisabled else { return [] }
         let itemProvider = NSItemProvider(object: "\(answerItem.id.hashValue)" as NSString)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = answerItem
@@ -798,6 +828,7 @@ extension ViewController: UITableViewDragDelegate, UITableViewDropDelegate {
     
     func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
         if destinationIndexPath?.section == 0 { return UITableViewDropProposal(operation: .cancel) }
+        guard let row = destinationIndexPath?.row, row < searchedAnswers?.count ?? 0, !(searchedAnswers?[row].forceDisabled ?? true) else { return UITableViewDropProposal(operation: .cancel) }
         if let _ = session.items.first?.localObject as? Category { return UITableViewDropProposal(operation: .cancel) }
         return UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
     }

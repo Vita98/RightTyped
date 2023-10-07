@@ -43,6 +43,12 @@ class GenericResultViewController: UIViewController {
     private func configure(){
         self.contentView.layer.cornerRadius = MODAL_VIEW_ROUND_CORNER
         self.iconImageView.image = iconImage
+        
+        if titleText == nil {
+            titleLabel.removeFromSuperview()
+            contentLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 20).isActive = true
+        }
+        
         titleLabel.text = titleText
         contentLabel.text = descriptionText
         var previous: UIView? = nil

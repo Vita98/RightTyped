@@ -94,7 +94,7 @@ public class Answer: NSManagedObject{
 
         // Configure Fetch Request
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Answer.order), ascending: false)]
-        fetchRequest.predicate = NSPredicate(format: "enabled == %@ && category == %@", NSNumber(booleanLiteral: enabled), category)
+        fetchRequest.predicate = NSPredicate(format: "enabled == %@ && category == %@ && forceDisabled == false", NSNumber(booleanLiteral: enabled), category)
 
         // Create Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataModelManagerPersistentContainer.shared.context, sectionNameKeyPath: nil, cacheName: nil)
@@ -102,6 +102,40 @@ public class Answer: NSManagedObject{
         // Configure Fetched Results Controller
         fetchedResultsController.delegate = delegate
         return fetchedResultsController
+    }
+    
+    //MARK: Methods to truncate all answers after pro disabilitation
+    @discardableResult
+    static func forceDisableAllExceedingAnswers(forMaximum maximum: Int) -> Bool{
+        guard let allCategories = Category.getAllCategory() else { return false }
+        
+        for cat in allCategories{
+            guard let answers = cat.answers?.allObjects as? [Answer], answers.count > maximum else { continue }
+            let sorted = answers.sorted(by: {$0.order > $1.order})
+            for i in stride(from: sorted.count - 1, to: maximum - 1, by: -1){
+                sorted[i].forceDisabled = true
+            }
+        }
+        return DataModelManagerPersistentContainer.shared.saveContextWithRollback()
+    }
+    
+    @discardableResult
+    static func forceEnableAllAnswers() -> Bool{
+        let categoryFetch = Answer.fetchRequest()
+        let sortBy = NSSortDescriptor(key: #keyPath(Answer.order), ascending: false)
+        categoryFetch.sortDescriptors = [sortBy]
+        do {
+            let managedContext = DataModelManagerPersistentContainer.shared.context
+            let results = try managedContext.fetch(categoryFetch)
+           
+            for answ in results{
+                answ.forceDisabled = false
+            }
+            
+            return DataModelManagerPersistentContainer.shared.saveContextWithRollback()
+        } catch _ as NSError {
+            return false
+        }
     }
     
 }
