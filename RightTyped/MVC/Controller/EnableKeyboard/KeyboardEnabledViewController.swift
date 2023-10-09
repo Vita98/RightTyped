@@ -14,6 +14,7 @@ class KeyboardEnabledViewController: UIViewController {
     @IBOutlet weak var nextLabel: UILabel!
     
     var fromSettings = false
+    var showCloseButton = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,11 @@ class KeyboardEnabledViewController: UIViewController {
         doneButtonView.enableComponentButtonMode()
         doneButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(doneButtonViewPressed)))
         nextLabel.text = fromSettings ? AppString.General.done : AppString.General.next
+        
+        if !showCloseButton{
+            closeButton.isHidden = true
+            closeButton.isEnabled = false
+        }
     }
     
     @objc private func doneButtonViewPressed(){
@@ -33,6 +39,7 @@ class KeyboardEnabledViewController: UIViewController {
             let viewC: ManagerTutorialViewController = UIStoryboard.main().instantiate()
             viewC.model = Tutorials.HOW_TO_USE_KEYBOARD
             viewC.fromSettings = self.fromSettings
+            viewC.showCloseButton = showCloseButton
             viewC.customFinalAction = {[weak self] in
                 //Implement the second tutorial
                 guard let strongSelf = self else { return }
@@ -40,6 +47,7 @@ class KeyboardEnabledViewController: UIViewController {
                 secondTutorial.model = Tutorials.HOW_TO_CUSTOMIZE_KEYBOARD
                 secondTutorial.fromSettings = strongSelf.fromSettings
                 secondTutorial.isFinalTutorial = true
+                secondTutorial.showCloseButton = strongSelf.showCloseButton
                 secondTutorial.customFinalAction = {[weak self] in
                     self?.dismiss(animated: true)
                 }

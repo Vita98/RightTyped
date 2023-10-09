@@ -21,6 +21,7 @@
 		013520CE2AD1598600DED2E9 /* SelectCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013520CD2AD1598600DED2E9 /* SelectCategoriesViewController.swift */; };
 		013520D32AD1710F00DED2E9 /* SelectionCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013520D12AD1710F00DED2E9 /* SelectionCategoryTableViewCell.swift */; };
 		013520D42AD1710F00DED2E9 /* SelectionCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013520D22AD1710F00DED2E9 /* SelectionCategoryTableViewCell.xib */; };
+		013520D62AD328B000DED2E9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013520D52AD328B000DED2E9 /* WelcomeViewController.swift */; };
 		01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */; };
 		0136BE852ABF27B000268393 /* GenericResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136BE842ABF27B000268393 /* GenericResultViewController.swift */; };
 		013E08432A21327100FF7928 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08422A21327100FF7928 /* ContentView.xib */; };
@@ -194,6 +195,7 @@
 		013520CD2AD1598600DED2E9 /* SelectCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoriesViewController.swift; sourceTree = "<group>"; };
 		013520D12AD1710F00DED2E9 /* SelectionCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		013520D22AD1710F00DED2E9 /* SelectionCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		013520D52AD328B000DED2E9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomComponentProtocol.swift; sourceTree = "<group>"; };
 		0136BE842ABF27B000268393 /* GenericResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResultViewController.swift; sourceTree = "<group>"; };
 		013E08422A21327100FF7928 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				012259DD2AA4CDBA00B69721 /* CustomPageViewController.swift */,
 				016D5C3B2AAF8EB700F327B9 /* LoadingViewController.swift */,
 				0136BE842ABF27B000268393 /* GenericResultViewController.swift */,
+				013520D52AD328B000DED2E9 /* WelcomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1103,6 +1106,7 @@
 				01B2D6C32A6D407E00C2A18C /* UIFont.swift in Sources */,
 				019EEC452A4DDE4E004C2761 /* NewCategoryViewController.swift in Sources */,
 				01DA1C2A2A2B52F900A28CE7 /* CustomTextField.swift in Sources */,
+				013520D62AD328B000DED2E9 /* WelcomeViewController.swift in Sources */,
 				016D5C312AACBBC500F327B9 /* SKProduct.swift in Sources */,
 				015B9E622A596DE400171360 /* SettingsViewController.swift in Sources */,
 			);

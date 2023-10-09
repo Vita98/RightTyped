@@ -8,6 +8,10 @@
 import UIKit
 import CoreData
 
+protocol SelectCategoriesViewControllerDelegate{
+    func selectCategoriesViewControllerChangesMade()
+}
+
 class SelectCategoriesViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     //MARK: - Outlet
@@ -24,6 +28,7 @@ class SelectCategoriesViewController: UIViewController, NSFetchedResultsControll
     private var maximumSelectable: Int = Product.getMaximumCategoriesCount()
     fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForAllCategory(delegate: self)
     private var selectedCategories: [Category] = []
+    public var delegate: SelectCategoriesViewControllerDelegate?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -99,6 +104,7 @@ class SelectCategoriesViewController: UIViewController, NSFetchedResultsControll
             Category.forceDisableAll(except: strongSelf.selectedCategories)
             Answer.forceDisableAllExceedingAnswers(forMaximum: MAXIMUM_ANSWERS_FOR_CATEGORIES)
             UserDefaultManager.shared.setBoolValue(key: UserDefaultManager.PRO_PLAN_HAS_JUST_BEEN_DISABLED, enabled: false)
+            strongSelf.delegate?.selectCategoriesViewControllerChangesMade()
             alert.dismiss(animated: true, completion: {[weak self] in self?.navigationController?.popViewController(animated: true)})
         }
         alert.addButton(withText: AppString.Alerts.no){

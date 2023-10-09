@@ -18,6 +18,7 @@ class EnableKeyboardViewController: UIViewController {
     
     var isCheckboxSelected: Bool = false
     var fromSettings = false
+    var showCloseButton = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,11 @@ class EnableKeyboardViewController: UIViewController {
             checkboxButton.isHidden = true
         }
         
+        if !showCloseButton{
+            closeButton.isHidden = true
+            closeButton.isEnabled = false
+        }
+        
         openSettingsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openSettings)))
         
         // set observer for UIApplication.willEnterForegroundNotification
@@ -59,6 +65,7 @@ class EnableKeyboardViewController: UIViewController {
         if UserDefaultManager.shared.isKeyboardExtensionEnabled(){
             let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "keyboardEnabledViewControllerID") as! KeyboardEnabledViewController
             VC.fromSettings = self.fromSettings
+            VC.showCloseButton = showCloseButton
             self.navigationController?.setViewControllers([VC], animated: true)
         }
     }

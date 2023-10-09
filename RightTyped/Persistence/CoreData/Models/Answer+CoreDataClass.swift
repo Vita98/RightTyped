@@ -12,6 +12,18 @@ import CoreData
 @objc(Answer)
 public class Answer: NSManagedObject{
     
+    static func getAllAnswers() -> [Answer]{
+        let categoryFetch = Answer.fetchRequest()
+        let sortBy = NSSortDescriptor(key: #keyPath(Answer.order), ascending: false)
+        categoryFetch.sortDescriptors = [sortBy]
+        do {
+            let managedContext = DataModelManagerPersistentContainer.shared.context
+            let results = try managedContext.fetch(categoryFetch)
+            return results
+        } catch _ as NSError {
+            return []
+        }
+    }
     
     @discardableResult
     static func saveNewAnswer(answer: Answer) -> (Bool, Answer?){

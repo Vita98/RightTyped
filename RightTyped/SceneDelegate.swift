@@ -20,8 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //Fetching all storekit purchase
         StoreKitHelper.shared.fetchProducts()
         
+        var firstBoot = false
         if UserDefaultManager.shared.isFirstBoot(){
             DefaultData.shared.saveDefaultData()
+            firstBoot = true
         }
         
         if UserDefaultManager.shared.getProPlanStatus() && UserDefaultManager.shared.isProPlanExpired(){
@@ -36,8 +38,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             initialViewController = viewC
         }else{
             initialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "viewControllerID") as! ViewController
-            if !UserDefaultManager.shared.isKeyboardExtensionEnabled(), let boolVal = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY), !boolVal, let initialViewController = initialViewController as? ViewController{
-                initialViewController.showTutorial = true
+            if let initialViewController = initialViewController as? ViewController{
+                if firstBoot{
+                    initialViewController.showWelcome = true
+                }else if !UserDefaultManager.shared.isKeyboardExtensionEnabled(), let boolVal = UserDefaultManager.shared.getBoolValue(key: UserDefaultManager.DONT_SHOW_ENABLE_KEYBOARD_AGAIN_KEY), !boolVal {
+                    initialViewController.showTutorial = true
+                }
             }
         }
         

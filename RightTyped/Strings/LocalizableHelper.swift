@@ -159,6 +159,16 @@ struct AppString{
                 private init(){}
                 static let description: String = LocalizableString("Alerts_AreSureAboutSelection_DESCRIPTION").locale
             }
+            struct CategoryDisabled{
+                private init(){}
+                static let title: String = LocalizableString("Premium_Popup_CategoryDisabled_TITLE").locale
+                static let description: String = LocalizableString("Premium_Popup_CategoryDisabled_DESCRIPTION").locale
+            }
+            struct AnswerDisabled{
+                private init(){}
+                static let title: String = LocalizableString("Premium_Popup_AnswerDisabled_TITLE").locale
+                static let description: String = LocalizableString("Premium_Popup_AnswerDisabled_DESCRIPTION").locale
+            }
         }
         
         struct MyPurchases{
@@ -249,11 +259,19 @@ struct AppString{
         static let deleteAnswerAlertDescription: String = LocalizableString("NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION").locale
     }
     
+    struct WelcomeViewController{
+        private init(){}
+        static let title: String = LocalizableString("WelcomeViewController_TITLE").locale
+        static let desc1: String = LocalizableString("WelcomeViewController_DESC1").locale
+        static let desc2: String = LocalizableString("WelcomeViewController_DESC2").locale
+    }
+    
     struct ViewController{
         private init(){}
         static let deleteCategoryAlertDescription: String = LocalizableString("ViewController_DEL_CAT_ALERT_DESCRIPTION").locale
         static let emptyCategories: String = LocalizableString("ViewController_EMPTY_CATEGORIES").locale
         static let emptyAnswers: String = LocalizableString("ViewController_EMPTY_ANSWERS").locale
+        static let noCategoryUsable: String = LocalizableString("ViewController_NO_CATEGORY_USABLE").locale
     }
     
     struct EnableKeyboardViewController{

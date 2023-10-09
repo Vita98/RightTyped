@@ -18,6 +18,7 @@ class ManagerTutorialViewController: UIViewController {
     var fromSettings = false
     var customFinalAction: (() -> Void)?
     var isFinalTutorial: Bool = false
+    var showCloseButton = true
     
     //MARK: Custom component
     var pageViewController: CustomPageViewController?
@@ -60,6 +61,11 @@ class ManagerTutorialViewController: UIViewController {
         pageControl.backgroundStyle = .minimal
         pageControl.numberOfPages = model?.pageModels.count ?? 0
         pageViewController?.pageControl = self.pageControl
+        
+        if !showCloseButton{
+            closeButton.isHidden = true
+            closeButton.isEnabled = false
+        }
     }
     
     private func configureModel(){

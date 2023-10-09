@@ -31,6 +31,7 @@ extension UIColor{
     public static let componentColor = UIColor(red: 238, green: 108, blue: 77)
     public static let lightComponentColor = UIColor(named: "lightComponentColor")
     public static let placeholderColor = UIColor(named: "placeholderColor")
+    public static let textColor = UIColor(named: "textColor")
     
     public static let cellDarkBackgroudColor = UIColor.white.withAlphaComponent(0.2)
     public static let cellLightBackgroudColor = UIColor.white

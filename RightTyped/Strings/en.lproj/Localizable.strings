@@ -73,10 +73,16 @@
 "NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER" = "Answer description";
 "NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION" = "Are you sure you want to delete this answer?";
 
+//MARK: WelcomeViewController
+"WelcomeViewController_TITLE" = "Welcome in RightTyped";
+"WelcomeViewController_DESC1" = "No, it's not a classic keyboard!\nIt's a container of pre-set responses!";
+"WelcomeViewController_DESC2" = "Go ahead, enable the keyboard and learn more about how it works!";
+
 //MARK: ViewController
 "ViewController_DEL_CAT_ALERT_DESCRIPTION" = "Are you sure you want to delete this category?\nAll associated questions will also be deleted";
 "ViewController_EMPTY_CATEGORIES" = "You have no category!";
 "ViewController_EMPTY_ANSWERS" = "There are no answers associated with this category!";
+"ViewController_NO_CATEGORY_USABLE" = "You cannot select any categories!\nContinue by adding one.";
 
 //MARK: EnableKeyboardViewController
 "EnableKeyboardViewController_KEYBOARD_DISABLED" = "Keyboard disabled";
@@ -123,6 +129,10 @@
 "Alerts_ProNotRenewedNoCatSelection_DESCRIPTION" = "Your subscription renewal was unsuccessful.\nIf you decide not to renew, all categories with more than %d responses will be truncated. Remaining answers cannot be used until a new Pro plan is activated.";
 "Alerts_ProNotRenewedNoCatSelection_NOT_INTERESTED" = "Not interested";
 "Alerts_AreSureAboutSelection_DESCRIPTION" = "The chosen categories cannot be changed or used until a new Pro plan is activated or new categories are purchased.";
+"Premium_Popup_CategoryDisabled_TITLE" = "Disabled Category!";
+"Premium_Popup_CategoryDisabled_DESCRIPTION" = "This category has been disabled because your pro subscription has expired or has been cancelled.\nTo re-enable it, purchase a new pro subscription or a new category.";
+"Premium_Popup_AnswerDisabled_TITLE" = "Disabled Answer!";
+"Premium_Popup_AnswerDisabled_DESCRIPTION" = "This response has been disabled because your pro subscription has expired or has been cancelled.\nTo re-enable it, purchase a new pro subscription.";
 
 //My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Restore purchases";

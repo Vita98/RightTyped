@@ -8,11 +8,12 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SelectCategoriesViewControllerDelegate{
     
     var selectedCategoryIndex : IndexPath?
     var selectedCategory : Category?
     var showTutorial = false
+    var showWelcome = false
     
     @IBOutlet var containerView: CustomBaseView!
     @IBOutlet weak var tableShadowView: UIView!
@@ -35,10 +36,15 @@ class ViewController: UIViewController {
     private var loader: LoadingViewController?
     private var loaderTimer: Timer?
     private var first = true
+    private var changesMade = false
     
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if showWelcome, let rNC = UINavigationController.instantiateNavController(withRoot: WelcomeViewController.self){
+            self.present(rNC.navController, animated: true)
+        }
         
         if showTutorial, let rNC = UINavigationController.instantiateNavController(withRoot: EnableKeyboardViewController.self){
             self.present(rNC.navController, animated: true)
@@ -112,6 +118,7 @@ class ViewController: UIViewController {
         alert.addButton(withText: AppString.Premium.Popup.ProNotRenewed.selectCategoriesButton){[weak self] in
             alert.dismiss(animated: true)
             let VC: SelectCategoriesViewController = UIStoryboard.premium().instantiate()
+            VC.delegate = self
             self?.view.endEditing(true)
             self?.navigationController?.pushViewController(VC, animated: true)
         }
@@ -150,6 +157,39 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    private func showDisabledCategory(){
+        let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+        alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Premium.Popup.CategoryDisabled.title, description: AppString.Premium.Popup.CategoryDisabled.description)
+        alert.addButton(withText: AppString.SettingsModel.premiumText){[weak self] in
+            alert.dismiss(animated: true)
+            let VC: PremiumViewController = UIStoryboard.premium().instantiate()
+            self?.navigationController?.pushViewController(VC, animated: true)
+        }
+        alert.addButton(withText: AppString.Premium.Popup.ProNotRenewedNoCatSelection.notInterested){ alert.dismiss(animated: true) }
+        alert.modalTransitionStyle = .crossDissolve
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: true)
+    }
+    
+    private func showDisabledAnswer(){
+        let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+        alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Premium.Popup.AnswerDisabled.title, description: AppString.Premium.Popup.AnswerDisabled.description)
+        alert.addButton(withText: AppString.SettingsModel.premiumText){[weak self] in
+            alert.dismiss(animated: true)
+            let VC: PremiumViewController = UIStoryboard.premium().instantiate()
+            self?.navigationController?.pushViewController(VC, animated: true)
+        }
+        alert.addButton(withText: AppString.Premium.Popup.ProNotRenewedNoCatSelection.notInterested){ alert.dismiss(animated: true) }
+        alert.modalTransitionStyle = .crossDissolve
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: true)
+    }
+    
+    //MARK: SelectCategoriesViewControllerDelegate
+    func selectCategoriesViewControllerChangesMade() {
+        changesMade = true
+    }
+    
     //MARK: Configuration
     private func configureView(){
         self.view.backgroundColor = .backgroundColor
@@ -180,8 +220,9 @@ class ViewController: UIViewController {
     private func configureAddAnswerCustomView(){
         addAnswerView = AddAnswerCustomView(inside: self.view)
         addAnswerView!.setCustomTapAction {[weak self] in
-            guard let strongSelf = self, let selectedCategory = self?.selectedCategory, let answersCount = selectedCategory.answers?.count else { return }
             
+            guard let strongSelf = self, let selectedCategory = self?.selectedCategory, let answers = selectedCategory.answers?.allObjects as? [Answer] else { return }
+            let answersCount = answers.filter({!$0.forceDisabled}).count
             if UserDefaultManager.shared.getProPlanStatus() || answersCount < Int(selectedCategory.maxAnswers){
                 let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newAnswerViewControllerID") as! NewAnswerViewController
                 VC.delegate = self
@@ -227,7 +268,7 @@ class ViewController: UIViewController {
     
     private func updateAddCatIconVisibility(){
         //Updating the add category icon
-        if let count = categoryFetchedResultsController.fetchedObjects?.count{
+        if let count = categoryFetchedResultsController.fetchedObjects?.filter({!$0.forceDisabled}).count{
             if UserDefaultManager.shared.getProPlanStatus(){
                 homeHeaderTableViewCell?.enableAddButton(true, animated: true)
             }else{
@@ -314,16 +355,26 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, NewCategoryViewControllerDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let categories = categoryFetchedResultsController.fetchedObjects
+        let filteredCat = categoryFetchedResultsController.fetchedObjects?.filter({!$0.forceDisabled})
         guard let cat = categories, !cat.isEmpty else {
             collectionView.setEmptyMessage(AppString.ViewController.emptyCategories)
+            answersTableView.setEmptyMessage(AppString.ViewController.noCategoryUsable, height: tableViewEmptyMessageHeight)
             toggleComponent(enabled: false)
             homeHeaderTableViewCell?.enableAddButton(true)
             return 0
         }
         
-        if categories!.count < Product.getMaximumCategoriesCount() || UserDefaultManager.shared.getProPlanStatus(){
-            //enable the add button
-            homeHeaderTableViewCell?.enableAddButton(true)
+        if let filteredCat = filteredCat{
+            if filteredCat.isEmpty{
+                toggleComponent(enabled: false)
+                homeHeaderTableViewCell?.enableAddButton(true)
+                selectedCategoryIndex = nil
+                answersTableView.setEmptyMessage(AppString.ViewController.noCategoryUsable, height: tableViewEmptyMessageHeight)
+                return categories!.count
+            } else if filteredCat.count < Product.getMaximumCategoriesCount() || UserDefaultManager.shared.getProPlanStatus(){
+                //enable the add button
+                homeHeaderTableViewCell?.enableAddButton(true)
+            }
         }else{
             //disable the add button
             homeHeaderTableViewCell?.enableAddButton(false)
@@ -341,7 +392,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.associatedCategory = category
         
         //Selection and deselection process
-        if selectedCategoryIndex == nil{
+        if (selectedCategoryIndex == nil || changesMade) && !category.forceDisabled{
+            changesMade = false
             selectedCategoryIndex = indexPath
             selectedCategory = category
             if let ans = category.answers{
@@ -365,7 +417,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard !categoryFetchedResultsController.object(at: indexPath).forceDisabled else { return }
+        guard !categoryFetchedResultsController.object(at: indexPath).forceDisabled else { showDisabledCategory(); return }
         
         //deselecting the previous
         guard let selectedCategoryIndex = selectedCategoryIndex else { return }
@@ -600,10 +652,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
             }
             
             //Managing the empty answer message
-            if let searchedAnswers = searchedAnswers, searchedAnswers.isEmpty{
-                tableView.setEmptyMessage(AppString.ViewController.emptyAnswers, height: tableViewEmptyMessageHeight)
-            }else{
-                tableView.restoreEmptyMessage()
+            if let searchedAnswers = searchedAnswers{
+                if searchedAnswers.isEmpty{
+                    tableView.setEmptyMessage(AppString.ViewController.emptyAnswers, height: tableViewEmptyMessageHeight)
+                }else{
+                    tableView.restoreEmptyMessage()
+                }
             }
             
             return searchedAnswers != nil ? searchedAnswers!.count : 0
@@ -667,7 +721,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let searchedAnswers = searchedAnswers, indexPath.section > 0 else { return }
-        guard !searchedAnswers[indexPath.row].forceDisabled else { return }
+        guard !searchedAnswers[indexPath.row].forceDisabled else { showDisabledAnswer(); return }
         
         let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newAnswerViewControllerID") as! NewAnswerViewController
         VC.setAnswer(searchedAnswers[indexPath.row])
@@ -771,7 +825,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        if type == .delete, let indexPath = indexPath, let cat = categoryFetchedResultsController.fetchedObjects?.count{
+        if type == .delete, let indexPath = indexPath, let cat = categoryFetchedResultsController.fetchedObjects?.filter({!$0.forceDisabled}).count{
             let nextCellIndex = indexPath.nearest(withLeftBound: cat)
             
             if let nextCellIndex = nextCellIndex{
@@ -803,9 +857,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
                 self.selectedCategoryIndex = nil
                 self.answers = nil
                 self.searchedAnswers = nil
+                answersTableView.setEmptyMessage(AppString.ViewController.noCategoryUsable, height: tableViewEmptyMessageHeight)
                 answersTableView.reloadSections(IndexSet(integer: 1), with: .fade)
             }
             updateAddCatIconVisibility()
+        }else{
+            answersTableView.reloadData()
         }
     }
 }

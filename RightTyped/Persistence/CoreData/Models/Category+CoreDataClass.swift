@@ -215,7 +215,7 @@ public class Category: NSManagedObject {
             if avoidIds.contains(cat.id) { continue }
             cat.forceDisabled = true
             cat.order = order
-            order += 1
+            order -= 1
         }
         return DataModelManagerPersistentContainer.shared.saveContextWithRollback()
     }

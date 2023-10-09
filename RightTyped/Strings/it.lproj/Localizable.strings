@@ -73,10 +73,16 @@
 "NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER" = "Descrizione della risposta";
 "NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION" = "Sei sicuro di voler cancellare questa risposta?";
 
+//MARK: WelcomeViewController
+"WelcomeViewController_TITLE" = "Benvenuto in RightTyped";
+"WelcomeViewController_DESC1" = "No, non è una classica tastiera!\nÈ un contenitore di risposte predefinite!";
+"WelcomeViewController_DESC2" = "Vai avanti, abilita la tastiera e scopri di più su come funziona!";
+
 //MARK: ViewController
 "ViewController_DEL_CAT_ALERT_DESCRIPTION" = "Sei sicuro di voler cancellare questa categoria?\nTutte le domande associate verranno anch'esse cancellate";
 "ViewController_EMPTY_CATEGORIES" = "Non hai nessuna categoria!";
 "ViewController_EMPTY_ANSWERS" = "Non ci sono risposte associate a questa categoria!";
+"ViewController_NO_CATEGORY_USABLE" = "Non puoi selezionare nessuna categoria!\nProsegui aggiungendone una.";
 
 //MARK: EnableKeyboardViewController
 "EnableKeyboardViewController_KEYBOARD_DISABLED" = "Tastiera disabilitata";
@@ -123,6 +129,10 @@
 "Alerts_ProNotRenewedNoCatSelection_DESCRIPTION" = "Il rinnovo del tuo abbonamento non è andato a buon fine.\nSe decidi di non rinnovarlo tutte le categorie con più di %d risposte verranno troncate. Quelle in eccesso non potranno essere usate fino all'attivazione di un piano Pro.";
 "Alerts_ProNotRenewedNoCatSelection_NOT_INTERESTED" = "Non sono più interessato";
 "Alerts_AreSureAboutSelection_DESCRIPTION" = "Le categorie scelte non potranno essere cambiate o utilizzate fino all'attivazione di un nuovo piano Pro o all'acquisto di nuove categorie.";
+"Premium_Popup_CategoryDisabled_TITLE" = "Categoria disabilitata!";
+"Premium_Popup_CategoryDisabled_DESCRIPTION" = "Questa categoria è stata disabilitata perchè il tuo abbonamento pro è scaduto o è stato cancellato.\nPer riabilitarla acquista un nuovo abbonamento pro o compra una nuova categoria.";
+"Premium_Popup_AnswerDisabled_TITLE" = "Risposta disabilitata!";
+"Premium_Popup_AnswerDisabled_DESCRIPTION" = "Questa risposta è stata disabilitata perchè il tuo abbonamento pro è scaduto o è stato cancellato.\nPer riabilitarla acquista un nuovo abbonamento pro.";
 
 //My Purchases
 "Premium_MyPurchases_RESTORE_PURCHASES_BUTTON_TITLE" = "Ripristina acquisti";
