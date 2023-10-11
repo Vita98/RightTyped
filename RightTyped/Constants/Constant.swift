@@ -20,3 +20,6 @@ let ANS_NUM_PPU_FIRST = MAXIMUM_ANSWERS_FOR_CATEGORIES
 //com.vitAndreAS.RightTyped_5_cat_10_answ constants
 let CAT_NUM_PPU_SECOND = 5
 let ANS_NUM_PPU_SECOND = MAXIMUM_ANSWERS_FOR_CATEGORIES
+
+//Support
+let SUPPORT_EMAIL_ADDRESS = "righttypedsup@gmail.com"

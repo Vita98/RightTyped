@@ -37,6 +37,7 @@
 "SettingsTypeEnum_APP" = "App";
 "SettingsTypeEnum_KEYBOARD" = "Keyboard";
 "SettingsTypeEnum_TUTORIAL" = "Tutorial";
+"SettingsTypeEnum_SUPPORT" = "Support";
 
 "SettingsModel_GO_BACK_TO_DEFAULT_KEYBOARD" = "Return to the default keyboard after entering an answer";
 "SettingsModel_HOW_TO_ENABLE_KEYBOARD" = "How to enable keyboard";
@@ -44,6 +45,7 @@
 "SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD" = "How to customize your keyboard using this app";
 "SettingsModel_PREMIUM" = "Premium";
 "SettingsModel_MY_PURCHASES" = "My purchases";
+"SettingsModel_CONTACT_SUPPORT_TEXT" = "Contact support";
 
 //MARK: Biometric
 "Biometric_REASON" = "Please authenticate to procede";
@@ -107,6 +109,18 @@
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_possibleAction" = "Add, edit or delete categories and answers using the following buttons";
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle" = "You are ready to customize your keyboard!";
 "Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Press and hold your finger on an answer to see its content";
+
+//MARK: Support
+//Alerts
+"Support_Alerts_SERVICE_NOT_AVAILABLE_TITLE" = "Mail services not available!";
+"Support_Alerts_SERVICE_NOT_AVAILABLE_DESCR" = "It appears you don't have any email account associated with your device.\nSet one up and then come back here to send a support request.";
+"Support_Alerts_EMAIL_SENT_TITLE" = "Email sent!";
+"Support_Alerts_EMAIL_SENT_DESCR" = "Your support request has been sent successfully!.\nWithin 24 hours an operator will contact you on the email address from which the request was sent.";
+"Support_Alerts_EMAIL_ERROR_TITLE" = "Error sending email!";
+"Support_Alerts_EMAIL_ERROR_DESCR" = "Something went wrong while sending the email.\nPlease try again later.";
+
+"Support_MAIL_SUBJECT" = "RightTyped - Support request";
+"Support_MAIL_BODY" = "Please indicate here the reason of your support request:";
 
 //MARK: Premium
 //Popup

@@ -7,6 +7,7 @@
 
 import UIKit
 import LocalAuthentication
+import MessageUI
 
 class SettingsViewController: UIViewController {
 
@@ -24,6 +25,7 @@ class SettingsViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: SettingsTableViewCell.reuseID)
         tableView.backgroundColor = .clear
+        tableView.contentInset.bottom = 30
     }
 
     private func setView(){
@@ -46,6 +48,49 @@ class SettingsViewController: UIViewController {
         }
         guard ac != nil else { return }
         self.present(ac!, animated: true)
+    }
+    
+    private func sendEmail(){
+        if !MFMailComposeViewController.canSendMail() {
+            showMailNotAvailable()
+            return
+        }
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+         
+        // Configure the fields of the interface.
+        composeVC.setToRecipients([SUPPORT_EMAIL_ADDRESS])
+        composeVC.setSubject(AppString.Support.mailSubject)
+        composeVC.setMessageBody(AppString.Support.mailBody, isHTML: false)
+        self.present(composeVC, animated: true, completion: nil)
+    }
+    
+    //MARK: Alerts
+    private func showMailNotAvailable(){
+        let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+        alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Support.Alerts.serviceNotAvailable.title, description: AppString.Support.Alerts.serviceNotAvailable.descr)
+        alert.addButton(withText: AppString.Alerts.ok){ alert.dismiss(animated: true) }
+        alert.modalTransitionStyle = .crossDissolve
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: true)
+    }
+    
+    private func showEmailSent(){
+        let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+        alert.configure(image: UIImage(named: "tickIcon"), title: AppString.Support.Alerts.emailSent.title, description: AppString.Support.Alerts.emailSent.descr)
+        alert.addButton(withText: AppString.Alerts.ok){ alert.dismiss(animated: true) }
+        alert.modalTransitionStyle = .crossDissolve
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: true)
+    }
+    
+    private func showEmailError(){
+        let alert : GenericResultViewController = UIStoryboard.main().instantiate()
+        alert.configure(image: UIImage(named: "warningIcon"), title: AppString.Support.Alerts.emailError.title, description: AppString.Support.Alerts.emailError.descr)
+        alert.addButton(withText: AppString.Alerts.ok){ alert.dismiss(animated: true) }
+        alert.modalTransitionStyle = .crossDissolve
+        alert.modalPresentationStyle = .overFullScreen
+        self.present(alert, animated: true)
     }
     
     //MARK: Controller lifecycle
@@ -153,9 +198,29 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
             default:
                 break
             }
+        case .Support:
+            switch cellModel.itemType{
+            case .contactSupport:
+                sendEmail()
+            default: break
+            }
         default:
             break
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        var completion: (() -> Void)?
+        switch result{
+        case .failed:
+            completion = showEmailError
+        case .sent:
+            completion = showEmailSent
+        default: break
+        }
+        controller.dismiss(animated: true, completion: {completion?()})
     }
 }

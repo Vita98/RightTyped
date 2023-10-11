@@ -53,6 +53,7 @@ struct AppString{
         static let app: String = LocalizableString("SettingsTypeEnum_APP").locale
         static let keyboard: String = LocalizableString("SettingsTypeEnum_KEYBOARD").locale
         static let tutorial: String = LocalizableString("SettingsTypeEnum_TUTORIAL").locale
+        static let support: String = LocalizableString("SettingsTypeEnum_SUPPORT").locale
     }
     
     struct SettingsModel{
@@ -63,6 +64,7 @@ struct AppString{
         static let howToCustomizeKeyboardText: String = LocalizableString("SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD").locale
         static let premiumText: String = LocalizableString("SettingsModel_PREMIUM").locale
         static let myPurchasesText: String = LocalizableString("SettingsModel_MY_PURCHASES").locale
+        static let contactSupportText: String = LocalizableString("SettingsModel_CONTACT_SUPPORT_TEXT").locale
     }
     
     struct Biometric{
@@ -106,6 +108,33 @@ struct AppString{
             static let possibleAction: String = LocalizableString("Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_possibleAction").locale
             static let finalTitle: String = LocalizableString("Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle").locale
         }
+    }
+    
+    struct Support{
+        private init(){}
+        
+        struct Alerts{
+            private init(){}
+            
+            struct serviceNotAvailable{
+                private init(){}
+                static let title: String = LocalizableString("Support_Alerts_SERVICE_NOT_AVAILABLE_TITLE").locale
+                static let descr: String = LocalizableString("Support_Alerts_SERVICE_NOT_AVAILABLE_DESCR").locale
+            }
+            struct emailSent{
+                private init(){}
+                static let title: String = LocalizableString("Support_Alerts_EMAIL_SENT_TITLE").locale
+                static let descr: String = LocalizableString("Support_Alerts_EMAIL_SENT_DESCR").locale
+            }
+            struct emailError{
+                private init(){}
+                static let title: String = LocalizableString("Support_Alerts_EMAIL_ERROR_TITLE").locale
+                static let descr: String = LocalizableString("Support_Alerts_EMAIL_ERROR_DESCR").locale
+            }
+        }
+        
+        static let mailSubject: String = LocalizableString("Support_MAIL_SUBJECT").locale
+        static let mailBody: String = LocalizableString("Support_MAIL_BODY").locale
     }
     
     struct Premium{

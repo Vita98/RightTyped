@@ -14,7 +14,8 @@ fileprivate var VALUES_MODEL: [SettingsCellModel] = {
             SettingsCellModel(type: .Keyboard, itemType: .goBackToDefaultKeyboard, text: AppString.SettingsModel.goBackToDefaultKeyboardText, cellType: .uiswitch),
             SettingsCellModel(type: .Tutorial, itemType: .howToEnableKeyboard, text: AppString.SettingsModel.howToEnableKeyboardText),
             SettingsCellModel(type: .Tutorial, itemType: .howToUseKeyboard, text: AppString.SettingsModel.howToUseKeyboardText),
-            SettingsCellModel(type: .Tutorial, itemType: .howToCustomizeKeyboard, text: AppString.SettingsModel.howToCustomizeKeyboardText),]
+            SettingsCellModel(type: .Tutorial, itemType: .howToCustomizeKeyboard, text: AppString.SettingsModel.howToCustomizeKeyboardText),
+            SettingsCellModel(type: .Support, itemType: .contactSupport, text: AppString.SettingsModel.contactSupportText),]
 }()
 
 
@@ -25,9 +26,10 @@ enum SettingsTypeEnum: String, CaseIterable{
     case App = "App"
     case Keyboard = "Tastiera"
     case Tutorial = "Tutorial"
+    case Support = "Supporto"
     
     public func getOrderedVector() -> [SettingsTypeEnum]{
-        return [.App, .Keyboard, .Tutorial]
+        return [.App, .Keyboard, .Tutorial, .Support]
     }
     
     public func getType() -> SettingsType {
@@ -38,6 +40,8 @@ enum SettingsTypeEnum: String, CaseIterable{
             return SettingsType(type: .Keyboard, name: AppString.SettingsTypeEnum.keyboard)
         case .Tutorial:
             return SettingsType(type: .Tutorial, name: AppString.SettingsTypeEnum.tutorial)
+        case .Support:
+            return SettingsType(type: .Support, name: AppString.SettingsTypeEnum.support)
         }
     }
 }
@@ -55,6 +59,7 @@ enum SettingsItem{
     case howToEnableKeyboard
     case howToUseKeyboard
     case howToCustomizeKeyboard
+    case contactSupport
 }
 
 enum SettingsCellType{

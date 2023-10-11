@@ -37,6 +37,7 @@
 "SettingsTypeEnum_APP" = "App";
 "SettingsTypeEnum_KEYBOARD" = "Tastiera";
 "SettingsTypeEnum_TUTORIAL" = "Guide";
+"SettingsTypeEnum_SUPPORT" = "Supporto";
 
 "SettingsModel_GO_BACK_TO_DEFAULT_KEYBOARD" = "Ritorna sulla tastiera di default dopo aver inserito una risposta";
 "SettingsModel_HOW_TO_ENABLE_KEYBOARD" = "Come abilitare la tastiera";
@@ -44,6 +45,7 @@
 "SettingsModel_HOW_TO_CUSTOMIZE_KEYBOARD" = "Come personalizzare la tastiera utilizzando quest'app";
 "SettingsModel_PREMIUM" = "Premium";
 "SettingsModel_MY_PURCHASES" = "I miei acquisti";
+"SettingsModel_CONTACT_SUPPORT_TEXT" = "Contatta il supporto";
 
 //MARK: Biometric
 "Biometric_REASON" = "Devi essere autenticato per procedere";
@@ -107,6 +109,18 @@
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_possibleAction" = "Aggiungi, modifica o cancella le categorie e le risposte usando i seguenti bottoni";
 "Tutorials_HOW_TO_CUSTOMIZE_KEYBOARD_finalTitle" = "Sei pronto a personalizzare la tua tastiera!";
 "Tutorials_HOW_TO_USE_KEYBOARD_keyboardPopUp" = "Tieni premuto il dito su di una risposta per vederene il contenuto";
+
+//MARK: Support
+//Alerts
+"Support_Alerts_SERVICE_NOT_AVAILABLE_TITLE" = "Invio email non disponibile!";
+"Support_Alerts_SERVICE_NOT_AVAILABLE_DESCR" = "Sembra tu non abbia alcun account email associato al dispositivo.\nConfigurane uno e poi torna qui per inviarci una richiesta di supporto.";
+"Support_Alerts_EMAIL_SENT_TITLE" = "Email inviata!";
+"Support_Alerts_EMAIL_SENT_DESCR" = "La tua richiesta di supporto è stata inviata con successo!.\nEntro 24 ore un operatore ti ricontatterà sull'indirizzo email da cui è stata inviata la richiesta.";
+"Support_Alerts_EMAIL_ERROR_TITLE" = "Errore nell'invio dell'email!";
+"Support_Alerts_EMAIL_ERROR_DESCR" = "Qualcosa è andato storto durante l'invio dell'email.\nRiprova più tardi.";
+
+"Support_MAIL_SUBJECT" = "RightTyped - Richiesta di supporto";
+"Support_MAIL_BODY" = "Indica qui il motivo della tua richiesta di supporto:";
 
 //MARK: Premium
 //Popup
