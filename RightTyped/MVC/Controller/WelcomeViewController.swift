@@ -29,6 +29,7 @@ class WelcomeViewController: UIViewController {
         welcomeLabel.text = AppString.WelcomeViewController.title
         description1Label.text = AppString.WelcomeViewController.desc1
         description2Label.text = AppString.WelcomeViewController.desc2
+        bottonViewLabel.text = AppString.General.next
     }
     
     //MARK: Event

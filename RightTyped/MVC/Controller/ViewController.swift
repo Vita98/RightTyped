@@ -250,7 +250,7 @@ class ViewController: UIViewController, SelectCategoriesViewControllerDelegate{
             homeHeaderTableViewCell.enableComponent(enabled: enabled, animated: true)
         }
         if let answerHeaderView = answerHeaderView, withSearchBar{
-            answerHeaderView.setSearchBarStatus(enabled: enabled)
+            answerHeaderView.setSearchBarStatus(enabled: self.answers?.count ?? 0 > 0)
         }
     }
     
@@ -374,6 +374,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             } else if filteredCat.count < Product.getMaximumCategoriesCount() || UserDefaultManager.shared.getProPlanStatus(){
                 //enable the add button
                 homeHeaderTableViewCell?.enableAddButton(true)
+                toggleComponent(enabled: true)
+            } else {
+                homeHeaderTableViewCell?.enableAddButton(false)
             }
         }else{
             //disable the add button
@@ -381,7 +384,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         
         collectionView.restoreEmptyMessage()
-        toggleComponent(enabled: true, withSearchBar: false)
         return categories!.count
     }
     
