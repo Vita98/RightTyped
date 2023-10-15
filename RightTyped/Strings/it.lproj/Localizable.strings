@@ -74,6 +74,7 @@
 "NewAnswerViewController_ANSW_TITLE_PLACEHOLDER" = "Titolo della risposta";
 "NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER" = "Descrizione della risposta";
 "NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION" = "Sei sicuro di voler cancellare questa risposta?";
+"NewAnswerViewController_USE_TITLE_AS_BOTH_TEXT" = "Usa il titolo come contenuto della risposta";
 
 //MARK: WelcomeViewController
 "WelcomeViewController_TITLE" = "Benvenuto in RightTyped";

@@ -69,13 +69,16 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
         }else{
             titleLabel.text = AppString.NewCategoryViewController.editCategory
         }
+        hideKeyboardWhenTappedAround()
     }
     
     private func configureTextField(){
         customTextField = CustomTextField.instanceFromNib(withNibName: "CustomTextField")
         guard let customTextField = self.customTextField else { return }
-        customTextField.inizalize(inView: textViewField,withText: associatedCategory?.name, placheolder: AppString.NewCategoryViewController.categoryNamePlaceholder)
         customTextField.delegate = self
+        customTextField.notDismissableAtIconPression = true
+        customTextField.animateBorders = false
+        customTextField.inizalize(inView: textViewField,withText: associatedCategory?.name, placheolder: AppString.NewCategoryViewController.categoryNamePlaceholder)
     }
     
     private func setBottomView(){

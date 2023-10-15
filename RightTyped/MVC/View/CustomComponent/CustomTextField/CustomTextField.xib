@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,12 +32,12 @@
                             <state key="normal" image="editIcon"/>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vb6-RT-z0C">
-                            <rect key="frame" x="5" y="0.0" width="332" height="97"/>
+                            <rect key="frame" x="8" y="0.0" width="329" height="97"/>
                             <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CA-Iz-ER2">
-                            <rect key="frame" x="5" y="0.0" width="332" height="97"/>
+                            <rect key="frame" x="8" y="0.0" width="329" height="97"/>
                             <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                         <constraint firstItem="WhC-h7-5hg" firstAttribute="centerY" secondItem="3CA-Iz-ER2" secondAttribute="centerY" id="og3-1b-Hgf"/>
                         <constraint firstAttribute="bottom" secondItem="3CA-Iz-ER2" secondAttribute="bottom" id="pjG-e0-Ajr"/>
                         <constraint firstItem="vb6-RT-z0C" firstAttribute="top" secondItem="3CA-Iz-ER2" secondAttribute="top" id="t9j-BJ-Ufa"/>
-                        <constraint firstItem="3CA-Iz-ER2" firstAttribute="leading" secondItem="sEh-fw-rYM" secondAttribute="leading" constant="5" id="yKy-Ap-9FP"/>
+                        <constraint firstItem="3CA-Iz-ER2" firstAttribute="leading" secondItem="sEh-fw-rYM" secondAttribute="leading" constant="8" id="yKy-Ap-9FP"/>
                     </constraints>
                 </view>
             </subviews>

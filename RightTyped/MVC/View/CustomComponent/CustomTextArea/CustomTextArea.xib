@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,14 +23,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="476" height="142"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="c sa asdcasd sdf sadf asdf " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tAi-GK-vBl">
-                            <rect key="frame" x="5" y="0.0" width="421" height="142"/>
+                            <rect key="frame" x="8" y="0.0" width="418" height="142"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" systemColor="labelColor"/>
                             <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xi-kx-Eap">
-                            <rect key="frame" x="5" y="0.0" width="421" height="142"/>
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xi-kx-Eap">
+                            <rect key="frame" x="8" y="0.0" width="418" height="142"/>
                             <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                             <color key="textColor" systemColor="systemGray4Color"/>
                             <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="tAi-GK-vBl" firstAttribute="leading" secondItem="dVl-m2-04S" secondAttribute="leading" constant="5" id="3Eo-Xv-my4"/>
+                        <constraint firstItem="tAi-GK-vBl" firstAttribute="leading" secondItem="dVl-m2-04S" secondAttribute="leading" constant="8" id="3Eo-Xv-my4"/>
                         <constraint firstAttribute="trailing" secondItem="gcO-Zj-B2H" secondAttribute="trailing" constant="5" id="6wl-WX-fkx"/>
                         <constraint firstItem="1xi-kx-Eap" firstAttribute="leading" secondItem="tAi-GK-vBl" secondAttribute="leading" id="72K-Ps-UBg"/>
                         <constraint firstItem="gcO-Zj-B2H" firstAttribute="leading" secondItem="tAi-GK-vBl" secondAttribute="trailing" constant="5" id="Jsq-nS-G7r"/>
@@ -81,10 +81,10 @@
     <resources>
         <image name="editIcon" width="31" height="31"/>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

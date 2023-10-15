@@ -26,6 +26,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
     @IBOutlet weak var binImageView: UIImageView!
     @IBOutlet weak var binLabel: UILabel!
     @IBOutlet weak var checkBox: UICheckBox!
+    @IBOutlet weak var useTitleAsBothLabel: UILabel!
     
     @IBOutlet weak var contentTitleLabel: UILabel!
     @IBOutlet weak var contentDescrLabel: UILabel!
@@ -80,6 +81,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
         }
         
         binLabel.text = AppString.General.delete
+        useTitleAsBothLabel.text = AppString.NewAnswerViewController.useTitleAsBothText
         checkBox.selectionDelegate = self
         originalCheckboxStatus = checkBox.isSelected
         
@@ -92,7 +94,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
         }else{
             binImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteIconTouchUpInside)))
         }
-        
+        hideKeyboardWhenTappedAround()
     }
     
     //MARK: Controller lifecycle
@@ -143,15 +145,21 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
         textAreaLabelPlaceholder.removeFromSuperview()
         customTextArea = CustomTextField.instanceFromNib(withNibName: "CustomTextArea")
         guard let customTextArea = self.customTextArea else { return }
-        customTextArea.inizalize(inView: textAreaView, withText: answer?.descr, placheolder: AppString.NewAnswerViewController.answerContentPlaceholder)
         customTextArea.delegate = self
+        customTextArea.animateBorders = false
+        customTextArea.notDismissableAtIconPression = true
+        customTextArea.startEditingTouchingEverywhere = true
+        customTextArea.inizalize(inView: textAreaView, withText: answer?.descr, placheolder: AppString.NewAnswerViewController.answerContentPlaceholder)
     }
     
     private func setTextField(){
         customTextField = CustomTextField.instanceFromNib(withNibName: "CustomTextField")
         guard let customTextField = self.customTextField else { return }
-        customTextField.inizalize(inView: textFieldView, withText: answer?.title, placheolder: AppString.NewAnswerViewController.answerTitlePlaceholder)
         customTextField.delegate = self
+        customTextField.notDismissableAtIconPression = true
+        customTextField.animateBorders = false
+        customTextField.startEditingTouchingEverywhere = true
+        customTextField.inizalize(inView: textFieldView, withText: answer?.title, placheolder: AppString.NewAnswerViewController.answerTitlePlaceholder)
     }
     
     private func setBottomView(){
@@ -277,7 +285,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
     @objc func goBack() {
         if !areChangesMade(){
             navigationController?.popViewController(animated: true)
-        }else if isSavabled(){
+        }else{
             let alert = UIAlertController(title: AppString.Alerts.titleAreYouSure, message: AppString.Alerts.genericGoBackWithoutSaving, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: AppString.Alerts.no, style: .cancel))
             alert.addAction(UIAlertAction(title: AppString.Alerts.yes, style: .destructive, handler: { alertAction in

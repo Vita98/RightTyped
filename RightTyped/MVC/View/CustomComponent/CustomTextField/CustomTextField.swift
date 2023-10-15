@@ -15,7 +15,8 @@ class CustomTextField: UIView, UITextFieldDelegate {
     @IBOutlet private weak var editButton: UIButton!
     
     public var delegate: CustomComponentDelegate?
-        
+    private var isEditing = false
+    
     var currentText : String? {
         didSet {
             textField.text = currentText
@@ -23,7 +24,18 @@ class CustomTextField: UIView, UITextFieldDelegate {
         }
     }
     
-    private var isEditing = false
+    /// Use this configuration variable to block the icon listener ONLY when in editing mode.
+    /// Default value: false
+    public var notDismissableAtIconPression = false
+    
+    /// Enable or disable the border animation when editing
+    /// Default value: true
+    public var animateBorders = true
+    
+    /// It allow to stop editing touching over all the component and not only on the icon
+    /// Default value: false
+    public var startEditingTouchingEverywhere = false
+    
     
     //MARK: Configuration
     public func inizalize(inView view : UIView, withText text: String? = nil, placheolder: String? = nil){
@@ -52,10 +64,11 @@ class CustomTextField: UIView, UITextFieldDelegate {
         textField.delegate = self
         
         editButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        if startEditingTouchingEverywhere { self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonPressed))) }
         
         self.contentView.layer.borderWidth = 0.5
         self.contentView.layer.cornerRadius = 7
-        self.contentView.layer.borderColor = UIColor.clear.cgColor
+        self.contentView.layer.borderColor = animateBorders ? UIColor.clear.cgColor : UIColor.lightGray.withAlphaComponent(0.5).cgColor
     }
     
     //MARK: Events
@@ -64,11 +77,13 @@ class CustomTextField: UIView, UITextFieldDelegate {
             endEditing(true)
         }else{
             isEditing = true
+            if notDismissableAtIconPression { editButton.isUserInteractionEnabled = false }
             setEditingMode(enabled: true)
         }
     }
     
     internal func textFieldDidEndEditing(_ textField: UITextField) {
+        if notDismissableAtIconPression { editButton.isUserInteractionEnabled = true }
         disableEditing()
     }
     
@@ -97,6 +112,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
     }
     
     private func toggleBorder(enabled : Bool){
+        guard animateBorders else { return }
         if enabled{
             self.contentView.animateBorderColor(toColor: UIColor.lightGray.withAlphaComponent(0.5), duration: 0.2)
         }else{

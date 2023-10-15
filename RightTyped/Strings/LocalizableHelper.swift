@@ -286,6 +286,7 @@ struct AppString{
         static let answerTitlePlaceholder: String = LocalizableString("NewAnswerViewController_ANSW_TITLE_PLACEHOLDER").locale
         static let answerContentPlaceholder: String = LocalizableString("NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER").locale
         static let deleteAnswerAlertDescription: String = LocalizableString("NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION").locale
+        static let useTitleAsBothText: String = LocalizableString("NewAnswerViewController_USE_TITLE_AS_BOTH_TEXT").locale
     }
     
     struct WelcomeViewController{

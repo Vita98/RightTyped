@@ -15,7 +15,6 @@ class CustomTextArea: UIView, UITextViewDelegate {
     @IBOutlet private weak var textView: UITextView!
     
     public var delegate: CustomComponentDelegate?
-    
     private var isEditing : Bool = false
     
     var currentText : String? {
@@ -23,6 +22,18 @@ class CustomTextArea: UIView, UITextViewDelegate {
             textView.text = currentText
         }
     }
+    
+    /// Use this configuration variable to block the icon listener ONLY when in editing mode.
+    /// Default value: false
+    public var notDismissableAtIconPression = false
+    
+    /// Enable or disable the border animation when editing
+    /// Default value: true
+    public var animateBorders = true
+    
+    /// It allow to stop editing touching over all the component and not only on the icon
+    /// Default value: false
+    public var startEditingTouchingEverywhere = false
     
     //MARK: Configuration
     public func inizalize(inView view : UIView, withText text: String? = nil, placheolder: String? = nil){
@@ -52,25 +63,31 @@ class CustomTextArea: UIView, UITextViewDelegate {
         editButton.imageView?.contentMode = .scaleAspectFit
         
         editButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        if startEditingTouchingEverywhere {
+            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonPressed)))
+            placeholderLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonPressed)))
+        }
         
         self.contentView.layer.borderWidth = 0.5
         self.contentView.layer.cornerRadius = 7
-        self.contentView.layer.borderColor = UIColor.clear.cgColor
+        self.contentView.layer.borderColor = animateBorders ? UIColor.clear.cgColor : UIColor.lightGray.withAlphaComponent(0.5).cgColor
         
         placeholderLabel.isHidden = true
     }
     
     //MARK: Events
-    @objc private func buttonPressed(){
+    @objc private func buttonPressed(sender: Any){
         if isEditing{
             textView.endEditing(true)
         }else{
             isEditing = true
+            if notDismissableAtIconPression { editButton.isUserInteractionEnabled = false }
             setEditingMode(enabled: true)
         }
     }
     
     internal func textViewDidEndEditing(_ textView: UITextView) {
+        if notDismissableAtIconPression { editButton.isUserInteractionEnabled = true }
         disableEditing()
     }
     
@@ -94,6 +111,7 @@ class CustomTextArea: UIView, UITextViewDelegate {
     }
     
     private func toggleBorder(enabled : Bool){
+        guard animateBorders else { return }
         if enabled{
             self.contentView.animateBorderColor(toColor: UIColor.lightGray.withAlphaComponent(0.5), duration: 0.2)
         }else{

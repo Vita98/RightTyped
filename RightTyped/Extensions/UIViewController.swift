@@ -11,6 +11,10 @@ import UIKit
 
 extension UIViewController{
     
+    public func resetBackButtonText(){
+        navigationItem.backButtonTitle = ""
+    }
+    
     public func setNavigationBarView(){
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
         imageView.contentMode = .scaleAspectFit
@@ -36,5 +40,17 @@ extension UIViewController{
     /// - Parameter action: the new action to execute
     public func overrideBackAction(action: Selector?){
         self.navigationController?.navigationBar.subviews[1].subviews[1].addGestureRecognizer(UITapGestureRecognizer(target: self, action: action))
+    }
+    
+    
+    /// Method to dismiss the keyboard touching on any place of the controller
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

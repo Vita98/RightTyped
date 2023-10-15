@@ -26,6 +26,7 @@ class SettingsViewController: UIViewController {
         tableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: SettingsTableViewCell.reuseID)
         tableView.backgroundColor = .clear
         tableView.contentInset.bottom = 30
+        resetBackButtonText()
     }
 
     private func setView(){

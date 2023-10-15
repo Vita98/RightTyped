@@ -74,6 +74,7 @@
 "NewAnswerViewController_ANSW_TITLE_PLACEHOLDER" = "Answer title";
 "NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER" = "Answer description";
 "NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION" = "Are you sure you want to delete this answer?";
+"NewAnswerViewController_USE_TITLE_AS_BOTH_TEXT" = "Use the title as the content of the answer";
 
 //MARK: WelcomeViewController
 "WelcomeViewController_TITLE" = "Welcome in RightTyped";

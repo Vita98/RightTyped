@@ -259,7 +259,7 @@ when and how you want!</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-PS-9Fg">
-                                                        <rect key="frame" x="23" y="213" width="344" height="40"/>
+                                                        <rect key="frame" x="15" y="213" width="360" height="40"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="M0A-Z9-cLG"/>
@@ -306,10 +306,10 @@ when and how you want!</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R7-VX-w5t">
-                                                        <rect key="frame" x="23" y="391.66666666666669" width="344" height="41"/>
+                                                        <rect key="frame" x="15" y="391.66666666666669" width="360" height="41"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEv-Ug-Rdz">
-                                                                <rect key="frame" x="23" y="10" width="298" height="21"/>
+                                                                <rect key="frame" x="23" y="10" width="314" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -352,7 +352,7 @@ when and how you want!</string>
                                                     <constraint firstItem="cUo-Zk-QZg" firstAttribute="top" secondItem="O5c-PS-9Fg" secondAttribute="bottom" constant="20" id="2el-QJ-QcO"/>
                                                     <constraint firstItem="xde-8v-1z1" firstAttribute="centerX" secondItem="lVU-Zd-AMk" secondAttribute="centerX" id="3C9-Pe-ifI"/>
                                                     <constraint firstAttribute="trailing" secondItem="hG9-hg-OaX" secondAttribute="trailing" constant="23" id="5TG-Py-CQK"/>
-                                                    <constraint firstItem="5R7-VX-w5t" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="CHk-L9-F1a"/>
+                                                    <constraint firstItem="5R7-VX-w5t" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="CHk-L9-F1a"/>
                                                     <constraint firstItem="7wt-7S-h2R" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="10" id="CfP-2E-XpU"/>
                                                     <constraint firstAttribute="trailing" secondItem="PyR-Lk-sO6" secondAttribute="trailing" constant="10" id="EZz-jx-OeT"/>
                                                     <constraint firstAttribute="trailing" secondItem="YFV-Y2-Myb" secondAttribute="trailing" constant="23" id="Jje-i4-S8K"/>
@@ -368,15 +368,15 @@ when and how you want!</string>
                                                     <constraint firstItem="942-6P-fSg" firstAttribute="top" secondItem="M2r-MJ-iQW" secondAttribute="bottom" id="WHp-6M-8Bt"/>
                                                     <constraint firstItem="O5c-PS-9Fg" firstAttribute="top" secondItem="Uba-st-Dkc" secondAttribute="bottom" constant="10" id="XVs-h2-PI4"/>
                                                     <constraint firstItem="hG9-hg-OaX" firstAttribute="top" secondItem="cUo-Zk-QZg" secondAttribute="bottom" constant="20" id="Xdh-dj-wZr"/>
-                                                    <constraint firstItem="O5c-PS-9Fg" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="YUj-bJ-Hfw"/>
+                                                    <constraint firstItem="O5c-PS-9Fg" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="YUj-bJ-Hfw"/>
                                                     <constraint firstItem="7wt-7S-h2R" firstAttribute="top" secondItem="tb3-bk-Yfk" secondAttribute="bottom" constant="10" id="Zgk-KT-pHK"/>
                                                     <constraint firstItem="M2r-MJ-iQW" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="a5k-vj-bN1"/>
                                                     <constraint firstItem="Uba-st-Dkc" firstAttribute="top" secondItem="RUj-Jm-J1Y" secondAttribute="bottom" id="aam-US-Ky0"/>
-                                                    <constraint firstAttribute="trailing" secondItem="O5c-PS-9Fg" secondAttribute="trailing" constant="23" id="bET-qC-276"/>
+                                                    <constraint firstAttribute="trailing" secondItem="O5c-PS-9Fg" secondAttribute="trailing" constant="15" id="bET-qC-276"/>
                                                     <constraint firstItem="lVU-Zd-AMk" firstAttribute="leading" secondItem="942-6P-fSg" secondAttribute="trailing" constant="10" id="cCE-kl-MDR"/>
                                                     <constraint firstItem="NF1-0f-XXW" firstAttribute="top" secondItem="hG9-hg-OaX" secondAttribute="bottom" id="des-4X-ID4"/>
                                                     <constraint firstItem="Uba-st-Dkc" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="15" id="dyy-XU-Yqf"/>
-                                                    <constraint firstAttribute="trailing" secondItem="5R7-VX-w5t" secondAttribute="trailing" constant="23" id="fqR-Rk-x5n"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5R7-VX-w5t" secondAttribute="trailing" constant="15" id="fqR-Rk-x5n"/>
                                                     <constraint firstItem="M2r-MJ-iQW" firstAttribute="top" secondItem="JNv-tT-KBF" secondAttribute="top" constant="5" id="fy3-IC-svW"/>
                                                     <constraint firstItem="hG9-hg-OaX" firstAttribute="leading" secondItem="JNv-tT-KBF" secondAttribute="leading" constant="23" id="hFT-Y9-zLd"/>
                                                     <constraint firstAttribute="trailing" secondItem="RUj-Jm-J1Y" secondAttribute="trailing" constant="23" id="ikF-0T-ROR"/>
@@ -437,6 +437,7 @@ when and how you want!</string>
                         <outlet property="textAreaLabelPlaceholder" destination="aEv-Ug-Rdz" id="GW8-8e-Dac"/>
                         <outlet property="textAreaView" destination="5R7-VX-w5t" id="Rao-9k-V1O"/>
                         <outlet property="textFieldView" destination="O5c-PS-9Fg" id="9yz-hg-b6b"/>
+                        <outlet property="useTitleAsBothLabel" destination="Cqm-9Q-iNR" id="iCJ-2d-goB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGJ-k5-Pgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -474,7 +475,7 @@ when and how you want!</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EF3-7a-kVb">
-                                        <rect key="frame" x="23" y="223" width="304" height="40"/>
+                                        <rect key="frame" x="15" y="223" width="320" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="URo-7X-W97"/>
@@ -551,7 +552,7 @@ when and how you want!</string>
                                     <constraint firstItem="uEq-Cr-shX" firstAttribute="top" secondItem="NlB-Zj-392" secondAttribute="bottom" constant="44" id="4Hq-4g-Ftg"/>
                                     <constraint firstAttribute="trailing" secondItem="CDT-dw-hVe" secondAttribute="trailing" constant="10" id="D3r-bk-OVE"/>
                                     <constraint firstItem="nWw-Ml-Mh8" firstAttribute="top" secondItem="6v0-v5-3Tg" secondAttribute="bottom" id="EJJ-jX-MKf"/>
-                                    <constraint firstAttribute="trailing" secondItem="EF3-7a-kVb" secondAttribute="trailing" constant="23" id="EaD-ie-IOp"/>
+                                    <constraint firstAttribute="trailing" secondItem="EF3-7a-kVb" secondAttribute="trailing" constant="15" id="EaD-ie-IOp"/>
                                     <constraint firstAttribute="trailing" secondItem="uEq-Cr-shX" secondAttribute="trailing" constant="20" id="Eko-bE-ngh"/>
                                     <constraint firstItem="VPu-HM-cYo" firstAttribute="centerY" secondItem="veb-g3-as4" secondAttribute="centerY" id="KEl-gY-6Vo"/>
                                     <constraint firstAttribute="trailing" secondItem="6v0-v5-3Tg" secondAttribute="trailing" constant="23" id="KzH-Ol-FdW"/>
@@ -559,7 +560,7 @@ when and how you want!</string>
                                     <constraint firstItem="veb-g3-as4" firstAttribute="leading" secondItem="QZ9-Av-jJV" secondAttribute="leading" constant="23" id="OLB-Y8-Yv4"/>
                                     <constraint firstAttribute="height" constant="450" id="OfM-2Q-oOz"/>
                                     <constraint firstAttribute="trailing" secondItem="NlB-Zj-392" secondAttribute="trailing" constant="10" id="SIL-D7-Udo"/>
-                                    <constraint firstItem="EF3-7a-kVb" firstAttribute="leading" secondItem="QZ9-Av-jJV" secondAttribute="leading" constant="23" id="UF9-gh-La8"/>
+                                    <constraint firstItem="EF3-7a-kVb" firstAttribute="leading" secondItem="QZ9-Av-jJV" secondAttribute="leading" constant="15" id="UF9-gh-La8"/>
                                     <constraint firstItem="nWw-Ml-Mh8" firstAttribute="leading" secondItem="QZ9-Av-jJV" secondAttribute="leading" constant="15" id="VLT-8M-8gy"/>
                                     <constraint firstItem="6v0-v5-3Tg" firstAttribute="top" secondItem="qnC-Ef-dDf" secondAttribute="bottom" constant="30" id="X2F-um-SVq"/>
                                     <constraint firstAttribute="trailing" secondItem="nWw-Ml-Mh8" secondAttribute="trailing" constant="15" id="Ybk-4t-5Uv"/>
@@ -714,7 +715,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="do not show this message again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q03-9H-ffK">
-                                        <rect key="frame" x="27" y="5" width="198.66666666666663" height="20"/>
+                                        <rect key="frame" x="27" y="5" width="198.66666666666666" height="20"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1343,13 +1344,13 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
             <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

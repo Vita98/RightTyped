@@ -70,6 +70,7 @@ class ViewController: UIViewController, SelectCategoriesViewControllerDelegate{
                 addAnswerView.setStatus(status: .closed, withAnimation: true)
             }
         }
+        resetBackButtonText()
     }
     
     override func viewWillAppear(_ animated: Bool) {
