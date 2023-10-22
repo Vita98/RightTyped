@@ -35,6 +35,10 @@ class PremiumResultViewController: UIViewController {
     
     //MARK: - Configuration
     private func configure(){
+        bottomViewLabel.set(size: 24)
+        titleLabel.set(size: 24)
+        contentLabel.set(size: 18)
+        
         self.contentView.layer.cornerRadius = MODAL_VIEW_ROUND_CORNER
         bottomView.enableComponentButtonMode()
         bottomView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeButtonPressed)))

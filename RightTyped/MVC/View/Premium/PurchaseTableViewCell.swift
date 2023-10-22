@@ -15,10 +15,12 @@ class PurchaseTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLabel.set(size: 16)
+        dateLabel.set(size: 12)
+        priceLabel.set(size: 16)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
 }

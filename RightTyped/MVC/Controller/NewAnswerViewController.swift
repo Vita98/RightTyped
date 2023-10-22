@@ -31,6 +31,13 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
     @IBOutlet weak var contentTitleLabel: UILabel!
     @IBOutlet weak var contentDescrLabel: UILabel!
     
+    @IBOutlet weak var answerTitleLabel: UILabel!
+    @IBOutlet weak var answerDescriptionLabel: UILabel!
+    @IBOutlet weak var enableLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titelDescriptionLabel: UILabel!
+    @IBOutlet weak var buttonTitleLabel: UILabel!
+    
     public var isNewAnswer: Bool = false
     public var delegate: NewAnswerViewControllerDelegate?
     public var originTableViewIndexPath: IndexPath?
@@ -80,8 +87,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
             setContentVisibility(!checkBox.isSelected)
         }
         
-        binLabel.text = AppString.General.delete
-        useTitleAsBothLabel.text = AppString.NewAnswerViewController.useTitleAsBothText
+        setTextsAndFonts()
         checkBox.selectionDelegate = self
         originalCheckboxStatus = checkBox.isSelected
         
@@ -95,6 +101,19 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
             binImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteIconTouchUpInside)))
         }
         hideKeyboardWhenTappedAround()
+    }
+    
+    private func setTextsAndFonts(){
+        answerTitleLabel.set(text: AppString.General.answer, size: 24)
+        answerDescriptionLabel.set(text: AppString.NewAnswerViewController.answerDescription, size: 14)
+        enableLabel.set(text: AppString.General.enable, size: 20)
+        titleLabel.set(text: AppString.NewAnswerViewController.answerTitle, size: 20)
+        titelDescriptionLabel.set(text: AppString.NewAnswerViewController.answerTitleDescription, size: 14)
+        useTitleAsBothLabel.set(text: AppString.NewAnswerViewController.useTitleAsBothText, size: 14)
+        binLabel.set(text: AppString.General.delete, size: 9)
+        contentTitleLabel.set(text: AppString.NewAnswerViewController.contentTitle, size: 20)
+        contentDescrLabel.set(text: AppString.NewAnswerViewController.contentDescription, size: 14)
+        buttonTitleLabel.set(text: AppString.General.save, size: 24)
     }
     
     //MARK: Controller lifecycle
@@ -289,6 +308,7 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
             let alert = UIAlertController(title: AppString.Alerts.titleAreYouSure, message: AppString.Alerts.genericGoBackWithoutSaving, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: AppString.Alerts.no, style: .cancel))
             alert.addAction(UIAlertAction(title: AppString.Alerts.yes, style: .destructive, handler: { alertAction in
+                DataModelManagerPersistentContainer.shared.context.rollback()
                 self.navigationController?.popViewController(animated: true)
             }))
             

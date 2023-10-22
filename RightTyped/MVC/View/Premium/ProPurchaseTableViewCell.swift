@@ -27,6 +27,10 @@ class ProPurchaseTableViewCell: UITableViewCell {
     private func configure(){
         purchaseDateLabel.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -5).isActive = true
         expirationLabel.leadingAnchor.constraint(equalTo: self.centerXAnchor, constant: 5).isActive = true
+        titleLabel.set(size: 16)
+        purchaseDateLabel.set(size: 12)
+        priceLabel.set(size: 16)
+        expirationLabel.set(size: 12)
     }
     
 }

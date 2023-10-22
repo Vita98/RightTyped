@@ -33,6 +33,8 @@ class FinalTutorialViewController: UIViewController {
         guard let model = model, model.final, model.stackContent.count == 1, model.stackContent.first?.type == .text else { return }
         titleLabel.text = model.stackContent.first?.content.first
         bottomLabel.text = fromSettings || isFinal ? AppString.General.done : AppString.General.next
+        titleLabel.set(size: 24)
+        bottomLabel.set(size: 24)
     }
     
     private func buttonPressedAction(){

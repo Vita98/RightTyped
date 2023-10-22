@@ -26,10 +26,10 @@ class WelcomeViewController: UIViewController {
         self.view.backgroundColor = .backgroundColor
         bottomView.enableComponentButtonMode()
         bottomView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goOn)))
-        welcomeLabel.text = AppString.WelcomeViewController.title
-        description1Label.text = AppString.WelcomeViewController.desc1
-        description2Label.text = AppString.WelcomeViewController.desc2
-        bottonViewLabel.text = AppString.General.next
+        welcomeLabel.set(text: AppString.WelcomeViewController.title, size: 30)
+        description1Label.set(text: AppString.WelcomeViewController.desc1, size: 20)
+        description2Label.set(text: AppString.WelcomeViewController.desc2, size: 20)
+        bottonViewLabel.set(text: AppString.General.next, size: 24)
     }
     
     //MARK: Event

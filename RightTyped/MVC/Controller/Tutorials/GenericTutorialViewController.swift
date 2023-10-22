@@ -31,6 +31,7 @@ class GenericTutorialViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
+        titleLabel.set(size: 24)
         configureModel()
         configureGifConstraint()
     }

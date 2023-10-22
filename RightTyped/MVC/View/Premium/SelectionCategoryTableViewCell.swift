@@ -37,7 +37,7 @@ class SelectionCategoryTableViewCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .componentColor.withAlphaComponent(0.20)
         self.selectedBackgroundView = view
-        
+        titleLabel.set(size: 16)
         guard let assCat = associatedCategory else { return }
         titleLabel.text = assCat.name
     }

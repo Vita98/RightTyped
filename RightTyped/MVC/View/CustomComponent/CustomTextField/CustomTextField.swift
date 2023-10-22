@@ -62,6 +62,8 @@ class CustomTextField: UIView, UITextFieldDelegate {
         textField.backgroundColor = .none
         textField.borderStyle = .none
         textField.delegate = self
+        textField.set(size: 18)
+        label.set(size: 18)
         
         editButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         if startEditingTouchingEverywhere { self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonPressed))) }

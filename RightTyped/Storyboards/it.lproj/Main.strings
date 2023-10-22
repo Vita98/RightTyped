@@ -1,45 +1,45 @@
 
 /* Class = "UILabel"; text = "Apri le impostazioni"; ObjectID = "2B4-wI-xFh"; */
-"2B4-wI-xFh.text" = "Apri le impostazioni";
+//"2B4-wI-xFh.text" = "Apri le impostazioni";
 
 /* Class = "UILabel"; text = "Abilita la tastiera dalle impostazioni"; ObjectID = "2eV-1L-gAd"; */
-"2eV-1L-gAd.text" = "Abilita la tastiera dalle impostazioni";
+//"2eV-1L-gAd.text" = "Abilita la tastiera dalle impostazioni";
 
 /* Class = "UILabel"; text = "Nome"; ObjectID = "6v0-v5-3Tg"; */
-"6v0-v5-3Tg.text" = "Nome";
+//"6v0-v5-3Tg.text" = "Nome";
 
 /* Class = "UILabel"; text = "Compila tutti i campi della risposta rapida"; ObjectID = "942-6P-fSg"; */
-"942-6P-fSg.text" = "Compila tutti i campi della risposta rapida";
+//"942-6P-fSg.text" = "Compila tutti i campi della risposta rapida";
 
 /* Class = "UILabel"; text = "Impostazioni"; ObjectID = "9eS-kY-g5a"; */
-"9eS-kY-g5a.text" = "Impostazioni";
+//"9eS-kY-g5a.text" = "Impostazioni";
 
 /* Class = "UILabel"; text = "oppure"; ObjectID = "CbF-hr-hOZ"; */
-"CbF-hr-hOZ.text" = "oppure";
+//"CbF-hr-hOZ.text" = "oppure";
 
 /* Class = "UILabel"; text = "Tastiera non abilitata"; ObjectID = "GaR-Tt-0gV"; */
-"GaR-Tt-0gV.text" = "Tastiera non abilitata";
+//"GaR-Tt-0gV.text" = "Tastiera non abilitata";
 
 /* Class = "UILabel"; text = "Personalizza le tue risposte, \nquando e come vuoi!"; ObjectID = "IAP-9K-XNs"; */
-"IAP-9K-XNs.text" = "Personalizza le tue risposte, \nquando e come vuoi!";
+//"IAP-9K-XNs.text" = "Personalizza le tue risposte, \nquando e come vuoi!";
 
 /* Class = "UILabel"; text = "Risposta"; ObjectID = "M2r-MJ-iQW"; */
-"M2r-MJ-iQW.text" = "Risposta";
+//"M2r-MJ-iQW.text" = "Risposta";
 
 /* Class = "UILabel"; text = "È il testo che viene scritto come risposta, può essere lungo e dettagliato"; ObjectID = "NF1-0f-XXW"; */
-"NF1-0f-XXW.text" = "È il testo che viene scritto come risposta, può essere lungo e dettagliato";
+//"NF1-0f-XXW.text" = "È il testo che viene scritto come risposta, può essere lungo e dettagliato";
 
 /* Class = "UILabel"; text = "Fatto!"; ObjectID = "O0o-gh-l0P"; */
-"O0o-gh-l0P.text" = "Fatto!";
+//"O0o-gh-l0P.text" = "Fatto!";
 
 /* Class = "UILabel"; text = "non visualizzare più questo messaggio"; ObjectID = "Q03-9H-ffK"; */
-"Q03-9H-ffK.text" = "non visualizzare più questo messaggio";
+//"Q03-9H-ffK.text" = "non visualizzare più questo messaggio";
 
 /* Class = "UILabel"; text = "Tastiera abilitata con successo!"; ObjectID = "RUR-OV-gkQ"; */
-"RUR-OV-gkQ.text" = "Tastiera abilitata con successo!";
+//"RUR-OV-gkQ.text" = "Tastiera abilitata con successo!";
 
 /* Class = "UILabel"; text = "Titolo"; ObjectID = "RUj-Jm-J1Y"; */
-"RUj-Jm-J1Y.text" = "Titolo";
+//"RUj-Jm-J1Y.text" = "Titolo";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RpI-7M-hKi"; */
 "RpI-7M-hKi.normalTitle" = "Button";
@@ -48,10 +48,10 @@
 "T1B-Jk-TIm.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Viene visualizzato nella tastiera come titolo della risposta, deve essere breve"; ObjectID = "Uba-st-Dkc"; */
-"Uba-st-Dkc.text" = "Viene visualizzato nella tastiera come titolo della risposta, deve essere breve";
+//"Uba-st-Dkc.text" = "Viene visualizzato nella tastiera come titolo della risposta, deve essere breve";
 
 /* Class = "UILabel"; text = "Salva"; ObjectID = "Wbo-Gm-SVI"; */
-"Wbo-Gm-SVI.text" = "Salva";
+//"Wbo-Gm-SVI.text" = "Salva";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "aEv-Ug-Rdz"; */
 "aEv-Ug-Rdz.text" = "Label";
@@ -60,31 +60,31 @@
 "eYd-00-a7m.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Testo"; ObjectID = "hG9-hg-OaX"; */
-"hG9-hg-OaX.text" = "Testo";
+//"hG9-hg-OaX.text" = "Testo";
 
 /* Class = "UILabel"; text = "Vai in: Impostazioni > Generali > Tastiera > Tastiere > Aggiungi nuova tastiera > Seleziona RightTyped"; ObjectID = "izz-0c-ae8"; */
-"izz-0c-ae8.text" = "Vai in: Impostazioni > Generali > Tastiera > Tastiere > Aggiungi nuova tastiera > Seleziona RightTyped";
+//"izz-0c-ae8.text" = "Vai in: Impostazioni > Generali > Tastiera > Tastiere > Aggiungi nuova tastiera > Seleziona RightTyped";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ku3-N9-Asw"; */
 "ku3-N9-Asw.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Cancella"; ObjectID = "lVU-Zd-AMk"; */
-"lVU-Zd-AMk.text" = "Cancella";
+//"lVU-Zd-AMk.text" = "Cancella";
 
 /* Class = "UILabel"; text = "Viene visualizzato nella tastiera come titolo della categoria, deve essere breve"; ObjectID = "nWw-Ml-Mh8"; */
-"nWw-Ml-Mh8.text" = "Viene visualizzato nella tastiera come titolo della categoria, deve essere breve";
+//"nWw-Ml-Mh8.text" = "Viene visualizzato nella tastiera come titolo della categoria, deve essere breve";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oWk-55-KiC"; */
 "oWk-55-KiC.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Abilita"; ObjectID = "qAE-5w-BgA"; */
-"qAE-5w-BgA.text" = "Abilita";
+//"qAE-5w-BgA.text" = "Abilita";
 
 /* Class = "UILabel"; text = "Modifica Categoria"; ObjectID = "qnC-Ef-dDf"; */
-"qnC-Ef-dDf.text" = "Modifica Categoria";
+//"qnC-Ef-dDf.text" = "Modifica Categoria";
 
 /* Class = "UILabel"; text = "e clicca:\nAggiungi Nuova Tastiera >  Seleziona RightTyped"; ObjectID = "qzC-Xh-91Z"; */
-"qzC-Xh-91Z.text" = "e clicca:\nAggiungi Nuova Tastiera >  Seleziona RightTyped";
+//"qzC-Xh-91Z.text" = "e clicca:\nAggiungi Nuova Tastiera >  Seleziona RightTyped";
 
 /* Class = "UILabel"; text = "Abilita"; ObjectID = "veb-g3-as4"; */
 "veb-g3-as4.text" = "Abilita";

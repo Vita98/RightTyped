@@ -20,6 +20,8 @@
 "GENERAL_DONE" = "Done!";
 "GENERAL_CLOSE" = "Close";
 "GENERAL_SAVE" = "Save";
+"GENERAL_ENABLE" = "Enable";
+"GENERAL_NOT_SHOW_THIS_MESSAGE" = "do not show this message again";
 
 //MARK: Alert
 "Alerts_YES" = "Yes";
@@ -69,12 +71,19 @@
 "NewCategoryViewController_NEW_CATEGORY" = "New Category";
 "NewCategoryViewController_EDIT_CATEGORY" = "Edit Category";
 "NewCategoryViewController_CAT_NAME_PLACEHOLDER" = "Category name";
+"NewCategoryViewController_CATEGORY_NAME_TITLE" = "Name";
+"NewCategoryViewController_CATEGORY_NAME_DESCRIPTION" = "It appears in the keyboard as a category title, it must be short";
 
 //MARK: NewAnswerViewController
 "NewAnswerViewController_ANSW_TITLE_PLACEHOLDER" = "Answer title";
 "NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER" = "Answer description";
 "NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION" = "Are you sure you want to delete this answer?";
 "NewAnswerViewController_USE_TITLE_AS_BOTH_TEXT" = "Use the title as the content of the answer";
+"NewAnswerViewController_ANSWER_DESCRIPTION" = "Fill in all the fields of the answer";
+"NewAnswerViewController_ANSWER_TITLE" = "Title";
+"NewAnswerViewController_ANSWER_TITLE_DESCRIPTION" = "It appears in the keyboard as the title of the answer, it must be short";
+"NewAnswerViewController_CONTENT_TITLE" = "Content";
+"NewAnswerViewController_CONTENT_DESCRIPTION" = "It is the text that is written as an answer, it can be long and detailed";
 
 //MARK: WelcomeViewController
 "WelcomeViewController_TITLE" = "Welcome in RightTyped";
@@ -82,12 +91,21 @@
 "WelcomeViewController_DESC2" = "Go ahead, enable the keyboard and learn more about how it works!";
 
 //MARK: ViewController
+"ViewController_TITLE" = "Personalize your answers, \nwhen and how you want!";
 "ViewController_DEL_CAT_ALERT_DESCRIPTION" = "Are you sure you want to delete this category?\nAll associated questions will also be deleted";
 "ViewController_EMPTY_CATEGORIES" = "You have no category!";
 "ViewController_EMPTY_ANSWERS" = "There are no answers associated with this category!";
 "ViewController_NO_CATEGORY_USABLE" = "You cannot select any categories!\nContinue by adding one.";
 
+//MARK: KeyboardEnabledViewController
+"KeyboardEnabledViewController_TITLE" = "Keyboard successfully enabled!";
+
 //MARK: EnableKeyboardViewController
+"EnableKeyboardViewController_FIRST_STACK_TEXT" = "Enable keyboard from settings";
+"EnableKeyboardViewController_SECOND_STACK_TEXT" = "Go to: Settings > General > Keyboard > Keyboards > Add New Keyboard > Select RightTyped";
+"EnableKeyboardViewController_THIRD_STACK_TEXT" = "and click on:\nAdd New Keyboad >  Select RightTyped";
+"EnableKeyboardViewController_OR_TEXT" = "or";
+"EnableKeyboardViewController_GO_TO_SETTINGS" = "Go to Settings";
 "EnableKeyboardViewController_KEYBOARD_DISABLED" = "Keyboard disabled";
 "EnableKeyboardViewController_KEYBOARD_ENABLED" = "Keyboard already enabled";
 
@@ -197,3 +215,6 @@
 "Premium_Plans_FirstPpuPlan_BUTTON_TITLE" = "Buy";
 "Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT" = "Single category with %d answers";
 "Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT" = "%d categories with %d answers each";
+
+//MARK: SettingsViewController
+"SettingsViewController_TITLE" = "Settings";

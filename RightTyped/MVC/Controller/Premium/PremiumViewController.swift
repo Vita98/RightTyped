@@ -48,6 +48,7 @@ class PremiumViewController: UIViewController {
     
     //MARK: - Configuration
     private func configure(){
+        setTextsAndFonts()
         setNavigationBarView()
         premiumLabel.textColor = .componentColor
         view.backgroundColor = .backgroundColor
@@ -67,6 +68,12 @@ class PremiumViewController: UIViewController {
         setComponentStatus(false)
         activityIndicator.hidesWhenStopped = true
         StoreKitHelper.shared.fetchProducts(delegate: self)
+    }
+    
+    private func setTextsAndFonts(){
+        premiumLabel.set(size: 24)
+        emptyLabel.set(size: 20)
+        emptyButtonLabel.set(size: 24)
     }
     
     private func configureEmptyView(){

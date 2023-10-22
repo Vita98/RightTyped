@@ -54,6 +54,7 @@ class PlainPremiumViewController: UIViewController {
     
     //MARK: - Configuration
     private func configure(){
+        setTextsAndFonts()
         configurePlanType()
         tableView.register(UINib(nibName: "PlainPremiumTableViewCell", bundle: nil), forCellReuseIdentifier: "PlainPremiumTableViewCell")
         tableView.delegate = self
@@ -65,6 +66,14 @@ class PlainPremiumViewController: UIViewController {
             cardShadowViewBottomConstraint.constant = 40
         }
         buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonViewPressed)))
+    }
+    
+    private func setTextsAndFonts(){
+        descriptionLabel.set(size: 18)
+        priceLabel.set(font: .customFont(.alt, size: 36))
+        subscriptionTypeLabel.set(font: .customFont(.alt, size: 18))
+        buttonViewLabel.set(size: 24)
+        planLabel.set(size: 16)
     }
     
     private func configurePlanType(){

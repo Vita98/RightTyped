@@ -23,6 +23,11 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
     private var customTextField: CustomTextField?
     @IBOutlet private weak var textViewField: UIView!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var enableLabel: UILabel!
+    @IBOutlet weak var buttonLabel: UILabel!
+    
     public var editMode = false
     private var associatedCategory: Category? {
         didSet{
@@ -62,6 +67,7 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
         }
         
         configureTextField()
+        setTextAndFonts()
         
         if !editMode{
             associatedCategory = Category(entity: Category.entity(), insertInto: nil)
@@ -72,12 +78,21 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
         hideKeyboardWhenTappedAround()
     }
     
+    private func setTextAndFonts(){
+        titleLabel.set(size: 24)
+        nameLabel.set(text: AppString.NewCategoryViewController.categoryNameTitle, size: 20)
+        descriptionLabel.set(text: AppString.NewCategoryViewController.categoryNameDescription, size: 14)
+        enableLabel.set(text: AppString.General.enable, size: 20)
+        buttonLabel.set(text: AppString.General.save, size: 24)
+    }
+    
     private func configureTextField(){
         customTextField = CustomTextField.instanceFromNib(withNibName: "CustomTextField")
         guard let customTextField = self.customTextField else { return }
         customTextField.delegate = self
         customTextField.notDismissableAtIconPression = true
         customTextField.animateBorders = false
+        customTextField.startEditingTouchingEverywhere = true
         customTextField.inizalize(inView: textViewField,withText: associatedCategory?.name, placheolder: AppString.NewCategoryViewController.categoryNamePlaceholder)
     }
     

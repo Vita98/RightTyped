@@ -32,6 +32,8 @@ struct AppString{
         static let done: String = LocalizableString("GENERAL_DONE").locale
         static let close: String = LocalizableString("GENERAL_CLOSE").locale
         static let save: String = LocalizableString("GENERAL_SAVE").locale
+        static let enable: String = LocalizableString("GENERAL_ENABLE").locale
+        static let doNotShowThisMessage: String = LocalizableString("GENERAL_NOT_SHOW_THIS_MESSAGE").locale
     }
     
     struct Alerts{
@@ -279,6 +281,8 @@ struct AppString{
         static let newCategory: String = LocalizableString("NewCategoryViewController_NEW_CATEGORY").locale
         static let editCategory: String = LocalizableString("NewCategoryViewController_EDIT_CATEGORY").locale
         static let categoryNamePlaceholder: String = LocalizableString("NewCategoryViewController_CAT_NAME_PLACEHOLDER").locale
+        static let categoryNameTitle: String = LocalizableString("NewCategoryViewController_CATEGORY_NAME_TITLE").locale
+        static let categoryNameDescription: String = LocalizableString("NewCategoryViewController_CATEGORY_NAME_DESCRIPTION").locale
     }
     
     struct NewAnswerViewController{
@@ -287,6 +291,12 @@ struct AppString{
         static let answerContentPlaceholder: String = LocalizableString("NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER").locale
         static let deleteAnswerAlertDescription: String = LocalizableString("NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION").locale
         static let useTitleAsBothText: String = LocalizableString("NewAnswerViewController_USE_TITLE_AS_BOTH_TEXT").locale
+        static let answerDescription: String = LocalizableString("NewAnswerViewController_ANSWER_DESCRIPTION").locale
+        static let answerTitle: String = LocalizableString("NewAnswerViewController_ANSWER_TITLE").locale
+        static let answerTitleDescription: String = LocalizableString("NewAnswerViewController_ANSWER_TITLE_DESCRIPTION").locale
+        static let contentTitle: String = LocalizableString("NewAnswerViewController_CONTENT_TITLE").locale
+        static let contentDescription: String = LocalizableString("NewAnswerViewController_CONTENT_DESCRIPTION").locale
+        
     }
     
     struct WelcomeViewController{
@@ -298,14 +308,25 @@ struct AppString{
     
     struct ViewController{
         private init(){}
+        static let title: String = LocalizableString("ViewController_TITLE").locale
         static let deleteCategoryAlertDescription: String = LocalizableString("ViewController_DEL_CAT_ALERT_DESCRIPTION").locale
         static let emptyCategories: String = LocalizableString("ViewController_EMPTY_CATEGORIES").locale
         static let emptyAnswers: String = LocalizableString("ViewController_EMPTY_ANSWERS").locale
         static let noCategoryUsable: String = LocalizableString("ViewController_NO_CATEGORY_USABLE").locale
     }
     
+    struct KeyboardEnabledViewController{
+        private init(){}
+        static let title: String = LocalizableString("KeyboardEnabledViewController_TITLE").locale
+    }
+    
     struct EnableKeyboardViewController{
         private init(){}
+        static let firstStackText: String = LocalizableString("EnableKeyboardViewController_FIRST_STACK_TEXT").locale
+        static let secondStackText: String = LocalizableString("EnableKeyboardViewController_SECOND_STACK_TEXT").locale
+        static let thirdStackText: String = LocalizableString("EnableKeyboardViewController_THIRD_STACK_TEXT").locale
+        static let orText: String = LocalizableString("EnableKeyboardViewController_OR_TEXT").locale
+        static let goToSettings: String = LocalizableString("EnableKeyboardViewController_GO_TO_SETTINGS").locale
         static let keyboardDisabled: String = LocalizableString("EnableKeyboardViewController_KEYBOARD_DISABLED").locale
         static let keyboardEnabled: String = LocalizableString("EnableKeyboardViewController_KEYBOARD_ENABLED").locale
     }
@@ -314,5 +335,10 @@ struct AppString{
         private init(){}
         static let middleMessage: String = LocalizableString("BiometricViewController_MIDDLE_MESSAGE").locale
         static let buttonText: String = LocalizableString("BiometricViewController_BUTTON_TEXT").locale
+    }
+    
+    struct SettingsViewController{
+        private init(){}
+        static let title: String = LocalizableString("SettingsViewController_TITLE").locale
     }
 }

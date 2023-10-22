@@ -24,6 +24,7 @@ class PlainPremiumTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        contentLabel.set(size: 19)
     }
     
     public func configure(with stackContent: PremiumStackContent, at index: IndexPath){

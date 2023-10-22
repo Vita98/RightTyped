@@ -20,6 +20,8 @@
 "GENERAL_DONE" = "Fatto!";
 "GENERAL_CLOSE" = "Chiudi";
 "GENERAL_SAVE" = "Salva";
+"GENERAL_ENABLE" = "Abilita";
+"GENERAL_NOT_SHOW_THIS_MESSAGE" = "non visualizzare più questo messaggio";
 
 //MARK: Alert
 "Alerts_YES" = "Si";
@@ -69,12 +71,19 @@
 "NewCategoryViewController_NEW_CATEGORY" = "Nuova Categoria";
 "NewCategoryViewController_EDIT_CATEGORY" = "Modifica Categoria";
 "NewCategoryViewController_CAT_NAME_PLACEHOLDER" = "Nome della Categoria";
+"NewCategoryViewController_CATEGORY_NAME_TITLE" = "Nome";
+"NewCategoryViewController_CATEGORY_NAME_DESCRIPTION" = "Viene visualizzato nella tastiera come titolo della categoria, deve essere breve";
 
 //MARK: NewAnswerViewController
 "NewAnswerViewController_ANSW_TITLE_PLACEHOLDER" = "Titolo della risposta";
 "NewAnswerViewController_ANSW_CONTENT_PLACEHOLDER" = "Descrizione della risposta";
 "NewAnswerViewController_DEL_ANS_ALERT_DESCRIPTION" = "Sei sicuro di voler cancellare questa risposta?";
 "NewAnswerViewController_USE_TITLE_AS_BOTH_TEXT" = "Usa il titolo come contenuto della risposta";
+"NewAnswerViewController_ANSWER_DESCRIPTION" = "Compila tutti i campi della risposta rapida";
+"NewAnswerViewController_ANSWER_TITLE" = "Titolo";
+"NewAnswerViewController_ANSWER_TITLE_DESCRIPTION" = "Viene visualizzato nella tastiera come titolo della risposta, deve essere breve";
+"NewAnswerViewController_CONTENT_TITLE" = "Testo";
+"NewAnswerViewController_CONTENT_DESCRIPTION" = "È il testo che viene scritto come risposta, può essere lungo e dettagliato";
 
 //MARK: WelcomeViewController
 "WelcomeViewController_TITLE" = "Benvenuto in RightTyped";
@@ -82,12 +91,21 @@
 "WelcomeViewController_DESC2" = "Vai avanti, abilita la tastiera e scopri di più su come funziona!";
 
 //MARK: ViewController
+"ViewController_TITLE" = "Personalizza le tue risposte, \nquando e come vuoi!";
 "ViewController_DEL_CAT_ALERT_DESCRIPTION" = "Sei sicuro di voler cancellare questa categoria?\nTutte le domande associate verranno anch'esse cancellate";
 "ViewController_EMPTY_CATEGORIES" = "Non hai nessuna categoria!";
 "ViewController_EMPTY_ANSWERS" = "Non ci sono risposte associate a questa categoria!";
 "ViewController_NO_CATEGORY_USABLE" = "Non puoi selezionare nessuna categoria!\nProsegui aggiungendone una.";
 
+//MARK: KeyboardEnabledViewController
+"KeyboardEnabledViewController_TITLE" = "Tastiera abilitata con successo!";
+
 //MARK: EnableKeyboardViewController
+"EnableKeyboardViewController_FIRST_STACK_TEXT" = "Abilita la tastiera dalle impostazioni";
+"EnableKeyboardViewController_SECOND_STACK_TEXT" = "Vai in: Impostazioni > Generali > Tastiera > Tastiere > Aggiungi nuova tastiera > Seleziona RightTyped";
+"EnableKeyboardViewController_THIRD_STACK_TEXT" = "e clicca:\nAggiungi Nuova Tastiera >  Seleziona RightTyped";
+"EnableKeyboardViewController_OR_TEXT" = "oppure";
+"EnableKeyboardViewController_GO_TO_SETTINGS" = "Apri le Impostazioni";
 "EnableKeyboardViewController_KEYBOARD_DISABLED" = "Tastiera disabilitata";
 "EnableKeyboardViewController_KEYBOARD_ENABLED" = "Tastiera già abilitata";
 
@@ -198,3 +216,6 @@
 "Premium_Plans_FirstPpuPlan_BUTTON_TITLE" = "Compra";
 "Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT" = "Singola categoria con %d risposte";
 "Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT" = "%d categorie con %d risposte l'una";
+
+//MARK: SettingsViewController
+"SettingsViewController_TITLE" = "Impostazioni";

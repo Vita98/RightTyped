@@ -51,6 +51,8 @@ class GenericResultViewController: UIViewController {
         
         titleLabel.text = titleText
         contentLabel.text = descriptionText
+        titleLabel.set(size: 24)
+        contentLabel.set(size: 18)
         var previous: UIView? = nil
         
         for (v,i) in zip(buttons, 0..<buttons.count){

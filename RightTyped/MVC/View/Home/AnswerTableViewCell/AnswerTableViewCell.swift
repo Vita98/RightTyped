@@ -16,5 +16,6 @@ class AnswerTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         answerLabel.sizeToFit()
+        answerLabel.set(size: 18)
     }
 }

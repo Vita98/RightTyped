@@ -45,7 +45,7 @@ class MyPurchasesViewController: UIViewController {
         self.view.backgroundColor = .backgroundColor
         containerView.applyCustomRoundCorner()
         containerView.dropShadow(shadowType: .contentView)
-        titleLabel.text = AppString.SettingsModel.myPurchasesText
+        titleLabel.set(text: AppString.SettingsModel.myPurchasesText, size: 24)
     }
     
     private func setEmptyView(){

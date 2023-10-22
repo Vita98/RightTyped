@@ -40,6 +40,8 @@ class BiometricViewController: UIViewController {
         self.view.backgroundColor = .backgroundColor
         self.bottomView.enableComponentButtonMode()
         bottomView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(bottomViewPressed)))
+        bottomLabel.set(size: 24)
+        middleLabel.set(size: 20)
         
         let biomType: String? = BiometricHelper.biometricType()
         if let biomType = biomType{

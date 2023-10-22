@@ -18,10 +18,7 @@
 		</dict>
 	</array>
 	<key>UIAppFonts</key>
-	<array>
-		<string>bulent-yuksel-trakya-rounded-300-light.otf</string>
-		<string>bulent-yuksel-trakya-rounded-alt-300-light.otf</string>
-	</array>
+	<array/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>UIApplicationSceneManifest</key>

@@ -71,16 +71,17 @@ class HomeHeaderTableViewCell: UITableViewCell {
     }
     
     private func configureString(){
-        titleLabel.text = AppString.General.categories
-        addLabel.text = AppString.General.category
+        titleLabel.set(text: AppString.General.categories, size: 24)
+        addLabel.set(text: AppString.General.category, size: 9)
+        descLabel.set(size: 14)
         if UserDefaultManager.shared.getProPlanStatus(){
             descLabel.text = AppString.HomeHeaderTableViewCell.proDescription
         }else{
             descLabel.text = String(format: AppString.HomeHeaderTableViewCell.description, Product.getMaximumCategoriesCount())
         }
-        enableCatLable.text = AppString.HomeHeaderTableViewCell.enableCategory
-        editLabel.text = AppString.General.edit
-        deleteLabel.text = AppString.General.delete
+        enableCatLable.set(text: AppString.HomeHeaderTableViewCell.enableCategory, size: 20)
+        editLabel.set(text: AppString.General.edit, size: 12)
+        deleteLabel.set(text: AppString.General.delete, size: 12)
     }
 
     //MARK: events

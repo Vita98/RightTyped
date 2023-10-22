@@ -18,6 +18,7 @@ class ViewController: UIViewController, SelectCategoriesViewControllerDelegate{
     @IBOutlet var containerView: CustomBaseView!
     @IBOutlet weak var tableShadowView: UIView!
     @IBOutlet weak var answersTableView: UITableView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     fileprivate lazy var categoryFetchedResultsController: NSFetchedResultsController<Category> = Category.getFetchedResultControllerForAllCategory(delegate: self)
     var answers: [Answer]? {
@@ -41,6 +42,8 @@ class ViewController: UIViewController, SelectCategoriesViewControllerDelegate{
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.set(text: AppString.ViewController.title, size: 18)
         
         if showWelcome, let rNC = UINavigationController.instantiateNavController(withRoot: WelcomeViewController.self){
             self.present(rNC.navController, animated: true)

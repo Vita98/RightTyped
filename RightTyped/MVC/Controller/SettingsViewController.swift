@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: UIView!
     private let settingsModel = SettingsModelHelper.shared
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class SettingsViewController: UIViewController {
         self.view.backgroundColor = .backgroundColor
         containerView.applyCustomRoundCorner()
         containerView.dropShadow(shadowType: .contentView)
+        titleLabel.set(text: AppString.SettingsViewController.title, size: 24)
     }
     
     private func showAuthenticationAlert(successful: Bool, enabled: Bool){

@@ -20,7 +20,3 @@ let MODAL_VIEW_ROUND_CORNER : CGFloat = 20
 //Color
 let DISABLED_COMPONENT_ALPHA: CGFloat = 0.5
 
-//Fonts
-let CUSTOM_FONT_LIGHT_NAME = "Trakya Rounded 300 Light"
-let CUSTOM_FONT_ALT_LIGHT_NAME = "Trakya Rounded Alt 300 Light"
-

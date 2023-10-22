@@ -16,7 +16,8 @@ extension UIViewController{
     }
     
     public func setNavigationBarView(){
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 25))
+        imageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
         imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "appLogo")
         imageView.image = image

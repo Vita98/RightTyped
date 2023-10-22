@@ -12,6 +12,7 @@ class KeyboardEnabledViewController: UIViewController {
     @IBOutlet weak var doneButtonView: UIView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var nextLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var fromSettings = false
     var showCloseButton = true
@@ -25,6 +26,8 @@ class KeyboardEnabledViewController: UIViewController {
         doneButtonView.enableComponentButtonMode()
         doneButtonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(doneButtonViewPressed)))
         nextLabel.text = fromSettings ? AppString.General.done : AppString.General.next
+        nextLabel.set(size: 24)
+        titleLabel.set(text: AppString.KeyboardEnabledViewController.title, size: 24)
         
         if !showCloseButton{
             closeButton.isHidden = true

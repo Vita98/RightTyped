@@ -16,12 +16,20 @@ class EnableKeyboardViewController: UIViewController {
     @IBOutlet weak var keyboardNotEnabledLabel: UILabel!
     @IBOutlet weak var doNotShowLabel: UILabel!
     
+    @IBOutlet weak var firstStackLabel: UILabel!
+    @IBOutlet weak var secondStackLabel: UILabel!
+    @IBOutlet weak var orLabel: UILabel!
+    @IBOutlet weak var thirdStackLabel: UILabel!
+    @IBOutlet weak var goToSettingsLabel: UILabel!
+    
     var isCheckboxSelected: Bool = false
     var fromSettings = false
     var showCloseButton = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setTextsAndFonts()
         
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .backgroundColor
@@ -50,6 +58,16 @@ class EnableKeyboardViewController: UIViewController {
         
         // set observer for UIApplication.willEnterForegroundNotification
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    private func setTextsAndFonts(){
+        firstStackLabel.set(text: AppString.EnableKeyboardViewController.firstStackText, size: 24)
+        secondStackLabel.set(text: AppString.EnableKeyboardViewController.secondStackText, size: 18)
+        thirdStackLabel.set(text: AppString.EnableKeyboardViewController.thirdStackText, size: 18)
+        orLabel.set(text: AppString.EnableKeyboardViewController.orText, size: 18)
+        keyboardNotEnabledLabel.set(size: 24)
+        doNotShowLabel.set(text: AppString.General.doNotShowThisMessage, size: 14)
+        goToSettingsLabel.set(text: AppString.EnableKeyboardViewController.goToSettings, size: 24)
     }
     
     deinit{

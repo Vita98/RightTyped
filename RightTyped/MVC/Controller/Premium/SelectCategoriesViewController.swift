@@ -45,6 +45,7 @@ class SelectCategoriesViewController: UIViewController, NSFetchedResultsControll
         setNavigationBarView()
         setView()
         setTableView()
+        setTextsAndFonts()
         
         //Performing the core data fetch
         do {
@@ -54,6 +55,13 @@ class SelectCategoriesViewController: UIViewController, NSFetchedResultsControll
             print("Unable to Perform Fetch Request")
             print("\(fetchError), \(fetchError.localizedDescription)")
         }
+    }
+    
+    private func setTextsAndFonts(){
+        titleLabel.set(size: 24)
+        descriptionLabel.set(size: 14)
+        selectionLabel.set(size: 20)
+        buttonViewTitle.set(size: 24)
     }
     
     private func setView(){

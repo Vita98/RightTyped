@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="0EQ-6b-OGC">
-                                <rect key="frame" x="106.66666666666669" y="77" width="177" height="36"/>
+                                <rect key="frame" x="58.666666666666657" y="77" width="273" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="ton-0A-ef1"/>
                                 </constraints>
@@ -110,9 +110,9 @@ Use the touch ID to open it.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Xx1-w8-0ZK">
-                                <rect key="frame" x="106.66666666666669" y="52" width="177" height="36"/>
+                                <rect key="frame" x="58.666666666666657" y="52" width="273" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="wDY-XY-bTx"/>
+                                    <constraint firstAttribute="height" constant="25" id="wDY-XY-bTx"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1B-Jk-TIm">
@@ -128,7 +128,7 @@ Use the touch ID to open it.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAP-9K-XNs">
-                                <rect key="frame" x="95.333333333333329" y="88" width="199.33333333333337" height="51.333333333333343"/>
+                                <rect key="frame" x="95.333333333333329" y="82" width="199.33333333333337" height="51.333333333333343"/>
                                 <string key="text">Personalize your answers,
 when and how you want!</string>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
@@ -136,10 +136,10 @@ when and how you want!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2a8-Bt-QhJ">
-                                <rect key="frame" x="0.0" y="159.33333333333331" width="390" height="684.66666666666674"/>
+                                <rect key="frame" x="0.0" y="153.33333333333331" width="390" height="690.66666666666674"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIP-bj-mxL">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="684.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="690.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -158,7 +158,7 @@ when and how you want!</string>
                             <constraint firstItem="2a8-Bt-QhJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FzC-Ur-Rpf"/>
                             <constraint firstItem="Xx1-w8-0ZK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GHK-6U-pxO"/>
                             <constraint firstItem="2a8-Bt-QhJ" firstAttribute="top" secondItem="IAP-9K-XNs" secondAttribute="bottom" constant="20" id="N8B-XK-ord"/>
-                            <constraint firstItem="IAP-9K-XNs" firstAttribute="top" secondItem="Xx1-w8-0ZK" secondAttribute="bottom" id="NQa-2p-lew"/>
+                            <constraint firstItem="IAP-9K-XNs" firstAttribute="top" secondItem="Xx1-w8-0ZK" secondAttribute="bottom" constant="5" id="NQa-2p-lew"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2a8-Bt-QhJ" secondAttribute="trailing" id="NzF-vK-L9O"/>
                             <constraint firstAttribute="bottom" secondItem="2a8-Bt-QhJ" secondAttribute="bottom" id="Srb-Iw-GSh"/>
                             <constraint firstItem="Xx1-w8-0ZK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="e8q-YA-nsO"/>
@@ -172,6 +172,7 @@ when and how you want!</string>
                         <outlet property="answersTableView" destination="aIP-bj-mxL" id="Eju-QS-dKM"/>
                         <outlet property="containerView" destination="8bC-Xf-vdC" id="8LR-Go-pSx"/>
                         <outlet property="tableShadowView" destination="2a8-Bt-QhJ" id="ryo-EF-JtR"/>
+                        <outlet property="titleLabel" destination="IAP-9K-XNs" id="sE7-vg-o5f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -425,18 +426,24 @@ when and how you want!</string>
                     </view>
                     <navigationItem key="navigationItem" id="buQ-Xc-dOo"/>
                     <connections>
+                        <outlet property="answerDescriptionLabel" destination="942-6P-fSg" id="tvH-Wu-dcH"/>
+                        <outlet property="answerTitleLabel" destination="M2r-MJ-iQW" id="uj2-86-Igp"/>
                         <outlet property="binImageView" destination="xde-8v-1z1" id="Bd6-KY-5JD"/>
                         <outlet property="binLabel" destination="lVU-Zd-AMk" id="gan-IQ-0bj"/>
                         <outlet property="bottomView" destination="YFV-Y2-Myb" id="v5f-J1-Yop"/>
+                        <outlet property="buttonTitleLabel" destination="Wbo-Gm-SVI" id="v2Q-Ig-vMV"/>
                         <outlet property="checkBox" destination="Lcf-Zb-aOL" id="VFA-lV-Wgu"/>
                         <outlet property="containerView" destination="NgR-Bq-yTl" id="kZl-7e-xM3"/>
                         <outlet property="contentDescrLabel" destination="NF1-0f-XXW" id="ylS-rk-Ysn"/>
                         <outlet property="contentTitleLabel" destination="hG9-hg-OaX" id="EWs-Gz-CXg"/>
+                        <outlet property="enableLabel" destination="qAE-5w-BgA" id="uce-M4-juY"/>
                         <outlet property="enableSwitch" destination="tb3-bk-Yfk" id="93e-38-dJk"/>
                         <outlet property="scrollView" destination="dT8-Dm-6bs" id="Tic-TS-TbB"/>
                         <outlet property="textAreaLabelPlaceholder" destination="aEv-Ug-Rdz" id="GW8-8e-Dac"/>
                         <outlet property="textAreaView" destination="5R7-VX-w5t" id="Rao-9k-V1O"/>
                         <outlet property="textFieldView" destination="O5c-PS-9Fg" id="9yz-hg-b6b"/>
+                        <outlet property="titelDescriptionLabel" destination="Uba-st-Dkc" id="MET-LH-LJ6"/>
+                        <outlet property="titleLabel" destination="RUj-Jm-J1Y" id="N7Z-NT-pLh"/>
                         <outlet property="useTitleAsBothLabel" destination="Cqm-9Q-iNR" id="iCJ-2d-goB"/>
                     </connections>
                 </viewController>
@@ -593,9 +600,13 @@ when and how you want!</string>
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="uEq-Cr-shX" id="zVq-nU-jLp"/>
+                        <outlet property="buttonLabel" destination="xuH-t6-NcM" id="dCI-dn-NsE"/>
                         <outlet property="closeButton" destination="RpI-7M-hKi" id="9iC-hQ-EuI"/>
                         <outlet property="contentView" destination="QZ9-Av-jJV" id="GlG-Bt-WFs"/>
+                        <outlet property="descriptionLabel" destination="nWw-Ml-Mh8" id="gzE-n9-74d"/>
+                        <outlet property="enableLabel" destination="veb-g3-as4" id="pqx-Uf-e07"/>
                         <outlet property="enableSwitch" destination="VPu-HM-cYo" id="A1I-QP-Lwy"/>
+                        <outlet property="nameLabel" destination="6v0-v5-3Tg" id="Usy-FU-DT2"/>
                         <outlet property="textViewField" destination="EF3-7a-kVb" id="ryV-2g-0M5"/>
                         <outlet property="titleLabel" destination="qnC-Ef-dDf" id="CE9-jF-W2M"/>
                     </connections>
@@ -613,9 +624,9 @@ when and how you want!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="KJ0-qS-E63">
-                                <rect key="frame" x="106.66666666666669" y="77" width="177" height="36"/>
+                                <rect key="frame" x="58.666666666666657" y="77" width="273" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="6SX-Mb-BNY"/>
+                                    <constraint firstAttribute="height" constant="25" id="6SX-Mb-BNY"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku3-N9-Asw">
@@ -631,22 +642,22 @@ when and how you want!</string>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="E04-tn-f2M">
-                                <rect key="frame" x="20" y="113" width="350" height="284"/>
+                                <rect key="frame" x="20" y="107" width="350" height="290"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Enable keyboard from settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="2eV-1L-gAd">
-                                        <rect key="frame" x="14.333333333333343" y="0.0" width="321.66666666666663" height="87.333333333333329"/>
+                                        <rect key="frame" x="11.666666666666657" y="0.0" width="327" height="89.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Go to: Settings &gt; General &gt; Keyboard &gt; Keyboards &gt; Add New Keyboard &gt; Select &quot;RightTyped&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="izz-0c-ae8">
-                                        <rect key="frame" x="8.6666666666666572" y="98.333333333333343" width="333" height="87.333333333333343"/>
+                                        <rect key="frame" x="4.6666666666666572" y="100.33333333333334" width="340.66666666666674" height="89.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="748" text="or" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-hr-hOZ">
-                                        <rect key="frame" x="167" y="196.66666666666669" width="16.333333333333343" height="87.333333333333314"/>
+                                        <rect key="frame" x="167" y="200.66666666666669" width="16.333333333333343" height="89.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -700,7 +711,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCP-km-jby">
-                                <rect key="frame" x="82.333333333333329" y="665" width="225.66666666666669" height="30"/>
+                                <rect key="frame" x="80.333333333333329" y="665" width="229.33333333333337" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-00-a7m">
                                         <rect key="frame" x="0.0" y="6.6666666666666288" width="17" height="17"/>
@@ -715,7 +726,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="do not show this message again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q03-9H-ffK">
-                                        <rect key="frame" x="27" y="5" width="198.66666666666666" height="20"/>
+                                        <rect key="frame" x="27.000000000000014" y="7" width="202.33333333333337" height="16.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -736,7 +747,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="heG-vC-reh" firstAttribute="trailing" secondItem="i5I-2y-hGz" secondAttribute="trailing" constant="40" id="1Bb-vQ-hOk"/>
-                            <constraint firstItem="E04-tn-f2M" firstAttribute="top" secondItem="KJ0-qS-E63" secondAttribute="bottom" id="3AT-ql-8Y3"/>
+                            <constraint firstItem="E04-tn-f2M" firstAttribute="top" secondItem="KJ0-qS-E63" secondAttribute="bottom" constant="5" id="3AT-ql-8Y3"/>
                             <constraint firstAttribute="trailing" secondItem="E04-tn-f2M" secondAttribute="trailing" constant="20" id="58V-gv-qvM"/>
                             <constraint firstItem="jGM-n1-S06" firstAttribute="top" secondItem="iCP-km-jby" secondAttribute="bottom" constant="5" id="5xd-Tg-8ZI"/>
                             <constraint firstItem="qzC-Xh-91Z" firstAttribute="leading" secondItem="sCj-hf-8cD" secondAttribute="leading" constant="20" id="6bE-lS-Q7w"/>
@@ -761,9 +772,14 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <outlet property="checkboxButton" destination="eYd-00-a7m" id="2Ak-cK-ttm"/>
                         <outlet property="closeButton" destination="ku3-N9-Asw" id="99n-72-vzN"/>
                         <outlet property="doNotShowLabel" destination="Q03-9H-ffK" id="k2h-eN-GKJ"/>
+                        <outlet property="firstStackLabel" destination="2eV-1L-gAd" id="Hpf-98-YRQ"/>
+                        <outlet property="goToSettingsLabel" destination="2B4-wI-xFh" id="cwR-9X-avj"/>
                         <outlet property="keyboardNotEnabledLabel" destination="GaR-Tt-0gV" id="x13-fg-98E"/>
                         <outlet property="keyboardNotEnabledView" destination="jGM-n1-S06" id="WKA-9z-MAj"/>
                         <outlet property="openSettingsView" destination="i5I-2y-hGz" id="Uuy-sW-LBi"/>
+                        <outlet property="orLabel" destination="CbF-hr-hOZ" id="c7F-5f-jqM"/>
+                        <outlet property="secondStackLabel" destination="izz-0c-ae8" id="WnB-73-5RE"/>
+                        <outlet property="thirdStackLabel" destination="qzC-Xh-91Z" id="qfd-5w-hhH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Uz-iO-gTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -779,9 +795,9 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="FIA-LO-I2K">
-                                <rect key="frame" x="106.66666666666669" y="77" width="177" height="36"/>
+                                <rect key="frame" x="58.666666666666657" y="77" width="273" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="zGp-vU-nB0"/>
+                                    <constraint firstAttribute="height" constant="25" id="zGp-vU-nB0"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWk-55-KiC">
@@ -797,7 +813,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8cg-TX-XhQ">
-                                <rect key="frame" x="80" y="213" width="230" height="387"/>
+                                <rect key="frame" x="80" y="202" width="230" height="398"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1m-v2-OTa">
                                 <rect key="frame" x="40" y="700" width="310" height="50"/>
@@ -819,7 +835,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Keyboard successfully enabled!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RUR-OV-gkQ">
-                                <rect key="frame" x="40" y="118" width="310" height="68.333333333333314"/>
+                                <rect key="frame" x="40" y="117" width="310" height="56"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -834,7 +850,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                             <constraint firstItem="FIA-LO-I2K" firstAttribute="top" secondItem="Y00-YE-i83" secondAttribute="top" constant="30" id="LKi-IS-koC"/>
                             <constraint firstItem="FIA-LO-I2K" firstAttribute="centerX" secondItem="qho-1s-aOa" secondAttribute="centerX" id="Tsi-PE-LgS"/>
                             <constraint firstItem="B1m-v2-OTa" firstAttribute="leading" secondItem="Y00-YE-i83" secondAttribute="leading" constant="40" id="UCG-5W-Svp"/>
-                            <constraint firstItem="RUR-OV-gkQ" firstAttribute="top" secondItem="FIA-LO-I2K" secondAttribute="bottom" constant="5" id="WRt-8J-inI"/>
+                            <constraint firstItem="RUR-OV-gkQ" firstAttribute="top" secondItem="FIA-LO-I2K" secondAttribute="bottom" constant="15" id="WRt-8J-inI"/>
                             <constraint firstItem="Y00-YE-i83" firstAttribute="bottom" secondItem="B1m-v2-OTa" secondAttribute="bottom" constant="60" id="YCm-TP-9ys"/>
                             <constraint firstItem="Y00-YE-i83" firstAttribute="trailing" secondItem="B1m-v2-OTa" secondAttribute="trailing" constant="40" id="eol-V0-IHE"/>
                             <constraint firstItem="Y00-YE-i83" firstAttribute="trailing" secondItem="RUR-OV-gkQ" secondAttribute="trailing" constant="40" id="i1j-3x-OmC"/>
@@ -848,6 +864,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <outlet property="closeButton" destination="oWk-55-KiC" id="4gm-f6-RrO"/>
                         <outlet property="doneButtonView" destination="B1m-v2-OTa" id="Xgr-KE-DbI"/>
                         <outlet property="nextLabel" destination="O0o-gh-l0P" id="tlD-2P-iPs"/>
+                        <outlet property="titleLabel" destination="RUR-OV-gkQ" id="mtA-Mc-2hB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeR-hV-KwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -863,9 +880,9 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="w2t-hx-k1v">
-                                <rect key="frame" x="106.66666666666669" y="77" width="177" height="36"/>
+                                <rect key="frame" x="58.666666666666657" y="77" width="273" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="FKL-j4-0NX"/>
+                                    <constraint firstAttribute="height" constant="25" id="FKL-j4-0NX"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wA6-CU-aTt">
@@ -882,7 +899,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlX-lM-U2S">
-                                <rect key="frame" x="0.0" y="113" width="390" height="652"/>
+                                <rect key="frame" x="0.0" y="107" width="390" height="658"/>
                                 <connections>
                                     <segue destination="qfb-5b-Dp1" kind="embed" id="E4V-BX-RYv"/>
                                 </connections>
@@ -932,7 +949,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                             <constraint firstItem="w2t-hx-k1v" firstAttribute="centerX" secondItem="UYs-hl-Aae" secondAttribute="centerX" id="Yk9-rR-pzr"/>
                             <constraint firstItem="wA6-CU-aTt" firstAttribute="top" secondItem="QgL-E2-dqv" secondAttribute="top" constant="10" id="ae1-CI-9Jk"/>
                             <constraint firstItem="QgL-E2-dqv" firstAttribute="trailing" secondItem="0aI-kC-9Ik" secondAttribute="trailing" constant="10" id="ava-XT-nAc"/>
-                            <constraint firstItem="jlX-lM-U2S" firstAttribute="top" secondItem="w2t-hx-k1v" secondAttribute="bottom" id="fc7-Lb-ECI"/>
+                            <constraint firstItem="jlX-lM-U2S" firstAttribute="top" secondItem="w2t-hx-k1v" secondAttribute="bottom" constant="5" id="fc7-Lb-ECI"/>
                             <constraint firstItem="QgL-E2-dqv" firstAttribute="bottom" secondItem="0aI-kC-9Ik" secondAttribute="bottom" constant="10" id="gCi-Sx-dQA"/>
                             <constraint firstItem="KTU-DJ-OiX" firstAttribute="leading" secondItem="QgL-E2-dqv" secondAttribute="leading" constant="10" id="lW4-Uz-jfO"/>
                             <constraint firstItem="0aI-kC-9Ik" firstAttribute="centerY" secondItem="KTU-DJ-OiX" secondAttribute="centerY" id="rhb-8q-kLI"/>
@@ -1005,6 +1022,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                     <connections>
                         <outlet property="containerView" destination="Zw6-aB-GK3" id="yh5-JF-fDo"/>
                         <outlet property="tableView" destination="e3H-NZ-Nnh" id="5Dq-Y3-40h"/>
+                        <outlet property="titleLabel" destination="9eS-kY-g5a" id="PkY-wc-Fwy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0Y-nS-dYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1229,22 +1247,22 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-8Q-nyR">
-                                <rect key="frame" x="106.66666666666669" y="62" width="177" height="36"/>
+                                <rect key="frame" x="58.666666666666657" y="62" width="273" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="fv2-8C-1lS"/>
+                                    <constraint firstAttribute="height" constant="25" id="fv2-8C-1lS"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGf-8T-bmo">
-                                <rect key="frame" x="20" y="340.66666666666674" width="350" height="339.33333333333326"/>
+                                <rect key="frame" x="20" y="320" width="350" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Vai avanti, abilita la tastiera e scopri di più su come funziona!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="pps-Aw-efV">
-                                        <rect key="frame" x="0.0" y="169.66666666666663" width="350" height="169.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="180" width="350" height="180"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ep4-Qr-QQn">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="169.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="180"/>
                                         <string key="text">No, non è una classica tastiera!
 È un contenitore di risposte predefinite.</string>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
@@ -1283,13 +1301,13 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benvenuto in RightTyped" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1X-dI-6ZV">
-                                <rect key="frame" x="20" y="108.00000000000001" width="350" height="42.666666666666671"/>
-                                <fontDescription key="fontDescription" name="Trakya-Rounded-Alt-300-Light" family="Trakya Rounded Alt" pointSize="30"/>
+                                <rect key="frame" x="20" y="102" width="350" height="28"/>
+                                <fontDescription key="fontDescription" name="Trakya-Rounded-Alt-300-Light" family="Trakya Rounded Alt" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8O5-fO-FVb">
-                                <rect key="frame" x="20" y="170.66666666666666" width="350" height="149.99999999999997"/>
+                                <rect key="frame" x="20" y="150" width="350" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="UPD-RZ-yRV"/>
                                 </constraints>
@@ -1302,7 +1320,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                             <constraint firstItem="8O5-fO-FVb" firstAttribute="leading" secondItem="nsE-fR-IqG" secondAttribute="leading" constant="20" id="3gB-ro-E9t"/>
                             <constraint firstItem="KGf-8T-bmo" firstAttribute="top" secondItem="8O5-fO-FVb" secondAttribute="bottom" constant="20" id="ClM-gK-i26"/>
                             <constraint firstItem="zUt-Cu-yWn" firstAttribute="top" secondItem="KGf-8T-bmo" secondAttribute="bottom" constant="20" id="IS0-5J-QDC"/>
-                            <constraint firstItem="e1X-dI-6ZV" firstAttribute="top" secondItem="pfP-8Q-nyR" secondAttribute="bottom" constant="10" id="QXQ-Qd-3Dz"/>
+                            <constraint firstItem="e1X-dI-6ZV" firstAttribute="top" secondItem="pfP-8Q-nyR" secondAttribute="bottom" constant="15" id="QXQ-Qd-3Dz"/>
                             <constraint firstItem="pfP-8Q-nyR" firstAttribute="centerX" secondItem="R1x-Ps-1Rx" secondAttribute="centerX" id="QiU-Mt-Ur1"/>
                             <constraint firstItem="zUt-Cu-yWn" firstAttribute="leading" secondItem="nsE-fR-IqG" secondAttribute="leading" constant="40" id="VqA-pB-7qy"/>
                             <constraint firstItem="nsE-fR-IqG" firstAttribute="bottom" secondItem="zUt-Cu-yWn" secondAttribute="bottom" constant="60" id="a8N-D3-G5w"/>
@@ -1329,7 +1347,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
         </scene>
     </scenes>
     <resources>
-        <image name="appLogo" width="177" height="19"/>
+        <image name="appLogo" width="273" height="27"/>
         <image name="binIcon" width="21" height="24"/>
         <image name="checkboxUnchecked" width="17" height="17"/>
         <image name="closeIcon" width="30" height="30"/>
@@ -1344,13 +1362,13 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
             <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

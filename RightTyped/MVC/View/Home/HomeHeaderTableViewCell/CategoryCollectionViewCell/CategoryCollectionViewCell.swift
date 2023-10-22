@@ -27,6 +27,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         cellModel = CategoryCell(isSelected: isSelected)
         self.layer.cornerRadius = 15
         self.layer.borderWidth = 1
+        label.set(size: 16)
         
         self.dropShadow(shadowType: .categoryAppCollectionViewCell)
         

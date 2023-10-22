@@ -58,6 +58,7 @@ class CustomTextArea: UIView, UITextViewDelegate {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.delegate = self
         textView.text = ""
+        textView.set(size: 18)
         
         editButton.setTitle("", for: .normal)
         editButton.imageView?.contentMode = .scaleAspectFit
@@ -73,6 +74,7 @@ class CustomTextArea: UIView, UITextViewDelegate {
         self.contentView.layer.borderColor = animateBorders ? UIColor.clear.cgColor : UIColor.lightGray.withAlphaComponent(0.5).cgColor
         
         placeholderLabel.isHidden = true
+        placeholderLabel.set(size: 18)
     }
     
     //MARK: Events

@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-enum CustomFontType{
+public enum CustomFontType{
     case normal
     case alt
 }
 
 extension UIFont{
-    static func customFont(_ type: CustomFontType, size: CGFloat) -> UIFont?{
+    public static func customFont(_ type: CustomFontType, size: CGFloat) -> UIFont?{
         switch type {
         case .normal:
-            return UIFont(name: CUSTOM_FONT_LIGHT_NAME, size: size)
+            return UIFont(name: "Avenir Light", size: size)
         case .alt:
-            return UIFont(name: CUSTOM_FONT_ALT_LIGHT_NAME, size: size)
+            return UIFont(name: "Avenir Light", size: size)
         }
     }
 }

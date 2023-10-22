@@ -51,7 +51,7 @@ class SettingsTableViewCell: UITableViewCell {
     //MARK: Configuration
     public func setModel(cellModel: SettingsCellModel){
         self.cellModel = cellModel
-        self.titleLabel.text = cellModel.text
+        self.titleLabel.set(text: cellModel.text, size: 18)
         
         switch cellModel.cellType{
         case .uiswitch:
