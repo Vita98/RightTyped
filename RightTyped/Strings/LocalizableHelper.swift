@@ -253,6 +253,7 @@ struct AppString{
         struct FirstProPlan{
             private init(){}
             static let description: String = LocalizableString("Premium_Plans_FirstProPlan_DESCRIPTION").locale
+            static let note: String = LocalizableString("Premium_Plans_FirstProPlan_NOTE").locale
             static let buttonTitle: String = LocalizableString("Premium_Plans_FirstProPlan_BUTTON_TITLE").locale
             static let firstStackText: String = LocalizableString("Premium_Plans_FirstProPlan_FIRST_STACK_TEXT").locale
             static let secondStackText: String = LocalizableString("Premium_Plans_FirstProPlan_SECOND_STACK_TEXT").locale
@@ -262,6 +263,7 @@ struct AppString{
         struct FirstPpuPlan{
             private init(){}
             static let description: String = LocalizableString("Premium_Plans_FirstPpuPlan_DESCRIPTION").locale
+            static let note: String = LocalizableString("Premium_Plans_FirstPpuPlan_NOTE").locale
             static let buttonTitle: String = LocalizableString("Premium_Plans_FirstPpuPlan_BUTTON_TITLE").locale
             static let firstStackText: String = LocalizableString("Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT").locale
             static let secondStackText: String = LocalizableString("Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT").locale

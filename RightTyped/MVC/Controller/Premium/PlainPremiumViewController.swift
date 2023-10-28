@@ -21,6 +21,9 @@ class PlainPremiumViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var cardShadowView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var priceTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var priceBottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var cardShadowViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var cardShadowViewBottomConstraint: NSLayoutConstraint!
@@ -64,6 +67,9 @@ class PlainPremiumViewController: UIViewController {
         if !UIDevice.current.isSmall(){
             cardShadowViewTopConstraint.constant = 40
             cardShadowViewBottomConstraint.constant = 40
+        } else {
+            priceTopConstraint.constant = 10
+            priceBottomConstraint.constant = 10
         }
         buttonView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonViewPressed)))
     }
@@ -74,6 +80,7 @@ class PlainPremiumViewController: UIViewController {
         subscriptionTypeLabel.set(font: .customFont(.alt, size: 18))
         buttonViewLabel.set(size: 24)
         planLabel.set(size: 16)
+        noteLabel.set(size: 12)
     }
     
     private func configurePlanType(){
@@ -117,6 +124,13 @@ class PlainPremiumViewController: UIViewController {
         }
         
         planLabel.text = model.type.value
+        
+        guard let note = model.note else {
+            noteLabel.isHidden = true
+            noteLabel.heightAnchor.constraint(equalToConstant: 0).isActive = true
+            return
+        }
+        noteLabel.text = note
     }
     
     //MARK: - Events

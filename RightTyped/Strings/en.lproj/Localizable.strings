@@ -205,13 +205,15 @@
 
 // First pro plan
 "Premium_Plans_FirstProPlan_DESCRIPTION" = "Unlocks all features available to date plus all features available in future updates.";
+"Premium_Plans_FirstProPlan_NOTE" = "Note: You will be able to recover this purchases even after an uninstallation";
 "Premium_Plans_FirstProPlan_BUTTON_TITLE" = "Buy";
 "Premium_Plans_FirstProPlan_FIRST_STACK_TEXT" = "Unlimited categories";
 "Premium_Plans_FirstProPlan_SECOND_STACK_TEXT" = "Unlimited answers for each category";
 "Premium_Plans_FirstProPlan_THIRD_STACK_TEXT" = "All features available in the future";
 
 // First pay per use plan
-"Premium_Plans_FirstPpuPlan_DESCRIPTION" = "Buy only the features you need most, with no commitment or annual recurrence. What you buy stays forever.";
+"Premium_Plans_FirstPpuPlan_DESCRIPTION" = "Buy only the features you need most, with no commitment or annual recurrence.";
+"Premium_Plans_FirstPpuPlan_NOTE" = "Note: these purchases will be lost if you uninstall the app";
 "Premium_Plans_FirstPpuPlan_BUTTON_TITLE" = "Buy";
 "Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT" = "Single category with %d answers";
 "Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT" = "%d categories with %d answers each";

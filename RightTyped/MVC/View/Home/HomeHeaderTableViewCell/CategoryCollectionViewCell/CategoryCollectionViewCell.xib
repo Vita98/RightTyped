@@ -23,7 +23,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bi-dB-SRV">
-                        <rect key="frame" x="17" y="5" width="118" height="62"/>
+                        <rect key="frame" x="17" y="6" width="118" height="61"/>
                         <fontDescription key="fontDescription" name="Trakya-Rounded-Alt-300-Light" family="Trakya Rounded Alt" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="8bi-dB-SRV" secondAttribute="bottom" constant="5" id="8HJ-zI-NLp"/>
-                <constraint firstItem="8bi-dB-SRV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="JQT-GH-tlU"/>
+                <constraint firstItem="8bi-dB-SRV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="JQT-GH-tlU"/>
                 <constraint firstAttribute="trailing" secondItem="8bi-dB-SRV" secondAttribute="trailing" constant="17" id="jJT-VT-ro7"/>
                 <constraint firstItem="8bi-dB-SRV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="17" id="uZB-OU-vw0"/>
             </constraints>

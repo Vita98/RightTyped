@@ -205,6 +205,7 @@
 
 // First pro plan
 "Premium_Plans_FirstProPlan_DESCRIPTION" = "Sbocca tutte le funzionalità disponibili ad oggi più tutte quelle disponibili in aggioramenti futuri.";
+"Premium_Plans_FirstProPlan_NOTE" = "Nota: Potrai recuperare questo acquisto anche dopo una disinstallazione";
 "Premium_Plans_FirstProPlan_BUTTON_TITLE" = "Compra";
 "Premium_Plans_FirstProPlan_FIRST_STACK_TEXT" = "Categorie illimitate";
 "Premium_Plans_FirstProPlan_SECOND_STACK_TEXT" = "Risposte illimitate per ogni categoria";
@@ -212,7 +213,8 @@
 
 
 //First pay per use plan
-"Premium_Plans_FirstPpuPlan_DESCRIPTION" = "Compra solo le funzionalità che più ti servono, senza alcun impegno o ricorrenza annuale. Quello che compri rimane per sempre.";
+"Premium_Plans_FirstPpuPlan_DESCRIPTION" = "Compra solo le funzionalità che più ti servono, senza alcun impegno o ricorrenza annuale.";
+"Premium_Plans_FirstPpuPlan_NOTE" = "Nota: questi acquisti verranno persi se disinistalli l'app";
 "Premium_Plans_FirstPpuPlan_BUTTON_TITLE" = "Compra";
 "Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT" = "Singola categoria con %d risposte";
 "Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT" = "%d categorie con %d risposte l'una";

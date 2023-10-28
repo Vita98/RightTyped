@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGB-e9-vC8">
-                                <rect key="frame" x="20" y="286" width="353" height="280"/>
+                                <rect key="frame" x="20" y="291.66666666666669" width="353" height="269.00000000000006"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9D-dj-DgT">
                                         <rect key="frame" x="146.66666666666666" y="25" width="60" height="60"/>
@@ -37,19 +37,19 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifica Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ9-FG-w6z">
-                                        <rect key="frame" x="10" y="100" width="333" height="34.333333333333343"/>
+                                        <rect key="frame" x="10" y="100" width="333" height="28"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwG-aY-fKg">
-                                        <rect key="frame" x="10" y="154.33333333333331" width="333" height="25.666666666666657"/>
+                                        <rect key="frame" x="10" y="148" width="333" height="21"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HCb-LZ-Ym2">
-                                        <rect key="frame" x="20" y="210" width="313" height="50"/>
+                                        <rect key="frame" x="20" y="199" width="313" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjI-Rm-D5w">
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
@@ -115,22 +115,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPd-Tl-Rr3">
-                                <rect key="frame" x="151.33333333333334" y="49" width="90.666666666666657" height="34.333333333333343"/>
+                                <rect key="frame" x="148.66666666666666" y="49" width="95.666666666666657" height="28"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-Alt-300-Light" family="Trakya Rounded Alt" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEr-Il-JIH">
-                                <rect key="frame" x="0.0" y="91.333333333333314" width="393" height="681.66666666666674"/>
+                                <rect key="frame" x="0.0" y="85" width="393" height="688"/>
                                 <connections>
                                     <segue destination="F3L-cy-KPC" kind="embed" id="YYQ-wg-Jbi"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdf-0Q-Vge">
-                                <rect key="frame" x="0.0" y="91.333333333333314" width="393" height="681.66666666666674"/>
+                                <rect key="frame" x="0.0" y="85" width="393" height="688"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNO-To-KjL">
-                                        <rect key="frame" x="40" y="316" width="313" height="50"/>
+                                        <rect key="frame" x="40" y="319" width="313" height="50"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refresh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVb-EA-4V2">
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
@@ -149,7 +149,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No premium option available at the moment!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyE-ZB-rEe">
-                                        <rect key="frame" x="20" y="20" width="353" height="57"/>
+                                        <rect key="frame" x="20" y="19.999999999999996" width="353" height="46.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -165,7 +165,7 @@
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Hgo-td-yuT" customClass="CustomActivityIndicatorView" customModule="RightTyped" customModuleProvider="target">
-                                <rect key="frame" x="186.66666666666666" y="422.33333333333331" width="20" height="20"/>
+                                <rect key="frame" x="186.66666666666666" y="419" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-PC-uUY">
                                 <rect key="frame" x="10" y="773" width="51" height="35"/>
@@ -252,16 +252,16 @@
                                 <rect key="frame" x="0.0" y="69" width="393" height="783"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="I miei acquisti" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnz-S9-GuL">
-                                        <rect key="frame" x="23" y="10" width="347" height="34.333333333333336"/>
+                                        <rect key="frame" x="23" y="10" width="347" height="28"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s95-Bz-n0A" customClass="SelfSizedTableView" customModule="RightTyped" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="74.333333333333314" width="393" height="708.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="64.333333333333314" width="393" height="718.66666666666674"/>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNs-H7-PEQ">
-                                        <rect key="frame" x="23" y="44.333333333333329" width="347" height="20"/>
+                                        <rect key="frame" x="23" y="38" width="347" height="16.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -282,16 +282,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXg-NJ-QYG">
-                                <rect key="frame" x="0.0" y="713.33333333333337" width="393" height="138.66666666666663"/>
+                                <rect key="frame" x="0.0" y="718.66666666666663" width="393" height="133.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-mj-U0L">
-                                        <rect key="frame" x="20" y="15.000000000000002" width="353" height="28.666666666666671"/>
+                                        <rect key="frame" x="20" y="14.999999999999998" width="353" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Grt-zx-IZx">
-                                        <rect key="frame" x="40" y="58.666666666666629" width="313" height="50"/>
+                                        <rect key="frame" x="40" y="53.333333333333371" width="313" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salva" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uau-mD-DaI">
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
@@ -361,13 +361,13 @@
                                 <rect key="frame" x="0.0" y="69" width="393" height="783"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="I miei acquisti" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmz-mI-PCx">
-                                        <rect key="frame" x="23" y="10" width="347" height="34.333333333333336"/>
+                                        <rect key="frame" x="23" y="10" width="347" height="28"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-5b-R9K" customClass="SelfSizedTableView" customModule="RightTyped" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.333333333333314" width="393" height="738.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="38" width="393" height="745"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -425,13 +425,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="363" height="649"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZa-1j-0WW">
-                                                <rect key="frame" x="0.0" y="0.0" width="363" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="363" height="37.666666666666664"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFa-ma-4DS">
-                                                        <rect key="frame" x="15" y="10" width="76" height="27"/>
+                                                        <rect key="frame" x="15" y="10.000000000000002" width="76" height="22.666666666666671"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnJ-Xd-HX7">
-                                                                <rect key="frame" x="20" y="2" width="36" height="23"/>
+                                                                <rect key="frame" x="20" y="2" width="36" height="18.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -453,25 +453,25 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutte le funzionalità diponibili nella versione gratuita gia abilitate di default." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYb-1O-bVB">
-                                                <rect key="frame" x="10" y="52" width="343" height="45.666666666666657"/>
+                                                <rect key="frame" x="10" y="47.666666666666657" width="343" height="37.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Su-WL-1ja">
-                                                <rect key="frame" x="15" y="127.66666666666666" width="84" height="44"/>
-                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="36"/>
+                                                <rect key="frame" x="15" y="134.33333333333334" width="78.666666666666671" height="49.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="36"/>
                                                 <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/anno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbX-9G-vQq">
-                                                <rect key="frame" x="103.99999999999999" y="141.66666666666666" width="50.333333333333329" height="25.666666666666657"/>
+                                                <rect key="frame" x="98.666666666666671" y="153.33333333333334" width="46.333333333333329" height="21"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-Alt-300-Light" family="Trakya Rounded Alt" pointSize="18"/>
                                                 <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view alpha="0.60000002384185791" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="SdG-M7-BF0" userLabel="separator">
-                                                <rect key="frame" x="10" y="194.66666666666666" width="343" height="1"/>
+                                                <rect key="frame" x="10" y="206.66666666666666" width="343" height="1"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="QcT-eO-Plu"/>
@@ -485,7 +485,7 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LEn-fh-MJU">
-                                                <rect key="frame" x="0.0" y="200.66666666666666" width="363" height="352.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="212.66666666666666" width="363" height="340.33333333333337"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Lj-jO-zTO">
@@ -518,11 +518,16 @@
                                                     <constraint firstAttribute="trailing" secondItem="Yu9-YK-xDu" secondAttribute="trailing" id="oSC-x7-f28"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcB-JF-xoQ">
+                                                <rect key="frame" x="10" y="90" width="343" height="14.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="LEn-fh-MJU" secondAttribute="trailing" id="0bE-C2-NyU"/>
-                                            <constraint firstItem="5Su-WL-1ja" firstAttribute="top" secondItem="tYb-1O-bVB" secondAttribute="bottom" constant="30" id="4KI-1t-OOT"/>
                                             <constraint firstItem="5Su-WL-1ja" firstAttribute="leading" secondItem="zeQ-ML-hik" secondAttribute="leading" constant="15" id="4iR-2C-4GS"/>
                                             <constraint firstItem="tYb-1O-bVB" firstAttribute="leading" secondItem="zeQ-ML-hik" secondAttribute="leading" constant="10" id="5bv-6T-yWz"/>
                                             <constraint firstItem="1Lj-jO-zTO" firstAttribute="top" secondItem="PDi-lE-gu5" secondAttribute="bottom" constant="20" id="9qm-su-u7g"/>
@@ -530,9 +535,12 @@
                                             <constraint firstAttribute="trailing" secondItem="1Lj-jO-zTO" secondAttribute="trailing" constant="40" id="DD8-ge-Nbq"/>
                                             <constraint firstItem="1Lj-jO-zTO" firstAttribute="leading" secondItem="zeQ-ML-hik" secondAttribute="leading" constant="40" id="F5Z-RG-Nhz"/>
                                             <constraint firstItem="LEn-fh-MJU" firstAttribute="leading" secondItem="zeQ-ML-hik" secondAttribute="leading" id="O3x-B3-0d2"/>
+                                            <constraint firstItem="5Su-WL-1ja" firstAttribute="top" secondItem="jcB-JF-xoQ" secondAttribute="bottom" constant="30" id="ODW-lC-nZz"/>
+                                            <constraint firstItem="jcB-JF-xoQ" firstAttribute="top" secondItem="tYb-1O-bVB" secondAttribute="bottom" constant="5" id="Opa-1M-neA"/>
                                             <constraint firstItem="LEn-fh-MJU" firstAttribute="top" secondItem="SdG-M7-BF0" secondAttribute="bottom" constant="5" id="PKb-oF-joR"/>
                                             <constraint firstItem="tYb-1O-bVB" firstAttribute="top" secondItem="cZa-1j-0WW" secondAttribute="bottom" constant="10" id="PiR-yE-g2i"/>
                                             <constraint firstItem="SdG-M7-BF0" firstAttribute="top" secondItem="5Su-WL-1ja" secondAttribute="bottom" constant="23" id="RHM-EO-Ala"/>
+                                            <constraint firstItem="jcB-JF-xoQ" firstAttribute="leading" secondItem="zeQ-ML-hik" secondAttribute="leading" constant="10" id="SBa-vs-98E"/>
                                             <constraint firstItem="SdG-M7-BF0" firstAttribute="leading" secondItem="zeQ-ML-hik" secondAttribute="leading" constant="10" id="YZ0-ah-lJo"/>
                                             <constraint firstAttribute="trailing" secondItem="SdG-M7-BF0" secondAttribute="trailing" constant="10" id="ZcC-Zl-z0O"/>
                                             <constraint firstItem="cZa-1j-0WW" firstAttribute="top" secondItem="zeQ-ML-hik" secondAttribute="top" id="bOd-P7-6hL"/>
@@ -540,6 +548,7 @@
                                             <constraint firstItem="HbX-9G-vQq" firstAttribute="leading" secondItem="5Su-WL-1ja" secondAttribute="trailing" constant="5" id="jTA-TA-zXm"/>
                                             <constraint firstItem="PDi-lE-gu5" firstAttribute="top" secondItem="LEn-fh-MJU" secondAttribute="bottom" constant="5" id="kEz-3H-TMd"/>
                                             <constraint firstAttribute="bottom" secondItem="1Lj-jO-zTO" secondAttribute="bottom" constant="20" id="knA-e3-i8X"/>
+                                            <constraint firstAttribute="trailing" secondItem="jcB-JF-xoQ" secondAttribute="trailing" constant="10" id="mWB-fv-elr"/>
                                             <constraint firstAttribute="trailing" secondItem="cZa-1j-0WW" secondAttribute="trailing" id="nwL-xX-e0H"/>
                                             <constraint firstAttribute="trailing" secondItem="PDi-lE-gu5" secondAttribute="trailing" constant="10" id="qHt-Vb-M0x"/>
                                             <constraint firstItem="PDi-lE-gu5" firstAttribute="leading" secondItem="zeQ-ML-hik" secondAttribute="leading" constant="10" id="slJ-oP-Bab"/>
@@ -573,9 +582,12 @@
                         <outlet property="cardShadowViewTopConstraint" destination="Zgd-oi-PgG" id="4IA-2T-mP8"/>
                         <outlet property="cardView" destination="zeQ-ML-hik" id="cIC-f3-e2l"/>
                         <outlet property="descriptionLabel" destination="tYb-1O-bVB" id="Pev-AQ-h3O"/>
+                        <outlet property="noteLabel" destination="jcB-JF-xoQ" id="J7D-rG-M4P"/>
                         <outlet property="planLabel" destination="BnJ-Xd-HX7" id="heR-wb-asC"/>
                         <outlet property="planView" destination="kFa-ma-4DS" id="RyV-iE-IvZ"/>
+                        <outlet property="priceBottomConstraint" destination="RHM-EO-Ala" id="9Ua-yr-Ss1"/>
                         <outlet property="priceLabel" destination="5Su-WL-1ja" id="UCW-ZS-0oT"/>
+                        <outlet property="priceTopConstraint" destination="ODW-lC-nZz" id="ImH-HK-lQM"/>
                         <outlet property="subscriptionTypeLabel" destination="HbX-9G-vQq" id="RLH-VB-2h9"/>
                         <outlet property="tableView" destination="LEn-fh-MJU" id="bEQ-zC-hEA"/>
                     </connections>
@@ -599,13 +611,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="363" height="649"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-VU-bOA">
-                                                <rect key="frame" x="0.0" y="0.0" width="363" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="363" height="37.666666666666664"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCS-R4-yZy">
-                                                        <rect key="frame" x="15" y="10" width="76" height="27"/>
+                                                        <rect key="frame" x="15" y="10.000000000000002" width="76" height="22.666666666666671"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvF-pe-T2N">
-                                                                <rect key="frame" x="20" y="2" width="36" height="23"/>
+                                                                <rect key="frame" x="20" y="2" width="36" height="18.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="16"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -627,20 +639,20 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutte le funzionalità diponibili nella versione gratuita gia abilitate di default." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5w-7p-0Hs">
-                                                <rect key="frame" x="10" y="52" width="343" height="45.666666666666657"/>
+                                                <rect key="frame" x="10" y="47.666666666666657" width="343" height="37.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view alpha="0.60000002384185791" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="XEe-RD-M2f" userLabel="separator">
-                                                <rect key="frame" x="10" y="117.66666666666667" width="343" height="1"/>
+                                                <rect key="frame" x="10" y="134.33333333333334" width="343" height="1"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="9P0-Na-Ro9"/>
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sbK-9H-m5G">
-                                                <rect key="frame" x="0.0" y="123.66666666666663" width="363" height="343"/>
+                                                <rect key="frame" x="0.0" y="140.33333333333334" width="363" height="335.66666666666663"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </tableView>
                                             <view alpha="0.60000002384185791" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="84A-b6-gO6" userLabel="separator">
@@ -681,34 +693,44 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djP-gC-doO">
-                                                <rect key="frame" x="15" y="486.66666666666669" width="76.666666666666671" height="51.333333333333314"/>
+                                                <rect key="frame" x="15" y="496" width="82" height="42"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-Alt-300-Light" family="Trakya Rounded Alt" pointSize="36"/>
                                                 <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/anno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCI-Y5-ag1">
-                                                <rect key="frame" x="96.666666666666671" y="506.66666666666669" width="50.333333333333329" height="25.666666666666686"/>
+                                                <rect key="frame" x="102" y="513.33333333333337" width="46.333333333333343" height="21"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-Alt-300-Light" family="Trakya Rounded Alt" pointSize="18"/>
                                                 <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blW-Qs-7HV">
+                                                <rect key="frame" x="10" y="90" width="343" height="14.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="blW-Qs-7HV" firstAttribute="top" secondItem="x5w-7p-0Hs" secondAttribute="bottom" constant="5" id="130-km-Ld4"/>
                                             <constraint firstItem="84A-b6-gO6" firstAttribute="top" secondItem="djP-gC-doO" secondAttribute="bottom" constant="20" id="1xW-ZM-BGf"/>
                                             <constraint firstAttribute="trailing" secondItem="x5w-7p-0Hs" secondAttribute="trailing" constant="10" id="3pV-Sa-fbB"/>
                                             <constraint firstItem="djP-gC-doO" firstAttribute="top" secondItem="sbK-9H-m5G" secondAttribute="bottom" constant="20" id="4sB-sr-Rip"/>
                                             <constraint firstAttribute="bottom" secondItem="JXJ-SN-Pd8" secondAttribute="bottom" constant="20" id="7EM-0F-zEQ"/>
                                             <constraint firstItem="sbK-9H-m5G" firstAttribute="top" secondItem="XEe-RD-M2f" secondAttribute="bottom" constant="5" id="7OH-sI-pfO"/>
+                                            <constraint firstItem="blW-Qs-7HV" firstAttribute="leading" secondItem="LOl-qS-YkT" secondAttribute="leading" constant="10" id="DaR-ZU-raI"/>
                                             <constraint firstItem="ZCI-Y5-ag1" firstAttribute="leading" secondItem="djP-gC-doO" secondAttribute="trailing" constant="5" id="GmH-g7-KLX"/>
                                             <constraint firstItem="JXJ-SN-Pd8" firstAttribute="top" secondItem="84A-b6-gO6" secondAttribute="bottom" constant="20" id="HR4-Cw-hnI"/>
                                             <constraint firstItem="x5w-7p-0Hs" firstAttribute="leading" secondItem="LOl-qS-YkT" secondAttribute="leading" constant="10" id="Hbd-XZ-Fri"/>
                                             <constraint firstItem="XEe-RD-M2f" firstAttribute="leading" secondItem="LOl-qS-YkT" secondAttribute="leading" constant="10" id="Qum-7M-QKL"/>
                                             <constraint firstAttribute="trailing" secondItem="sbK-9H-m5G" secondAttribute="trailing" id="W2i-74-zHW"/>
+                                            <constraint firstItem="XEe-RD-M2f" firstAttribute="top" secondItem="blW-Qs-7HV" secondAttribute="bottom" constant="30" id="WFi-ef-guf"/>
                                             <constraint firstItem="djP-gC-doO" firstAttribute="leading" secondItem="LOl-qS-YkT" secondAttribute="leading" constant="15" id="X6e-Fz-GqD"/>
                                             <constraint firstItem="oOl-VU-bOA" firstAttribute="top" secondItem="LOl-qS-YkT" secondAttribute="top" id="acl-nG-140"/>
                                             <constraint firstAttribute="trailing" secondItem="JXJ-SN-Pd8" secondAttribute="trailing" constant="40" id="ccE-dU-a01"/>
                                             <constraint firstAttribute="trailing" secondItem="oOl-VU-bOA" secondAttribute="trailing" id="d94-ap-0GK"/>
+                                            <constraint firstAttribute="trailing" secondItem="blW-Qs-7HV" secondAttribute="trailing" constant="10" id="eLr-SC-A4V"/>
                                             <constraint firstItem="oOl-VU-bOA" firstAttribute="leading" secondItem="LOl-qS-YkT" secondAttribute="leading" id="eQr-SU-e09"/>
                                             <constraint firstItem="sbK-9H-m5G" firstAttribute="leading" secondItem="LOl-qS-YkT" secondAttribute="leading" id="hk4-7N-TGn"/>
                                             <constraint firstItem="x5w-7p-0Hs" firstAttribute="top" secondItem="oOl-VU-bOA" secondAttribute="bottom" constant="10" id="kby-sG-CXo"/>
@@ -716,7 +738,6 @@
                                             <constraint firstAttribute="trailing" secondItem="84A-b6-gO6" secondAttribute="trailing" constant="10" id="nGA-gT-KkD"/>
                                             <constraint firstItem="ZCI-Y5-ag1" firstAttribute="firstBaseline" secondItem="djP-gC-doO" secondAttribute="firstBaseline" id="p2A-yr-4fU"/>
                                             <constraint firstItem="84A-b6-gO6" firstAttribute="leading" secondItem="LOl-qS-YkT" secondAttribute="leading" constant="10" id="q53-SW-dTc"/>
-                                            <constraint firstItem="XEe-RD-M2f" firstAttribute="top" secondItem="x5w-7p-0Hs" secondAttribute="bottom" constant="20" id="rIT-JP-dMQ"/>
                                             <constraint firstItem="JXJ-SN-Pd8" firstAttribute="leading" secondItem="LOl-qS-YkT" secondAttribute="leading" constant="40" id="w5o-PD-dRi"/>
                                         </constraints>
                                     </view>
@@ -747,6 +768,7 @@
                         <outlet property="cardShadowViewTopConstraint" destination="tPY-Qp-8Iy" id="F4x-xm-QKi"/>
                         <outlet property="cardView" destination="LOl-qS-YkT" id="oKA-IZ-Reu"/>
                         <outlet property="descriptionLabel" destination="x5w-7p-0Hs" id="UN5-yr-hUz"/>
+                        <outlet property="noteLabel" destination="blW-Qs-7HV" id="zj6-kD-dXu"/>
                         <outlet property="planLabel" destination="yvF-pe-T2N" id="M5J-NX-ks2"/>
                         <outlet property="planView" destination="PCS-R4-yZy" id="1HC-KA-KI6"/>
                         <outlet property="priceLabel" destination="djP-gC-doO" id="hBQ-Ro-SGt"/>
@@ -769,13 +791,13 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

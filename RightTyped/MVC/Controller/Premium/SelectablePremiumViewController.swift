@@ -22,6 +22,7 @@ class SelectablePremiumViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var cardShadowView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noteLabel: UILabel!
     
     @IBOutlet weak var cardShadowViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var cardShadowViewBottomConstraint: NSLayoutConstraint!
@@ -78,6 +79,7 @@ class SelectablePremiumViewController: UIViewController {
         subscriptionTypeLabel.set(font: .customFont(.alt, size: 18))
         buttonViewLabel.set(size: 24)
         planLabel.set(size: 16)
+        noteLabel.set(size: 12)
     }
     
     private func configurePlanType(){
@@ -104,6 +106,13 @@ class SelectablePremiumViewController: UIViewController {
             buttonViewLabel.text = model.buttonTitle
             planLabel.text = model.type.value
         }
+        
+        guard let note = model.note else {
+            noteLabel.isHidden = true
+            noteLabel.heightAnchor.constraint(equalToConstant: 0).isActive = true
+            return
+        }
+        noteLabel.text = note
     }
     
     private func setPrice(_ price: Double, currencySymbol: String){

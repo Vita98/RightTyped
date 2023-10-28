@@ -88,6 +88,7 @@ struct PremiumPageModel{
     var products: [SKProduct]?
     let type: PremiumType
     let description: String
+    let note: String?
     var price: Double?
     var currencySymbol: String?
     var subscriptionType: SubscriptionType?
@@ -104,10 +105,11 @@ struct PremiumPageModel{
         self.price = nil
         self.associatedIDs = nil
         self.currencySymbol = nil
+        self.note = nil
     }
     
     /// Initializer for a pro model
-    init(associatedID: String, description: String, buttonTitle: String, stackContent: [PremiumStackContent]) {
+    init(associatedID: String, description: String, note: String, buttonTitle: String, stackContent: [PremiumStackContent]) {
         self.description = description
         self.buttonTitle = buttonTitle
         self.price = nil
@@ -116,10 +118,11 @@ struct PremiumPageModel{
         self.associatedIDs = [associatedID]
         self.subscriptionType = nil
         self.currencySymbol = nil
+        self.note = note
     }
     
     /// Initializer for a Pay per Use model
-    init(associatedIDs: [String]? = nil, description: String, buttonTitle: String, stackContent: [PremiumStackContent]) {
+    init(associatedIDs: [String]? = nil, description: String, note: String, buttonTitle: String, stackContent: [PremiumStackContent]) {
         self.description = description
         self.buttonTitle = buttonTitle
         self.price = nil
@@ -128,6 +131,7 @@ struct PremiumPageModel{
         self.type = .payPerUse
         self.associatedIDs = associatedIDs
         self.currencySymbol = nil
+        self.note = note
     }
 }
 
@@ -168,11 +172,11 @@ struct Premium{
             PremiumStackContent(included: true, title: String(format: AppString.Premium.FirstBasePlan.firstStackText, MAXIMUM_CATEGORIES_AVAILABLE), type: .plainItem),
             PremiumStackContent(included: true, title: String(format: AppString.Premium.FirstBasePlan.secondStackText, MAXIMUM_ANSWERS_FOR_CATEGORIES), type: .plainItem),
             PremiumStackContent(included: false, title: AppString.Premium.FirstBasePlan.thirdStackText, type: .plainItem),]),
-        PremiumPageModel(associatedID: Products.YearlyProPlan.rawValue, description: AppString.Premium.FirstProPlan.description, buttonTitle: AppString.Premium.FirstProPlan.buttonTitle, stackContent: [
+        PremiumPageModel(associatedID: Products.YearlyProPlan.rawValue, description: AppString.Premium.FirstProPlan.description, note: AppString.Premium.FirstProPlan.note, buttonTitle: AppString.Premium.FirstProPlan.buttonTitle, stackContent: [
             PremiumStackContent(included: true, title: AppString.Premium.FirstProPlan.firstStackText, type: .plainItem),
             PremiumStackContent(included: true, title: AppString.Premium.FirstProPlan.secondStackText, type: .plainItem),
             PremiumStackContent(included: true, title: AppString.Premium.FirstProPlan.thirdStackText, type: .plainItem),]),
-        PremiumPageModel(associatedIDs: nil, description: AppString.Premium.FirstPpuPlan.description, buttonTitle: AppString.Premium.FirstPpuPlan.buttonTitle, stackContent: [
+        PremiumPageModel(associatedIDs: nil, description: AppString.Premium.FirstPpuPlan.description, note: AppString.Premium.FirstPpuPlan.note, buttonTitle: AppString.Premium.FirstPpuPlan.buttonTitle, stackContent: [
             PremiumStackContent(associatedID: Products.SingleCatTenAnsw.rawValue, included: false, title: String(format: AppString.Premium.FirstPpuPlan.firstStackText, ANS_NUM_PPU_FIRST) , type: .selectableItem),
             PremiumStackContent(associatedID: Products.FiveCatTenAnsw.rawValue, included: false, title: String(format: AppString.Premium.FirstPpuPlan.secondStackText, CAT_NUM_PPU_SECOND, ANS_NUM_PPU_SECOND), type: .selectableItem),
         ]),])

@@ -27,13 +27,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="462" height="249"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="751" text="Categorie" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOw-nu-5hm">
-                                <rect key="frame" x="23" y="5" width="377" height="47.333333333333336"/>
+                                <rect key="frame" x="23" y="5" width="377" height="46.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Hai a disposizione fino a 10 categorie" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVw-DI-jpK">
-                                <rect key="frame" x="23" y="52.333333333333336" width="367.66666666666669" height="20.000000000000007"/>
+                                <rect key="frame" x="23" y="51.666666666666664" width="368.33333333333331" height="16.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abilita categoria selezionata" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-XD-EyT">
-                                <rect key="frame" x="23" y="157.33333333333334" width="357" height="28.666666666666657"/>
+                                <rect key="frame" x="23" y="160" width="357" height="23.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -58,10 +58,10 @@
                                 </connections>
                             </switch>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jzh-zn-v8O">
-                                <rect key="frame" x="0.0" y="84.333333333333329" width="462" height="48.666666666666671"/>
+                                <rect key="frame" x="0.0" y="73" width="462" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48.666666666666671" id="VTl-PN-CMv"/>
+                                    <constraint firstAttribute="height" constant="60" id="VTl-PN-CMv"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="20" id="CZO-gs-ThQ">
                                     <size key="itemSize" width="128" height="128"/>
@@ -78,7 +78,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFE-Js-3Xr">
-                                <rect key="frame" x="400.66666666666669" y="37" width="40.666666666666686" height="13"/>
+                                <rect key="frame" x="401.33333333333331" y="37" width="39.333333333333314" height="10.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="9"/>
                                 <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -90,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="231" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3y-Wd-jzM">
-                                                <rect key="frame" x="115.66666666666669" y="6.3333333333333428" width="115.33333333333331" height="17.333333333333332"/>
+                                                <rect key="frame" x="115.66666666666669" y="8" width="115.33333333333331" height="14"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="12"/>
                                                 <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                         <rect key="frame" x="231" y="0.0" width="231" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancella" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-Qt-vMZ">
-                                                <rect key="frame" x="115.66666666666669" y="6.3333333333333428" width="115.33333333333331" height="17.333333333333332"/>
+                                                <rect key="frame" x="115.66666666666669" y="8" width="115.33333333333331" height="14"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="12"/>
                                                 <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -161,7 +161,7 @@
                             <constraint firstAttribute="trailing" secondItem="16e-LD-KZv" secondAttribute="trailing" constant="30" id="92N-W8-muV"/>
                             <constraint firstItem="XVw-DI-jpK" firstAttribute="leading" secondItem="HWH-un-pHY" secondAttribute="leading" constant="23" id="Ds1-QR-xlm"/>
                             <constraint firstItem="oBP-jx-tne" firstAttribute="top" secondItem="jzh-zn-v8O" secondAttribute="bottom" constant="12" id="EEd-st-UMW"/>
-                            <constraint firstItem="jzh-zn-v8O" firstAttribute="top" secondItem="XVw-DI-jpK" secondAttribute="bottom" constant="12" id="HG8-3m-ygd"/>
+                            <constraint firstItem="jzh-zn-v8O" firstAttribute="top" secondItem="XVw-DI-jpK" secondAttribute="bottom" constant="5" id="HG8-3m-ygd"/>
                             <constraint firstItem="7HT-XD-EyT" firstAttribute="leading" secondItem="HWH-un-pHY" secondAttribute="leading" constant="23" id="JX2-13-Bic"/>
                             <constraint firstItem="jzh-zn-v8O" firstAttribute="leading" secondItem="HWH-un-pHY" secondAttribute="leading" id="Oid-Kk-eSf"/>
                             <constraint firstItem="16e-LD-KZv" firstAttribute="leading" secondItem="DOw-nu-5hm" secondAttribute="trailing" constant="10" id="QK1-V8-wt9"/>
@@ -219,7 +219,7 @@
         <image name="binIcon" width="21" height="24"/>
         <image name="completeEditIcon" width="22" height="22"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
