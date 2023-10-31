@@ -15,7 +15,9 @@ fileprivate var VALUES_MODEL: [SettingsCellModel] = {
             SettingsCellModel(type: .Tutorial, itemType: .howToEnableKeyboard, text: AppString.SettingsModel.howToEnableKeyboardText),
             SettingsCellModel(type: .Tutorial, itemType: .howToUseKeyboard, text: AppString.SettingsModel.howToUseKeyboardText),
             SettingsCellModel(type: .Tutorial, itemType: .howToCustomizeKeyboard, text: AppString.SettingsModel.howToCustomizeKeyboardText),
-            SettingsCellModel(type: .Support, itemType: .contactSupport, text: AppString.SettingsModel.contactSupportText),]
+            SettingsCellModel(type: .Support, itemType: .contactSupport, text: AppString.SettingsModel.contactSupportText),
+            SettingsCellModel(type: .TermsConditions, itemType: .termsOfUse, text: AppString.SettingsModel.termsOfUse),
+            SettingsCellModel(type: .TermsConditions, itemType: .privacyPolicy, text: AppString.SettingsModel.privacyPolicy),]
 }()
 
 
@@ -27,9 +29,10 @@ enum SettingsTypeEnum: String, CaseIterable{
     case Keyboard = "Tastiera"
     case Tutorial = "Tutorial"
     case Support = "Supporto"
+    case TermsConditions = "TermsConditions"
     
     public func getOrderedVector() -> [SettingsTypeEnum]{
-        return [.App, .Keyboard, .Tutorial, .Support]
+        return [.App, .Keyboard, .Tutorial, .Support, .TermsConditions]
     }
     
     public func getType() -> SettingsType {
@@ -42,6 +45,8 @@ enum SettingsTypeEnum: String, CaseIterable{
             return SettingsType(type: .Tutorial, name: AppString.SettingsTypeEnum.tutorial)
         case .Support:
             return SettingsType(type: .Support, name: AppString.SettingsTypeEnum.support)
+        case .TermsConditions:
+            return SettingsType(type: .TermsConditions, name: AppString.SettingsTypeEnum.termsConditions)
         }
     }
 }
@@ -60,6 +65,8 @@ enum SettingsItem{
     case howToUseKeyboard
     case howToCustomizeKeyboard
     case contactSupport
+    case termsOfUse
+    case privacyPolicy
 }
 
 enum SettingsCellType{

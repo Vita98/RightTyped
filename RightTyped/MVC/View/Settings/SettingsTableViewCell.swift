@@ -13,7 +13,7 @@ class SettingsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var rowButton: UIButton!
+    @IBOutlet var rowButton: UIButton!
     
     private var cellModel: SettingsCellModel?
     
@@ -26,6 +26,16 @@ class SettingsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    private func resetSwitchMode() {
+        switchComponent.removeFromSuperview()
+        containerView.addSubview(rowButton)
+        rowButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20).isActive = true
+        rowButton.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5).isActive = true
+        rowButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
+        rowButton.widthAnchor.constraint(equalToConstant: 11).isActive = true
+        rowButton.heightAnchor.constraint(equalToConstant: 22).isActive = true
     }
     
     private func setSwitchMode(isOn: Bool?){
@@ -58,7 +68,7 @@ class SettingsTableViewCell: UITableViewCell {
             setSwitchMode(isOn: cellModel.status)
             self.selectionStyle = .none
         default:
-            break
+            resetSwitchMode()
         }
     }
     

@@ -207,6 +207,19 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
                 sendEmail()
             default: break
             }
+        case .TermsConditions:
+            switch cellModel.itemType{
+            case .termsOfUse:
+                let cv: WebKitViewController = UIStoryboard.main().instantiate()
+                cv.loadLink(AppString.SettingsLinks.termsOfUse)
+                self.navigationController?.pushViewController(cv, animated: true)
+            case .privacyPolicy:
+                let cv: WebKitViewController = UIStoryboard.main().instantiate()
+                cv.loadLink(AppString.SettingsLinks.privacyPolicy)
+                cv.withBarIcon = false
+                self.navigationController?.pushViewController(cv, animated: true)
+            default: break
+            }
         default:
             break
         }

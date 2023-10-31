@@ -24,6 +24,7 @@
 		013520D62AD328B000DED2E9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013520D52AD328B000DED2E9 /* WelcomeViewController.swift */; };
 		01369BC62A38D6590017B356 /* CustomComponentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */; };
 		0136BE852ABF27B000268393 /* GenericResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136BE842ABF27B000268393 /* GenericResultViewController.swift */; };
+		013DD0592AF0723700A5901D /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013DD0582AF0723700A5901D /* WebKitViewController.swift */; };
 		013E08432A21327100FF7928 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013E08422A21327100FF7928 /* ContentView.xib */; };
 		013E08452A21328100FF7928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08442A21328100FF7928 /* ContentView.swift */; };
 		013E08472A21348D00FF7928 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013E08462A21348D00FF7928 /* UIColor.swift */; };
@@ -195,6 +196,7 @@
 		013520D52AD328B000DED2E9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		01369BC52A38D6590017B356 /* CustomComponentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomComponentProtocol.swift; sourceTree = "<group>"; };
 		0136BE842ABF27B000268393 /* GenericResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResultViewController.swift; sourceTree = "<group>"; };
+		013DD0582AF0723700A5901D /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		013E08422A21327100FF7928 /* ContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentView.xib; sourceTree = "<group>"; };
 		013E08442A21328100FF7928 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		013E08462A21348D00FF7928 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 				016D5C3B2AAF8EB700F327B9 /* LoadingViewController.swift */,
 				0136BE842ABF27B000268393 /* GenericResultViewController.swift */,
 				013520D52AD328B000DED2E9 /* WelcomeViewController.swift */,
+				013DD0582AF0723700A5901D /* WebKitViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1091,6 +1094,7 @@
 				01A7659A2A27AF9600D50C4B /* CategoryCollectionViewCell.swift in Sources */,
 				019E2F0A2A1E8C39005A8021 /* SceneDelegate.swift in Sources */,
 				019945B82AE5932C00A37786 /* TextFormattable.swift in Sources */,
+				013DD0592AF0723700A5901D /* WebKitViewController.swift in Sources */,
 				012027522A2514ED00B62039 /* AnswerTableViewCell.swift in Sources */,
 				01EC3BE62AA7A2170026DF1B /* PlainPremiumViewController.swift in Sources */,
 				01930A452A7F936B005EE27A /* GenericTutorialViewController.swift in Sources */,

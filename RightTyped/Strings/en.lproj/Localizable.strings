@@ -40,6 +40,7 @@
 "SettingsTypeEnum_KEYBOARD" = "Keyboard";
 "SettingsTypeEnum_TUTORIAL" = "Tutorial";
 "SettingsTypeEnum_SUPPORT" = "Support";
+"SettingsTypeEnum_TERMS_CONDITION" = "Terms and Conditions";
 
 "SettingsModel_GO_BACK_TO_DEFAULT_KEYBOARD" = "Return to the default keyboard after entering an answer";
 "SettingsModel_HOW_TO_ENABLE_KEYBOARD" = "How to enable keyboard";
@@ -48,6 +49,12 @@
 "SettingsModel_PREMIUM" = "Premium";
 "SettingsModel_MY_PURCHASES" = "My purchases";
 "SettingsModel_CONTACT_SUPPORT_TEXT" = "Contact support";
+"SettingsModel_TERMS_OF_USE_TEXT" = "Terms of Use";
+"SettingsModel_PRIVACY_POLICY_TEXT" = "Privacy policy";
+
+//SettingsLinks
+"SettingsLinks_TERMS_OF_USE_LINK" = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
+"SettingsLinks_PRIVACY_POLICY_LINK" = "https://righttyped.github.io/website/privacy/";
 
 //MARK: Biometric
 "Biometric_REASON" = "Please authenticate to procede";

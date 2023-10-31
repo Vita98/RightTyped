@@ -56,6 +56,7 @@ struct AppString{
         static let keyboard: String = LocalizableString("SettingsTypeEnum_KEYBOARD").locale
         static let tutorial: String = LocalizableString("SettingsTypeEnum_TUTORIAL").locale
         static let support: String = LocalizableString("SettingsTypeEnum_SUPPORT").locale
+        static let termsConditions: String = LocalizableString("SettingsTypeEnum_TERMS_CONDITION").locale
     }
     
     struct SettingsModel{
@@ -67,6 +68,15 @@ struct AppString{
         static let premiumText: String = LocalizableString("SettingsModel_PREMIUM").locale
         static let myPurchasesText: String = LocalizableString("SettingsModel_MY_PURCHASES").locale
         static let contactSupportText: String = LocalizableString("SettingsModel_CONTACT_SUPPORT_TEXT").locale
+        static let termsOfUse: String = LocalizableString("SettingsModel_TERMS_OF_USE_TEXT").locale
+        static let privacyPolicy: String = LocalizableString("SettingsModel_PRIVACY_POLICY_TEXT").locale
+    }
+    
+    
+    struct SettingsLinks{
+        private init(){}
+        static let termsOfUse: String = LocalizableString("SettingsLinks_TERMS_OF_USE_LINK").locale
+        static let privacyPolicy: String = LocalizableString("SettingsLinks_PRIVACY_POLICY_LINK").locale
     }
     
     struct Biometric{

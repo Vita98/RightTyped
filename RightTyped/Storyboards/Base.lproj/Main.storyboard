@@ -33,13 +33,13 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vQA-Z7-8uz">
-                                <rect key="frame" x="141" y="243.66666666666663" width="108" height="120"/>
+                                <rect key="frame" x="141" y="248.66666666666663" width="108" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="cty-4r-g0Q"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fq-4h-1q3">
-                                <rect key="frame" x="10" y="393.66666666666669" width="370" height="57"/>
+                                <rect key="frame" x="10" y="398.66666666666669" width="370" height="46.666666666666686"/>
                                 <string key="text">RightTyped is locked
 Use the touch ID to open it.</string>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
@@ -47,10 +47,10 @@ Use the touch ID to open it.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0M9-5b-QxY">
-                                <rect key="frame" x="0.0" y="450.66666666666674" width="390" height="359.33333333333326"/>
+                                <rect key="frame" x="0.0" y="445.33333333333326" width="390" height="364.66666666666674"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ce-Qk-Kdl">
-                                        <rect key="frame" x="40" y="154.66666666666669" width="310" height="50"/>
+                                        <rect key="frame" x="40" y="157.33333333333331" width="310" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Biometrics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-Pw-Oq5">
                                                 <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
@@ -128,7 +128,7 @@ Use the touch ID to open it.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAP-9K-XNs">
-                                <rect key="frame" x="95.333333333333329" y="82" width="199.33333333333337" height="51.333333333333343"/>
+                                <rect key="frame" x="90" y="82" width="210" height="42"/>
                                 <string key="text">Personalize your answers,
 when and how you want!</string>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
@@ -136,10 +136,10 @@ when and how you want!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2a8-Bt-QhJ">
-                                <rect key="frame" x="0.0" y="153.33333333333331" width="390" height="690.66666666666674"/>
+                                <rect key="frame" x="0.0" y="144" width="390" height="700"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIP-bj-mxL">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="690.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="700"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -197,7 +197,7 @@ when and how you want!</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2r-MJ-iQW">
-                                                        <rect key="frame" x="23" y="5" width="307" height="34.333333333333336"/>
+                                                        <rect key="frame" x="23" y="5" width="307" height="28"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -210,67 +210,67 @@ when and how you want!</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancella" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVU-Zd-AMk">
-                                                        <rect key="frame" x="332.66666666666669" y="38" width="35" height="13"/>
+                                                        <rect key="frame" x="332.66666666666669" y="38" width="35" height="10.666666666666664"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="9"/>
                                                         <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Fill in all the fields of the answer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="942-6P-fSg">
-                                                        <rect key="frame" x="15" y="39.333333333333329" width="307.66666666666669" height="20"/>
+                                                        <rect key="frame" x="15" y="33" width="307.66666666666669" height="16.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view alpha="0.60000002384185791" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="PyR-Lk-sO6" userLabel="separator">
-                                                        <rect key="frame" x="10" y="71.333333333333343" width="370" height="1"/>
+                                                        <rect key="frame" x="10" y="61.333333333333329" width="370" height="1"/>
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="KuQ-ei-HqI"/>
                                                         </constraints>
                                                     </view>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tb3-bk-Yfk">
-                                                        <rect key="frame" x="318" y="82.333333333333343" width="51" height="31"/>
+                                                        <rect key="frame" x="318" y="72.333333333333343" width="51" height="31"/>
                                                         <connections>
                                                             <action selector="enableSwitchValueChanged:" destination="M7H-gB-n8C" eventType="valueChanged" id="Lkc-6D-JmB"/>
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-5w-BgA">
-                                                        <rect key="frame" x="23" y="83.666666666666657" width="285" height="28.666666666666671"/>
+                                                        <rect key="frame" x="23" y="76.333333333333343" width="285" height="23.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view alpha="0.60000002384185791" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="7wt-7S-h2R" userLabel="separator">
-                                                        <rect key="frame" x="10" y="123.33333333333334" width="370" height="1"/>
+                                                        <rect key="frame" x="10" y="113.33333333333334" width="370" height="1"/>
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="YeR-pP-ZQY"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUj-Jm-J1Y">
-                                                        <rect key="frame" x="23" y="134.33333333333334" width="344" height="28.666666666666657"/>
+                                                        <rect key="frame" x="23" y="124.33333333333333" width="344" height="23.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It appears in the keyboard as the title of the answer, it must be short" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-st-Dkc">
-                                                        <rect key="frame" x="15" y="163" width="360" height="40"/>
+                                                        <rect key="frame" x="15" y="147.66666666666666" width="360" height="32.666666666666657"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-PS-9Fg">
-                                                        <rect key="frame" x="15" y="213" width="360" height="40"/>
+                                                        <rect key="frame" x="15" y="190.33333333333334" width="360" height="40"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="M0A-Z9-cLG"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUo-Zk-QZg">
-                                                        <rect key="frame" x="54.333333333333343" y="273" width="281.33333333333326" height="20"/>
+                                                        <rect key="frame" x="53.666666666666657" y="250.33333333333334" width="282.66666666666674" height="16.333333333333343"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lcf-Zb-aOL" customClass="UICheckBox" customModule="RightTyped" customModuleProvider="target">
-                                                                <rect key="frame" x="0.6666666666666643" y="1.6666666666666856" width="17" height="17"/>
+                                                                <rect key="frame" x="1" y="-0.33333333333331439" width="17" height="17"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="17" id="NSW-a2-2OI"/>
@@ -278,7 +278,7 @@ when and how you want!</string>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="use the title as the content of the answer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqm-9Q-iNR">
-                                                                <rect key="frame" x="27.666666666666671" y="0.0" width="253.66666666666663" height="20"/>
+                                                                <rect key="frame" x="28.000000000000014" y="0.0" width="254.66666666666669" height="16.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -295,19 +295,19 @@ when and how you want!</string>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-hg-OaX">
-                                                        <rect key="frame" x="23" y="313" width="344" height="28.666666666666686"/>
+                                                        <rect key="frame" x="23" y="286.66666666666669" width="344" height="23.333333333333314"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is the text that is written as an answer, it can be long and detailed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF1-0f-XXW">
-                                                        <rect key="frame" x="15" y="341.66666666666669" width="360" height="40"/>
+                                                        <rect key="frame" x="15" y="310" width="360" height="32.666666666666686"/>
                                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R7-VX-w5t">
-                                                        <rect key="frame" x="15" y="391.66666666666669" width="360" height="41"/>
+                                                        <rect key="frame" x="15" y="352.66666666666669" width="360" height="41"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEv-Ug-Rdz">
                                                                 <rect key="frame" x="23" y="10" width="314" height="21"/>
@@ -469,13 +469,13 @@ when and how you want!</string>
                                             <constraint firstAttribute="height" constant="30" id="btM-Cq-YhY"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifica Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnC-Ef-dDf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Modifica Categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnC-Ef-dDf">
                                         <rect key="frame" x="10" y="80" width="330" height="34"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v0-v5-3Tg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v0-v5-3Tg">
                                         <rect key="frame" x="23" y="144" width="304" height="29"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -488,7 +488,7 @@ when and how you want!</string>
                                             <constraint firstAttribute="height" constant="40" id="URo-7X-W97"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="It appears in the keyboard as a category title, it must be short" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-Ml-Mh8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" ambiguous="YES" text="It appears in the keyboard as a category title, it must be short" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-Ml-Mh8">
                                         <rect key="frame" x="15" y="173" width="320" height="40"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -514,7 +514,7 @@ when and how you want!</string>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veb-g3-as4">
-                                        <rect key="frame" x="23" y="295.33333333333331" width="245" height="28.666666666666686"/>
+                                        <rect key="frame" x="23" y="298" width="245" height="23.333333333333314"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -988,13 +988,13 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 <rect key="frame" x="0.0" y="57" width="390" height="787"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eS-kY-g5a">
-                                        <rect key="frame" x="23" y="10" width="344" height="34.333333333333336"/>
+                                        <rect key="frame" x="23" y="10" width="344" height="28"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-NZ-Nnh">
-                                        <rect key="frame" x="0.0" y="44.333333333333314" width="390" height="742.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="38" width="390" height="749"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1029,6 +1029,41 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
             </objects>
             <point key="canvasLocation" x="4849" y="-28"/>
         </scene>
+        <!--Web Kit View Controller-->
+        <scene sceneID="K6t-Pl-i0f">
+            <objects>
+                <viewController storyboardIdentifier="WebKitViewController" id="VoC-oc-AHT" customClass="WebKitViewController" customModule="RightTyped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pdH-BV-2N2">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLN-f2-7Mx">
+                                <rect key="frame" x="0.0" y="47" width="390" height="797"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qjC-vA-LJy"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PLN-f2-7Mx" secondAttribute="bottom" id="GoD-iS-C9z"/>
+                            <constraint firstItem="PLN-f2-7Mx" firstAttribute="trailing" secondItem="qjC-vA-LJy" secondAttribute="trailing" id="cZu-Hn-ysq"/>
+                            <constraint firstItem="PLN-f2-7Mx" firstAttribute="leading" secondItem="qjC-vA-LJy" secondAttribute="leading" id="dGZ-1u-hTQ"/>
+                            <constraint firstItem="PLN-f2-7Mx" firstAttribute="top" secondItem="qjC-vA-LJy" secondAttribute="top" id="eSx-PG-zi7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="PLN-f2-7Mx" id="PcI-ZO-iTF"/>
+                        <outlet property="webViewTopConstraint" destination="eSx-PG-zi7" id="uGT-1P-xAd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVo-VY-aKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5780" y="-28.436018957345969"/>
+        </scene>
         <!--Generic Tutorial View Controller-->
         <scene sceneID="z39-MK-Ydw">
             <objects>
@@ -1038,13 +1073,13 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgP-r4-8Xs">
-                                <rect key="frame" x="10" y="0.0" width="370" height="34.333333333333336"/>
+                                <rect key="frame" x="10" y="0.0" width="370" height="28"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szv-nB-Etb">
-                                <rect key="frame" x="20" y="44.333333333333343" width="350" height="321"/>
+                                <rect key="frame" x="20" y="38" width="350" height="321"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aWO-GQ-Bus">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="321"/>
@@ -1065,7 +1100,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                 </constraints>
                             </view>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="RwY-iA-fld">
-                                <rect key="frame" x="10" y="385.33333333333326" width="370" height="256.66666666666674"/>
+                                <rect key="frame" x="10" y="379" width="370" height="263"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1109,13 +1144,13 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5P-Kn-Wyv">
-                                <rect key="frame" x="40" y="0.0" width="310" height="34.333333333333336"/>
+                                <rect key="frame" x="40" y="0.0" width="310" height="28"/>
                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickIcon" translatesAutoresizingMaskIntoConstraints="NO" id="OA6-B2-Nif">
-                                <rect key="frame" x="96" y="134.33333333333334" width="198" height="200.00000000000003"/>
+                                <rect key="frame" x="96" y="128" width="198" height="200"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4T-8V-Jqy">
                                 <rect key="frame" x="56" y="532" width="278" height="50"/>
@@ -1171,7 +1206,7 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25c-ZW-hG9">
-                                <rect key="frame" x="20" y="279.66666666666669" width="350" height="285.00000000000006"/>
+                                <rect key="frame" x="20" y="285" width="350" height="274"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hm8-wR-pnj">
                                         <rect key="frame" x="145" y="25" width="60" height="60"/>
@@ -1181,19 +1216,19 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifica Categoria" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWg-DS-t1K">
-                                        <rect key="frame" x="10" y="100" width="330" height="34.333333333333343"/>
+                                        <rect key="frame" x="10" y="100" width="330" height="28"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="24"/>
                                         <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLJ-E8-nC9">
-                                        <rect key="frame" x="20" y="154.33333333333331" width="310" height="25.666666666666657"/>
+                                        <rect key="frame" x="20" y="148" width="310" height="21"/>
                                         <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLO-MY-1Uo">
-                                        <rect key="frame" x="20" y="210" width="310" height="50"/>
+                                        <rect key="frame" x="20" y="199" width="310" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="SJN-qK-w8w"/>
@@ -1358,17 +1393,20 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
         <image name="settingsIcon" width="30" height="30"/>
         <image name="tickIcon" width="200" height="200"/>
         <image name="welcomeIcon" width="182" height="146"/>
+        <namedColor name="backgroundColor">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="backgroundGradientColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
