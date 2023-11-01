@@ -1045,17 +1045,23 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hfZ-pi-sOL">
+                                <rect key="frame" x="185" y="412" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qjC-vA-LJy"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hfZ-pi-sOL" firstAttribute="centerY" secondItem="pdH-BV-2N2" secondAttribute="centerY" id="4s1-bI-IF4"/>
                             <constraint firstAttribute="bottom" secondItem="PLN-f2-7Mx" secondAttribute="bottom" id="GoD-iS-C9z"/>
                             <constraint firstItem="PLN-f2-7Mx" firstAttribute="trailing" secondItem="qjC-vA-LJy" secondAttribute="trailing" id="cZu-Hn-ysq"/>
                             <constraint firstItem="PLN-f2-7Mx" firstAttribute="leading" secondItem="qjC-vA-LJy" secondAttribute="leading" id="dGZ-1u-hTQ"/>
+                            <constraint firstItem="hfZ-pi-sOL" firstAttribute="centerX" secondItem="pdH-BV-2N2" secondAttribute="centerX" id="eCN-NC-Yth"/>
                             <constraint firstItem="PLN-f2-7Mx" firstAttribute="top" secondItem="qjC-vA-LJy" secondAttribute="top" id="eSx-PG-zi7"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="hfZ-pi-sOL" id="SrR-kT-s64"/>
                         <outlet property="webView" destination="PLN-f2-7Mx" id="PcI-ZO-iTF"/>
                         <outlet property="webViewTopConstraint" destination="eSx-PG-zi7" id="uGT-1P-xAd"/>
                     </connections>
