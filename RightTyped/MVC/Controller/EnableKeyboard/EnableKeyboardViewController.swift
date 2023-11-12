@@ -12,6 +12,9 @@ class EnableKeyboardViewController: UIViewController {
     @IBOutlet weak var openSettingsView: UIView!
     @IBOutlet weak var keyboardNotEnabledView: UIView!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet var closeButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet var closeButtonTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var closeButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var keyboardNotEnabledLabel: UILabel!
     @IBOutlet weak var doNotShowLabel: UILabel!
@@ -25,6 +28,7 @@ class EnableKeyboardViewController: UIViewController {
     var isCheckboxSelected: Bool = false
     var fromSettings = false
     var showCloseButton = true
+    var showSkipButton = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +53,21 @@ class EnableKeyboardViewController: UIViewController {
             checkboxButton.isHidden = true
         }
         
-        if !showCloseButton{
-            closeButton.isHidden = true
-            closeButton.isEnabled = false
+        if !showCloseButton {
+            if showSkipButton {
+                closeButton.isHidden = false
+                closeButton.isEnabled = true
+                closeButton.removeConstraint(closeButtonWidthConstraint)
+                closeButtonTrailingConstraint.constant = 5
+                closeButtonTopConstraint.constant = 5
+                closeButton.setImage(UIImage(), for: .normal)
+                closeButton.setTitle(AppString.General.skip, for: .normal)
+                closeButton.setTitleColor(.componentColor, for: .normal)
+                closeButton.setTitleColor(.componentColor, for: .highlighted)
+            } else {
+                closeButton.isHidden = true
+                closeButton.isEnabled = false
+            }
         }
         
         openSettingsView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openSettings)))
@@ -76,7 +92,28 @@ class EnableKeyboardViewController: UIViewController {
     
     
     @IBAction func closeButtonPression(_ sender: Any) {
-        self.dismiss(animated: true)
+        if showSkipButton {
+            let viewC: ManagerTutorialViewController = UIStoryboard.main().instantiate()
+            viewC.model = Tutorials.HOW_TO_USE_KEYBOARD
+            viewC.fromSettings = self.fromSettings
+            viewC.showCloseButton = showCloseButton
+            viewC.customFinalAction = {[weak self] in
+                //Implement the second tutorial
+                guard let strongSelf = self else { return }
+                let secondTutorial: ManagerTutorialViewController = UIStoryboard.main().instantiate()
+                secondTutorial.model = Tutorials.HOW_TO_CUSTOMIZE_KEYBOARD
+                secondTutorial.fromSettings = strongSelf.fromSettings
+                secondTutorial.isFinalTutorial = true
+                secondTutorial.showCloseButton = strongSelf.showCloseButton
+                secondTutorial.customFinalAction = {[weak self] in
+                    self?.dismiss(animated: true)
+                }
+                strongSelf.navigationController?.pushViewController(secondTutorial, animated: true)
+            }
+            self.navigationController?.pushViewController(viewC, animated: true)
+        } else {
+            self.dismiss(animated: true)
+        }
     }
     
     @objc private func willEnterForeground(){

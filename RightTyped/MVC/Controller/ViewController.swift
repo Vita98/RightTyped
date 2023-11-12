@@ -867,7 +867,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
                 answersTableView.reloadSections(IndexSet(integer: 1), with: .fade)
             }
             updateAddCatIconVisibility()
-        }else{
+        } else if type != .move {
             answersTableView.reloadData()
         }
     }

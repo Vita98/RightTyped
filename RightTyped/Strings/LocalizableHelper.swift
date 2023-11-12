@@ -34,6 +34,7 @@ struct AppString{
         static let save: String = LocalizableString("GENERAL_SAVE").locale
         static let enable: String = LocalizableString("GENERAL_ENABLE").locale
         static let doNotShowThisMessage: String = LocalizableString("GENERAL_NOT_SHOW_THIS_MESSAGE").locale
+        static let skip: String = LocalizableString("GENERAL_SKIP").locale
     }
     
     struct Alerts{

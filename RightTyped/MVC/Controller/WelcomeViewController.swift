@@ -36,6 +36,7 @@ class WelcomeViewController: UIViewController {
     @objc private func goOn(){
         let keyboardEnViewContr: EnableKeyboardViewController = UIStoryboard.main().instantiate()
         keyboardEnViewContr.showCloseButton = false
+        keyboardEnViewContr.showSkipButton = true
         self.navigationController?.pushViewController(keyboardEnViewContr, animated: true)
     }
 

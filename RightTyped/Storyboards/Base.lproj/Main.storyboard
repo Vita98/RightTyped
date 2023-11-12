@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -771,6 +771,9 @@ Add New Keyboad &gt;  Select "RightTyped"</string>
                     <connections>
                         <outlet property="checkboxButton" destination="eYd-00-a7m" id="2Ak-cK-ttm"/>
                         <outlet property="closeButton" destination="ku3-N9-Asw" id="99n-72-vzN"/>
+                        <outlet property="closeButtonTopConstraint" destination="EaN-XO-NZF" id="acE-LG-b4a"/>
+                        <outlet property="closeButtonTrailingConstraint" destination="dEk-3T-LIh" id="puz-fx-6ff"/>
+                        <outlet property="closeButtonWidthConstraint" destination="JY6-Uu-dYB" id="g1E-bs-jic"/>
                         <outlet property="doNotShowLabel" destination="Q03-9H-ffK" id="k2h-eN-GKJ"/>
                         <outlet property="firstStackLabel" destination="2eV-1L-gAd" id="Hpf-98-YRQ"/>
                         <outlet property="goToSettingsLabel" destination="2B4-wI-xFh" id="cwR-9X-avj"/>

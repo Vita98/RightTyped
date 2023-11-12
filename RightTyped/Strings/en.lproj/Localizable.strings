@@ -22,6 +22,7 @@
 "GENERAL_SAVE" = "Save";
 "GENERAL_ENABLE" = "Enable";
 "GENERAL_NOT_SHOW_THIS_MESSAGE" = "do not show this message again";
+"GENERAL_SKIP" = "Skip";
 
 //MARK: Alert
 "Alerts_YES" = "Yes";
