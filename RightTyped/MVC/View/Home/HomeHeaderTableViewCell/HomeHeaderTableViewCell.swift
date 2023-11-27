@@ -35,6 +35,10 @@ class HomeHeaderTableViewCell: UITableViewCell {
     @IBOutlet private weak var deleteIconImageView: UIImageView!
     @IBOutlet private weak var deleteLabel: UILabel!
     
+    @IBOutlet weak var shareContentView: UIView!
+    @IBOutlet weak var shareIconImageView: UIImageView!
+    @IBOutlet weak var shareLabel: UILabel!
+    
     @IBOutlet private weak var addImageView: UIImageView!
     
     @IBOutlet private weak var categoryCollectionViewFlowLayout: UICollectionViewFlowLayout! {
@@ -68,6 +72,7 @@ class HomeHeaderTableViewCell: UITableViewCell {
         changeContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonsPressed(sender:))))
         deleteContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonsPressed(sender:))))
         addImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonsPressed(sender:))))
+        shareContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonsPressed(sender:))))
     }
     
     private func configureString(){
@@ -82,6 +87,7 @@ class HomeHeaderTableViewCell: UITableViewCell {
         enableCatLable.set(text: AppString.HomeHeaderTableViewCell.enableCategory, size: 20)
         editLabel.set(text: AppString.General.edit, size: 12)
         deleteLabel.set(text: AppString.General.delete, size: 12)
+        shareLabel.set(text: AppString.General.share, size: 12)
     }
 
     //MARK: events
@@ -93,6 +99,8 @@ class HomeHeaderTableViewCell: UITableViewCell {
                 delegate.homeHeaderTableViewCellDidPressed(event: .Change, withComponentStatus: true)
             }else if sender.view == deleteContentView, self.enabled{
                 delegate.homeHeaderTableViewCellDidPressed(event: .Delete, withComponentStatus: true)
+            }else if sender.view == shareContentView, self.enabled{
+                delegate.homeHeaderTableViewCellDidPressed(event: .Share, withComponentStatus: true)
             }
         }
     }
@@ -113,13 +121,17 @@ class HomeHeaderTableViewCell: UITableViewCell {
             if enabled{
                 strongSelf.editLabel.textColor = .componentColor
                 strongSelf.deleteLabel.textColor = .componentColor
+                strongSelf.shareLabel.textColor = .componentColor
                 strongSelf.editIconImageView.image = strongSelf.editIconImageView.image?.withTintColor(.componentColor)
                 strongSelf.deleteIconImageView.image = strongSelf.deleteIconImageView.image?.withTintColor(.componentColor)
+                strongSelf.shareIconImageView.image = strongSelf.shareIconImageView.image?.withTintColor(.componentColor)
             }else{
                 strongSelf.editLabel.textColor = .componentColor.disabled()
                 strongSelf.deleteLabel.textColor = .componentColor.disabled()
+                strongSelf.shareLabel.textColor = .componentColor.disabled()
                 strongSelf.editIconImageView.image = strongSelf.editIconImageView.image?.withTintColor(.componentColor.disabled())
                 strongSelf.deleteIconImageView.image = strongSelf.deleteIconImageView.image?.withTintColor(.componentColor.disabled())
+                strongSelf.shareIconImageView.image = strongSelf.shareIconImageView.image?.withTintColor(.componentColor.disabled())
             }
         }
     }
@@ -155,5 +167,6 @@ class HomeHeaderTableViewCell: UITableViewCell {
         case AddNew
         case Delete
         case Change
+        case Share
     }
 }

@@ -23,6 +23,7 @@
 "GENERAL_ENABLE" = "Enable";
 "GENERAL_NOT_SHOW_THIS_MESSAGE" = "do not show this message again";
 "GENERAL_SKIP" = "Skip";
+"GENERAL_SHARE" = "Share";
 
 //MARK: Alert
 "Alerts_YES" = "Yes";
@@ -225,6 +226,10 @@
 "Premium_Plans_FirstPpuPlan_BUTTON_TITLE" = "Buy";
 "Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT" = "Single category with %d answers";
 "Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT" = "%d categories with %d answers each";
+
+//MARK: Share
+"Share_QRCODE" = "QR-Code";
+"Share_FILE" = "Share file";
 
 //MARK: SettingsViewController
 "SettingsViewController_TITLE" = "Settings";

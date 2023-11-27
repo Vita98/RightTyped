@@ -35,6 +35,7 @@ struct AppString{
         static let enable: String = LocalizableString("GENERAL_ENABLE").locale
         static let doNotShowThisMessage: String = LocalizableString("GENERAL_NOT_SHOW_THIS_MESSAGE").locale
         static let skip: String = LocalizableString("GENERAL_SKIP").locale
+        static let share: String = LocalizableString("GENERAL_SHARE").locale
     }
     
     struct Alerts{
@@ -279,6 +280,12 @@ struct AppString{
             static let firstStackText: String = LocalizableString("Premium_Plans_FirstPpuPlan_FIRST_STACK_TEXT").locale
             static let secondStackText: String = LocalizableString("Premium_Plans_FirstPpuPlan_SECOND_STACK_TEXT").locale
         }
+    }
+    
+    struct Share{
+        private init(){}
+        static let qrCode: String = LocalizableString("Share_QRCODE").locale
+        static let file: String = LocalizableString("Share_FILE").locale
     }
     
     //MARK: Controller - cell - xib

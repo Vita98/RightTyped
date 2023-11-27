@@ -13,6 +13,7 @@ let CATEGORY_CELL_KEYBOARD_SHADOW = Shadow(color: UIColor.black.cgColor, offset:
 let CONTENT_VIEW_SHADOW = Shadow(color: UIColor.black.cgColor, offset: CGSize(width: 0.1, height: -0.2), radius: 1, opacity: 0.2)
 let CATEGORY_CELL_APP_SHADOW = Shadow(color: UIColor.black.cgColor, offset: CGSize(width: 0.7, height: 0.7), radius: 0.7, opacity: 0.6)
 let TUTORIAL_GIF_SHADOW = Shadow(color: UIColor.black.cgColor, offset: CGSize(width: 2, height: 2), radius: 2, opacity: 0.3)
+let SHARE_CARD_SHADOW = Shadow(color: UIColor.black.cgColor, offset: CGSize(width: 2, height: 2), radius: 2, opacity: 0.2)
 
 let CONTAINER_VIEW_ROUND_CORNER : CGFloat = 45
 let MODAL_VIEW_ROUND_CORNER : CGFloat = 20

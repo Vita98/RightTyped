@@ -825,8 +825,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
                     DataModelManagerPersistentContainer.shared.saveContext()
                 }
             }))
-            
             self.present(alert, animated: true)
+        case .Share:
+            let VC: SharingChooserViewController = UIStoryboard.main().instantiate()
+            if let cat = selectedCategory {
+                VC.model = CategoryShareModel(from: cat)
+            }
+            VC.modalTransitionStyle = .crossDissolve
+            VC.modalPresentationStyle = .overFullScreen
+            self.view.endEditing(true)
+            self.present(VC, animated: true)
         }
     }
     

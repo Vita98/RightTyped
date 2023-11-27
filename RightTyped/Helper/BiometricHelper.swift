@@ -34,6 +34,8 @@ struct BiometricHelper{
                 return .touch
             case .faceID:
                 return .face
+            case .opticID:
+                return .unknown
             @unknown default:
                 return .unknown
             }

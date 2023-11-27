@@ -24,6 +24,7 @@ public enum ShadowType{
     case contentView
     case categoryAppCollectionViewCell
     case tutorialGifShadow
+    case shareCardShadow
     
     /// Associatiion between the type and the hardcoded constants
     var value : Shadow {
@@ -37,6 +38,8 @@ public enum ShadowType{
                 return CATEGORY_CELL_APP_SHADOW
             case .tutorialGifShadow:
                 return TUTORIAL_GIF_SHADOW
+            case .shareCardShadow:
+                return SHARE_CARD_SHADOW
             }
         }
     }

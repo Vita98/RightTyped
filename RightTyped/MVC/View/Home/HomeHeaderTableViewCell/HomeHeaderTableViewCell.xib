@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -87,16 +87,16 @@
                                 <rect key="frame" x="0.0" y="202" width="462" height="30"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AlZ-4g-mPX">
-                                        <rect key="frame" x="0.0" y="0.0" width="231" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="154" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3y-Wd-jzM">
-                                                <rect key="frame" x="115.66666666666669" y="8" width="115.33333333333331" height="14"/>
+                                                <rect key="frame" x="77" y="8" width="77" height="14"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="12"/>
                                                 <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="completeEditIcon" translatesAutoresizingMaskIntoConstraints="NO" id="efD-Cp-3UC">
-                                                <rect key="frame" x="88.666666666666671" y="4" width="22" height="22"/>
+                                                <rect key="frame" x="50" y="4" width="22" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="22" id="uuO-Wk-fuS"/>
                                                     <constraint firstAttribute="height" constant="22" id="yve-BD-i6i"/>
@@ -113,17 +113,45 @@
                                             <constraint firstAttribute="trailing" secondItem="Z3y-Wd-jzM" secondAttribute="trailing" id="qcQ-dr-3da"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="su9-g7-SiZ">
+                                        <rect key="frame" x="154" y="0.0" width="154" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condividi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbJ-yP-I4Z">
+                                                <rect key="frame" x="77" y="8" width="77" height="14"/>
+                                                <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="12"/>
+                                                <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="YEJ-hR-1gl">
+                                                <rect key="frame" x="55" y="4.6666666666666572" width="17" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="Itf-MA-jCK"/>
+                                                    <constraint firstAttribute="width" constant="17" id="jCx-ta-23P"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="PbJ-yP-I4Z" secondAttribute="trailing" id="Mqh-bF-6X2"/>
+                                            <constraint firstItem="PbJ-yP-I4Z" firstAttribute="centerY" secondItem="su9-g7-SiZ" secondAttribute="centerY" id="SIQ-Zh-omC"/>
+                                            <constraint firstItem="PbJ-yP-I4Z" firstAttribute="centerY" secondItem="su9-g7-SiZ" secondAttribute="centerY" id="TUm-Sc-dFt"/>
+                                            <constraint firstItem="PbJ-yP-I4Z" firstAttribute="width" secondItem="su9-g7-SiZ" secondAttribute="width" multiplier="0.5" id="VEh-bL-BY4"/>
+                                            <constraint firstItem="PbJ-yP-I4Z" firstAttribute="centerY" secondItem="su9-g7-SiZ" secondAttribute="centerY" id="nT4-A5-8PF"/>
+                                            <constraint firstItem="YEJ-hR-1gl" firstAttribute="centerY" secondItem="su9-g7-SiZ" secondAttribute="centerY" id="yCv-t7-cjD"/>
+                                            <constraint firstItem="PbJ-yP-I4Z" firstAttribute="leading" secondItem="YEJ-hR-1gl" secondAttribute="trailing" constant="5" id="yGA-uL-U2n"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZH-IU-Ddx">
-                                        <rect key="frame" x="231" y="0.0" width="231" height="30"/>
+                                        <rect key="frame" x="308" y="0.0" width="154" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancella" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-Qt-vMZ">
-                                                <rect key="frame" x="115.66666666666669" y="8" width="115.33333333333331" height="14"/>
+                                                <rect key="frame" x="77" y="8" width="77" height="14"/>
                                                 <fontDescription key="fontDescription" name="Trakya-Rounded-300-Light" family="Trakya Rounded" pointSize="12"/>
                                                 <color key="textColor" red="0.93339627979999995" green="0.4234841466" blue="0.30200973149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="binIcon" translatesAutoresizingMaskIntoConstraints="NO" id="z6u-84-bl3">
-                                                <rect key="frame" x="90.666666666666686" y="3.6666666666666572" width="20" height="23"/>
+                                                <rect key="frame" x="52" y="3.6666666666666572" width="20" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="0DW-Sg-hIE"/>
                                                     <constraint firstAttribute="width" constant="20" id="a9m-Yh-3Ht"/>
@@ -209,6 +237,9 @@
                 <outlet property="editIconImageView" destination="efD-Cp-3UC" id="ZEj-p4-cXk"/>
                 <outlet property="editLabel" destination="Z3y-Wd-jzM" id="JI5-eM-f9H"/>
                 <outlet property="enableCatLable" destination="7HT-XD-EyT" id="Jxf-Tm-bj4"/>
+                <outlet property="shareContentView" destination="su9-g7-SiZ" id="8Fw-0U-OVS"/>
+                <outlet property="shareIconImageView" destination="YEJ-hR-1gl" id="wzd-f6-JN6"/>
+                <outlet property="shareLabel" destination="PbJ-yP-I4Z" id="BHB-XN-jBW"/>
                 <outlet property="titleLabel" destination="DOw-nu-5hm" id="crn-8K-THD"/>
             </connections>
             <point key="canvasLocation" x="242.74809160305344" y="53.87323943661972"/>
@@ -218,6 +249,7 @@
         <image name="addIcon" width="28" height="27"/>
         <image name="binIcon" width="21" height="24"/>
         <image name="completeEditIcon" width="22" height="22"/>
+        <image name="shareIcon2" width="17" height="21"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
