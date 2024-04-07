@@ -24,6 +24,7 @@
 "GENERAL_NOT_SHOW_THIS_MESSAGE" = "non visualizzare più questo messaggio";
 "GENERAL_SKIP" = "Salta";
 "GENERAL_SHARE" = "Condividi";
+"GENERAL_WARNING" = "Attenzione";
 
 //MARK: Alert
 "Alerts_YES" = "Si";
@@ -36,6 +37,7 @@
 "Alerts_NO_MORE_ANSWERS_AVAILABLE" = "Hai terminato le risposte per questa categoria!";
 "Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR" = "\nIl numero massimo di risposte per questa categoria è %d.\n\nVai nella sezione premium per poter proseguire!";
 "Alerts_GO_TO_PREMIUM" = "Premium";
+"Alerts_GENERIC_ERROR" = "Si è verificato un errore!";
 
 //MARK: Settings
 "SettingsTypeEnum_APP" = "App";
@@ -220,7 +222,6 @@
 "Premium_Plans_FirstProPlan_SECOND_STACK_TEXT" = "Risposte illimitate per ogni categoria";
 "Premium_Plans_FirstProPlan_THIRD_STACK_TEXT" = "Tutte le funzionalità disponibili in futuro";
 
-
 //First pay per use plan
 "Premium_Plans_FirstPpuPlan_DESCRIPTION" = "Compra solo le funzionalità che più ti servono, senza alcun impegno o ricorrenza annuale.";
 "Premium_Plans_FirstPpuPlan_NOTE" = "Nota: questi acquisti verranno persi se disinistalli l'app";
@@ -231,6 +232,16 @@
 //MARK: Share
 "Share_QRCODE" = "QR-Code";
 "Share_FILE" = "Condividi file";
+"Share_FRAME_QRCODE" = "Inquadra il Qr-Code";
+"Share_PROBLEM_SCANNING_QRCODE" = "Problemi a leggere il Qr-Code?\nTorna indietro e invialo come file!";
+"Share_IMPORT" = "Importa";
+"Share_OR" = "Oppure";
+"Share_CAMERA_NOT_GRANTED_WARNING_DESC" = "Non hai accettato i permessi per la fotocamera.\nVai nelle impostazione e abilita la fotocamera.";
+"Share_CAMERA_GENERIC_ERROR_DESC" = "Qualcosa è andato storto durante l'apertura della fotocamera";
+"Share_INVALID_QRCODE_TITLE" = "Il QR-Code scansionato non è valido!";
+"Share_INVALID_QRCODE_DESC" = "Assicurati di aver inquadrato il qr-code corretto";
+"Share_ERROR_IMPORTING_DATA" = "Si è verificato un errore nell'importazione. Riprova";
+"Share_ERROR_TOO_MUCH_ANSWERS_DESCR" = "Con il tuo attuale abbonamento puoi creare categorie con un massimo di %@ risposte!\n\nVai nella sezione premium per poter proseguire!";
 
 //MARK: SettingsViewController
 "SettingsViewController_TITLE" = "Impostazioni";

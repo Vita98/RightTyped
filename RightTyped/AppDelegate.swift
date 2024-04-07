@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Customizing the back icon and text
-//        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: UIControl.State.highlighted)
         UIBarButtonItem.appearance().tintColor = .componentColor
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)

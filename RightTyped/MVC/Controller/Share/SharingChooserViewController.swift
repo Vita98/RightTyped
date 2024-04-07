@@ -43,6 +43,10 @@ class SharingChooserViewController: UIViewController {
     
     //MARK: Configuration
     private func configure() {
+        //Listener
+        qrCodeContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(qrCodePressEvent)))
+        fileContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(filePressedEvent)))
+        
         closeButton.setTitle("", for: .normal)
         self.contentView.layer.cornerRadius = MODAL_VIEW_ROUND_CORNER
         fileContentView.backgroundColor = .backgroundColor?.withAlphaComponent(0.5)
@@ -54,15 +58,18 @@ class SharingChooserViewController: UIViewController {
         titleLabel.set(text: AppString.General.share, size: 28)
         qrCodeLabel.set(text: AppString.Share.qrCode, size: 18)
         fileLabel.set(text: AppString.Share.file, size: 18)
-        
-        //Listener
-        qrCodeShadowContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(qrCodePressEvent)))
-        fileShadowContentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(filePressedEvent)))
     }
     
     //MARK: Events
     @IBAction func closeButtonAction(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        if touch?.view != self.contentView && touch?.view?.parentViewController == self {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc private func qrCodePressEvent() {

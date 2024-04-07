@@ -23,7 +23,12 @@ class QRCodeHelper {
     private static func decompress(_ data: Data) -> Data? {
         do {
             return try (data as NSData).decompressed(using: .zlib) as Data
-        } catch _ { return nil }
+        } catch let error {
+            #if DEBUG
+            print(error.localizedDescription)
+            #endif
+            return nil
+        }
     }
     
     //MARK: QRCode generator
@@ -36,7 +41,7 @@ class QRCodeHelper {
         guard let data = qrCodeData(obj) else { return nil }
         if let filter = CIFilter(name: "CIQRCodeGenerator") {
             filter.setValue(data, forKey: "inputMessage")
-            let transform = CGAffineTransform(scaleX: 3, y: 3)
+            let transform = CGAffineTransform(scaleX: 5, y: 5)
             if let output = filter.outputImage?.transformed(by: transform) {
                 return UIImage(ciImage: output)
             }
@@ -44,13 +49,20 @@ class QRCodeHelper {
         return nil
     }
     
-    static func readQRCode(_ stringValue: String) -> Serializable? {
-        guard let data = stringValue.data(using: .utf8) else { return nil }
+    //MARK: QRCode reader
+    static func readQRCode<T: Serializable>(data: Data, type: T.Type) -> T? {
+        if let decompressedData = decompress(data) {
+            return try? JSONDecoder().decode(T.self, from: decompressedData)
+        }
+        return nil
+    }
+    
+    static func readQRCode(_ data: Data) -> Serializable? {
+        guard let dataDecompressed = decompress(data) else { return nil }
         for poss in objectPossibilities{
-            do {
-                let c = try poss.init(from: JSONDecoder().decode(poss, from: data) as! Decoder)
+            if let c = poss.jsonDecode(dataDecompressed) {
                 return c
-            } catch _ { continue }
+            }
         }
         return nil
     }

@@ -36,6 +36,7 @@ struct AppString{
         static let doNotShowThisMessage: String = LocalizableString("GENERAL_NOT_SHOW_THIS_MESSAGE").locale
         static let skip: String = LocalizableString("GENERAL_SKIP").locale
         static let share: String = LocalizableString("GENERAL_SHARE").locale
+        static let warning: String = LocalizableString("GENERAL_WARNING").locale
     }
     
     struct Alerts{
@@ -50,6 +51,7 @@ struct AppString{
         static let noMoreAnswersAvailable: String = LocalizableString("Alerts_NO_MORE_ANSWERS_AVAILABLE").locale
         static let noMoreAnswersAvailableDescription: String = LocalizableString("Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR").locale
         static let goToPremiumSection: String = LocalizableString("Alerts_GO_TO_PREMIUM").locale
+        static let genericError: String = LocalizableString("Alerts_GENERIC_ERROR").locale
     }
     
     struct SettingsTypeEnum{
@@ -286,6 +288,16 @@ struct AppString{
         private init(){}
         static let qrCode: String = LocalizableString("Share_QRCODE").locale
         static let file: String = LocalizableString("Share_FILE").locale
+        static let frameQrCode: String = LocalizableString("Share_FRAME_QRCODE").locale
+        static let problemScanningQrCode: String = LocalizableString("Share_PROBLEM_SCANNING_QRCODE").locale
+        static let importText: String = LocalizableString("Share_IMPORT").locale
+        static let or: String = LocalizableString("Share_OR").locale
+        static let cameraNotGrantedDesc: String = LocalizableString("Share_CAMERA_NOT_GRANTED_WARNING_DESC").locale
+        static let genericCameraError: String = LocalizableString("Share_CAMERA_GENERIC_ERROR_DESC").locale
+        static let invalidQrCodeTitle: String = LocalizableString("Share_INVALID_QRCODE_TITLE").locale
+        static let invalidQrCodeDesc: String = LocalizableString("Share_INVALID_QRCODE_DESC").locale
+        static let errorWhileImporting: String = LocalizableString("Share_ERROR_IMPORTING_DATA").locale
+        static let errorTooMutchAnswersDescr: String = LocalizableString("Share_ERROR_TOO_MUCH_ANSWERS_DESCR").locale
     }
     
     //MARK: Controller - cell - xib
@@ -360,5 +372,10 @@ struct AppString{
     struct SettingsViewController{
         private init(){}
         static let title: String = LocalizableString("SettingsViewController_TITLE").locale
+    }
+    
+    struct Plurals {
+        private init(){}
+        static let associatedAnswers: String = LocalizableString("ASSOCIATED_ANSWERS").locale
     }
 }

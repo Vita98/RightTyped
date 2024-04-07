@@ -44,6 +44,45 @@ public class Category: NSManagedObject {
         return (DataModelManagerPersistentContainer.shared.saveContextWithCheck(), category)
     }
     
+    @discardableResult
+    static func saveNewCategory(category: Category, with answers: [Answer]) -> (Bool, Category?){
+        if Category.isEmpty(){
+            category.order = 0
+        }else{
+            if let order = Category.getGreatestOrder(){
+                category.order = Double(order + 1)
+            }else{
+                return (false, nil)
+            }
+        }
+        category.creationDate = Date()
+        
+        //Check if the object is not associated to the current context
+        if category.managedObjectContext == nil || (category.managedObjectContext != nil && category.managedObjectContext! != DataModelManagerPersistentContainer.shared.context){
+            let objectToSave = Category(context: DataModelManagerPersistentContainer.shared.context)
+            category.copyTo(objectToSave)
+            addAnswers(answers: answers, to: objectToSave)
+            return (DataModelManagerPersistentContainer.shared.saveContextWithCheck(), objectToSave)
+        }
+        addAnswers(answers: answers, to: category)
+        return (DataModelManagerPersistentContainer.shared.saveContextWithCheck(), category)
+    }
+    
+    private static func addAnswers(answers: [Answer], to category: Category) {
+        var answOrder: Double = 0
+        for answer in answers {
+            answer.order = answOrder
+            if answer.managedObjectContext == nil || (answer.managedObjectContext != nil && answer.managedObjectContext! != DataModelManagerPersistentContainer.shared.context){
+                let objectToSave = Answer(context: DataModelManagerPersistentContainer.shared.context)
+                answer.copyTo(objectToSave)
+                objectToSave.category = category
+            } else {
+                answer.category = category
+            }
+            answOrder += 1
+        }
+    }
+    
     private static func isEmpty() -> Bool{
         let request = Category.fetchRequest()
         do{
@@ -226,5 +265,17 @@ public class Category: NSManagedObject {
         guard let allCat = allCat else { return false }
         for cat in allCat { cat.forceDisabled = false }
         return DataModelManagerPersistentContainer.shared.saveContextWithRollback()
+    }
+    
+    static func canAddCategory() -> Bool {
+        if UserDefaultManager.shared.getProPlanStatus() { return true }
+        else {
+            guard let count = getAllCategory()?.filter({!$0.forceDisabled}).count else { return false }
+            return count < Product.getMaximumCategoriesCount()
+        }
+    }
+    
+    static func appendAnswers(answers: Answer) {
+        
     }
 }

@@ -31,7 +31,7 @@ class ViewController: UIViewController, SelectCategoriesViewControllerDelegate{
     }
     var searchedAnswers: [Answer]?
     private var homeHeaderTableViewCell: HomeHeaderTableViewCell?
-    private var answerHeaderView: AnswersHeaderView?
+    private var answerHeaderView: AnswersHeaderView? = nil
     private var addAnswerView: AddAnswerCustomView?
     private var tableViewEmptyMessageHeight: Double = 0
     private var loader: LoadingViewController?
@@ -427,6 +427,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         //deselecting the previous
         guard let selectedCategoryIndex = selectedCategoryIndex else { return }
+        guard selectedCategoryIndex != indexPath else { return }
         let oldCell = collectionView.cellForItem(at: selectedCategoryIndex) as? CategoryCollectionViewCell
         oldCell?.setSelected(false, animated: true)
         let originIndex = selectedCategoryIndex.row
@@ -439,6 +440,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if let ans = selectedCategory?.answers{
             answers = ans.allObjects as? [Answer]
             searchedAnswers = answers
+            answerHeaderView?.searchBar.text = ""
             reloadTableViewWithAnimation(originIndex: originIndex, destinationIndex: indexPath.row)
         }
         
@@ -672,6 +674,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, NewAnswerV
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 { return nil }
+        guard answerHeaderView == nil else { return answerHeaderView }
         
         guard let header : AnswersHeaderView = AnswersHeaderView.instanceFromNib(withNibName: AnswersHeaderView.NIB_NAME) else { return nil }
         header.configureCell()

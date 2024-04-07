@@ -145,16 +145,16 @@ class NewAnswerViewController: UIViewController, CustomComponentDelegate, Select
     // MARK: keyboard events
     @objc private func keyboardWillHide(_ notification: Notification){
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
-            scrollView.contentInset = contentInset
+        scrollView.contentInset = contentInset
     }
     
     @objc private func keyboardWillShow(_ notification: Notification){
         guard let userInfo = notification.userInfo else { return }
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
 
         var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height + 40
+        contentInset.bottom = keyboardFrame.size.height + 20
         scrollView.contentInset = contentInset
     }
     

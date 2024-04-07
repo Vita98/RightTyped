@@ -104,7 +104,7 @@ extension UIView{
     /// - Parameter nibName: the name of the associated xib file
     /// - Returns: the result UIView
     /// - Warning: if nibName is nil, the xib file must have the same name as the given Generic class T. Force casting to the give T to specify the generic
-    class func instanceFromNib<T : UIView>(withNibName nibName: String?) -> T? {
+    class func instanceFromNib<T : UIView>(withNibName nibName: String? = nil) -> T? {
         if let nibName = nibName{
             return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? T
         }else{
@@ -155,4 +155,32 @@ extension UIView {
     
 }
 
+//MARK: Pause and resume UIView.animate animation with .repeat option
+extension UIView {
+    func pauseAnimation() {
+        let pausedTime: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil)
+        layer.speed = 0.0
+        layer.timeOffset = pausedTime
+    }
 
+    func resumeAnimation() {
+        let pausedTime: CFTimeInterval = layer.timeOffset
+        layer.speed = 1.0
+        layer.timeOffset = 0.0
+        layer.beginTime = 0.0
+        let timeSincePause: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+        layer.beginTime = timeSincePause
+    }
+}
+
+//MARK: UIImageView
+extension UIImageView {
+    public var imageAnimated: UIImage? {
+        set {
+            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                self.image = newValue
+            })
+        }
+        get { self.image }
+    }
+}

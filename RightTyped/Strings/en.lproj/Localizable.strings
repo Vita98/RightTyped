@@ -24,6 +24,7 @@
 "GENERAL_NOT_SHOW_THIS_MESSAGE" = "do not show this message again";
 "GENERAL_SKIP" = "Skip";
 "GENERAL_SHARE" = "Share";
+"GENERAL_WARNING" = "Warning";
 
 //MARK: Alert
 "Alerts_YES" = "Yes";
@@ -36,6 +37,7 @@
 "Alerts_NO_MORE_ANSWERS_AVAILABLE" = "You've run out of answers for this category!";
 "Alerts_NO_MORE_ANSWERS_AVAILABLE_DESCR" = "\nThe maximum number of answers for this category is %d.\n\nGo to the premium section to continue!";
 "Alerts_GO_TO_PREMIUM" = "Premium";
+"Alerts_GENERIC_ERROR" = "An error has occurred!";
 
 //MARK: Settings
 "SettingsTypeEnum_APP" = "App";
@@ -230,6 +232,16 @@
 //MARK: Share
 "Share_QRCODE" = "QR-Code";
 "Share_FILE" = "Share file";
+"Share_FRAME_QRCODE" = "Frame the Qr-Code";
+"Share_PROBLEM_SCANNING_QRCODE" = "Problems scanning the QR-Code?\nGo back and send it as a file!";
+"Share_IMPORT" = "Import";
+"Share_OR" = "Or instead";
+"Share_CAMERA_NOT_GRANTED_WARNING_DESC" = "You have not accepted camera permissions.\nGo to settings and enable the camera.";
+"Share_CAMERA_GENERIC_ERROR_DESC" = "Something went wrong while opening the camera";
+"Share_INVALID_QRCODE_TITLE" = "QR-Code not invalid!";
+"Share_INVALID_QRCODE_DESC" = "Make sure you have framed the correct QR code";
+"Share_ERROR_IMPORTING_DATA" = "An error occurred while importing. Try again";
+"Share_ERROR_TOO_MUCH_ANSWERS_DESCR" = "With your current subscription you can create categories with a maximum of %@ asnwers!\n\nGo to the premium section to continue!";
 
 //MARK: SettingsViewController
 "SettingsViewController_TITLE" = "Settings";

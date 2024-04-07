@@ -13,7 +13,8 @@ protocol NewCategoryViewControllerDelegate{
 }
 
 class NewCategoryViewController: UIViewController, CustomComponentDelegate {
-
+    
+    //MARK: Outlet
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var closeButton: UIButton!
@@ -27,6 +28,15 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var enableLabel: UILabel!
     @IBOutlet weak var buttonLabel: UILabel!
+    @IBOutlet weak var newAnswersImportedLabel: UILabel!
+    
+    //Import section
+    @IBOutlet weak var importContainer: UIView!
+    @IBOutlet weak var orLabel: UILabel!
+    @IBOutlet weak var importButtonContainer: UIView!
+    @IBOutlet weak var importLabel: UILabel!
+    @IBOutlet weak var importIcon: UIImageView!
+    
     
     public var editMode = false
     private var associatedCategory: Category? {
@@ -42,6 +52,7 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
     private var originalCategory: Category?
     public var originIndexPath: IndexPath?
     public var delegate: NewCategoryViewControllerDelegate?
+    private var modelFromScan: CategoryShareModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +79,7 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
         
         configureTextField()
         setTextAndFonts()
+        setImportSection()
         
         if !editMode{
             associatedCategory = Category(entity: Category.entity(), insertInto: nil)
@@ -78,12 +90,27 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
         hideKeyboardWhenTappedAround()
     }
     
+    private func setImportSection() {
+        if editMode {
+            importContainer.isHidden = true
+            importContainer.isUserInteractionEnabled = false
+            importContainer.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        } else {
+            importLabel.set(text: AppString.Share.importText, size: 14)
+            importIcon.image = UIImage(named: "importIcon")?.withTintColor(.white)
+            importButtonContainer.enableComponentButtonMode()
+            orLabel.set(text: AppString.Share.or, size: 16)
+            importButtonContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(importButtonPressed)))
+        }
+    }
+    
     private func setTextAndFonts(){
         titleLabel.set(size: 24)
         nameLabel.set(text: AppString.NewCategoryViewController.categoryNameTitle, size: 20)
         descriptionLabel.set(text: AppString.NewCategoryViewController.categoryNameDescription, size: 14)
         enableLabel.set(text: AppString.General.enable, size: 20)
         buttonLabel.set(text: AppString.General.save, size: 24)
+        newAnswersImportedLabel.set(text: "", size: 14)
     }
     
     private func configureTextField(){
@@ -109,14 +136,13 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
                 }else{
                     return true
                 }
-            }else if orC.name == currCat.name{
-                return false
-            }else{
+            } else if let _ = modelFromScan {
+                return true
+            } else if orC.name != currCat.name {
                 return true
             }
-        }else{
-            return false
         }
+        return false
     }
     
     //MARK: CustomTextField delegate
@@ -151,16 +177,19 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
     
     @objc func bottomViewTouchUpInside(){
         if isSavabled(){
-            if editMode{
+            if editMode {
                 if let saved = associatedCategory?.save(), saved{
                     originalCategory = associatedCategory?.copy()
                     bottomView.enableComponentButtonMode(enabled: isSavabled(), animated: true)
-                    //TODO: Call the delegate didChange
                     delegate?.newCategoryViewController(didChange: associatedCategory!, at: originIndexPath)
                 }
-            }else{
+            } else {
                 if let cat = associatedCategory{
-                    let savResp = Category.saveNewCategory(category: cat)
+                    var savResp: (Bool, Category?) = (false, nil)
+                    if let sharedAnsw = modelFromScan?.answers {
+                        savResp = Category.saveNewCategory(category: cat, with: sharedAnsw.map({$0.toManagedObject()}))
+                    } else { savResp = Category.saveNewCategory(category: cat) }
+                    
                     if savResp.0 {
                         associatedCategory = savResp.1
                         originalCategory = associatedCategory?.copy()
@@ -177,9 +206,65 @@ class NewCategoryViewController: UIViewController, CustomComponentDelegate {
         }
     }
     
+    @objc private func importButtonPressed() {
+        let VC = ScannerViewController<CategoryShareModel>()
+        VC.modalTransitionStyle = .crossDissolve
+        VC.modalPresentationStyle = .overFullScreen
+        self.view.endEditing(true)
+        self.present(VC, animated: true)
+        VC.delegate = self
+    }
+    
     //MARK: Public configurator
     public func setCategory(_ category: Category?, indexPath: IndexPath? = nil){
         associatedCategory = category
         originIndexPath = indexPath
+    }
+}
+
+//MARK: ScannerViewControllerDelegate
+extension NewCategoryViewController: ScannerViewControllerDelegate {
+    func scannerViewControllerDidFound<T: QRCodable>(model: T) {
+        guard let newCategory = model as? CategoryShareModel, let answCount = newCategory.answers?.count else {
+            //Show generic error
+            let alert = UIAlertController(title: AppString.Alerts.genericError, message: AppString.Share.errorWhileImporting, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: AppString.General.close, style: .cancel))
+            self.present(alert, animated: true)
+            return
+        }
+        
+        //Check category number
+        guard Category.canAddCategory() else {
+            //Show category error
+            let alert = UIAlertController(title: AppString.Alerts.noMoreCategoriesAvailable, message: AppString.Alerts.noMoreCategoriesAvailableDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: AppString.General.close, style: .cancel))
+            self.present(alert, animated: true)
+            return
+        }
+        
+        //Check answer number
+        guard newCategory.checkAnswers() else {
+            //Show answers error
+            let alert = UIAlertController(title: AppString.General.warning, message: String(format: AppString.Share.errorTooMutchAnswersDescr, String(MAXIMUM_ANSWERS_FOR_CATEGORIES)), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: AppString.General.close, style: .cancel))
+            self.present(alert, animated: true)
+            return
+        }
+        
+        //Can actually add the category
+        self.modelFromScan = newCategory
+        self.customTextField?.currentText = newCategory.name
+        let resultString : String = String(format: AppString.Plurals.associatedAnswers, answCount)
+        
+        UIView.transition(with: newAnswersImportedLabel, duration: 0.3) {
+            self.newAnswersImportedLabel.text = resultString
+            self.newAnswersImportedLabel.layoutIfNeeded()
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            if let cat = self.associatedCategory {
+                cat.name = newCategory.name
+            }
+            self.bottomView.enableComponentButtonMode(enabled: self.isSavabled(), animated: true)
+        }
     }
 }

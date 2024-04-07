@@ -65,6 +65,7 @@ class CustomTextArea: UIView, UITextViewDelegate {
         
         editButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         if startEditingTouchingEverywhere {
+            textView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonPressed)))
             self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonPressed)))
             placeholderLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonPressed)))
         }
